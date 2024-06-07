@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="theoryStore" nsURI="http://www.xtext.org/example/modellingDialogue/TheoryStore"
+    nsPrefix="theoryStore">
+  <eClassifiers xsi:type="ecore:EClass" name="TheoryStore">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Element" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" unique="false"
+        upperBound="-1" eType="#//Requirement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Theory" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" unique="false"
+        upperBound="-1" eType="#//Element"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Experiment" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" unique="false" upperBound="-1"
+        eType="#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" unique="false"
+        upperBound="-1" eType="#//Requirement"/>
+  </eClassifiers>
+</ecore:EPackage>

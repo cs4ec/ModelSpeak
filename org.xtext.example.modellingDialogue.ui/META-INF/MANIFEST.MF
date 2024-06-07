@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.example.modellingDialogue.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.modellingDialogue.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.modellingDialogue.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.example.modellingDialogue,
+ org.xtext.example.modellingDialogue.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
+ org.eclipse.xtend.lib;bundle-version="2.35.0";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.xtext.example.mod.ui.quickfix,
+ org.xtext.example.mod.ui.contentassist,
+ org.xtext.example.modellingDialogue.ui.internal
+Bundle-Activator: org.xtext.example.modellingDialogue.ui.internal.ModellingDialogueActivator

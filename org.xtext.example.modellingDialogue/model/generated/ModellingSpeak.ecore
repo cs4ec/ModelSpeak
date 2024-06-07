@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modellingSpeak" nsURI="http://www.xtext.org/example/mod/ModellingSpeak"
+    nsPrefix="modellingSpeak">
+  <eClassifiers xsi:type="ecore:EClass" name="Game">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moves" upperBound="-1"
+        eType="#//Move" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Move"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Experiment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Theory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProposeRequirement" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttackRequirement" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theory" eType="#//Theory"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RedefineRequirement" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newRequirement" eType="#//Requirement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RetractRequirement" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SupportRequirement" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theory" eType="#//Theory"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProposeModel" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SupportModel" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theory" eType="#//Theory"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceModel" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newModel" eType="#//Model"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CounterModel" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="experiment" eType="#//Experiment"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttackModel" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theory" eType="#//Theory"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReviseRequirement" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newRequirement" eType="#//Requirement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="experiment" eType="#//Experiment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProposeExperiment" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="experiment" eType="#//Experiment"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SupportExperiment" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="experiment" eType="#//Experiment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theory" eType="#//Theory"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttackExperiment" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="experiment" eType="#//Experiment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theory" eType="#//Theory"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RetractExperiment" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="experiment" eType="#//Experiment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StudyDone" eSuperTypes="#//Move"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NotConvinced" eSuperTypes="#//Move">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"/>
+  </eClassifiers>
+</ecore:EPackage>
