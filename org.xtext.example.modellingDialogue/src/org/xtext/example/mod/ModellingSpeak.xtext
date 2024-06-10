@@ -44,9 +44,7 @@ ProposeModel:
 
 SupportModel:
     'SupportModel' '(' model=[Model] ',' theory=Theory ')';
-    
-// Should the new model still point to the requirements of the replaced model? 
-// YES
+
 ReplaceModel:
     'ReplaceModel' '(' model=[Model] ',' newModel=Model ')';
 

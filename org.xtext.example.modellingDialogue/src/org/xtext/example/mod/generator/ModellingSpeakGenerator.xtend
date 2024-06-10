@@ -33,7 +33,6 @@ import org.xtext.example.modellingDialogue.theoryStore.TheoryStoreFactory
 
 class ModellingSpeakGenerator extends AbstractGenerator {
 	val extension TheoryStoreFactory factory = TheoryStoreFactory.eINSTANCE
-	
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		resource.contents.forEach [ e |
@@ -77,17 +76,41 @@ class ModellingSpeakGenerator extends AbstractGenerator {
 				newReq.name = move.newRequirement.name
 				newReq.content = move.newRequirement.getContent()
 				if (move.requirement.name !== null) {
-					requirementMap.remove(move.requirement.name)
+					val oldReq = requirementMap.remove(move.requirement.name)
+
+					// Traverse all models that reference the old requirement, and update them to reference the new requirement
+					modelMap.values.forEach [ model |
+						if (model.requirements.contains(oldReq)) {
+							model.requirements.remove(oldReq)
+							model.requirements.add(newReq)
+						}
+					]
+
+					// Remove all Theory that referenced the deleted Requirement
+					val theoriesToRemove = theoryStore.elements.filter(Theory).filter [ theory |
+						theory.elements.contains(oldReq)
+					]
+					theoriesToRemove.forEach [ theory |
+						theoryStore.elements.remove(theory)
+					]
+
 					theoryStore.elements.remove(move.requirement.name)
 				}
 				requirementMap.put(newReq.name, newReq)
 				theoryStore.elements += newReq
-			// ToDo: Traverse all model children of the old requirement, and update them to reference the new requirement
-			// ToDo: Remove all Theory that referenced the deleted Requirement
-			
+
 			} else if (move instanceof RetractRequirement) {
 				if (move.requirement.name !== null) {
 					requirementMap.remove(move.requirement.name)
+
+					// Remove all Theory that referenced the deleted Requirement
+					val theoriesToRemove = theoryStore.elements.filter(Theory).filter [ theory |
+						theory.elements.contains(move.requirement)
+					]
+					theoriesToRemove.forEach [ theory |
+						theoryStore.elements.remove(theory)
+					]
+
 					theoryStore.elements.remove(move.requirement.name)
 				}
 
@@ -122,18 +145,50 @@ class ModellingSpeakGenerator extends AbstractGenerator {
 				theoryMap.put(theory.name, theory)
 				theoryStore.elements += theory
 
-			// Should the new model still point to the requirements of the replaced model? YES
 			} else if (move instanceof ReplaceModel) {
 				val newModel = factory.createModel
-				newModel.name = move.model.name
-				newModel.content = move.model.getContent()
+				newModel.name = move.newModel.name
+				newModel.content = move.newModel.getContent()
+
 				if (move.model.name !== null) {
-					modelMap.remove(move.model.name)
-					theoryStore.elements.remove(move.model.name)
+					val oldModel = modelMap.get(move.model.name)
+					if (oldModel !== null) {
+						// Transfer the requirements from the old model to the new model
+						newModel.requirements.addAll(oldModel.requirements)
+
+						// Collect theories to remove
+						val theoriesToRemove = theoryStore.elements.filter(Theory).filter [ theory |
+							theory.elements.contains(oldModel)
+						].toList
+
+						// Collect experiments to remove
+						val experimentsToRemove = theoryStore.elements.filter(Experiment).filter [ experiment |
+							experiment.model.contains(oldModel)
+						].toList
+
+						// Remove the collected theories and experiments
+						theoriesToRemove.forEach [ theory |
+							theoryStore.elements.remove(theory)
+						]
+
+						experimentsToRemove.forEach [ experiment |
+							theoryStore.elements.remove(experiment)
+						]
+
+						// Remove the old model from the map and the theory store
+						modelMap.remove(move.model.name)
+						theoryStore.elements.remove(oldModel)
+					} else {
+						println("Old model not found for name: " + move.model.name)
+					}
+				} else {
+					println("Move model name is null")
 				}
+
+				// Add the new model to the map and the theory store
 				modelMap.put(newModel.name, newModel)
 				theoryStore.elements += newModel
-				
+
 			} else if (move instanceof CounterModel) {
 				val experiment = factory.createExperiment
 				experiment.name = move.experiment.name
@@ -146,7 +201,7 @@ class ModellingSpeakGenerator extends AbstractGenerator {
 				}
 				experimentMap.put(experiment.name, experiment)
 				theoryStore.elements += experiment
-				
+
 			} else if (move instanceof AttackModel) {
 				val theory = factory.createTheory
 				theory.name = move.theory.name
@@ -190,12 +245,12 @@ class ModellingSpeakGenerator extends AbstractGenerator {
 				}
 				theoryMap.put(theory.name, theory)
 				theoryStore.elements += theory
-				
+
 			} else if (move instanceof RetractExperiment) {
 				if (move.experiment.name !== null) {
 					experimentMap.remove(move.experiment.name)
 					theoryStore.elements.remove(move.experiment.name)
-			}
+				}
 
 			} else if (move instanceof NotConvinced) {
 				val theory = factory.createTheory
