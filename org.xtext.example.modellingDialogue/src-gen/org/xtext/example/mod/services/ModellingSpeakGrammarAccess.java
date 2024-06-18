@@ -582,8 +582,6 @@ public class ModellingSpeakGrammarAccess extends AbstractElementFinder.AbstractG
 		private final RuleCall cNewModelModelParserRuleCall_4_0 = (RuleCall)cNewModelAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//// Should the new model still point to the requirements of the replaced model?
-		//// YES
 		//ReplaceModel:
 		//    'ReplaceModel' '(' model=[Model] ',' newModel=Model ')';
 		@Override public ParserRule getRule() { return rule; }
@@ -1293,8 +1291,6 @@ public class ModellingSpeakGrammarAccess extends AbstractElementFinder.AbstractG
 		return getSupportModelAccess().getRule();
 	}
 	
-	//// Should the new model still point to the requirements of the replaced model?
-	//// YES
 	//ReplaceModel:
 	//    'ReplaceModel' '(' model=[Model] ',' newModel=Model ')';
 	public ReplaceModelElements getReplaceModelAccess() {
