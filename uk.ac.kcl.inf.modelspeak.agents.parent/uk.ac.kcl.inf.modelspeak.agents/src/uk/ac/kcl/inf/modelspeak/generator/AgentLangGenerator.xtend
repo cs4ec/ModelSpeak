@@ -3,9 +3,7 @@
  */
 package uk.ac.kcl.inf.modelspeak.generator
 
-import java.util.HashMap
 import java.util.List
-import java.util.Map
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.henshin.interpreter.EGraph
@@ -36,11 +34,6 @@ import uk.ac.kcl.inf.modelspeak.agentLang.RetractRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Experiment
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Model
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Requirement
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Theory
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStore
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory
 
 /**
@@ -90,8 +83,7 @@ class AgentLangGenerator extends AbstractGenerator {
 	}
 
 	/**
-	 * Update the theory store with the consequences of the given move, using the various maps to track referenced 
-	 * elements and their representation in the theory store.
+	 * Update the theory store with the consequences of the given move. The below is just plumbing. The real effects are implemented in the accompanying Henshin file.
 	 */
 	private dispatch def updateTheoryStore(Move move) {}
 

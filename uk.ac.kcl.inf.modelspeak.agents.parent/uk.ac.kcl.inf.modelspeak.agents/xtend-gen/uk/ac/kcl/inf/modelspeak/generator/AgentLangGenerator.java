@@ -114,8 +114,7 @@ public class AgentLangGenerator extends AbstractGenerator {
   }
 
   /**
-   * Update the theory store with the consequences of the given move, using the various maps to track referenced
-   * elements and their representation in the theory store.
+   * Update the theory store with the consequences of the given move. The below is just plumbing. The real effects are implemented in the accompanying Henshin file.
    */
   private Boolean _updateTheoryStore(final Move move) {
     return null;
