@@ -5,6 +5,7 @@ package uk.ac.kcl.inf.modelspeak.generator;
 
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,10 +26,12 @@ import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.resource.SaveOptions;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.Pair;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackRequirement;
@@ -120,34 +123,21 @@ public class AgentLangGenerator extends AbstractGenerator {
   }
 
   private Boolean _updateTheoryStore(final ProposeRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Function1<Rule, Boolean> _function = (Rule it) -> {
-        String _name = it.getName();
-        return Boolean.valueOf(Objects.equals(_name, "proposeRequirement"));
-      };
-      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
-      this.ruleRunner.setParameterValue("reqName", move.getRequirement().getName());
-      this.ruleRunner.setParameterValue("reqContents", move.getRequirement().getContent());
-      _xblockexpression = this.ruleRunner.execute(null);
-    }
-    return Boolean.valueOf(_xblockexpression);
+    String _name = move.getRequirement().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", _name);
+    String _content = move.getRequirement().getContent();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("reqContents", _content);
+    return Boolean.valueOf(this.execute("proposeRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1))));
   }
 
   private Boolean _updateTheoryStore(final AttackRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Function1<Rule, Boolean> _function = (Rule it) -> {
-        String _name = it.getName();
-        return Boolean.valueOf(Objects.equals(_name, "attackRequirement"));
-      };
-      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
-      this.ruleRunner.setParameterValue("attackedRequirement", move.getRequirement().getName());
-      this.ruleRunner.setParameterValue("theoryName", move.getTheory().getName());
-      this.ruleRunner.setParameterValue("theoryContents", move.getTheory().getContent());
-      _xblockexpression = this.ruleRunner.execute(null);
-    }
-    return Boolean.valueOf(_xblockexpression);
+    String _name = move.getRequirement().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("attackedRequirement", _name);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
+    String _content = move.getTheory().getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    return Boolean.valueOf(this.execute("attackRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final RedefineRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
@@ -229,19 +219,14 @@ public class AgentLangGenerator extends AbstractGenerator {
   }
 
   private Boolean _updateTheoryStore(final ProposeModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Function1<Rule, Boolean> _function = (Rule it) -> {
-        String _name = it.getName();
-        return Boolean.valueOf(Objects.equals(_name, "proposeModel"));
-      };
-      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
-      this.ruleRunner.setParameterValue("requirementName", move.getRequirement().getName());
-      this.ruleRunner.setParameterValue("modelName", move.getModel().getName());
-      this.ruleRunner.setParameterValue("modelContents", move.getModel().getContent());
-      _xblockexpression = this.ruleRunner.execute(null);
-    }
-    return Boolean.valueOf(_xblockexpression);
+    String _name = move.getRequirement().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("requirementName", _name);
+    String _name_1 = move.getModel().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("modelName", _name_1);
+    String _content = move.getModel().getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("modelContents", _content);
+    return Boolean.valueOf(this.execute("proposeModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final SupportModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
@@ -265,20 +250,14 @@ public class AgentLangGenerator extends AbstractGenerator {
   }
 
   private Boolean _updateTheoryStore(final ReplaceModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    final Function1<Rule, Boolean> _function = (Rule it) -> {
-      String _name = it.getName();
-      return Boolean.valueOf(Objects.equals(_name, "replaceModel"));
-    };
-    this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
-    this.ruleRunner.setParameterValue("newModelName", move.getNewModel().getName());
-    this.ruleRunner.setParameterValue("newModelContents", move.getNewModel().getContent());
-    this.ruleRunner.setParameterValue("oldModelName", move.getModel().getName());
-    boolean _execute = this.ruleRunner.execute(null);
-    boolean _not = (!_execute);
-    if (_not) {
-      throw new RuntimeException("Shit got real...");
-    }
-    return null;
+    String _name = move.getNewModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("newModelName", _name);
+    String _content = move.getNewModel().getContent();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("newModelContents", _content);
+    String _name_1 = move.getModel().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("oldModelName", _name_1);
+    return Boolean.valueOf(this.execute("replaceModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final CounterModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
@@ -309,19 +288,14 @@ public class AgentLangGenerator extends AbstractGenerator {
   }
 
   private Boolean _updateTheoryStore(final AttackModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Function1<Rule, Boolean> _function = (Rule it) -> {
-        String _name = it.getName();
-        return Boolean.valueOf(Objects.equals(_name, "attackModel"));
-      };
-      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
-      this.ruleRunner.setParameterValue("modelName", move.getModel().getName());
-      this.ruleRunner.setParameterValue("theoryContents", move.getTheory().getContent());
-      this.ruleRunner.setParameterValue("theoryName", move.getTheory().getName());
-      _xblockexpression = this.ruleRunner.execute(null);
-    }
-    return Boolean.valueOf(_xblockexpression);
+    String _name = move.getModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+    String _content = move.getTheory().getContent();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryContents", _content);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryName", _name_1);
+    return Boolean.valueOf(this.execute("attackModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final ProposeExperiment move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
@@ -425,6 +399,23 @@ public class AgentLangGenerator extends AbstractGenerator {
       _xblockexpression = _elements_1.add(theory);
     }
     return Boolean.valueOf(_xblockexpression);
+  }
+
+  private boolean execute(final String ruleName, final List<Pair<String, String>> parameters) {
+    boolean _xblockexpression = false;
+    {
+      final Function1<Rule, Boolean> _function = (Rule it) -> {
+        String _name = it.getName();
+        return Boolean.valueOf(Objects.equals(_name, ruleName));
+      };
+      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
+      final Consumer<Pair<String, String>> _function_1 = (Pair<String, String> it) -> {
+        this.ruleRunner.setParameterValue(it.getKey(), it.getValue());
+      };
+      parameters.forEach(_function_1);
+      _xblockexpression = this.ruleRunner.execute(null);
+    }
+    return _xblockexpression;
   }
 
   private Boolean updateTheoryStore(final Move move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
