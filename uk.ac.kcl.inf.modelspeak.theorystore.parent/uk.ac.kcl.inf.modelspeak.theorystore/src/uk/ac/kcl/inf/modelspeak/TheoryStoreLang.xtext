@@ -1,0 +1,21 @@
+grammar uk.ac.kcl.inf.modelspeak.TheoryStoreLang with org.eclipse.xtext.common.Terminals
+
+generate theoryStoreLang "http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang"
+
+TheoryStore:
+    elements+=Element*;
+
+Element:
+    Model | Theory | Requirement | Experiment;
+
+Model:
+    'Model' name=ID '{' content=STRING '}' ('->' requirements+=[Requirement] (',' requirements+=[Requirement])*)?;
+
+Theory:
+    'Theory' name=ID '{' content=STRING '}' ('->' elements+=[Element] (',' elements+=[Element])*)?;
+
+Requirement:
+    'Requirement' name=ID '{' content=STRING '}';
+
+Experiment:
+    'Experiment' name=ID '{' content=STRING '}' '->' model+=[Model] ('->' requirements+=[Requirement] (',' requirements+=[Requirement])*)?;

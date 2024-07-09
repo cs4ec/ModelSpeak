@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uk.ac.kcl.inf.modelspeak.agents.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: uk.ac.kcl.inf.modelspeak.agents.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uk.ac.kcl.inf.modelspeak.agents.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: uk.ac.kcl.inf.modelspeak.agents,
+ uk.ac.kcl.inf.modelspeak.agents.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;bundle-version="2.35.0";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: uk.ac.kcl.inf.modelspeak.agents.ui.internal,
+ uk.ac.kcl.inf.modelspeak.ui.contentassist,
+ uk.ac.kcl.inf.modelspeak.ui.quickfix
+Bundle-Activator: uk.ac.kcl.inf.modelspeak.agents.ui.internal.AgentsActivator

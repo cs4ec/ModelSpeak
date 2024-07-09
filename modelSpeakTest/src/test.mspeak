@@ -1,0 +1,4 @@
+ProposeRequirement (r1["First requirement"])
+ProposeModel(m1["First model"], r1)
+AttackModel(m1, e1["My experiment"])
+//ReplaceModel(m1, m2["Refined model"])
