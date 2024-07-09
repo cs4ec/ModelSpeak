@@ -4,8 +4,17 @@
 package uk.ac.kcl.inf.modelspeak.generator
 
 import java.util.HashMap
+import java.util.List
 import java.util.Map
+import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.emf.henshin.interpreter.EGraph
+import org.eclipse.emf.henshin.interpreter.Engine
+import org.eclipse.emf.henshin.interpreter.InterpreterFactory
+import org.eclipse.emf.henshin.interpreter.RuleApplication
+import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl
+import org.eclipse.emf.henshin.model.Module
+import org.eclipse.emf.henshin.model.Rule
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
@@ -40,14 +49,36 @@ import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class AgentLangGenerator extends AbstractGenerator {
+	val Engine engine = InterpreterFactory.INSTANCE.createEngine
+	val RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(engine)
+	var EGraph modelGraph
+
+	var List<Rule> rules
+
 	val extension TheoryStoreLangFactory factory = TheoryStoreLangFactory.eINSTANCE
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		resource.contents.filter(Game).forEach [generateTheoryStore(resource, fsa)]
+		val rulesResource = resource.resourceSet.getResource(
+			URI.createPlatformPluginURI(
+				'/uk.ac.kcl.inf.modelspeak.agents/uk/ac/kcl/inf/modelspeak/generator/theory_store.henshin', false),
+			true
+		)
+		rules = (rulesResource.contents.head as Module).allRules
+
+		resource.contents.filter(Game).forEach[generateTheoryStore(resource, fsa)]
 	}
 
 	def generateTheoryStore(Game game, Resource resource, IFileSystemAccess2 fsa) {
 		val theoryStore = createTheoryStore
+		val outputUri = fsa.getURI("theoryStoreOutput.theoryStore")
+		val resourceSet = resource.resourceSet
+		val newResource = resourceSet.createResource(outputUri)
+		newResource.contents += theoryStore
+
+		modelGraph = new EGraphImpl(theoryStore)
+		ruleRunner.EGraph = modelGraph
+		
+		// TODO: Replace all methods with appropriate rule calls
 
 		val requirementMap = new HashMap<String, Requirement>()
 		val modelMap = new HashMap<String, Model>()
@@ -56,10 +87,6 @@ class AgentLangGenerator extends AbstractGenerator {
 
 		game.moves.forEach[updateTheoryStore(theoryStore, requirementMap, modelMap, experimentMap, theoryMap)]
 
-		val outputUri = fsa.getURI("theoryStoreOutput.theoryStore")
-		val resourceSet = resource.resourceSet
-		val newResource = resourceSet.createResource(outputUri)
-		newResource.contents += theoryStore
 		newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
 	}
 
@@ -74,24 +101,37 @@ class AgentLangGenerator extends AbstractGenerator {
 	private dispatch def updateTheoryStore(ProposeRequirement move, TheoryStore theoryStore,
 		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
 		Map<String, Theory> theoryMap) {
-		val req = createRequirement
-		req.name = move.requirement.name
-		req.content = move.requirement.content
-		requirementMap.put(req.name, req)
-		theoryStore.elements += req
+			
+		ruleRunner.rule = rules.findFirst[name == 'proposeRequirement']
+		ruleRunner.setParameterValue('reqName', move.requirement.name)
+		ruleRunner.setParameterValue('reqContents', move.requirement.content)
+		ruleRunner.execute(null)
+		
+//		val req = createRequirement
+//		req.name = move.requirement.name
+//		req.content = move.requirement.content
+//		requirementMap.put(req.name, req)
+//		theoryStore.elements += req
 	}
 
 	private dispatch def updateTheoryStore(AttackRequirement move, TheoryStore theoryStore,
 		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
 		Map<String, Theory> theoryMap) {
-		val theory = createTheory
-		theory.name = move.theory.name
-		theory.content = move.theory.content
-		if (move.requirement.name !== null) { // TODO: This seems wrong, should this refer to something other than a requirement?
-			theory.elements += experimentMap.get(move.requirement.name)
-		}
-		theoryMap.put(theory.name, theory)
-		theoryStore.elements += theory
+
+		ruleRunner.rule = rules.findFirst[name == 'attackRequirement']
+		ruleRunner.setParameterValue('attackedRequirement', move.requirement.name)
+		ruleRunner.setParameterValue('theoryName', move.theory.name)
+		ruleRunner.setParameterValue('theoryContents', move.theory.content)
+		ruleRunner.execute(null)
+
+//		val theory = createTheory
+//		theory.name = move.theory.name
+//		theory.content = move.theory.content
+//		if (move.requirement.name !== null) { // TODO: This seems wrong, should this refer to something other than a requirement?
+//			theory.elements += experimentMap.get(move.requirement.name)
+//		}
+//		theoryMap.put(theory.name, theory)
+//		theoryStore.elements += theory
 	}
 
 	private dispatch def updateTheoryStore(RedefineRequirement move, TheoryStore theoryStore,
@@ -162,14 +202,21 @@ class AgentLangGenerator extends AbstractGenerator {
 	private dispatch def updateTheoryStore(ProposeModel move, TheoryStore theoryStore,
 		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
 		Map<String, Theory> theoryMap) {
-		val mdl = createModel
-		mdl.name = move.model.name
-		mdl.content = move.model.content
-		if (move.requirement.name !== null) {
-			mdl.requirements += requirementMap.get(move.requirement.name)
-		}
-		modelMap.put(mdl.name, mdl)
-		theoryStore.elements += mdl
+
+		ruleRunner.rule = rules.findFirst[name == 'proposeModel']
+		ruleRunner.setParameterValue('requirementName', move.requirement.name)
+		ruleRunner.setParameterValue('modelName', move.model.name)
+		ruleRunner.setParameterValue('modelContents', move.model.content)
+		ruleRunner.execute(null)
+
+//		val mdl = createModel
+//		mdl.name = move.model.name
+//		mdl.content = move.model.content
+//		if (move.requirement.name !== null) {
+//			mdl.requirements += requirementMap.get(move.requirement.name)
+//		}
+//		modelMap.put(mdl.name, mdl)
+//		theoryStore.elements += mdl
 
 	}
 
@@ -189,48 +236,57 @@ class AgentLangGenerator extends AbstractGenerator {
 	private dispatch def updateTheoryStore(ReplaceModel move, TheoryStore theoryStore,
 		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
 		Map<String, Theory> theoryMap) {
-		val newModel = createModel
-		newModel.name = move.newModel.name
-		newModel.content = move.newModel.content
-
-		if (move.model.name !== null) {
-			val oldModel = modelMap.get(move.model.name)
-			if (oldModel !== null) {
-				// Transfer the requirements from the old model to the new model
-				newModel.requirements.addAll(oldModel.requirements)
-
-				// Collect theories to remove
-				val theoriesToRemove = theoryStore.elements.filter(Theory).filter [ theory |
-					theory.elements.contains(oldModel)
-				].toList
-
-				// Collect experiments to remove
-				val experimentsToRemove = theoryStore.elements.filter(Experiment).filter [ experiment |
-					experiment.model.contains(oldModel)
-				].toList
-
-				// Remove the collected theories and experiments
-				theoriesToRemove.forEach [ theory |
-					theoryStore.elements.remove(theory)
-				]
-
-				experimentsToRemove.forEach [ experiment |
-					theoryStore.elements.remove(experiment)
-				]
-
-				// Remove the old model from the map and the theory store
-				modelMap.remove(move.model.name)
-				theoryStore.elements.remove(oldModel)
-			} else {
-				println("Old model not found for name: " + move.model.name)
-			}
-		} else {
-			println("Move model name is null")
+			
+		ruleRunner.rule = rules.findFirst[name == 'replaceModel']
+		ruleRunner.setParameterValue('newModelName', move.newModel.name)
+		ruleRunner.setParameterValue('newModelContents', move.newModel.content)
+		ruleRunner.setParameterValue('oldModelName', move.model.name)
+		if (!ruleRunner.execute(null)) {
+			throw new RuntimeException("Shit got real...")
 		}
-
-		// Add the new model to the map and the theory store
-		modelMap.put(newModel.name, newModel)
-		theoryStore.elements += newModel
+						
+//		val newModel = createModel
+//		newModel.name = move.newModel.name
+//		newModel.content = move.newModel.content
+//
+//		if (move.model.name !== null) {
+//			val oldModel = modelMap.get(move.model.name)
+//			if (oldModel !== null) {
+//				// Transfer the requirements from the old model to the new model
+//				newModel.requirements.addAll(oldModel.requirements)
+//
+//				// Collect theories to remove
+//				val theoriesToRemove = theoryStore.elements.filter(Theory).filter [ theory |
+//					theory.elements.contains(oldModel)
+//				].toList
+//
+//				// Collect experiments to remove
+//				val experimentsToRemove = theoryStore.elements.filter(Experiment).filter [ experiment |
+//					experiment.model.contains(oldModel)
+//				].toList
+//
+//				// Remove the collected theories and experiments
+//				theoriesToRemove.forEach [ theory |
+//					theoryStore.elements.remove(theory)
+//				]
+//
+//				experimentsToRemove.forEach [ experiment |
+//					theoryStore.elements.remove(experiment)
+//				]
+//
+//				// Remove the old model from the map and the theory store
+//				modelMap.remove(move.model.name)
+//				theoryStore.elements.remove(oldModel)
+//			} else {
+//				println("Old model not found for name: " + move.model.name)
+//			}
+//		} else {
+//			println("Move model name is null")
+//		}
+//
+//		// Add the new model to the map and the theory store
+//		modelMap.put(newModel.name, newModel)
+//		theoryStore.elements += newModel
 	}
 
 	private dispatch def updateTheoryStore(CounterModel move, TheoryStore theoryStore,
@@ -253,14 +309,22 @@ class AgentLangGenerator extends AbstractGenerator {
 	private dispatch def updateTheoryStore(AttackModel move, TheoryStore theoryStore,
 		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
 		Map<String, Theory> theoryMap) {
-		val theory = createTheory
-		theory.name = move.theory.name
-		theory.content = move.theory.content
-		if (move.model.name !== null) {
-			theory.elements += modelMap.get(move.model.name)
-		}
-		theoryMap.put(theory.name, theory)
-		theoryStore.elements += theory
+			
+		ruleRunner.rule = rules.findFirst[name == 'attackModel']
+		ruleRunner.setParameterValue('modelName', move.model.name)
+		ruleRunner.setParameterValue('theoryContents', move.theory.content)
+		ruleRunner.setParameterValue('theoryName', move.theory.name)
+		ruleRunner.execute(null)
+			
+			
+//		val theory = createTheory
+//		theory.name = move.theory.name
+//		theory.content = move.theory.content
+//		if (move.model.name !== null) {
+//			theory.elements += modelMap.get(move.model.name)
+//		}
+//		theoryMap.put(theory.name, theory)
+//		theoryStore.elements += theory
 	}
 
 	// --------------- Experiment -----------------

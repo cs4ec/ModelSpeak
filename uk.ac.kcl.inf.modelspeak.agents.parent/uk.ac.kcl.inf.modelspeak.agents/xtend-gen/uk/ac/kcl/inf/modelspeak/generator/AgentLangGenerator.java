@@ -8,12 +8,19 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.henshin.interpreter.EGraph;
+import org.eclipse.emf.henshin.interpreter.Engine;
+import org.eclipse.emf.henshin.interpreter.InterpreterFactory;
+import org.eclipse.emf.henshin.interpreter.RuleApplication;
+import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
+import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -21,7 +28,6 @@ import org.eclipse.xtext.resource.SaveOptions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackModel;
@@ -55,11 +61,25 @@ import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory;
  */
 @SuppressWarnings("all")
 public class AgentLangGenerator extends AbstractGenerator {
+  private final Engine engine = InterpreterFactory.INSTANCE.createEngine();
+
+  private final RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(this.engine);
+
+  private EGraph modelGraph;
+
+  private List<Rule> rules;
+
   @Extension
   private final TheoryStoreLangFactory factory = TheoryStoreLangFactory.eINSTANCE;
 
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    final Resource rulesResource = resource.getResourceSet().getResource(
+      URI.createPlatformPluginURI(
+        "/uk.ac.kcl.inf.modelspeak.agents/uk/ac/kcl/inf/modelspeak/generator/theory_store.henshin", false), 
+      true);
+    EObject _head = IterableExtensions.<EObject>head(rulesResource.getContents());
+    this.rules = ((org.eclipse.emf.henshin.model.Module) _head).getAllRules();
     final Consumer<Game> _function = (Game it) -> {
       this.generateTheoryStore(it, resource, fsa);
     };
@@ -69,6 +89,14 @@ public class AgentLangGenerator extends AbstractGenerator {
   public void generateTheoryStore(final Game game, final Resource resource, final IFileSystemAccess2 fsa) {
     try {
       final TheoryStore theoryStore = this.factory.createTheoryStore();
+      final URI outputUri = fsa.getURI("theoryStoreOutput.theoryStore");
+      final ResourceSet resourceSet = resource.getResourceSet();
+      final Resource newResource = resourceSet.createResource(outputUri);
+      EList<EObject> _contents = newResource.getContents();
+      _contents.add(theoryStore);
+      EGraphImpl _eGraphImpl = new EGraphImpl(theoryStore);
+      this.modelGraph = _eGraphImpl;
+      this.ruleRunner.setEGraph(this.modelGraph);
       final HashMap<String, Requirement> requirementMap = new HashMap<String, Requirement>();
       final HashMap<String, Model> modelMap = new HashMap<String, Model>();
       final HashMap<String, Experiment> experimentMap = new HashMap<String, Experiment>();
@@ -77,11 +105,6 @@ public class AgentLangGenerator extends AbstractGenerator {
         this.updateTheoryStore(it, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
       };
       game.getMoves().forEach(_function);
-      final URI outputUri = fsa.getURI("theoryStoreOutput.theoryStore");
-      final ResourceSet resourceSet = resource.getResourceSet();
-      final Resource newResource = resourceSet.createResource(outputUri);
-      EList<EObject> _contents = newResource.getContents();
-      _contents.add(theoryStore);
       newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -99,12 +122,14 @@ public class AgentLangGenerator extends AbstractGenerator {
   private Boolean _updateTheoryStore(final ProposeRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
     boolean _xblockexpression = false;
     {
-      final Requirement req = this.factory.createRequirement();
-      req.setName(move.getRequirement().getName());
-      req.setContent(move.getRequirement().getContent());
-      requirementMap.put(req.getName(), req);
-      EList<Element> _elements = theoryStore.getElements();
-      _xblockexpression = _elements.add(req);
+      final Function1<Rule, Boolean> _function = (Rule it) -> {
+        String _name = it.getName();
+        return Boolean.valueOf(Objects.equals(_name, "proposeRequirement"));
+      };
+      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
+      this.ruleRunner.setParameterValue("reqName", move.getRequirement().getName());
+      this.ruleRunner.setParameterValue("reqContents", move.getRequirement().getContent());
+      _xblockexpression = this.ruleRunner.execute(null);
     }
     return Boolean.valueOf(_xblockexpression);
   }
@@ -112,19 +137,15 @@ public class AgentLangGenerator extends AbstractGenerator {
   private Boolean _updateTheoryStore(final AttackRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
     boolean _xblockexpression = false;
     {
-      final Theory theory = this.factory.createTheory();
-      theory.setName(move.getTheory().getName());
-      theory.setContent(move.getTheory().getContent());
-      String _name = move.getRequirement().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Element> _elements = theory.getElements();
-        Experiment _get = experimentMap.get(move.getRequirement().getName());
-        _elements.add(_get);
-      }
-      theoryMap.put(theory.getName(), theory);
-      EList<Element> _elements_1 = theoryStore.getElements();
-      _xblockexpression = _elements_1.add(theory);
+      final Function1<Rule, Boolean> _function = (Rule it) -> {
+        String _name = it.getName();
+        return Boolean.valueOf(Objects.equals(_name, "attackRequirement"));
+      };
+      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
+      this.ruleRunner.setParameterValue("attackedRequirement", move.getRequirement().getName());
+      this.ruleRunner.setParameterValue("theoryName", move.getTheory().getName());
+      this.ruleRunner.setParameterValue("theoryContents", move.getTheory().getContent());
+      _xblockexpression = this.ruleRunner.execute(null);
     }
     return Boolean.valueOf(_xblockexpression);
   }
@@ -210,19 +231,15 @@ public class AgentLangGenerator extends AbstractGenerator {
   private Boolean _updateTheoryStore(final ProposeModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
     boolean _xblockexpression = false;
     {
-      final Model mdl = this.factory.createModel();
-      mdl.setName(move.getModel().getName());
-      mdl.setContent(move.getModel().getContent());
-      String _name = move.getRequirement().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Requirement> _requirements = mdl.getRequirements();
-        Requirement _get = requirementMap.get(move.getRequirement().getName());
-        _requirements.add(_get);
-      }
-      modelMap.put(mdl.getName(), mdl);
-      EList<Element> _elements = theoryStore.getElements();
-      _xblockexpression = _elements.add(mdl);
+      final Function1<Rule, Boolean> _function = (Rule it) -> {
+        String _name = it.getName();
+        return Boolean.valueOf(Objects.equals(_name, "proposeModel"));
+      };
+      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
+      this.ruleRunner.setParameterValue("requirementName", move.getRequirement().getName());
+      this.ruleRunner.setParameterValue("modelName", move.getModel().getName());
+      this.ruleRunner.setParameterValue("modelContents", move.getModel().getContent());
+      _xblockexpression = this.ruleRunner.execute(null);
     }
     return Boolean.valueOf(_xblockexpression);
   }
@@ -248,48 +265,20 @@ public class AgentLangGenerator extends AbstractGenerator {
   }
 
   private Boolean _updateTheoryStore(final ReplaceModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Model newModel = this.factory.createModel();
-      newModel.setName(move.getNewModel().getName());
-      newModel.setContent(move.getNewModel().getContent());
-      String _name = move.getModel().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        final Model oldModel = modelMap.get(move.getModel().getName());
-        if ((oldModel != null)) {
-          newModel.getRequirements().addAll(oldModel.getRequirements());
-          final Function1<Theory, Boolean> _function = (Theory theory) -> {
-            return Boolean.valueOf(theory.getElements().contains(oldModel));
-          };
-          final List<Theory> theoriesToRemove = IterableExtensions.<Theory>toList(IterableExtensions.<Theory>filter(Iterables.<Theory>filter(theoryStore.getElements(), Theory.class), _function));
-          final Function1<Experiment, Boolean> _function_1 = (Experiment experiment) -> {
-            return Boolean.valueOf(experiment.getModel().contains(oldModel));
-          };
-          final List<Experiment> experimentsToRemove = IterableExtensions.<Experiment>toList(IterableExtensions.<Experiment>filter(Iterables.<Experiment>filter(theoryStore.getElements(), Experiment.class), _function_1));
-          final Consumer<Theory> _function_2 = (Theory theory) -> {
-            theoryStore.getElements().remove(theory);
-          };
-          theoriesToRemove.forEach(_function_2);
-          final Consumer<Experiment> _function_3 = (Experiment experiment) -> {
-            theoryStore.getElements().remove(experiment);
-          };
-          experimentsToRemove.forEach(_function_3);
-          modelMap.remove(move.getModel().getName());
-          theoryStore.getElements().remove(oldModel);
-        } else {
-          String _name_1 = move.getModel().getName();
-          String _plus = ("Old model not found for name: " + _name_1);
-          InputOutput.<String>println(_plus);
-        }
-      } else {
-        InputOutput.<String>println("Move model name is null");
-      }
-      modelMap.put(newModel.getName(), newModel);
-      EList<Element> _elements = theoryStore.getElements();
-      _xblockexpression = _elements.add(newModel);
+    final Function1<Rule, Boolean> _function = (Rule it) -> {
+      String _name = it.getName();
+      return Boolean.valueOf(Objects.equals(_name, "replaceModel"));
+    };
+    this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
+    this.ruleRunner.setParameterValue("newModelName", move.getNewModel().getName());
+    this.ruleRunner.setParameterValue("newModelContents", move.getNewModel().getContent());
+    this.ruleRunner.setParameterValue("oldModelName", move.getModel().getName());
+    boolean _execute = this.ruleRunner.execute(null);
+    boolean _not = (!_execute);
+    if (_not) {
+      throw new RuntimeException("Shit got real...");
     }
-    return Boolean.valueOf(_xblockexpression);
+    return null;
   }
 
   private Boolean _updateTheoryStore(final CounterModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
@@ -322,19 +311,15 @@ public class AgentLangGenerator extends AbstractGenerator {
   private Boolean _updateTheoryStore(final AttackModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
     boolean _xblockexpression = false;
     {
-      final Theory theory = this.factory.createTheory();
-      theory.setName(move.getTheory().getName());
-      theory.setContent(move.getTheory().getContent());
-      String _name = move.getModel().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Element> _elements = theory.getElements();
-        Model _get = modelMap.get(move.getModel().getName());
-        _elements.add(_get);
-      }
-      theoryMap.put(theory.getName(), theory);
-      EList<Element> _elements_1 = theoryStore.getElements();
-      _xblockexpression = _elements_1.add(theory);
+      final Function1<Rule, Boolean> _function = (Rule it) -> {
+        String _name = it.getName();
+        return Boolean.valueOf(Objects.equals(_name, "attackModel"));
+      };
+      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
+      this.ruleRunner.setParameterValue("modelName", move.getModel().getName());
+      this.ruleRunner.setParameterValue("theoryContents", move.getTheory().getContent());
+      this.ruleRunner.setParameterValue("theoryName", move.getTheory().getName());
+      _xblockexpression = this.ruleRunner.execute(null);
     }
     return Boolean.valueOf(_xblockexpression);
   }
