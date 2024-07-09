@@ -70,7 +70,7 @@ class AgentLangGenerator extends AbstractGenerator {
 
 	def generateTheoryStore(Game game, Resource resource, IFileSystemAccess2 fsa) {
 		val theoryStore = createTheoryStore
-		val outputUri = fsa.getURI("theoryStoreOutput.theoryStore")
+		val outputUri = fsa.getURI(resource.theoryStoreFileName)
 		val resourceSet = resource.resourceSet
 		val newResource = resourceSet.createResource(outputUri)
 		newResource.contents += theoryStore
@@ -81,6 +81,12 @@ class AgentLangGenerator extends AbstractGenerator {
 		game.moves.forEach[updateTheoryStore]
 
 		newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
+	}
+	
+	private def theoryStoreFileName(Resource resource) {
+		val origName = resource.URI.lastSegment
+
+		origName.substring(0, origName.lastIndexOf('.')) + '.theoryStore'
 	}
 
 	/**

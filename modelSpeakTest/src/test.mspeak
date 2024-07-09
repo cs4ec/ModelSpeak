@@ -1,5 +1,7 @@
 ProposeRequirement (r1["First requirement"])
 ProposeModel(m1["First model"], r1)
-AttackModel(m1, e1["My experiment"])
+AttackModel(m1, t1["Attack on model formulation"])
 //ReplaceModel(m1, m2["Refined model"])
 //RedefineRequirement(r1, r1Prime["First requirement, refined"])
+SupportModel(m1, t2["Supportive theory"])
+CounterModel(m1, e1["An experiment"], r1)

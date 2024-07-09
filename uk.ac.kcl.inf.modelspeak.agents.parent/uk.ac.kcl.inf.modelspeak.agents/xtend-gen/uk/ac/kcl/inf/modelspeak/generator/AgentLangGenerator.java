@@ -85,7 +85,7 @@ public class AgentLangGenerator extends AbstractGenerator {
   public void generateTheoryStore(final Game game, final Resource resource, final IFileSystemAccess2 fsa) {
     try {
       final TheoryStore theoryStore = this.factory.createTheoryStore();
-      final URI outputUri = fsa.getURI("theoryStoreOutput.theoryStore");
+      final URI outputUri = fsa.getURI(this.theoryStoreFileName(resource));
       final ResourceSet resourceSet = resource.getResourceSet();
       final Resource newResource = resourceSet.createResource(outputUri);
       EList<EObject> _contents = newResource.getContents();
@@ -101,6 +101,16 @@ public class AgentLangGenerator extends AbstractGenerator {
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+
+  private String theoryStoreFileName(final Resource resource) {
+    String _xblockexpression = null;
+    {
+      final String origName = resource.getURI().lastSegment();
+      String _substring = origName.substring(0, origName.lastIndexOf("."));
+      _xblockexpression = (_substring + ".theoryStore");
+    }
+    return _xblockexpression;
   }
 
   /**
