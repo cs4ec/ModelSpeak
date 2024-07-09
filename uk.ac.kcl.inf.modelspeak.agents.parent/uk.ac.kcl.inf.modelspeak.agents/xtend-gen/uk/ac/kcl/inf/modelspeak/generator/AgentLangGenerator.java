@@ -6,9 +6,7 @@ package uk.ac.kcl.inf.modelspeak.generator;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
@@ -49,11 +47,6 @@ import uk.ac.kcl.inf.modelspeak.agentLang.RetractRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Element;
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Experiment;
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Model;
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Requirement;
-import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Theory;
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStore;
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory;
 
@@ -100,12 +93,8 @@ public class AgentLangGenerator extends AbstractGenerator {
       EGraphImpl _eGraphImpl = new EGraphImpl(theoryStore);
       this.modelGraph = _eGraphImpl;
       this.ruleRunner.setEGraph(this.modelGraph);
-      final HashMap<String, Requirement> requirementMap = new HashMap<String, Requirement>();
-      final HashMap<String, Model> modelMap = new HashMap<String, Model>();
-      final HashMap<String, Experiment> experimentMap = new HashMap<String, Experiment>();
-      final HashMap<String, Theory> theoryMap = new HashMap<String, Theory>();
       final Consumer<Move> _function = (Move it) -> {
-        this.updateTheoryStore(it, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+        this.updateTheoryStore(it);
       };
       game.getMoves().forEach(_function);
       newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
@@ -118,11 +107,11 @@ public class AgentLangGenerator extends AbstractGenerator {
    * Update the theory store with the consequences of the given move, using the various maps to track referenced
    * elements and their representation in the theory store.
    */
-  private Boolean _updateTheoryStore(final Move move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
+  private Boolean _updateTheoryStore(final Move move) {
     return null;
   }
 
-  private Boolean _updateTheoryStore(final ProposeRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
+  private Boolean _updateTheoryStore(final ProposeRequirement move) {
     String _name = move.getRequirement().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", _name);
     String _content = move.getRequirement().getContent();
@@ -130,7 +119,7 @@ public class AgentLangGenerator extends AbstractGenerator {
     return Boolean.valueOf(this.execute("proposeRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1))));
   }
 
-  private Boolean _updateTheoryStore(final AttackRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
+  private Boolean _updateTheoryStore(final AttackRequirement move) {
     String _name = move.getRequirement().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("attackedRequirement", _name);
     String _name_1 = move.getTheory().getName();
@@ -140,85 +129,35 @@ public class AgentLangGenerator extends AbstractGenerator {
     return Boolean.valueOf(this.execute("attackRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
-  private Boolean _updateTheoryStore(final RedefineRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Requirement newReq = this.factory.createRequirement();
-      newReq.setName(move.getNewRequirement().getName());
-      newReq.setContent(move.getNewRequirement().getContent());
-      String _name = move.getRequirement().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        final Requirement oldReq = requirementMap.remove(move.getRequirement().getName());
-        final Consumer<Model> _function = (Model model) -> {
-          boolean _contains = model.getRequirements().contains(oldReq);
-          if (_contains) {
-            model.getRequirements().remove(oldReq);
-            model.getRequirements().add(newReq);
-          }
-        };
-        modelMap.values().forEach(_function);
-        final Function1<Theory, Boolean> _function_1 = (Theory theory) -> {
-          return Boolean.valueOf(theory.getElements().contains(oldReq));
-        };
-        final Iterable<Theory> theoriesToRemove = IterableExtensions.<Theory>filter(Iterables.<Theory>filter(theoryStore.getElements(), Theory.class), _function_1);
-        final Consumer<Theory> _function_2 = (Theory theory) -> {
-          theoryStore.getElements().remove(theory);
-        };
-        theoriesToRemove.forEach(_function_2);
-        theoryStore.getElements().remove(move.getRequirement().getName());
-      }
-      requirementMap.put(newReq.getName(), newReq);
-      EList<Element> _elements = theoryStore.getElements();
-      _xblockexpression = _elements.add(newReq);
-    }
-    return Boolean.valueOf(_xblockexpression);
+  private Boolean _updateTheoryStore(final RedefineRequirement move) {
+    String _name = move.getNewRequirement().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("requirementName", _name);
+    String _content = move.getNewRequirement().getContent();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("requirementContents", _content);
+    String _name_1 = move.getRequirement().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("oldReqName", _name_1);
+    return Boolean.valueOf(this.execute("redefineRequirement", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
-  private Boolean _updateTheoryStore(final RetractRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xifexpression = false;
+  private Boolean _updateTheoryStore(final RetractRequirement move) {
     String _name = move.getRequirement().getName();
-    boolean _tripleNotEquals = (_name != null);
-    if (_tripleNotEquals) {
-      boolean _xblockexpression = false;
-      {
-        requirementMap.remove(move.getRequirement().getName());
-        final Function1<Theory, Boolean> _function = (Theory theory) -> {
-          return Boolean.valueOf(theory.getElements().contains(move.getRequirement()));
-        };
-        final Iterable<Theory> theoriesToRemove = IterableExtensions.<Theory>filter(Iterables.<Theory>filter(theoryStore.getElements(), Theory.class), _function);
-        final Consumer<Theory> _function_1 = (Theory theory) -> {
-          theoryStore.getElements().remove(theory);
-        };
-        theoriesToRemove.forEach(_function_1);
-        _xblockexpression = theoryStore.getElements().remove(move.getRequirement().getName());
-      }
-      _xifexpression = _xblockexpression;
-    }
-    return Boolean.valueOf(_xifexpression);
+    Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", _name);
+    return Boolean.valueOf(this.execute("retractRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo))));
   }
 
-  private Boolean _updateTheoryStore(final SupportRequirement move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Theory theory = this.factory.createTheory();
-      theory.setName(move.getTheory().getName());
-      theory.setContent(move.getTheory().getContent());
-      String _name = move.getRequirement().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Element> _elements = theory.getElements();
-        Requirement _get = requirementMap.get(move.getRequirement().getName());
-        _elements.add(_get);
-      }
-      theoryMap.put(theory.getName(), theory);
-      EList<Element> _elements_1 = theoryStore.getElements();
-      _xblockexpression = _elements_1.add(theory);
-    }
-    return Boolean.valueOf(_xblockexpression);
+  private Boolean _updateTheoryStore(final SupportRequirement move) {
+    String _name = move.getRequirement().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("requirementName", _name);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
+    String _content = move.getTheory().getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    return Boolean.valueOf(this.execute("supportRequirement", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
-  private Boolean _updateTheoryStore(final ProposeModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
+  private Boolean _updateTheoryStore(final ProposeModel move) {
     String _name = move.getRequirement().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("requirementName", _name);
     String _name_1 = move.getModel().getName();
@@ -229,27 +168,18 @@ public class AgentLangGenerator extends AbstractGenerator {
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
-  private Boolean _updateTheoryStore(final SupportModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Theory theory = this.factory.createTheory();
-      theory.setName(move.getTheory().getName());
-      theory.setContent(move.getTheory().getContent());
-      String _name = move.getModel().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Element> _elements = theory.getElements();
-        Model _get = modelMap.get(move.getModel().getName());
-        _elements.add(_get);
-      }
-      theoryMap.put(theory.getName(), theory);
-      EList<Element> _elements_1 = theoryStore.getElements();
-      _xblockexpression = _elements_1.add(theory);
-    }
-    return Boolean.valueOf(_xblockexpression);
+  private Boolean _updateTheoryStore(final SupportModel move) {
+    String _name = move.getModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+    String _content = move.getTheory().getContent();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryContents", _content);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryName", _name_1);
+    return Boolean.valueOf(this.execute("supportModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
-  private Boolean _updateTheoryStore(final ReplaceModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
+  private Boolean _updateTheoryStore(final ReplaceModel move) {
     String _name = move.getNewModel().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("newModelName", _name);
     String _content = move.getNewModel().getContent();
@@ -260,34 +190,20 @@ public class AgentLangGenerator extends AbstractGenerator {
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
-  private Boolean _updateTheoryStore(final CounterModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Experiment experiment = this.factory.createExperiment();
-      experiment.setName(move.getExperiment().getName());
-      experiment.setContent(move.getExperiment().getContent());
-      String _name = move.getModel().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Model> _model = experiment.getModel();
-        Model _get = modelMap.get(move.getModel().getName());
-        _model.add(_get);
-      }
-      String _name_1 = move.getRequirement().getName();
-      boolean _tripleNotEquals_1 = (_name_1 != null);
-      if (_tripleNotEquals_1) {
-        EList<Requirement> _requirements = experiment.getRequirements();
-        Requirement _get_1 = requirementMap.get(move.getRequirement().getName());
-        _requirements.add(_get_1);
-      }
-      experimentMap.put(experiment.getName(), experiment);
-      EList<Element> _elements = theoryStore.getElements();
-      _xblockexpression = _elements.add(experiment);
-    }
-    return Boolean.valueOf(_xblockexpression);
+  private Boolean _updateTheoryStore(final CounterModel move) {
+    String _name = move.getModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+    String _name_1 = move.getRequirement().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("requirementName", _name_1);
+    String _name_2 = move.getExperiment().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("experimentName", _name_2);
+    String _content = move.getExperiment().getContent();
+    Pair<String, String> _mappedTo_3 = Pair.<String, String>of("experimentContents", _content);
+    return Boolean.valueOf(this.execute("counterModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2, _mappedTo_3))));
   }
 
-  private Boolean _updateTheoryStore(final AttackModel move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
+  private Boolean _updateTheoryStore(final AttackModel move) {
     String _name = move.getModel().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
     String _content = move.getTheory().getContent();
@@ -298,107 +214,51 @@ public class AgentLangGenerator extends AbstractGenerator {
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
-  private Boolean _updateTheoryStore(final ProposeExperiment move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Experiment exp = this.factory.createExperiment();
-      exp.setName(move.getExperiment().getName());
-      exp.setContent(move.getExperiment().getContent());
-      String _name = move.getModel().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Model> _model = exp.getModel();
-        Model _get = modelMap.get(move.getModel().getName());
-        _model.add(_get);
-      }
-      String _name_1 = move.getRequirement().getName();
-      boolean _tripleNotEquals_1 = (_name_1 != null);
-      if (_tripleNotEquals_1) {
-        EList<Requirement> _requirements = exp.getRequirements();
-        Requirement _get_1 = requirementMap.get(move.getRequirement().getName());
-        _requirements.add(_get_1);
-      }
-      experimentMap.put(exp.getName(), exp);
-      EList<Element> _elements = theoryStore.getElements();
-      _xblockexpression = _elements.add(exp);
-    }
-    return Boolean.valueOf(_xblockexpression);
+  private Boolean _updateTheoryStore(final ProposeExperiment move) {
+    String _name = move.getModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+    String _name_1 = move.getRequirement().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("requirementName", _name_1);
+    String _name_2 = move.getExperiment().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("experimentName", _name_2);
+    String _content = move.getExperiment().getContent();
+    Pair<String, String> _mappedTo_3 = Pair.<String, String>of("experimentContents", _content);
+    return Boolean.valueOf(this.execute("proposeExperiment", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2, _mappedTo_3))));
   }
 
-  private Boolean _updateTheoryStore(final SupportExperiment move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Theory theory = this.factory.createTheory();
-      theory.setName(move.getTheory().getName());
-      theory.setContent(move.getTheory().getContent());
-      String _name = move.getExperiment().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Element> _elements = theory.getElements();
-        Experiment _get = experimentMap.get(move.getExperiment().getName());
-        _elements.add(_get);
-      }
-      theoryMap.put(theory.getName(), theory);
-      EList<Element> _elements_1 = theoryStore.getElements();
-      _xblockexpression = _elements_1.add(theory);
-    }
-    return Boolean.valueOf(_xblockexpression);
-  }
-
-  private Boolean _updateTheoryStore(final AttackExperiment move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Theory theory = this.factory.createTheory();
-      theory.setName(move.getTheory().getName());
-      theory.setContent(move.getTheory().getContent());
-      String _name = move.getExperiment().getName();
-      boolean _tripleNotEquals = (_name != null);
-      if (_tripleNotEquals) {
-        EList<Element> _elements = theory.getElements();
-        Experiment _get = experimentMap.get(move.getExperiment().getName());
-        _elements.add(_get);
-      }
-      theoryMap.put(theory.getName(), theory);
-      EList<Element> _elements_1 = theoryStore.getElements();
-      _xblockexpression = _elements_1.add(theory);
-    }
-    return Boolean.valueOf(_xblockexpression);
-  }
-
-  private Boolean _updateTheoryStore(final RetractExperiment move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xifexpression = false;
+  private Boolean _updateTheoryStore(final SupportExperiment move) {
     String _name = move.getExperiment().getName();
-    boolean _tripleNotEquals = (_name != null);
-    if (_tripleNotEquals) {
-      boolean _xblockexpression = false;
-      {
-        experimentMap.remove(move.getExperiment().getName());
-        _xblockexpression = theoryStore.getElements().remove(move.getExperiment().getName());
-      }
-      _xifexpression = _xblockexpression;
-    }
-    return Boolean.valueOf(_xifexpression);
+    Pair<String, String> _mappedTo = Pair.<String, String>of("experimentName", _name);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
+    String _content = move.getTheory().getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    return Boolean.valueOf(this.execute("supportExperiment", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
-  private Boolean _updateTheoryStore(final NotConvinced move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
-    boolean _xblockexpression = false;
-    {
-      final Theory theory = this.factory.createTheory();
-      theory.setName("NoConfidence");
-      String _name = move.getModel().getName();
-      String _plus = ("No confidence in model " + _name);
-      theory.setContent(_plus);
-      String _name_1 = move.getModel().getName();
-      boolean _tripleNotEquals = (_name_1 != null);
-      if (_tripleNotEquals) {
-        EList<Element> _elements = theory.getElements();
-        Model _get = modelMap.get(move.getModel().getName());
-        _elements.add(_get);
-      }
-      EList<Element> _elements_1 = theoryStore.getElements();
-      _xblockexpression = _elements_1.add(theory);
-    }
-    return Boolean.valueOf(_xblockexpression);
+  private Boolean _updateTheoryStore(final AttackExperiment move) {
+    String _name = move.getExperiment().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("experimentName", _name);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
+    String _content = move.getTheory().getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    return Boolean.valueOf(this.execute("attackExperiment", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
+  }
+
+  private Boolean _updateTheoryStore(final RetractExperiment move) {
+    String _name = move.getExperiment().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("experimentName", _name);
+    return Boolean.valueOf(this.execute("retractExperiment", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo))));
+  }
+
+  private Boolean _updateTheoryStore(final NotConvinced move) {
+    String _name = move.getModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+    return Boolean.valueOf(this.execute("notConvinced", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo))));
   }
 
   private boolean execute(final String ruleName, final List<Pair<String, String>> parameters) {
@@ -418,42 +278,42 @@ public class AgentLangGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
 
-  private Boolean updateTheoryStore(final Move move, final TheoryStore theoryStore, final Map<String, Requirement> requirementMap, final Map<String, Model> modelMap, final Map<String, Experiment> experimentMap, final Map<String, Theory> theoryMap) {
+  private Boolean updateTheoryStore(final Move move) {
     if (move instanceof AttackExperiment) {
-      return _updateTheoryStore((AttackExperiment)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((AttackExperiment)move);
     } else if (move instanceof AttackModel) {
-      return _updateTheoryStore((AttackModel)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((AttackModel)move);
     } else if (move instanceof AttackRequirement) {
-      return _updateTheoryStore((AttackRequirement)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((AttackRequirement)move);
     } else if (move instanceof CounterModel) {
-      return _updateTheoryStore((CounterModel)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((CounterModel)move);
     } else if (move instanceof NotConvinced) {
-      return _updateTheoryStore((NotConvinced)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((NotConvinced)move);
     } else if (move instanceof ProposeExperiment) {
-      return _updateTheoryStore((ProposeExperiment)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((ProposeExperiment)move);
     } else if (move instanceof ProposeModel) {
-      return _updateTheoryStore((ProposeModel)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((ProposeModel)move);
     } else if (move instanceof ProposeRequirement) {
-      return _updateTheoryStore((ProposeRequirement)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((ProposeRequirement)move);
     } else if (move instanceof RedefineRequirement) {
-      return _updateTheoryStore((RedefineRequirement)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((RedefineRequirement)move);
     } else if (move instanceof ReplaceModel) {
-      return _updateTheoryStore((ReplaceModel)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((ReplaceModel)move);
     } else if (move instanceof RetractExperiment) {
-      return _updateTheoryStore((RetractExperiment)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((RetractExperiment)move);
     } else if (move instanceof RetractRequirement) {
-      return _updateTheoryStore((RetractRequirement)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((RetractRequirement)move);
     } else if (move instanceof SupportExperiment) {
-      return _updateTheoryStore((SupportExperiment)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((SupportExperiment)move);
     } else if (move instanceof SupportModel) {
-      return _updateTheoryStore((SupportModel)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((SupportModel)move);
     } else if (move instanceof SupportRequirement) {
-      return _updateTheoryStore((SupportRequirement)move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore((SupportRequirement)move);
     } else if (move != null) {
-      return _updateTheoryStore(move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap);
+      return _updateTheoryStore(move);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(move, theoryStore, requirementMap, modelMap, experimentMap, theoryMap).toString());
+        Arrays.<Object>asList(move).toString());
     }
   }
 }

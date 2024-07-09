@@ -78,13 +78,7 @@ class AgentLangGenerator extends AbstractGenerator {
 		modelGraph = new EGraphImpl(theoryStore)
 		ruleRunner.EGraph = modelGraph
 
-		// TODO: Replace all methods with appropriate rule calls
-		val requirementMap = new HashMap<String, Requirement>()
-		val modelMap = new HashMap<String, Model>()
-		val experimentMap = new HashMap<String, Experiment>()
-		val theoryMap = new HashMap<String, Theory>()
-
-		game.moves.forEach[updateTheoryStore(theoryStore, requirementMap, modelMap, experimentMap, theoryMap)]
+		game.moves.forEach[updateTheoryStore]
 
 		newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
 	}
@@ -93,211 +87,93 @@ class AgentLangGenerator extends AbstractGenerator {
 	 * Update the theory store with the consequences of the given move, using the various maps to track referenced 
 	 * elements and their representation in the theory store.
 	 */
-	private dispatch def updateTheoryStore(Move move, TheoryStore theoryStore, Map<String, Requirement> requirementMap,
-		Map<String, Model> modelMap, Map<String, Experiment> experimentMap, Map<String, Theory> theoryMap) {}
+	private dispatch def updateTheoryStore(Move move) {}
 
 	// --------------- Requirements -----------------
-	private dispatch def updateTheoryStore(ProposeRequirement move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-
+	private dispatch def updateTheoryStore(ProposeRequirement move) {
 		'proposeRequirement'.execute(#['reqName' -> move.requirement.name, 'reqContents' -> move.requirement.content])
 	}
 
-	private dispatch def updateTheoryStore(AttackRequirement move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-
+	private dispatch def updateTheoryStore(AttackRequirement move) {
 		'attackRequirement'.execute(#['attackedRequirement' -> move.requirement.name, 'theoryName' -> move.theory.name,
 			'theoryContents' -> move.theory.content])
 	}
 
-	private dispatch def updateTheoryStore(RedefineRequirement move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		val newReq = createRequirement
-		newReq.name = move.newRequirement.name
-		newReq.content = move.newRequirement.content
-		if (move.requirement.name !== null) {
-			val oldReq = requirementMap.remove(move.requirement.name)
-
-			// Traverse all models that reference the old requirement, and update them to reference the new requirement
-			modelMap.values.forEach [ model |
-				if (model.requirements.contains(oldReq)) {
-					model.requirements.remove(oldReq)
-					model.requirements.add(newReq)
-				}
-			]
-
-			// Remove all Theory that referenced the deleted Requirement
-			val theoriesToRemove = theoryStore.elements.filter(Theory).filter [ theory |
-				theory.elements.contains(oldReq)
-			]
-			theoriesToRemove.forEach [ theory |
-				theoryStore.elements.remove(theory)
-			]
-
-			theoryStore.elements.remove(move.requirement.name)
-		}
-
-		requirementMap.put(newReq.name, newReq)
-		theoryStore.elements += newReq
+	private dispatch def updateTheoryStore(RedefineRequirement move) {
+		'redefineRequirement'.execute(
+			#['requirementName' -> move.newRequirement.name, 'requirementContents' -> move.newRequirement.content,
+				'oldReqName' -> move.requirement.name])
 	}
 
-	private dispatch def updateTheoryStore(RetractRequirement move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		if (move.requirement.name !== null) {
-			requirementMap.remove(move.requirement.name)
-
-			// Remove all Theory that referenced the deleted Requirement
-			val theoriesToRemove = theoryStore.elements.filter(Theory).filter [ theory |
-				theory.elements.contains(move.requirement)
-			]
-			theoriesToRemove.forEach [ theory |
-				theoryStore.elements.remove(theory)
-			]
-
-			theoryStore.elements.remove(move.requirement.name)
-		}
-
+	private dispatch def updateTheoryStore(RetractRequirement move) {
+		'retractRequirement'.execute(#['reqName' -> move.requirement.name])
 	}
 
-	private dispatch def updateTheoryStore(SupportRequirement move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		val theory = createTheory
-		theory.name = move.theory.name
-		theory.content = move.theory.content
-		if (move.requirement.name !== null) {
-			theory.elements += requirementMap.get(move.requirement.name)
-		}
-		theoryMap.put(theory.name, theory)
-		theoryStore.elements += theory
+	private dispatch def updateTheoryStore(SupportRequirement move) {
+		'supportRequirement'.execute(
+			#['requirementName' -> move.requirement.name, 'theoryName' -> move.theory.name,
+				'theoryContents' -> move.theory.content])
 	}
 
 	// --------------- Model -----------------
-	private dispatch def updateTheoryStore(ProposeModel move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-
+	private dispatch def updateTheoryStore(ProposeModel move) {
 		'proposeModel'.execute(
 			#['requirementName' -> move.requirement.name, 'modelName' -> move.model.name,
 				'modelContents' -> move.model.content])
 	}
 
-	private dispatch def updateTheoryStore(SupportModel move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		val theory = createTheory
-		theory.name = move.theory.name
-		theory.content = move.theory.content
-		if (move.model.name !== null) {
-			theory.elements += modelMap.get(move.model.name)
-		}
-		theoryMap.put(theory.name, theory)
-		theoryStore.elements += theory
+	private dispatch def updateTheoryStore(SupportModel move) {
+		'supportModel'.execute(
+			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.content,
+				'theoryName' -> move.theory.name])
 	}
 
-	private dispatch def updateTheoryStore(ReplaceModel move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-
+	private dispatch def updateTheoryStore(ReplaceModel move) {
 		'replaceModel'.execute(
 			#['newModelName' -> move.newModel.name, 'newModelContents' -> move.newModel.content,
 				'oldModelName' -> move.model.name])
 	}
 
-	private dispatch def updateTheoryStore(CounterModel move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		val experiment = createExperiment
-		experiment.name = move.experiment.name
-		experiment.content = move.experiment.content
-		if (move.model.name !== null) {
-			experiment.model += modelMap.get(move.model.name)
-		}
-		if (move.requirement.name !== null) {
-			experiment.requirements += requirementMap.get(move.requirement.name)
-		}
-		experimentMap.put(experiment.name, experiment)
-		theoryStore.elements += experiment
-
+	private dispatch def updateTheoryStore(CounterModel move) {
+		'counterModel'.execute(
+			#['modelName' -> move.model.name, 'requirementName' -> move.requirement.name,
+				'experimentName' -> move.experiment.name, 'experimentContents' -> move.experiment.content])
 	}
 
-	private dispatch def updateTheoryStore(AttackModel move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-
+	private dispatch def updateTheoryStore(AttackModel move) {
 		'attackModel'.execute(
 			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.content,
 				'theoryName' -> move.theory.name])
 	}
 
 	// --------------- Experiment -----------------
-	private dispatch def updateTheoryStore(ProposeExperiment move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		val exp = createExperiment
-		exp.name = move.experiment.name
-		exp.content = move.experiment.content
-		if (move.model.name !== null) {
-			exp.model += modelMap.get(move.model.name)
-		}
-		if (move.requirement.name !== null) {
-			exp.requirements += requirementMap.get(move.requirement.name)
-		}
-		experimentMap.put(exp.name, exp)
-		theoryStore.elements += exp
+	private dispatch def updateTheoryStore(ProposeExperiment move) {
+		'proposeExperiment'.execute(
+			#['modelName' -> move.model.name, 'requirementName' -> move.requirement.name,
+				'experimentName' -> move.experiment.name, 'experimentContents' -> move.experiment.content])
 	}
 
-	private dispatch def updateTheoryStore(SupportExperiment move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		val theory = createTheory
-		theory.name = move.theory.name
-		theory.content = move.theory.content
-		if (move.experiment.name !== null) {
-			theory.elements += experimentMap.get(move.experiment.name)
-		}
-		theoryMap.put(theory.name, theory)
-		theoryStore.elements += theory
+	private dispatch def updateTheoryStore(SupportExperiment move) {
+		'supportExperiment'.execute(
+			#['experimentName' -> move.experiment.name, 'theoryName' -> move.theory.name,
+				'theoryContents' -> move.theory.content])
 	}
 
-	private dispatch def updateTheoryStore(AttackExperiment move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		val theory = createTheory
-		theory.name = move.theory.name
-		theory.content = move.theory.content
-		if (move.experiment.name !== null) {
-			theory.elements += experimentMap.get(move.experiment.name)
-		}
-		theoryMap.put(theory.name, theory)
-		theoryStore.elements += theory
+	private dispatch def updateTheoryStore(AttackExperiment move) {
+		'attackExperiment'.execute(
+			#['experimentName' -> move.experiment.name, 'theoryName' -> move.theory.name,
+				'theoryContents' -> move.theory.content])
 	}
 
-	private dispatch def updateTheoryStore(RetractExperiment move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		if (move.experiment.name !== null) {
-			experimentMap.remove(move.experiment.name)
-			theoryStore.elements.remove(move.experiment.name)
-		}
+	private dispatch def updateTheoryStore(RetractExperiment move) {
+		'retractExperiment'.execute(#['experimentName' -> move.experiment.name])
 	}
 
-	private dispatch def updateTheoryStore(NotConvinced move, TheoryStore theoryStore,
-		Map<String, Requirement> requirementMap, Map<String, Model> modelMap, Map<String, Experiment> experimentMap,
-		Map<String, Theory> theoryMap) {
-		val theory = createTheory
-		theory.name = "NoConfidence"
-		theory.content = "No confidence in model " + move.model.name
-		if (move.model.name !== null) {
-			theory.elements += modelMap.get(move.model.name)
-		}
-		theoryStore.elements += theory
+	private dispatch def updateTheoryStore(NotConvinced move) {
+		'notConvinced'.execute(#['modelName' -> move.model.name])
 	}
 
+	// -- rule execution --
 	private def execute(String ruleName, List<Pair<String, String>> parameters) {
 		ruleRunner.rule = rules.findFirst[name == ruleName]
 		parameters.forEach [
