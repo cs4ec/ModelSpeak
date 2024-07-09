@@ -1,5 +1,0 @@
-Requirement R1 { "R1" }
-Theory T3 { "[3]" } -> R1
-Theory T6 { "[6]" } -> R1
-Theory T7 { "[7]" } -> R1
-Model M2 { "M2" } -> R1
