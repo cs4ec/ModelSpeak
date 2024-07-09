@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="theoryStore" version="7.4.0.202403051613">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="theoryStore" version="12.0.0.2017041100">
   <ownedViewpoints name="TheoryStoreViewpoint" modelFileExtension="theoryStore">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="TheoryStoreDiagram" domainClass="theoryStore::TheoryStore" enablePopupBars="true">
-      <metamodel href="http://www.xtext.org/example/modellingDialogue/TheoryStore#/"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="TheoryStoreDiagram" domainClass="theoryStoreLang::TheoryStore" enablePopupBars="true">
+      <metamodel href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="RequirementNode" domainClass="theoryStore::Requirement">
+        <nodeMappings name="RequirementNode" domainClass="theoryStoreLang::Requirement">
           <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="feature:content" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="TheoryNode" domainClass="theoryStore::Theory">
+        <nodeMappings name="TheoryNode" domainClass="theoryStoreLang::Theory">
           <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="feature:content" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ModelNode" domainClass="theoryStore::Model">
+        <nodeMappings name="ModelNode" domainClass="theoryStoreLang::Model">
           <style xsi:type="style:EllipseNodeDescription" labelSize="12" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ExperimentNode" domainClass="theoryStore::Experiment">
+        <nodeMappings name="ExperimentNode" domainClass="theoryStoreLang::Experiment">
           <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="feature:content" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -66,6 +66,6 @@
         </edgeMappings>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="theoryStore.design.Services"/>
+    <ownedJavaExtensions qualifiedClassName="uk.ac.kcl.inf.modelspeak.theorystore.design.Services"/>
   </ownedViewpoints>
 </description:Group>

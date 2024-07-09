@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="theoryStore.design.Activator"
+    <component class="uk.ac.kcl.inf.modelspeak.theorystore.design.Activator"
                id="theoryStore.design"
 	       name="theoryStore">
     </component>
