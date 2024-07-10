@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_2KN2AD3eEe-1LYaok1WkDg">
+  <imports href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_uokiID3hEe-PBJVQcpEIFg" name="proposeRequirement">
+    <parameters xmi:id="_xBhWgD3hEe-PBJVQcpEIFg" name="reqName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_xBhWgT3hEe-PBJVQcpEIFg" name="reqContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_upNbUD3hEe-PBJVQcpEIFg" name="Lhs">
+      <nodes xmi:id="_x1QgkD3hEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_upNbUT3hEe-PBJVQcpEIFg" name="Rhs">
+      <nodes xmi:id="_x1QgkT3hEe-PBJVQcpEIFg" outgoing="_1jYYID3hEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_ye6hkD3hEe-PBJVQcpEIFg" incoming="_1jYYID3hEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_zlDqQD3hEe-PBJVQcpEIFg" value="reqContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_zqmRkD3hEe-PBJVQcpEIFg" value="reqName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_1jYYID3hEe-PBJVQcpEIFg" source="_x1QgkT3hEe-PBJVQcpEIFg" target="_ye6hkD3hEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_x1RHoD3hEe-PBJVQcpEIFg" origin="_x1QgkD3hEe-PBJVQcpEIFg" image="_x1QgkT3hEe-PBJVQcpEIFg"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_Njon8D3pEe-PBJVQcpEIFg" name="attackRequirement">
+    <parameters xmi:id="_TnYTED3pEe-PBJVQcpEIFg" name="theoryName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_TnYTET3pEe-PBJVQcpEIFg" name="theoryContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_TnYTEj3pEe-PBJVQcpEIFg" name="attackedRequirement" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_NjtgcD3pEe-PBJVQcpEIFg" name="Lhs">
+      <nodes xmi:id="_Ujeu8D3pEe-PBJVQcpEIFg" outgoing="_faCBwD3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_Ya4eUD3pEe-PBJVQcpEIFg" incoming="_faCBwD3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_opRYgD3pEe-PBJVQcpEIFg" value="attackedRequirement">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_faCBwD3pEe-PBJVQcpEIFg" source="_Ujeu8D3pEe-PBJVQcpEIFg" target="_Ya4eUD3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_NjtgcT3pEe-PBJVQcpEIFg" name="Rhs">
+      <nodes xmi:id="_Ujeu8T3pEe-PBJVQcpEIFg" outgoing="_fGy8sD3pEe-PBJVQcpEIFg _faCo0D3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_V0XvED3pEe-PBJVQcpEIFg" incoming="_fGy8sD3pEe-PBJVQcpEIFg" outgoing="_fo6LQD3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        <attributes xmi:id="_nkaCMD3pEe-PBJVQcpEIFg" value="theoryContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_n28jsD3pEe-PBJVQcpEIFg" value="theoryName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Ya4eUT3pEe-PBJVQcpEIFg" incoming="_faCo0D3pEe-PBJVQcpEIFg _fo6LQD3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_opRYgT3pEe-PBJVQcpEIFg" value="attackedRequirement">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_fGy8sD3pEe-PBJVQcpEIFg" source="_Ujeu8T3pEe-PBJVQcpEIFg" target="_V0XvED3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_faCo0D3pEe-PBJVQcpEIFg" source="_Ujeu8T3pEe-PBJVQcpEIFg" target="_Ya4eUT3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_fo6LQD3pEe-PBJVQcpEIFg" source="_V0XvED3pEe-PBJVQcpEIFg" target="_Ya4eUT3pEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Ujeu8j3pEe-PBJVQcpEIFg" origin="_Ujeu8D3pEe-PBJVQcpEIFg" image="_Ujeu8T3pEe-PBJVQcpEIFg"/>
+    <mappings xmi:id="_Ya4eUj3pEe-PBJVQcpEIFg" origin="_Ya4eUD3pEe-PBJVQcpEIFg" image="_Ya4eUT3pEe-PBJVQcpEIFg"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="__nu4UD3pEe-PBJVQcpEIFg" name="proposeModel">
+    <parameters xmi:id="_FP-TMD3qEe-PBJVQcpEIFg" name="modelName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_FP-TMT3qEe-PBJVQcpEIFg" name="modelContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_FP-TMj3qEe-PBJVQcpEIFg" name="requirementName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="__nx7oD3pEe-PBJVQcpEIFg" name="Lhs">
+      <nodes xmi:id="_GNsfsD3qEe-PBJVQcpEIFg" outgoing="_Ib_jQD3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_GoVNQD3qEe-PBJVQcpEIFg" incoming="_Ib_jQD3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_LzBwgD3qEe-PBJVQcpEIFg" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_Ib_jQD3qEe-PBJVQcpEIFg" source="_GNsfsD3qEe-PBJVQcpEIFg" target="_GoVNQD3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="__nx7oT3pEe-PBJVQcpEIFg" name="Rhs">
+      <nodes xmi:id="_GNsfsT3qEe-PBJVQcpEIFg" outgoing="_IPmGAD3qEe-PBJVQcpEIFg _IcAKUD3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_GoVNQT3qEe-PBJVQcpEIFg" incoming="_IcAKUD3qEe-PBJVQcpEIFg _It5yoD3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_LzBwgT3qEe-PBJVQcpEIFg" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_G7HmYD3qEe-PBJVQcpEIFg" incoming="_IPmGAD3qEe-PBJVQcpEIFg" outgoing="_It5yoD3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_NKq44D3qEe-PBJVQcpEIFg" value="modelContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_NQIAoD3qEe-PBJVQcpEIFg" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_IPmGAD3qEe-PBJVQcpEIFg" source="_GNsfsT3qEe-PBJVQcpEIFg" target="_G7HmYD3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_IcAKUD3qEe-PBJVQcpEIFg" source="_GNsfsT3qEe-PBJVQcpEIFg" target="_GoVNQT3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_It5yoD3qEe-PBJVQcpEIFg" source="_G7HmYD3qEe-PBJVQcpEIFg" target="_GoVNQT3qEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_GNsfsj3qEe-PBJVQcpEIFg" origin="_GNsfsD3qEe-PBJVQcpEIFg" image="_GNsfsT3qEe-PBJVQcpEIFg"/>
+    <mappings xmi:id="_GoV0UD3qEe-PBJVQcpEIFg" origin="_GoVNQD3qEe-PBJVQcpEIFg" image="_GoVNQT3qEe-PBJVQcpEIFg"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_-d4M8D3sEe-PBJVQcpEIFg" name="attackModel">
+    <parameters xmi:id="_CXNO8D3tEe-PBJVQcpEIFg" name="theoryName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_CXNO8T3tEe-PBJVQcpEIFg" name="theoryContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_CXNO8j3tEe-PBJVQcpEIFg" name="modelName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_-d7QQD3sEe-PBJVQcpEIFg" name="Lhs">
+      <nodes xmi:id="_FtIB4D3tEe-PBJVQcpEIFg" outgoing="_JupWkD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_Gu1WgD3tEe-PBJVQcpEIFg" incoming="_JupWkD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_LL1tUD3tEe-PBJVQcpEIFg" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_JupWkD3tEe-PBJVQcpEIFg" source="_FtIB4D3tEe-PBJVQcpEIFg" target="_Gu1WgD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_-d7QQT3sEe-PBJVQcpEIFg" name="Rhs">
+      <nodes xmi:id="_FtIo8D3tEe-PBJVQcpEIFg" outgoing="_JupWkT3tEe-PBJVQcpEIFg _KH15sD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_Gu19kD3tEe-PBJVQcpEIFg" incoming="_JupWkT3tEe-PBJVQcpEIFg _KV2ggD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_LL1tUT3tEe-PBJVQcpEIFg" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_HSgEQD3tEe-PBJVQcpEIFg" incoming="_KH15sD3tEe-PBJVQcpEIFg" outgoing="_KV2ggD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        <attributes xmi:id="_MqvUQD3tEe-PBJVQcpEIFg" value="theoryContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_MyI8wD3tEe-PBJVQcpEIFg" value="theoryName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_JupWkT3tEe-PBJVQcpEIFg" source="_FtIo8D3tEe-PBJVQcpEIFg" target="_Gu19kD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_KH15sD3tEe-PBJVQcpEIFg" source="_FtIo8D3tEe-PBJVQcpEIFg" target="_HSgEQD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_KV2ggD3tEe-PBJVQcpEIFg" source="_HSgEQD3tEe-PBJVQcpEIFg" target="_Gu19kD3tEe-PBJVQcpEIFg">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_FtIo8T3tEe-PBJVQcpEIFg" origin="_FtIB4D3tEe-PBJVQcpEIFg" image="_FtIo8D3tEe-PBJVQcpEIFg"/>
+    <mappings xmi:id="_Gu19kT3tEe-PBJVQcpEIFg" origin="_Gu1WgD3tEe-PBJVQcpEIFg" image="_Gu19kD3tEe-PBJVQcpEIFg"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_dEZIoD4AEe-iQZoabAyeEw" name="redefineRequirement">
+    <parameters xmi:id="_kJVyED4AEe-iQZoabAyeEw" name="requirementName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_kJVyET4AEe-iQZoabAyeEw" name="requirementContents" kind="IN"/>
+    <parameters xmi:id="_kJVyEj4AEe-iQZoabAyeEw" name="oldReqName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_dEsqoD4AEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_moXZQD4AEe-iQZoabAyeEw" outgoing="_sCii8D4AEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_nnzdAD4AEe-iQZoabAyeEw" name="old" incoming="_sCii8D4AEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_twB_gD4AEe-iQZoabAyeEw" value="oldReqName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_sCii8D4AEe-iQZoabAyeEw" source="_moXZQD4AEe-iQZoabAyeEw" target="_nnzdAD4AEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_dEtRsD4AEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_moXZQT4AEe-iQZoabAyeEw" outgoing="_rycRcD4AEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_nyAh4D4AEe-iQZoabAyeEw" name="new" incoming="_rycRcD4AEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_vTlc8D4AEe-iQZoabAyeEw" value="requirementContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_vj-CUD4AEe-iQZoabAyeEw" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_rycRcD4AEe-iQZoabAyeEw" source="_moXZQT4AEe-iQZoabAyeEw" target="_nyAh4D4AEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_moXZQj4AEe-iQZoabAyeEw" origin="_moXZQD4AEe-iQZoabAyeEw" image="_moXZQT4AEe-iQZoabAyeEw"/>
+    <multiRules xmi:id="_5e2XEj4AEe-iQZoabAyeEw" name="models">
+      <parameters xmi:id="_5e8dsD4AEe-iQZoabAyeEw" name="requirementName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_5e8dsT4AEe-iQZoabAyeEw" name="requirementContents" kind="IN"/>
+      <parameters xmi:id="_5e9EwD4AEe-iQZoabAyeEw" name="oldReqName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_5e2-ID4AEe-iQZoabAyeEw" name="Lhs">
+        <nodes xmi:id="_5e2-KT4AEe-iQZoabAyeEw" outgoing="_5e2-Lj4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_5e2-Kz4AEe-iQZoabAyeEw" name="old" incoming="_5e2-Lj4AEe-iQZoabAyeEw _6YriED4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+          <attributes xmi:id="_5e2-LD4AEe-iQZoabAyeEw" value="oldReqName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_37ZnUD4AEe-iQZoabAyeEw" outgoing="_6YriED4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        </nodes>
+        <edges xmi:id="_5e2-Lj4AEe-iQZoabAyeEw" source="_5e2-KT4AEe-iQZoabAyeEw" target="_5e2-Kz4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_6YriED4AEe-iQZoabAyeEw" source="_37ZnUD4AEe-iQZoabAyeEw" target="_5e2-Kz4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_5e2-IT4AEe-iQZoabAyeEw" name="Rhs">
+        <nodes xmi:id="_5e2-Ij4AEe-iQZoabAyeEw" outgoing="_5e2-KD4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_5e2-JD4AEe-iQZoabAyeEw" name="new" incoming="_5e2-KD4AEe-iQZoabAyeEw _6pY3kD4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+          <attributes xmi:id="_5e2-JT4AEe-iQZoabAyeEw" value="requirementContents">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+          </attributes>
+          <attributes xmi:id="_5e2-Jj4AEe-iQZoabAyeEw" value="requirementName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_5e2XED4AEe-iQZoabAyeEw" outgoing="_6pY3kD4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        </nodes>
+        <edges xmi:id="_5e2-KD4AEe-iQZoabAyeEw" source="_5e2-Ij4AEe-iQZoabAyeEw" target="_5e2-JD4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_6pY3kD4AEe-iQZoabAyeEw" source="_5e2XED4AEe-iQZoabAyeEw" target="_5e2-JD4AEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_5e2-Lz4AEe-iQZoabAyeEw" origin="_5e2-KT4AEe-iQZoabAyeEw" image="_5e2-Ij4AEe-iQZoabAyeEw"/>
+      <mappings xmi:id="_5e2XET4AEe-iQZoabAyeEw" origin="_37ZnUD4AEe-iQZoabAyeEw" image="_5e2XED4AEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_5e2-Iz4AEe-iQZoabAyeEw" origin="_moXZQT4AEe-iQZoabAyeEw" image="_5e2-Ij4AEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_5e2-Jz4AEe-iQZoabAyeEw" origin="_nyAh4D4AEe-iQZoabAyeEw" image="_5e2-JD4AEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_5e2-Kj4AEe-iQZoabAyeEw" origin="_moXZQD4AEe-iQZoabAyeEw" image="_5e2-KT4AEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_5e2-LT4AEe-iQZoabAyeEw" origin="_nnzdAD4AEe-iQZoabAyeEw" image="_5e2-Kz4AEe-iQZoabAyeEw"/>
+    </multiRules>
+    <multiRules xmi:id="_N4YcAD4BEe-iQZoabAyeEw" name="theories">
+      <parameters xmi:id="_N4YcEz4BEe-iQZoabAyeEw" name="requirementName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_N4YcFD4BEe-iQZoabAyeEw" name="requirementContents" kind="IN"/>
+      <parameters xmi:id="_N4YcFT4BEe-iQZoabAyeEw" name="oldReqName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_N4YcAT4BEe-iQZoabAyeEw" name="Lhs">
+        <nodes xmi:id="_N4YcCj4BEe-iQZoabAyeEw" outgoing="_N4YcDz4BEe-iQZoabAyeEw _UQa8ID4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_N4YcDD4BEe-iQZoabAyeEw" name="old" incoming="_N4YcDz4BEe-iQZoabAyeEw _QEzQQD4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+          <attributes xmi:id="_N4YcDT4BEe-iQZoabAyeEw" value="oldReqName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_LzqyQD4BEe-iQZoabAyeEw" incoming="_UQa8ID4BEe-iQZoabAyeEw" outgoing="_QEzQQD4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        </nodes>
+        <edges xmi:id="_N4YcDz4BEe-iQZoabAyeEw" source="_N4YcCj4BEe-iQZoabAyeEw" target="_N4YcDD4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_QEzQQD4BEe-iQZoabAyeEw" source="_LzqyQD4BEe-iQZoabAyeEw" target="_N4YcDD4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+        </edges>
+        <edges xmi:id="_UQa8ID4BEe-iQZoabAyeEw" source="_N4YcCj4BEe-iQZoabAyeEw" target="_LzqyQD4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_N4YcAj4BEe-iQZoabAyeEw" name="Rhs">
+        <nodes xmi:id="_N4YcAz4BEe-iQZoabAyeEw" outgoing="_N4YcCT4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_N4YcBT4BEe-iQZoabAyeEw" name="new" incoming="_N4YcCT4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+          <attributes xmi:id="_N4YcBj4BEe-iQZoabAyeEw" value="requirementContents">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+          </attributes>
+          <attributes xmi:id="_N4YcBz4BEe-iQZoabAyeEw" value="requirementName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <edges xmi:id="_N4YcCT4BEe-iQZoabAyeEw" source="_N4YcAz4BEe-iQZoabAyeEw" target="_N4YcBT4BEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_N4YcED4BEe-iQZoabAyeEw" origin="_N4YcCj4BEe-iQZoabAyeEw" image="_N4YcAz4BEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_N4YcBD4BEe-iQZoabAyeEw" origin="_moXZQT4AEe-iQZoabAyeEw" image="_N4YcAz4BEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_N4YcCD4BEe-iQZoabAyeEw" origin="_nyAh4D4AEe-iQZoabAyeEw" image="_N4YcBT4BEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_N4YcCz4BEe-iQZoabAyeEw" origin="_moXZQD4AEe-iQZoabAyeEw" image="_N4YcCj4BEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_N4YcDj4BEe-iQZoabAyeEw" origin="_nnzdAD4AEe-iQZoabAyeEw" image="_N4YcDD4BEe-iQZoabAyeEw"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_fp45UD4CEe-iQZoabAyeEw" name="replaceModel" checkDangling="false">
+    <parameters xmi:id="_lfvSYD4CEe-iQZoabAyeEw" name="newModelName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_lfvSYT4CEe-iQZoabAyeEw" name="newModelContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_lfvSYj4CEe-iQZoabAyeEw" name="oldModelName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_fp6ugD4CEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_rR-WwD4CEe-iQZoabAyeEw" outgoing="_0EofMD4CEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_ss6qwD4CEe-iQZoabAyeEw" name="old" incoming="_0EofMD4CEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_u_SWAD4CEe-iQZoabAyeEw" value="oldModelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_0EofMD4CEe-iQZoabAyeEw" source="_rR-WwD4CEe-iQZoabAyeEw" target="_ss6qwD4CEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_fp6ugT4CEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_rR-WwT4CEe-iQZoabAyeEw" outgoing="_z33OgD4CEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_sDesMD4CEe-iQZoabAyeEw" name="new" incoming="_z33OgD4CEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_wUtQ0D4CEe-iQZoabAyeEw" value="newModelContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_wlBkwD4CEe-iQZoabAyeEw" value="newModelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_z33OgD4CEe-iQZoabAyeEw" source="_rR-WwT4CEe-iQZoabAyeEw" target="_sDesMD4CEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_rR-Wwj4CEe-iQZoabAyeEw" origin="_rR-WwD4CEe-iQZoabAyeEw" image="_rR-WwT4CEe-iQZoabAyeEw"/>
+    <multiRules xmi:id="_80cH8j4CEe-iQZoabAyeEw" name="requirements" checkDangling="false">
+      <parameters xmi:id="_80hAcD4CEe-iQZoabAyeEw" name="newModelName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_80hAcT4CEe-iQZoabAyeEw" name="newModelContents" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_80hAcj4CEe-iQZoabAyeEw" name="oldModelName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_80cH8z4CEe-iQZoabAyeEw" name="Lhs">
+        <nodes xmi:id="_80cH_D4CEe-iQZoabAyeEw" outgoing="_80cIAT4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_80cH_j4CEe-iQZoabAyeEw" name="old" incoming="_80cIAT4CEe-iQZoabAyeEw" outgoing="_-u3NQD4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+          <attributes xmi:id="_80cH_z4CEe-iQZoabAyeEw" value="oldModelName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_6vDv0D4CEe-iQZoabAyeEw" incoming="_-u3NQD4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        </nodes>
+        <edges xmi:id="_80cIAT4CEe-iQZoabAyeEw" source="_80cH_D4CEe-iQZoabAyeEw" target="_80cH_j4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_-u3NQD4CEe-iQZoabAyeEw" source="_80cH_j4CEe-iQZoabAyeEw" target="_6vDv0D4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_80cH9D4CEe-iQZoabAyeEw" name="Rhs">
+        <nodes xmi:id="_80cH9T4CEe-iQZoabAyeEw" outgoing="_80cH-z4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_80cH9z4CEe-iQZoabAyeEw" name="new" incoming="_80cH-z4CEe-iQZoabAyeEw" outgoing="__LmMkD4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+          <attributes xmi:id="_80cH-D4CEe-iQZoabAyeEw" value="newModelContents">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+          </attributes>
+          <attributes xmi:id="_80cH-T4CEe-iQZoabAyeEw" value="newModelName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_80cH8D4CEe-iQZoabAyeEw" incoming="__LmMkD4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        </nodes>
+        <edges xmi:id="_80cH-z4CEe-iQZoabAyeEw" source="_80cH9T4CEe-iQZoabAyeEw" target="_80cH9z4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="__LmMkD4CEe-iQZoabAyeEw" source="_80cH9z4CEe-iQZoabAyeEw" target="_80cH8D4CEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_80cIAj4CEe-iQZoabAyeEw" origin="_80cH_D4CEe-iQZoabAyeEw" image="_80cH9T4CEe-iQZoabAyeEw"/>
+      <mappings xmi:id="_80cH8T4CEe-iQZoabAyeEw" origin="_6vDv0D4CEe-iQZoabAyeEw" image="_80cH8D4CEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80cH9j4CEe-iQZoabAyeEw" origin="_rR-WwT4CEe-iQZoabAyeEw" image="_80cH9T4CEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80cH-j4CEe-iQZoabAyeEw" origin="_sDesMD4CEe-iQZoabAyeEw" image="_80cH9z4CEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80cH_T4CEe-iQZoabAyeEw" origin="_rR-WwD4CEe-iQZoabAyeEw" image="_80cH_D4CEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80cIAD4CEe-iQZoabAyeEw" origin="_ss6qwD4CEe-iQZoabAyeEw" image="_80cH_j4CEe-iQZoabAyeEw"/>
+    </multiRules>
+    <multiRules xmi:id="_HDWzAD4DEe-iQZoabAyeEw" name="theories" checkDangling="false">
+      <parameters xmi:id="_HDXaGj4DEe-iQZoabAyeEw" name="newModelName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_HDXaGz4DEe-iQZoabAyeEw" name="newModelContents" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_HDXaHD4DEe-iQZoabAyeEw" name="oldModelName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_HDWzAT4DEe-iQZoabAyeEw" name="Lhs">
+        <nodes xmi:id="_HDXaET4DEe-iQZoabAyeEw" outgoing="_HDXaFj4DEe-iQZoabAyeEw _H_5TwD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_HDXaEz4DEe-iQZoabAyeEw" name="old" incoming="_HDXaFj4DEe-iQZoabAyeEw _IbjVAD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+          <attributes xmi:id="_HDXaFD4DEe-iQZoabAyeEw" value="oldModelName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_FfbiID4DEe-iQZoabAyeEw" incoming="_H_5TwD4DEe-iQZoabAyeEw" outgoing="_IbjVAD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        </nodes>
+        <edges xmi:id="_HDXaFj4DEe-iQZoabAyeEw" source="_HDXaET4DEe-iQZoabAyeEw" target="_HDXaEz4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_H_5TwD4DEe-iQZoabAyeEw" source="_HDXaET4DEe-iQZoabAyeEw" target="_FfbiID4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_IbjVAD4DEe-iQZoabAyeEw" source="_FfbiID4DEe-iQZoabAyeEw" target="_HDXaEz4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_HDWzAj4DEe-iQZoabAyeEw" name="Rhs">
+        <nodes xmi:id="_HDWzAz4DEe-iQZoabAyeEw" outgoing="_HDXaED4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_HDWzBT4DEe-iQZoabAyeEw" name="new" incoming="_HDXaED4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+          <attributes xmi:id="_HDWzBj4DEe-iQZoabAyeEw" value="newModelContents">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+          </attributes>
+          <attributes xmi:id="_HDWzBz4DEe-iQZoabAyeEw" value="newModelName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <edges xmi:id="_HDXaED4DEe-iQZoabAyeEw" source="_HDWzAz4DEe-iQZoabAyeEw" target="_HDWzBT4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_HDXaFz4DEe-iQZoabAyeEw" origin="_HDXaET4DEe-iQZoabAyeEw" image="_HDWzAz4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_HDWzBD4DEe-iQZoabAyeEw" origin="_rR-WwT4CEe-iQZoabAyeEw" image="_HDWzAz4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_HDWzCD4DEe-iQZoabAyeEw" origin="_sDesMD4CEe-iQZoabAyeEw" image="_HDWzBT4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_HDXaEj4DEe-iQZoabAyeEw" origin="_rR-WwD4CEe-iQZoabAyeEw" image="_HDXaET4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_HDXaFT4DEe-iQZoabAyeEw" origin="_ss6qwD4CEe-iQZoabAyeEw" image="_HDXaEz4DEe-iQZoabAyeEw"/>
+    </multiRules>
+    <multiRules xmi:id="_SaIeAD4DEe-iQZoabAyeEw" name="experiments" checkDangling="false">
+      <parameters xmi:id="_SaJFED4DEe-iQZoabAyeEw" name="newModelName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_SaJFET4DEe-iQZoabAyeEw" name="newModelContents" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <parameters xmi:id="_SaJFEj4DEe-iQZoabAyeEw" name="oldModelName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_SaIeAT4DEe-iQZoabAyeEw" name="Lhs">
+        <nodes xmi:id="_SaIeCj4DEe-iQZoabAyeEw" outgoing="_SaIeDz4DEe-iQZoabAyeEw _TVi9YD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_SaIeDD4DEe-iQZoabAyeEw" name="old" incoming="_SaIeDz4DEe-iQZoabAyeEw _Tj_pED4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+          <attributes xmi:id="_SaIeDT4DEe-iQZoabAyeEw" value="oldModelName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_RRO8QD4DEe-iQZoabAyeEw" incoming="_TVi9YD4DEe-iQZoabAyeEw" outgoing="_Tj_pED4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+        </nodes>
+        <edges xmi:id="_SaIeDz4DEe-iQZoabAyeEw" source="_SaIeCj4DEe-iQZoabAyeEw" target="_SaIeDD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_TVi9YD4DEe-iQZoabAyeEw" source="_SaIeCj4DEe-iQZoabAyeEw" target="_RRO8QD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_Tj_pED4DEe-iQZoabAyeEw" source="_RRO8QD4DEe-iQZoabAyeEw" target="_SaIeDD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/model"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_SaIeAj4DEe-iQZoabAyeEw" name="Rhs">
+        <nodes xmi:id="_SaIeAz4DEe-iQZoabAyeEw" outgoing="_SaIeCT4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_SaIeBT4DEe-iQZoabAyeEw" name="new" incoming="_SaIeCT4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+          <attributes xmi:id="_SaIeBj4DEe-iQZoabAyeEw" value="newModelContents">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+          </attributes>
+          <attributes xmi:id="_SaIeBz4DEe-iQZoabAyeEw" value="newModelName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <edges xmi:id="_SaIeCT4DEe-iQZoabAyeEw" source="_SaIeAz4DEe-iQZoabAyeEw" target="_SaIeBT4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_SaIeED4DEe-iQZoabAyeEw" origin="_SaIeCj4DEe-iQZoabAyeEw" image="_SaIeAz4DEe-iQZoabAyeEw"/>
+      <multiRules xmi:id="_ZWSX0T4DEe-iQZoabAyeEw" name="reqs">
+        <parameters xmi:id="_ZWZFgD4DEe-iQZoabAyeEw" name="newModelName" kind="IN">
+          <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </parameters>
+        <parameters xmi:id="_ZWZFgT4DEe-iQZoabAyeEw" name="newModelContents" kind="IN">
+          <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </parameters>
+        <parameters xmi:id="_ZWZFgj4DEe-iQZoabAyeEw" name="oldModelName" kind="IN">
+          <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </parameters>
+        <lhs xmi:id="_ZWSX0j4DEe-iQZoabAyeEw" name="Lhs">
+          <nodes xmi:id="_ZWS-5j4DEe-iQZoabAyeEw" outgoing="_ZWS-6z4DEe-iQZoabAyeEw _ZWS-7j4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+          </nodes>
+          <nodes xmi:id="_ZWS-6D4DEe-iQZoabAyeEw" name="old" incoming="_ZWS-6z4DEe-iQZoabAyeEw _ZWS-8D4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+            <attributes xmi:id="_ZWS-6T4DEe-iQZoabAyeEw" value="oldModelName">
+              <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_ZWS-7D4DEe-iQZoabAyeEw" incoming="_ZWS-7j4DEe-iQZoabAyeEw" outgoing="_ZWS-8D4DEe-iQZoabAyeEw _aJiZsD4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+          </nodes>
+          <nodes xmi:id="_Xsw1QD4DEe-iQZoabAyeEw" incoming="_aJiZsD4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+          </nodes>
+          <edges xmi:id="_ZWS-6z4DEe-iQZoabAyeEw" source="_ZWS-5j4DEe-iQZoabAyeEw" target="_ZWS-6D4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+          </edges>
+          <edges xmi:id="_ZWS-7j4DEe-iQZoabAyeEw" source="_ZWS-5j4DEe-iQZoabAyeEw" target="_ZWS-7D4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+          </edges>
+          <edges xmi:id="_ZWS-8D4DEe-iQZoabAyeEw" source="_ZWS-7D4DEe-iQZoabAyeEw" target="_ZWS-6D4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/model"/>
+          </edges>
+          <edges xmi:id="_aJiZsD4DEe-iQZoabAyeEw" source="_ZWS-7D4DEe-iQZoabAyeEw" target="_Xsw1QD4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/requirements"/>
+          </edges>
+        </lhs>
+        <rhs xmi:id="_ZWSX0z4DEe-iQZoabAyeEw" name="Rhs">
+          <nodes xmi:id="_ZWSX1D4DEe-iQZoabAyeEw" outgoing="_ZWS-5T4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+          </nodes>
+          <nodes xmi:id="_ZWS-4T4DEe-iQZoabAyeEw" name="new" incoming="_ZWS-5T4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+            <attributes xmi:id="_ZWS-4j4DEe-iQZoabAyeEw" value="newModelContents">
+              <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+            </attributes>
+            <attributes xmi:id="_ZWS-4z4DEe-iQZoabAyeEw" value="newModelName">
+              <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_ZWRwwD4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+          </nodes>
+          <edges xmi:id="_ZWS-5T4DEe-iQZoabAyeEw" source="_ZWSX1D4DEe-iQZoabAyeEw" target="_ZWS-4T4DEe-iQZoabAyeEw">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+          </edges>
+        </rhs>
+        <mappings xmi:id="_ZWS-7z4DEe-iQZoabAyeEw" origin="_ZWS-5j4DEe-iQZoabAyeEw" image="_ZWSX1D4DEe-iQZoabAyeEw"/>
+        <mappings xmi:id="_ZWSX0D4DEe-iQZoabAyeEw" origin="_Xsw1QD4DEe-iQZoabAyeEw" image="_ZWRwwD4DEe-iQZoabAyeEw"/>
+        <multiMappings xmi:id="_ZWS-4D4DEe-iQZoabAyeEw" origin="_SaIeAz4DEe-iQZoabAyeEw" image="_ZWSX1D4DEe-iQZoabAyeEw"/>
+        <multiMappings xmi:id="_ZWS-5D4DEe-iQZoabAyeEw" origin="_SaIeBT4DEe-iQZoabAyeEw" image="_ZWS-4T4DEe-iQZoabAyeEw"/>
+        <multiMappings xmi:id="_ZWS-5z4DEe-iQZoabAyeEw" origin="_SaIeCj4DEe-iQZoabAyeEw" image="_ZWS-5j4DEe-iQZoabAyeEw"/>
+        <multiMappings xmi:id="_ZWS-6j4DEe-iQZoabAyeEw" origin="_SaIeDD4DEe-iQZoabAyeEw" image="_ZWS-6D4DEe-iQZoabAyeEw"/>
+        <multiMappings xmi:id="_ZWS-7T4DEe-iQZoabAyeEw" origin="_RRO8QD4DEe-iQZoabAyeEw" image="_ZWS-7D4DEe-iQZoabAyeEw"/>
+      </multiRules>
+      <multiMappings xmi:id="_SaIeBD4DEe-iQZoabAyeEw" origin="_rR-WwT4CEe-iQZoabAyeEw" image="_SaIeAz4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_SaIeCD4DEe-iQZoabAyeEw" origin="_sDesMD4CEe-iQZoabAyeEw" image="_SaIeBT4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_SaIeCz4DEe-iQZoabAyeEw" origin="_rR-WwD4CEe-iQZoabAyeEw" image="_SaIeCj4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_SaIeDj4DEe-iQZoabAyeEw" origin="_ss6qwD4CEe-iQZoabAyeEw" image="_SaIeDD4DEe-iQZoabAyeEw"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_0LWVwD4DEe-iQZoabAyeEw" name="retractRequirement">
+    <parameters xmi:id="_2PZ4MD4DEe-iQZoabAyeEw" name="reqName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_0LZZED4DEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_3UOyQD4DEe-iQZoabAyeEw" outgoing="_8c2R4D4DEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_4HzkQD4DEe-iQZoabAyeEw" incoming="_8c2R4D4DEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_t0NYED4EEe-iQZoabAyeEw" value="reqName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_8c2R4D4DEe-iQZoabAyeEw" source="_3UOyQD4DEe-iQZoabAyeEw" target="_4HzkQD4DEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_0LZZET4DEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_3UOyQT4DEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_3UPZUD4DEe-iQZoabAyeEw" origin="_3UOyQD4DEe-iQZoabAyeEw" image="_3UOyQT4DEe-iQZoabAyeEw"/>
+    <multiRules xmi:id="_7fJTgD4DEe-iQZoabAyeEw">
+      <parameters xmi:id="_7fKhoD4DEe-iQZoabAyeEw" name="reqName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_7fJTgT4DEe-iQZoabAyeEw" name="Lhs">
+        <nodes xmi:id="_7fJ6kT4DEe-iQZoabAyeEw" outgoing="_8c2R4T4DEe-iQZoabAyeEw _9UWhoD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_7fJ6lD4DEe-iQZoabAyeEw" incoming="_8c2R4T4DEe-iQZoabAyeEw _866t8D4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        </nodes>
+        <nodes xmi:id="_6bF1gD4DEe-iQZoabAyeEw" incoming="_9UWhoD4DEe-iQZoabAyeEw" outgoing="_866t8D4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        </nodes>
+        <edges xmi:id="_8c2R4T4DEe-iQZoabAyeEw" source="_7fJ6kT4DEe-iQZoabAyeEw" target="_7fJ6lD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_866t8D4DEe-iQZoabAyeEw" source="_6bF1gD4DEe-iQZoabAyeEw" target="_7fJ6lD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+        </edges>
+        <edges xmi:id="_9UWhoD4DEe-iQZoabAyeEw" source="_7fJ6kT4DEe-iQZoabAyeEw" target="_6bF1gD4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_7fJTgj4DEe-iQZoabAyeEw" name="Rhs">
+        <nodes xmi:id="_7fJTgz4DEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+      </rhs>
+      <mappings xmi:id="_7fJ6kz4DEe-iQZoabAyeEw" origin="_7fJ6kT4DEe-iQZoabAyeEw" image="_7fJTgz4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_7fJ6kD4DEe-iQZoabAyeEw" origin="_3UOyQT4DEe-iQZoabAyeEw" image="_7fJTgz4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_7fJ6kj4DEe-iQZoabAyeEw" origin="_3UOyQD4DEe-iQZoabAyeEw" image="_7fJ6kT4DEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_7fJ6lT4DEe-iQZoabAyeEw" origin="_4HzkQD4DEe-iQZoabAyeEw" image="_7fJ6lD4DEe-iQZoabAyeEw"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_krpRED4EEe-iQZoabAyeEw" name="supportRequirement">
+    <parameters xmi:id="_pcr-MD4EEe-iQZoabAyeEw" name="theoryName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_2AD_MD4EEe-iQZoabAyeEw" name="theoryContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_pcr-Mj4EEe-iQZoabAyeEw" name="requirementName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_krrtUD4EEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_q-_ecD4EEe-iQZoabAyeEw" outgoing="_4bFQID4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_sHHkID4EEe-iQZoabAyeEw" incoming="_4bFQID4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_yRVqsD4EEe-iQZoabAyeEw" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_4bFQID4EEe-iQZoabAyeEw" source="_q-_ecD4EEe-iQZoabAyeEw" target="_sHHkID4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_krrtUT4EEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_q-_ecT4EEe-iQZoabAyeEw" outgoing="_4bFQIT4EEe-iQZoabAyeEw _4pGeAD4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_sHHkIT4EEe-iQZoabAyeEw" incoming="_4bFQIT4EEe-iQZoabAyeEw _43CzYD4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_yRVqsT4EEe-iQZoabAyeEw" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_su7yED4EEe-iQZoabAyeEw" incoming="_4pGeAD4EEe-iQZoabAyeEw" outgoing="_43CzYD4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        <attributes xmi:id="_wfaaED4EEe-iQZoabAyeEw" value="theoryContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_xD_t0D4EEe-iQZoabAyeEw" value="theoryName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_4bFQIT4EEe-iQZoabAyeEw" source="_q-_ecT4EEe-iQZoabAyeEw" target="_sHHkIT4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_4pGeAD4EEe-iQZoabAyeEw" source="_q-_ecT4EEe-iQZoabAyeEw" target="_su7yED4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_43CzYD4EEe-iQZoabAyeEw" source="_su7yED4EEe-iQZoabAyeEw" target="_sHHkIT4EEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_q-_ecj4EEe-iQZoabAyeEw" origin="_q-_ecD4EEe-iQZoabAyeEw" image="_q-_ecT4EEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_sHHkIj4EEe-iQZoabAyeEw" origin="_sHHkID4EEe-iQZoabAyeEw" image="_sHHkIT4EEe-iQZoabAyeEw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_RonPkD4FEe-iQZoabAyeEw" name="supportModel">
+    <parameters xmi:id="_RonPkT4FEe-iQZoabAyeEw" name="theoryName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_RonPkj4FEe-iQZoabAyeEw" name="theoryContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_RonPkz4FEe-iQZoabAyeEw" name="modelName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_RonPlD4FEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_RonPlT4FEe-iQZoabAyeEw" outgoing="_RonPmD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_RonPlj4FEe-iQZoabAyeEw" incoming="_RonPmD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_RonPlz4FEe-iQZoabAyeEw" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_RonPmD4FEe-iQZoabAyeEw" source="_RonPlT4FEe-iQZoabAyeEw" target="_RonPlj4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_RonPmT4FEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_RonPmj4FEe-iQZoabAyeEw" outgoing="_RonPoD4FEe-iQZoabAyeEw _RonPoT4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_RonPmz4FEe-iQZoabAyeEw" incoming="_RonPoD4FEe-iQZoabAyeEw _RonPoj4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_RonPnD4FEe-iQZoabAyeEw" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_RonPnT4FEe-iQZoabAyeEw" incoming="_RonPoT4FEe-iQZoabAyeEw" outgoing="_RonPoj4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        <attributes xmi:id="_RonPnj4FEe-iQZoabAyeEw" value="theoryContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_RonPnz4FEe-iQZoabAyeEw" value="theoryName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_RonPoD4FEe-iQZoabAyeEw" source="_RonPmj4FEe-iQZoabAyeEw" target="_RonPmz4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_RonPoT4FEe-iQZoabAyeEw" source="_RonPmj4FEe-iQZoabAyeEw" target="_RonPnT4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_RonPoj4FEe-iQZoabAyeEw" source="_RonPnT4FEe-iQZoabAyeEw" target="_RonPmz4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_RonPoz4FEe-iQZoabAyeEw" origin="_RonPlT4FEe-iQZoabAyeEw" image="_RonPmj4FEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_RonPpD4FEe-iQZoabAyeEw" origin="_RonPlj4FEe-iQZoabAyeEw" image="_RonPmz4FEe-iQZoabAyeEw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_g6dpAD4FEe-iQZoabAyeEw" name="counterModel">
+    <parameters xmi:id="_mySYAD4FEe-iQZoabAyeEw" name="experimentName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_xj78sD4FEe-iQZoabAyeEw" name="experimentContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_mySYAj4FEe-iQZoabAyeEw" name="modelName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_mySYAz4FEe-iQZoabAyeEw" name="requirementName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_g6e3ID4FEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_o9KUID4FEe-iQZoabAyeEw" outgoing="_1UXhYD4FEe-iQZoabAyeEw _1lmbUD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_px15YD4FEe-iQZoabAyeEw" incoming="_1UXhYD4FEe-iQZoabAyeEw" outgoing="_17UzsD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_sXno0D4FEe-iQZoabAyeEw" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_qKtFUD4FEe-iQZoabAyeEw" incoming="_1lmbUD4FEe-iQZoabAyeEw _17UzsD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_spbxkD4FEe-iQZoabAyeEw" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_1UXhYD4FEe-iQZoabAyeEw" source="_o9KUID4FEe-iQZoabAyeEw" target="_px15YD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_1lmbUD4FEe-iQZoabAyeEw" source="_o9KUID4FEe-iQZoabAyeEw" target="_qKtFUD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_17UzsD4FEe-iQZoabAyeEw" source="_px15YD4FEe-iQZoabAyeEw" target="_qKtFUD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_g6e3IT4FEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_o9KUIT4FEe-iQZoabAyeEw" outgoing="_1UXhYT4FEe-iQZoabAyeEw _1lmbUT4FEe-iQZoabAyeEw _2vLSgD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_pgHQMD4FEe-iQZoabAyeEw" incoming="_2vLSgD4FEe-iQZoabAyeEw" outgoing="_2Ql5ED4FEe-iQZoabAyeEw _2f6HcD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+        <attributes xmi:id="_roVg8D4FEe-iQZoabAyeEw" value="experimentContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_r3A2ID4FEe-iQZoabAyeEw" value="experimentName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_px15YT4FEe-iQZoabAyeEw" incoming="_1UXhYT4FEe-iQZoabAyeEw _2f6HcD4FEe-iQZoabAyeEw" outgoing="_17UzsT4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_sXno0T4FEe-iQZoabAyeEw" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_qKtFUT4FEe-iQZoabAyeEw" incoming="_1lmbUT4FEe-iQZoabAyeEw _17UzsT4FEe-iQZoabAyeEw _2Ql5ED4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_spcYoD4FEe-iQZoabAyeEw" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_1UXhYT4FEe-iQZoabAyeEw" source="_o9KUIT4FEe-iQZoabAyeEw" target="_px15YT4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_1lmbUT4FEe-iQZoabAyeEw" source="_o9KUIT4FEe-iQZoabAyeEw" target="_qKtFUT4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_17UzsT4FEe-iQZoabAyeEw" source="_px15YT4FEe-iQZoabAyeEw" target="_qKtFUT4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+      </edges>
+      <edges xmi:id="_2Ql5ED4FEe-iQZoabAyeEw" source="_pgHQMD4FEe-iQZoabAyeEw" target="_qKtFUT4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/requirements"/>
+      </edges>
+      <edges xmi:id="_2f6HcD4FEe-iQZoabAyeEw" source="_pgHQMD4FEe-iQZoabAyeEw" target="_px15YT4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/model"/>
+      </edges>
+      <edges xmi:id="_2vLSgD4FEe-iQZoabAyeEw" source="_o9KUIT4FEe-iQZoabAyeEw" target="_pgHQMD4FEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_o9KUIj4FEe-iQZoabAyeEw" origin="_o9KUID4FEe-iQZoabAyeEw" image="_o9KUIT4FEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_px15Yj4FEe-iQZoabAyeEw" origin="_px15YD4FEe-iQZoabAyeEw" image="_px15YT4FEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_qKtsYD4FEe-iQZoabAyeEw" origin="_qKtFUD4FEe-iQZoabAyeEw" image="_qKtFUT4FEe-iQZoabAyeEw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_nNmlkD4GEe-iQZoabAyeEw" name="proposeExperiment">
+    <parameters xmi:id="_nNmlkT4GEe-iQZoabAyeEw" name="experimentName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_nNmlkj4GEe-iQZoabAyeEw" name="experimentContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_nNmlkz4GEe-iQZoabAyeEw" name="modelName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_nNmllD4GEe-iQZoabAyeEw" name="requirementName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_nNmllT4GEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_nNmllj4GEe-iQZoabAyeEw" outgoing="_nNmlmz4GEe-iQZoabAyeEw _nNmlnD4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_nNmllz4GEe-iQZoabAyeEw" incoming="_nNmlmz4GEe-iQZoabAyeEw" outgoing="_nNmlnT4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_nNmlmD4GEe-iQZoabAyeEw" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_nNmlmT4GEe-iQZoabAyeEw" incoming="_nNmlnD4GEe-iQZoabAyeEw _nNmlnT4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_nNmlmj4GEe-iQZoabAyeEw" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_nNmlmz4GEe-iQZoabAyeEw" source="_nNmllj4GEe-iQZoabAyeEw" target="_nNmllz4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_nNmlnD4GEe-iQZoabAyeEw" source="_nNmllj4GEe-iQZoabAyeEw" target="_nNmlmT4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_nNmlnT4GEe-iQZoabAyeEw" source="_nNmllz4GEe-iQZoabAyeEw" target="_nNmlmT4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_nNmlnj4GEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_nNmlnz4GEe-iQZoabAyeEw" outgoing="_nNmlpz4GEe-iQZoabAyeEw _nNmlqD4GEe-iQZoabAyeEw _nNmlrD4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_nNmloD4GEe-iQZoabAyeEw" incoming="_nNmlrD4GEe-iQZoabAyeEw" outgoing="_nNmlqj4GEe-iQZoabAyeEw _nNmlqz4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+        <attributes xmi:id="_nNmloT4GEe-iQZoabAyeEw" value="experimentContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_nNmloj4GEe-iQZoabAyeEw" value="experimentName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_nNmloz4GEe-iQZoabAyeEw" incoming="_nNmlpz4GEe-iQZoabAyeEw _nNmlqz4GEe-iQZoabAyeEw" outgoing="_nNmlqT4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_nNmlpD4GEe-iQZoabAyeEw" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_nNmlpT4GEe-iQZoabAyeEw" incoming="_nNmlqD4GEe-iQZoabAyeEw _nNmlqT4GEe-iQZoabAyeEw _nNmlqj4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        <attributes xmi:id="_nNmlpj4GEe-iQZoabAyeEw" value="requirementName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_nNmlpz4GEe-iQZoabAyeEw" source="_nNmlnz4GEe-iQZoabAyeEw" target="_nNmloz4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_nNmlqD4GEe-iQZoabAyeEw" source="_nNmlnz4GEe-iQZoabAyeEw" target="_nNmlpT4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_nNmlqT4GEe-iQZoabAyeEw" source="_nNmloz4GEe-iQZoabAyeEw" target="_nNmlpT4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model/requirements"/>
+      </edges>
+      <edges xmi:id="_nNmlqj4GEe-iQZoabAyeEw" source="_nNmloD4GEe-iQZoabAyeEw" target="_nNmlpT4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/requirements"/>
+      </edges>
+      <edges xmi:id="_nNmlqz4GEe-iQZoabAyeEw" source="_nNmloD4GEe-iQZoabAyeEw" target="_nNmloz4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/model"/>
+      </edges>
+      <edges xmi:id="_nNmlrD4GEe-iQZoabAyeEw" source="_nNmlnz4GEe-iQZoabAyeEw" target="_nNmloD4GEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_nNmlrT4GEe-iQZoabAyeEw" origin="_nNmllj4GEe-iQZoabAyeEw" image="_nNmlnz4GEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_nNmlrj4GEe-iQZoabAyeEw" origin="_nNmllz4GEe-iQZoabAyeEw" image="_nNmloz4GEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_nNmlrz4GEe-iQZoabAyeEw" origin="_nNmlmT4GEe-iQZoabAyeEw" image="_nNmlpT4GEe-iQZoabAyeEw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_FnR5wD4HEe-iQZoabAyeEw" name="supportExperiment">
+    <parameters xmi:id="_IlewQD4HEe-iQZoabAyeEw" name="experimentName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_IlewQT4HEe-iQZoabAyeEw" name="theoryName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_IlewQj4HEe-iQZoabAyeEw" name="theoryContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_FnU9ED4HEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_JgRkkD4HEe-iQZoabAyeEw" outgoing="_Pv8y4D4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_KXPBwD4HEe-iQZoabAyeEw" incoming="_Pv8y4D4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+        <attributes xmi:id="_LbG5kD4HEe-iQZoabAyeEw" value="experimentName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_Pv8y4D4HEe-iQZoabAyeEw" source="_JgRkkD4HEe-iQZoabAyeEw" target="_KXPBwD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_FnU9ET4HEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_JgRkkT4HEe-iQZoabAyeEw" outgoing="_Pv8y4T4HEe-iQZoabAyeEw _QVXNED4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_KE2RQD4HEe-iQZoabAyeEw" incoming="_QVXNED4HEe-iQZoabAyeEw" outgoing="_QHRGsD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        <attributes xmi:id="_MIKM0D4HEe-iQZoabAyeEw" value="theoryContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_MM14gD4HEe-iQZoabAyeEw" value="theoryName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_KXPBwT4HEe-iQZoabAyeEw" incoming="_Pv8y4T4HEe-iQZoabAyeEw _QHRGsD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+        <attributes xmi:id="_LbG5kT4HEe-iQZoabAyeEw" value="experimentName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_Pv8y4T4HEe-iQZoabAyeEw" source="_JgRkkT4HEe-iQZoabAyeEw" target="_KXPBwT4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_QHRGsD4HEe-iQZoabAyeEw" source="_KE2RQD4HEe-iQZoabAyeEw" target="_KXPBwT4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+      </edges>
+      <edges xmi:id="_QVXNED4HEe-iQZoabAyeEw" source="_JgRkkT4HEe-iQZoabAyeEw" target="_KE2RQD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_JgRkkj4HEe-iQZoabAyeEw" origin="_JgRkkD4HEe-iQZoabAyeEw" image="_JgRkkT4HEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_KXPBwj4HEe-iQZoabAyeEw" origin="_KXPBwD4HEe-iQZoabAyeEw" image="_KXPBwT4HEe-iQZoabAyeEw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_h2gvoD4HEe-iQZoabAyeEw" name="attackExperiment">
+    <parameters xmi:id="_h2gvoT4HEe-iQZoabAyeEw" name="experimentName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_h2gvoj4HEe-iQZoabAyeEw" name="theoryName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_h2gvoz4HEe-iQZoabAyeEw" name="theoryContents" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_h2gvpD4HEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_h2gvpT4HEe-iQZoabAyeEw" outgoing="_h2gvqD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_h2gvpj4HEe-iQZoabAyeEw" incoming="_h2gvqD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+        <attributes xmi:id="_h2gvpz4HEe-iQZoabAyeEw" value="experimentName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_h2gvqD4HEe-iQZoabAyeEw" source="_h2gvpT4HEe-iQZoabAyeEw" target="_h2gvpj4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_h2gvqT4HEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_h2gvqj4HEe-iQZoabAyeEw" outgoing="_h2gvsD4HEe-iQZoabAyeEw _h2gvsj4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_h2gvqz4HEe-iQZoabAyeEw" incoming="_h2gvsj4HEe-iQZoabAyeEw" outgoing="_h2gvsT4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        <attributes xmi:id="_h2gvrD4HEe-iQZoabAyeEw" value="theoryContents">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_h2gvrT4HEe-iQZoabAyeEw" value="theoryName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_h2gvrj4HEe-iQZoabAyeEw" incoming="_h2gvsD4HEe-iQZoabAyeEw _h2gvsT4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+        <attributes xmi:id="_h2gvrz4HEe-iQZoabAyeEw" value="experimentName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_h2gvsD4HEe-iQZoabAyeEw" source="_h2gvqj4HEe-iQZoabAyeEw" target="_h2gvrj4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_h2gvsT4HEe-iQZoabAyeEw" source="_h2gvqz4HEe-iQZoabAyeEw" target="_h2gvrj4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+      </edges>
+      <edges xmi:id="_h2gvsj4HEe-iQZoabAyeEw" source="_h2gvqj4HEe-iQZoabAyeEw" target="_h2gvqz4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_h2gvsz4HEe-iQZoabAyeEw" origin="_h2gvpT4HEe-iQZoabAyeEw" image="_h2gvqj4HEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_h2gvtD4HEe-iQZoabAyeEw" origin="_h2gvpj4HEe-iQZoabAyeEw" image="_h2gvrj4HEe-iQZoabAyeEw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_uofNUD4HEe-iQZoabAyeEw" name="retractExperiment">
+    <parameters xmi:id="_uofNUT4HEe-iQZoabAyeEw" name="experimentName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_uofNVD4HEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_uofNVT4HEe-iQZoabAyeEw" outgoing="_uofNWD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_uofNVj4HEe-iQZoabAyeEw" incoming="_uofNWD4HEe-iQZoabAyeEw" outgoing="_2rzjgD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+        <attributes xmi:id="_uofNVz4HEe-iQZoabAyeEw" value="experimentName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_1NM3gD4HEe-iQZoabAyeEw" incoming="_2rzjgD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+      </nodes>
+      <edges xmi:id="_uofNWD4HEe-iQZoabAyeEw" source="_uofNVT4HEe-iQZoabAyeEw" target="_uofNVj4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_2rzjgD4HEe-iQZoabAyeEw" source="_uofNVj4HEe-iQZoabAyeEw" target="_1NM3gD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/model"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_uofNWT4HEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_uofNWj4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_2NAusD4HEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_uofNYz4HEe-iQZoabAyeEw" origin="_uofNVT4HEe-iQZoabAyeEw" image="_uofNWj4HEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_2NAusT4HEe-iQZoabAyeEw" origin="_1NM3gD4HEe-iQZoabAyeEw" image="_2NAusD4HEe-iQZoabAyeEw"/>
+    <multiRules xmi:id="_6j4BQD4HEe-iQZoabAyeEw" name="requirements">
+      <parameters xmi:id="_6j8SsD4HEe-iQZoabAyeEw" name="experimentName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_6j4BQT4HEe-iQZoabAyeEw" name="Lhs">
+        <nodes xmi:id="_6j4BRT4HEe-iQZoabAyeEw" outgoing="_6j4BSj4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_6j4BRz4HEe-iQZoabAyeEw" incoming="_6j4BSj4HEe-iQZoabAyeEw" outgoing="_6j4BTj4HEe-iQZoabAyeEw _9h_YMD4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+          <attributes xmi:id="_6j4BSD4HEe-iQZoabAyeEw" value="experimentName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_6j4BTD4HEe-iQZoabAyeEw" incoming="_6j4BTj4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        </nodes>
+        <nodes xmi:id="_5HzE0D4HEe-iQZoabAyeEw" incoming="_9h_YMD4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        </nodes>
+        <edges xmi:id="_6j4BSj4HEe-iQZoabAyeEw" source="_6j4BRT4HEe-iQZoabAyeEw" target="_6j4BRz4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_6j4BTj4HEe-iQZoabAyeEw" source="_6j4BRz4HEe-iQZoabAyeEw" target="_6j4BTD4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/model"/>
+        </edges>
+        <edges xmi:id="_9h_YMD4HEe-iQZoabAyeEw" source="_6j4BRz4HEe-iQZoabAyeEw" target="_5HzE0D4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/requirements"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_6j4BQj4HEe-iQZoabAyeEw" name="Rhs">
+        <nodes xmi:id="_6j4BQz4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_6j4BTz4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        </nodes>
+        <nodes xmi:id="_5HzE0T4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Requirement"/>
+        </nodes>
+      </rhs>
+      <mappings xmi:id="_6j4BSz4HEe-iQZoabAyeEw" origin="_6j4BRT4HEe-iQZoabAyeEw" image="_6j4BQz4HEe-iQZoabAyeEw"/>
+      <mappings xmi:id="_6j4BUT4HEe-iQZoabAyeEw" origin="_6j4BTD4HEe-iQZoabAyeEw" image="_6j4BTz4HEe-iQZoabAyeEw"/>
+      <mappings xmi:id="_5HzE0j4HEe-iQZoabAyeEw" origin="_5HzE0D4HEe-iQZoabAyeEw" image="_5HzE0T4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_6j4BRD4HEe-iQZoabAyeEw" origin="_uofNWj4HEe-iQZoabAyeEw" image="_6j4BQz4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_6j4BRj4HEe-iQZoabAyeEw" origin="_uofNVT4HEe-iQZoabAyeEw" image="_6j4BRT4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_6j4BST4HEe-iQZoabAyeEw" origin="_uofNVj4HEe-iQZoabAyeEw" image="_6j4BRz4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_6j4BTT4HEe-iQZoabAyeEw" origin="_1NM3gD4HEe-iQZoabAyeEw" image="_6j4BTD4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_6j4BUD4HEe-iQZoabAyeEw" origin="_2NAusD4HEe-iQZoabAyeEw" image="_6j4BTz4HEe-iQZoabAyeEw"/>
+    </multiRules>
+    <multiRules xmi:id="_80mtwD4HEe-iQZoabAyeEw" name="theories">
+      <parameters xmi:id="_80q_MD4HEe-iQZoabAyeEw" name="experimentName" kind="IN">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </parameters>
+      <lhs xmi:id="_80mtwT4HEe-iQZoabAyeEw" name="Lhs">
+        <nodes xmi:id="_80mtxT4HEe-iQZoabAyeEw" outgoing="_80mtyj4HEe-iQZoabAyeEw _NG1mID4IEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_80mtxz4HEe-iQZoabAyeEw" incoming="_80mtyj4HEe-iQZoabAyeEw __KaukD4HEe-iQZoabAyeEw" outgoing="_80mtzj4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment"/>
+          <attributes xmi:id="_80mtyD4HEe-iQZoabAyeEw" value="experimentName">
+            <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_80mtzD4HEe-iQZoabAyeEw" incoming="_80mtzj4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        </nodes>
+        <nodes xmi:id="_7VMwgD4HEe-iQZoabAyeEw" incoming="_NG1mID4IEe-iQZoabAyeEw" outgoing="__KaukD4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        </nodes>
+        <edges xmi:id="_80mtyj4HEe-iQZoabAyeEw" source="_80mtxT4HEe-iQZoabAyeEw" target="_80mtxz4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+        <edges xmi:id="_80mtzj4HEe-iQZoabAyeEw" source="_80mtxz4HEe-iQZoabAyeEw" target="_80mtzD4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Experiment/model"/>
+        </edges>
+        <edges xmi:id="__KaukD4HEe-iQZoabAyeEw" source="_7VMwgD4HEe-iQZoabAyeEw" target="_80mtxz4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+        </edges>
+        <edges xmi:id="_NG1mID4IEe-iQZoabAyeEw" source="_80mtxT4HEe-iQZoabAyeEw" target="_7VMwgD4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_80mtwj4HEe-iQZoabAyeEw" name="Rhs">
+        <nodes xmi:id="_80mtwz4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+        </nodes>
+        <nodes xmi:id="_80mtzz4HEe-iQZoabAyeEw">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        </nodes>
+      </rhs>
+      <mappings xmi:id="_80mtyz4HEe-iQZoabAyeEw" origin="_80mtxT4HEe-iQZoabAyeEw" image="_80mtwz4HEe-iQZoabAyeEw"/>
+      <mappings xmi:id="_80mt0T4HEe-iQZoabAyeEw" origin="_80mtzD4HEe-iQZoabAyeEw" image="_80mtzz4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80mtxD4HEe-iQZoabAyeEw" origin="_uofNWj4HEe-iQZoabAyeEw" image="_80mtwz4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80mtxj4HEe-iQZoabAyeEw" origin="_uofNVT4HEe-iQZoabAyeEw" image="_80mtxT4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80mtyT4HEe-iQZoabAyeEw" origin="_uofNVj4HEe-iQZoabAyeEw" image="_80mtxz4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80mtzT4HEe-iQZoabAyeEw" origin="_1NM3gD4HEe-iQZoabAyeEw" image="_80mtzD4HEe-iQZoabAyeEw"/>
+      <multiMappings xmi:id="_80mt0D4HEe-iQZoabAyeEw" origin="_2NAusD4HEe-iQZoabAyeEw" image="_80mtzz4HEe-iQZoabAyeEw"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_aCrxgD4IEe-iQZoabAyeEw" name="notConvinced">
+    <parameters xmi:id="_aCrxgz4IEe-iQZoabAyeEw" name="modelName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_aCrxhD4IEe-iQZoabAyeEw" name="Lhs">
+      <nodes xmi:id="_aCrxhT4IEe-iQZoabAyeEw" outgoing="_aCrxiD4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_aCrxhj4IEe-iQZoabAyeEw" incoming="_aCrxiD4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_aCrxhz4IEe-iQZoabAyeEw" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_aCrxiD4IEe-iQZoabAyeEw" source="_aCrxhT4IEe-iQZoabAyeEw" target="_aCrxhj4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_aCrxiT4IEe-iQZoabAyeEw" name="Rhs">
+      <nodes xmi:id="_aCrxij4IEe-iQZoabAyeEw" outgoing="_aCrxkD4IEe-iQZoabAyeEw _aCrxkT4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore"/>
+      </nodes>
+      <nodes xmi:id="_aCrxiz4IEe-iQZoabAyeEw" incoming="_aCrxkD4IEe-iQZoabAyeEw _aCrxkj4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Model"/>
+        <attributes xmi:id="_aCrxjD4IEe-iQZoabAyeEw" value="modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_aCrxjT4IEe-iQZoabAyeEw" incoming="_aCrxkT4IEe-iQZoabAyeEw" outgoing="_aCrxkj4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory"/>
+        <attributes xmi:id="_aCrxjj4IEe-iQZoabAyeEw" value="&quot;No confidence in model &quot; + modelName">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/content"/>
+        </attributes>
+        <attributes xmi:id="_aCrxjz4IEe-iQZoabAyeEw" value="&quot;NoConfidence&quot;">
+          <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Element/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_aCrxkD4IEe-iQZoabAyeEw" source="_aCrxij4IEe-iQZoabAyeEw" target="_aCrxiz4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_aCrxkT4IEe-iQZoabAyeEw" source="_aCrxij4IEe-iQZoabAyeEw" target="_aCrxjT4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//TheoryStore/elements"/>
+      </edges>
+      <edges xmi:id="_aCrxkj4IEe-iQZoabAyeEw" source="_aCrxjT4IEe-iQZoabAyeEw" target="_aCrxiz4IEe-iQZoabAyeEw">
+        <type href="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang#//Theory/elements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_aCrxkz4IEe-iQZoabAyeEw" origin="_aCrxhT4IEe-iQZoabAyeEw" image="_aCrxij4IEe-iQZoabAyeEw"/>
+    <mappings xmi:id="_aCrxlD4IEe-iQZoabAyeEw" origin="_aCrxhj4IEe-iQZoabAyeEw" image="_aCrxiz4IEe-iQZoabAyeEw"/>
+  </units>
+</henshin:Module>

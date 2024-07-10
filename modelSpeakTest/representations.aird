@@ -1,260 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TheoryStore="http://www.xtext.org/example/modellingDialogue/TheoryStore" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:theoryStoreLang="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:theoryStoreLang="http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_0EVMgC1UEe-U6v2CwN1D4g" selectedViews="_ZqqfcD3OEe-ZY6UZHoR-FQ" version="15.2.0.202303281325">
     <semanticResources>src/test.modspeak</semanticResources>
-    <semanticResources>src-gen/theoryStoreOutput.theoryStore</semanticResources>
     <semanticResources>src/test.mspeak</semanticResources>
+    <semanticResources>src-gen/test.theoryStore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="__dJCYC1VEe-57KNZKGE-DA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="__ru4AC1VEe-57KNZKGE-DA" name="new TheoryStoreDiagram" repPath="#__rdyQC1VEe-57KNZKGE-DA" changeId="1720515698325">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']"/>
-        <target xmi:type="TheoryStore:TheoryStore" href="src-gen/theoryStoreOutput.theoryStore#/"/>
-      </ownedRepresentationDescriptors>
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_ZqqfcD3OEe-ZY6UZHoR-FQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Z8Sa8D3OEe-ZY6UZHoR-FQ" name="new TheoryStoreDiagram" repPath="#_Z8P-sD3OEe-ZY6UZHoR-FQ" changeId="1720519235678">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_fDOoUD4KEe-p4t_WHXSN_g" name="new TheoryStoreDiagram" repPath="#_fDAl4D4KEe-p4t_WHXSN_g" changeId="1720607290991">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']"/>
-        <target xmi:type="theoryStoreLang:TheoryStore" href="src-gen/theoryStoreOutput.theoryStore#/"/>
+        <target xmi:type="theoryStoreLang:TheoryStore" href="src-gen/test.theoryStore#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram uid="__rdyQC1VEe-57KNZKGE-DA">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="__sH5kC1VEe-57KNZKGE-DA" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="__sH5kS1VEe-57KNZKGE-DA" type="Sirius" element="__rdyQC1VEe-57KNZKGE-DA" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="__sshUC1VEe-57KNZKGE-DA" type="2001" element="__sP1YC1VEe-57KNZKGE-DA">
-          <children xmi:type="notation:Node" xmi:id="__syA4C1VEe-57KNZKGE-DA" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="__syA4S1VEe-57KNZKGE-DA" y="5"/>
+  <diagram:DSemanticDiagram uid="_fDAl4D4KEe-p4t_WHXSN_g">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_fDfHAD4KEe-p4t_WHXSN_g" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_fDfHAT4KEe-p4t_WHXSN_g" type="Sirius" element="_fDAl4D4KEe-p4t_WHXSN_g" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_4Jce0D4KEe-p4t_WHXSN_g" type="2001" element="_4JY0cD4KEe-p4t_WHXSN_g">
+          <children xmi:type="notation:Node" xmi:id="_4Jce0z4KEe-p4t_WHXSN_g" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_4Jce1D4KEe-p4t_WHXSN_g" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="__s7x4C1VEe-57KNZKGE-DA" type="3003" element="__sTfwC1VEe-57KNZKGE-DA">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="__s7x4S1VEe-57KNZKGE-DA" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__s7x4i1VEe-57KNZKGE-DA"/>
+          <children xmi:type="notation:Node" xmi:id="_4JdF5z4KEe-p4t_WHXSN_g" type="3003" element="_4JY0cT4KEe-p4t_WHXSN_g">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4JdF6D4KEe-p4t_WHXSN_g" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4JdF6T4KEe-p4t_WHXSN_g"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="__sshUS1VEe-57KNZKGE-DA" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sshUi1VEe-57KNZKGE-DA" x="40" y="195" width="131" height="60"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_4Jce0T4KEe-p4t_WHXSN_g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Jce0j4KEe-p4t_WHXSN_g" x="185" y="315" width="120" height="66"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="__s7K0C1VEe-57KNZKGE-DA" type="2001" element="__sXKIC1VEe-57KNZKGE-DA">
-          <children xmi:type="notation:Node" xmi:id="__s7K0y1VEe-57KNZKGE-DA" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="__s7K1C1VEe-57KNZKGE-DA" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_sPiSUD6eEe-4qL5K0Y_DmQ" type="2001" element="_sPen8D6eEe-4qL5K0Y_DmQ">
+          <children xmi:type="notation:Node" xmi:id="_sPiSUz6eEe-4qL5K0Y_DmQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_sPiSVD6eEe-4qL5K0Y_DmQ" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="__s7x4y1VEe-57KNZKGE-DA" type="3016" element="__sXxMC1VEe-57KNZKGE-DA">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="__s7x5C1VEe-57KNZKGE-DA" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__s7x5S1VEe-57KNZKGE-DA"/>
+          <children xmi:type="notation:Node" xmi:id="_sPiSWD6eEe-4qL5K0Y_DmQ" type="3016" element="_sPen8T6eEe-4qL5K0Y_DmQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_sPiSWT6eEe-4qL5K0Y_DmQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sPiSWj6eEe-4qL5K0Y_DmQ"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="__s7K0S1VEe-57KNZKGE-DA" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__s7K0i1VEe-57KNZKGE-DA" x="330" y="80" width="100" height="83"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sPiSUT6eEe-4qL5K0Y_DmQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sPiSUj6eEe-4qL5K0Y_DmQ" x="205" y="75" width="100" height="100"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_PlesAC1jEe-7waWYYJAIPA" type="2001" element="_Plc20i1jEe-7waWYYJAIPA">
-          <children xmi:type="notation:Node" xmi:id="_PlfTEC1jEe-7waWYYJAIPA" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_PlfTES1jEe-7waWYYJAIPA" y="5"/>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_fDfHAj4KEe-p4t_WHXSN_g"/>
+        <edges xmi:type="notation:Edge" xmi:id="_sPiSWz6eEe-4qL5K0Y_DmQ" type="4001" element="_sPf2ED6eEe-4qL5K0Y_DmQ" source="_sPiSUD6eEe-4qL5K0Y_DmQ" target="_4Jce0D4KEe-p4t_WHXSN_g">
+          <children xmi:type="notation:Node" xmi:id="_sPi5YD6eEe-4qL5K0Y_DmQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sPi5YT6eEe-4qL5K0Y_DmQ" x="-6" y="-2"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_PlfTEi1jEe-7waWYYJAIPA" type="3016" element="_Plc20y1jEe-7waWYYJAIPA">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_PlfTEy1jEe-7waWYYJAIPA" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PlfTFC1jEe-7waWYYJAIPA"/>
+          <children xmi:type="notation:Node" xmi:id="_sPi5Yj6eEe-4qL5K0Y_DmQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sPi5Yz6eEe-4qL5K0Y_DmQ" x="4" y="3"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_PlesAS1jEe-7waWYYJAIPA" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PlesAi1jEe-7waWYYJAIPA" x="30" y="25" width="100" height="100"/>
-        </children>
-        <styles xmi:type="notation:DiagramStyle" xmi:id="__sH5ki1VEe-57KNZKGE-DA"/>
-        <edges xmi:type="notation:Edge" xmi:id="__tHYEC1VEe-57KNZKGE-DA" type="4001" element="__scpsC1VEe-57KNZKGE-DA" source="__s7K0C1VEe-57KNZKGE-DA" target="__sshUC1VEe-57KNZKGE-DA">
-          <children xmi:type="notation:Node" xmi:id="__tH_IC1VEe-57KNZKGE-DA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__tH_IS1VEe-57KNZKGE-DA" x="1" y="10"/>
+          <children xmi:type="notation:Node" xmi:id="_sPi5ZD6eEe-4qL5K0Y_DmQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sPi5ZT6eEe-4qL5K0Y_DmQ" x="4" y="4"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="__tJNQC1VEe-57KNZKGE-DA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__tJNQS1VEe-57KNZKGE-DA" x="-2" y="-5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="__tJNQi1VEe-57KNZKGE-DA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__tJNQy1VEe-57KNZKGE-DA" x="-3" y="-4"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="__tHYES1VEe-57KNZKGE-DA"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="__tHYEi1VEe-57KNZKGE-DA" fontName="Segoe UI" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__tHYEy1VEe-57KNZKGE-DA" points="[-50, 18, 225, -86]$[-209, 79, 66, -25]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__tRJEC1VEe-57KNZKGE-DA" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__tRJES1VEe-57KNZKGE-DA" id="(0.5,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_PlfTFS1jEe-7waWYYJAIPA" type="4001" element="_PleE8C1jEe-7waWYYJAIPA" source="_PlesAC1jEe-7waWYYJAIPA" target="__s7K0C1VEe-57KNZKGE-DA">
-          <children xmi:type="notation:Node" xmi:id="_Plf6IC1jEe-7waWYYJAIPA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Plf6IS1jEe-7waWYYJAIPA" x="-1" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_Plf6Ii1jEe-7waWYYJAIPA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Plf6Iy1jEe-7waWYYJAIPA" x="-2" y="9"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_Plf6JC1jEe-7waWYYJAIPA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Plf6JS1jEe-7waWYYJAIPA" x="-1" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_PlfTFi1jEe-7waWYYJAIPA"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_PlfTFy1jEe-7waWYYJAIPA" fontName="Segoe UI" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PlfTGC1jEe-7waWYYJAIPA" points="[50, 7, -250, -39]$[250, 38, -50, -8]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Plf6Ji1jEe-7waWYYJAIPA" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Plf6Jy1jEe-7waWYYJAIPA" id="(0.5,0.5)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_sPiSXD6eEe-4qL5K0Y_DmQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_sPiSXT6eEe-4qL5K0Y_DmQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sPiSXj6eEe-4qL5K0Y_DmQ" points="[-3, 50, 7, -173]$[-9, 190, 1, -33]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sPi5Zj6eEe-4qL5K0Y_DmQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sPi5Zz6eEe-4qL5K0Y_DmQ" id="(0.5,0.5)"/>
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="__sftAC1VEe-57KNZKGE-DA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="__sftAS1VEe-57KNZKGE-DA"/>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_fDu-oD4KEe-p4t_WHXSN_g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_fDu-oT4KEe-p4t_WHXSN_g"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="__sP1YC1VEe-57KNZKGE-DA" name="First requirement" incomingEdges="__scpsC1VEe-57KNZKGE-DA" width="10" height="10" resizeKind="NSEW">
-      <ownedStyle xmi:type="diagram:Square" uid="__sTfwC1VEe-57KNZKGE-DA" labelSize="12" labelPosition="node" color="138,226,52">
-        <description xmi:type="style:SquareDescription" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='RequirementNode']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='RequirementNode']"/>
-      <target xmi:type="TheoryStore:Requirement" href="src-gen/theoryStoreOutput.theoryStore#//@elements.0"/>
-      <semanticElements xmi:type="TheoryStore:Requirement" href="src-gen/theoryStoreOutput.theoryStore#//@elements.0"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="__sXKIC1VEe-57KNZKGE-DA" name="m1" outgoingEdges="__scpsC1VEe-57KNZKGE-DA" incomingEdges="_PleE8C1jEe-7waWYYJAIPA" width="10" height="10" resizeKind="NSEW">
-      <ownedStyle xmi:type="diagram:Ellipse" uid="__sXxMC1VEe-57KNZKGE-DA" labelSize="12" labelPosition="node" color="194,239,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='ModelNode']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='ModelNode']"/>
-      <target xmi:type="TheoryStore:Model" href="src-gen/theoryStoreOutput.theoryStore#//@elements.1"/>
-      <semanticElements xmi:type="TheoryStore:Model" href="src-gen/theoryStoreOutput.theoryStore#//@elements.1"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="__scpsC1VEe-57KNZKGE-DA" sourceNode="__sXKIC1VEe-57KNZKGE-DA" targetNode="__sP1YC1VEe-57KNZKGE-DA">
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="__see4C1VEe-57KNZKGE-DA" size="2" centered="Both">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@edgeMappings[name='ModelToRequirement']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="__see4S1VEe-57KNZKGE-DA" labelSize="12"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@edgeMappings[name='ModelToRequirement']"/>
-      <target xmi:type="TheoryStore:Model" href="src-gen/theoryStoreOutput.theoryStore#//@elements.1"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Plc20i1jEe-7waWYYJAIPA" name="My experiment" outgoingEdges="_PleE8C1jEe-7waWYYJAIPA" width="10" height="10" resizeKind="NSEW">
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_Plc20y1jEe-7waWYYJAIPA" labelSize="12" labelPosition="node" color="252,233,79">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='TheoryNode']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='TheoryNode']"/>
-      <target xmi:type="TheoryStore:Theory" href="src-gen/theoryStoreOutput.theoryStore#//@elements.2"/>
-      <semanticElements xmi:type="TheoryStore:Theory" href="src-gen/theoryStoreOutput.theoryStore#//@elements.2"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_PleE8C1jEe-7waWYYJAIPA" sourceNode="_Plc20i1jEe-7waWYYJAIPA" targetNode="__sXKIC1VEe-57KNZKGE-DA">
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_PleE8S1jEe-7waWYYJAIPA" size="2" centered="Both">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@edgeMappings[name='TheoryToElement']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_PleE8i1jEe-7waWYYJAIPA" labelSize="12"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@edgeMappings[name='TheoryToElement']"/>
-      <target xmi:type="TheoryStore:Theory" href="src-gen/theoryStoreOutput.theoryStore#//@elements.2"/>
-    </ownedDiagramElements>
-    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="__rkf8C1VEe-57KNZKGE-DA"/>
-    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/theoryStore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer"/>
-    <target xmi:type="TheoryStore:TheoryStore" href="src-gen/theoryStoreOutput.theoryStore#/"/>
-  </diagram:DSemanticDiagram>
-  <diagram:DSemanticDiagram uid="_Z8P-sD3OEe-ZY6UZHoR-FQ">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Z8bk4D3OEe-ZY6UZHoR-FQ" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="_Z8bk4T3OEe-ZY6UZHoR-FQ" type="Sirius" element="_Z8P-sD3OEe-ZY6UZHoR-FQ" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_Z810kD3OEe-ZY6UZHoR-FQ" type="2001" element="_Z8ku0D3OEe-ZY6UZHoR-FQ">
-          <children xmi:type="notation:Node" xmi:id="_Z85e8D3OEe-ZY6UZHoR-FQ" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_Z85e8T3OEe-ZY6UZHoR-FQ" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_Z88iQD3OEe-ZY6UZHoR-FQ" type="3003" element="_Z8oZMD3OEe-ZY6UZHoR-FQ">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_Z88iQT3OEe-ZY6UZHoR-FQ" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z88iQj3OEe-ZY6UZHoR-FQ"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_Z810kT3OEe-ZY6UZHoR-FQ" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z810kj3OEe-ZY6UZHoR-FQ" x="270" y="50" width="176" height="41"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_Z87UIj3OEe-ZY6UZHoR-FQ" type="2001" element="_Z8qOYz3OEe-ZY6UZHoR-FQ">
-          <children xmi:type="notation:Node" xmi:id="_Z87UJT3OEe-ZY6UZHoR-FQ" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_Z87UJj3OEe-ZY6UZHoR-FQ" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_Z8-XcD3OEe-ZY6UZHoR-FQ" type="3016" element="_Z8q1cD3OEe-ZY6UZHoR-FQ">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_Z8-XcT3OEe-ZY6UZHoR-FQ" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z8-Xcj3OEe-ZY6UZHoR-FQ"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_Z87UIz3OEe-ZY6UZHoR-FQ" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z87UJD3OEe-ZY6UZHoR-FQ" x="485" y="135" width="100" height="100"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_tHSv4D3REe-wo9tQsxvDkw" type="2001" element="_tHPFgj3REe-wo9tQsxvDkw">
-          <children xmi:type="notation:Node" xmi:id="_tHSv4z3REe-wo9tQsxvDkw" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_tHSv5D3REe-wo9tQsxvDkw" y="5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_tHSv5T3REe-wo9tQsxvDkw" type="3016" element="_tHPskD3REe-wo9tQsxvDkw">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_tHSv5j3REe-wo9tQsxvDkw" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tHSv5z3REe-wo9tQsxvDkw"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_tHSv4T3REe-wo9tQsxvDkw" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tHSv4j3REe-wo9tQsxvDkw" width="100" height="100"/>
-        </children>
-        <styles xmi:type="notation:DiagramStyle" xmi:id="_Z8bk4j3OEe-ZY6UZHoR-FQ"/>
-        <edges xmi:type="notation:Edge" xmi:id="_Z9DP8D3OEe-ZY6UZHoR-FQ" type="4001" element="_Z8uf0D3OEe-ZY6UZHoR-FQ" source="_Z87UIj3OEe-ZY6UZHoR-FQ" target="_Z810kD3OEe-ZY6UZHoR-FQ">
-          <children xmi:type="notation:Node" xmi:id="_Z9D3AD3OEe-ZY6UZHoR-FQ" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z9D3AT3OEe-ZY6UZHoR-FQ" x="1" y="3"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_Z9EeED3OEe-ZY6UZHoR-FQ" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z9EeET3OEe-ZY6UZHoR-FQ" x="3" y="-2"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_Z9FFID3OEe-ZY6UZHoR-FQ" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z9FFIT3OEe-ZY6UZHoR-FQ" x="3" y="-1"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Z9DP8T3OEe-ZY6UZHoR-FQ"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_Z9DP8j3OEe-ZY6UZHoR-FQ" fontName="Segoe UI" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Z9DP8z3OEe-ZY6UZHoR-FQ" points="[-50, -33, 127, 82]$[-145, -94, 32, 21]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Z9IvgD3OEe-ZY6UZHoR-FQ" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Z9IvgT3OEe-ZY6UZHoR-FQ" id="(0.5,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_tHTW8D3REe-wo9tQsxvDkw" type="4001" element="_tHQTpT3REe-wo9tQsxvDkw" source="_tHSv4D3REe-wo9tQsxvDkw" target="_Z87UIj3OEe-ZY6UZHoR-FQ">
-          <children xmi:type="notation:Node" xmi:id="_tHTW9D3REe-wo9tQsxvDkw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tHTW9T3REe-wo9tQsxvDkw" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_tHTW9j3REe-wo9tQsxvDkw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tHTW9z3REe-wo9tQsxvDkw" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_tHTW-D3REe-wo9tQsxvDkw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tHTW-T3REe-wo9tQsxvDkw" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tHTW8T3REe-wo9tQsxvDkw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_tHTW8j3REe-wo9tQsxvDkw" fontName="Segoe UI" fontHeight="12"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tHTW8z3REe-wo9tQsxvDkw" points="[50, 13, -435, -122]$[435, 121, -50, -14]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tHTW-j3REe-wo9tQsxvDkw" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tHTW-z3REe-wo9tQsxvDkw" id="(0.5,0.5)"/>
-        </edges>
-      </data>
-    </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Z8wVAj3OEe-ZY6UZHoR-FQ" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_Z8wVAz3OEe-ZY6UZHoR-FQ"/>
-    </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Z8ku0D3OEe-ZY6UZHoR-FQ" name="First requirement" incomingEdges="_Z8uf0D3OEe-ZY6UZHoR-FQ" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="theoryStoreLang:Requirement" href="src-gen/theoryStoreOutput.theoryStore#//@elements.0"/>
-      <semanticElements xmi:type="theoryStoreLang:Requirement" href="src-gen/theoryStoreOutput.theoryStore#//@elements.0"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_Z8oZMD3OEe-ZY6UZHoR-FQ" labelSize="12" labelPosition="node" color="138,226,52">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_4JY0cD4KEe-p4t_WHXSN_g" name="First requirement" incomingEdges="_sPf2ED6eEe-4qL5K0Y_DmQ" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="theoryStoreLang:Requirement" href="src-gen/test.theoryStore#//@elements.0"/>
+      <semanticElements xmi:type="theoryStoreLang:Requirement" href="src-gen/test.theoryStore#//@elements.0"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_4JY0cT4KEe-p4t_WHXSN_g" labelSize="12" labelPosition="node" color="138,226,52">
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='RequirementNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='RequirementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Z8qOYz3OEe-ZY6UZHoR-FQ" name="m1" outgoingEdges="_Z8uf0D3OEe-ZY6UZHoR-FQ" incomingEdges="_tHQTpT3REe-wo9tQsxvDkw" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="theoryStoreLang:Model" href="src-gen/theoryStoreOutput.theoryStore#//@elements.1"/>
-      <semanticElements xmi:type="theoryStoreLang:Model" href="src-gen/theoryStoreOutput.theoryStore#//@elements.1"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_Z8q1cD3OEe-ZY6UZHoR-FQ" labelSize="12" labelPosition="node" color="194,239,255">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_sPen8D6eEe-4qL5K0Y_DmQ" name="m2" outgoingEdges="_sPf2ED6eEe-4qL5K0Y_DmQ" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="theoryStoreLang:Model" href="src-gen/test.theoryStore#//@elements.1"/>
+      <semanticElements xmi:type="theoryStoreLang:Model" href="src-gen/test.theoryStore#//@elements.1"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_sPen8T6eEe-4qL5K0Y_DmQ" labelSize="12" labelPosition="node" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='ModelNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='ModelNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Z8uf0D3OEe-ZY6UZHoR-FQ" sourceNode="_Z8qOYz3OEe-ZY6UZHoR-FQ" targetNode="_Z8ku0D3OEe-ZY6UZHoR-FQ">
-      <target xmi:type="theoryStoreLang:Model" href="src-gen/theoryStoreOutput.theoryStore#//@elements.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Z8vG4D3OEe-ZY6UZHoR-FQ" size="2" centered="Both">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_sPf2ED6eEe-4qL5K0Y_DmQ" sourceNode="_sPen8D6eEe-4qL5K0Y_DmQ" targetNode="_4JY0cD4KEe-p4t_WHXSN_g">
+      <target xmi:type="theoryStoreLang:Model" href="src-gen/test.theoryStore#//@elements.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_sPf2ET6eEe-4qL5K0Y_DmQ" size="2" centered="Both">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@edgeMappings[name='ModelToRequirement']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Z8vG4T3OEe-ZY6UZHoR-FQ" labelSize="12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_sPf2Ej6eEe-4qL5K0Y_DmQ" labelSize="12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@edgeMappings[name='ModelToRequirement']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tHPFgj3REe-wo9tQsxvDkw" name="My experiment" outgoingEdges="_tHQTpT3REe-wo9tQsxvDkw" width="10" height="10" resizeKind="NSEW">
-      <target xmi:type="theoryStoreLang:Theory" href="src-gen/theoryStoreOutput.theoryStore#//@elements.2"/>
-      <semanticElements xmi:type="theoryStoreLang:Theory" href="src-gen/theoryStoreOutput.theoryStore#//@elements.2"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_tHPskD3REe-wo9tQsxvDkw" labelSize="12" labelPosition="node" color="252,233,79">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='TheoryNode']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@nodeMappings[name='TheoryNode']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tHQTpT3REe-wo9tQsxvDkw" sourceNode="_tHPFgj3REe-wo9tQsxvDkw" targetNode="_Z8qOYz3OEe-ZY6UZHoR-FQ">
-      <target xmi:type="theoryStoreLang:Theory" href="src-gen/theoryStoreOutput.theoryStore#//@elements.2"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tHQ6sD3REe-wo9tQsxvDkw" size="2" centered="Both">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@edgeMappings[name='TheoryToElement']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tHQ6sT3REe-wo9tQsxvDkw" labelSize="12"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer/@edgeMappings[name='TheoryToElement']"/>
-    </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_Z8QlwD3OEe-ZY6UZHoR-FQ"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_fDGFcD4KEe-p4t_WHXSN_g"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']/@defaultLayer"/>
-    <target xmi:type="theoryStoreLang:TheoryStore" href="src-gen/theoryStoreOutput.theoryStore#/"/>
+    <target xmi:type="theoryStoreLang:TheoryStore" href="src-gen/test.theoryStore#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

@@ -1,3 +1,0 @@
-Requirement r1 { "First requirement" }
-Model m1 { "First model" } -> r1
-Theory e1 { "My experiment" } -> m1

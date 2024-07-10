@@ -1,0 +1,2 @@
+Requirement r1 { "First requirement" }
+Model m2 { "Refined model" } -> r1
