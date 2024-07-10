@@ -353,7 +353,7 @@
       <multiMappings xmi:id="_N4YcDj4BEe-iQZoabAyeEw" origin="_nnzdAD4AEe-iQZoabAyeEw" image="_N4YcDD4BEe-iQZoabAyeEw"/>
     </multiRules>
   </units>
-  <units xsi:type="henshin:Rule" xmi:id="_fp45UD4CEe-iQZoabAyeEw" name="replaceModel">
+  <units xsi:type="henshin:Rule" xmi:id="_fp45UD4CEe-iQZoabAyeEw" name="replaceModel" checkDangling="false">
     <parameters xmi:id="_lfvSYD4CEe-iQZoabAyeEw" name="newModelName" kind="IN">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </parameters>
@@ -395,7 +395,7 @@
       </edges>
     </rhs>
     <mappings xmi:id="_rR-Wwj4CEe-iQZoabAyeEw" origin="_rR-WwD4CEe-iQZoabAyeEw" image="_rR-WwT4CEe-iQZoabAyeEw"/>
-    <multiRules xmi:id="_80cH8j4CEe-iQZoabAyeEw" name="requirements">
+    <multiRules xmi:id="_80cH8j4CEe-iQZoabAyeEw" name="requirements" checkDangling="false">
       <parameters xmi:id="_80hAcD4CEe-iQZoabAyeEw" name="newModelName" kind="IN">
         <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </parameters>
@@ -455,7 +455,7 @@
       <multiMappings xmi:id="_80cH_T4CEe-iQZoabAyeEw" origin="_rR-WwD4CEe-iQZoabAyeEw" image="_80cH_D4CEe-iQZoabAyeEw"/>
       <multiMappings xmi:id="_80cIAD4CEe-iQZoabAyeEw" origin="_ss6qwD4CEe-iQZoabAyeEw" image="_80cH_j4CEe-iQZoabAyeEw"/>
     </multiRules>
-    <multiRules xmi:id="_HDWzAD4DEe-iQZoabAyeEw" name="theories">
+    <multiRules xmi:id="_HDWzAD4DEe-iQZoabAyeEw" name="theories" checkDangling="false">
       <parameters xmi:id="_HDXaGj4DEe-iQZoabAyeEw" name="newModelName" kind="IN">
         <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </parameters>
@@ -511,7 +511,7 @@
       <multiMappings xmi:id="_HDXaEj4DEe-iQZoabAyeEw" origin="_rR-WwD4CEe-iQZoabAyeEw" image="_HDXaET4DEe-iQZoabAyeEw"/>
       <multiMappings xmi:id="_HDXaFT4DEe-iQZoabAyeEw" origin="_ss6qwD4CEe-iQZoabAyeEw" image="_HDXaEz4DEe-iQZoabAyeEw"/>
     </multiRules>
-    <multiRules xmi:id="_SaIeAD4DEe-iQZoabAyeEw" name="experiments">
+    <multiRules xmi:id="_SaIeAD4DEe-iQZoabAyeEw" name="experiments" checkDangling="false">
       <parameters xmi:id="_SaJFED4DEe-iQZoabAyeEw" name="newModelName" kind="IN">
         <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </parameters>
