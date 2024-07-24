@@ -9,7 +9,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_ZqqfcD3OEe-ZY6UZHoR-FQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_fDOoUD4KEe-p4t_WHXSN_g" name="new TheoryStoreDiagram" repPath="#_fDAl4D4KEe-p4t_WHXSN_g" changeId="1720607290991">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_fDOoUD4KEe-p4t_WHXSN_g" name="new TheoryStoreDiagram" repPath="#_fDAl4D4KEe-p4t_WHXSN_g" changeId="1721833711226">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.theorystore.design/description/theoryStore.odesign#//@ownedViewpoints[name='TheoryStoreViewpoint']/@ownedRepresentations[name='TheoryStoreDiagram']"/>
         <target xmi:type="theoryStoreLang:TheoryStore" href="src-gen/test.theoryStore#/"/>
       </ownedRepresentationDescriptors>
