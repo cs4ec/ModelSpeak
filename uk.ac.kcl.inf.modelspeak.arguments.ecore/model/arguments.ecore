@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arguments" nsURI="http://www.example.org/arguments" nsPrefix="arguments">
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentGraph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentElements" upperBound="-1"
+        eType="#//ArgumentElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
+        eType="#//ArgumentElementRelation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentElementRelation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RelationshipType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evidence" lowerBound="1"
+        eType="#//ArgumentElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="warrant" lowerBound="1"
+        eType="#//ArgumentElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="claim" lowerBound="1" eType="#//ArgumentElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RelationshipType">
+    <eLiterals name="SUPPORT"/>
+    <eLiterals name="ATTACK" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulationMechanismWarrant" eSuperTypes="#//ArgumentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputDataSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputDataSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="explaining" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardSimulationWarrant" eSuperTypes="#//ArgumentElement"/>
+</ecore:EPackage>

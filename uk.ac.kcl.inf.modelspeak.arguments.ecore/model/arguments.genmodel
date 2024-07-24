@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/uk.ac.kcl.inf.modelspeak.arguments.ecore/src-gen"
+    creationIcons="false" editDirectory="/uk.ac.kcl.inf.modelspeak.arguments.ecore.edit/src-gen"
+    editorDirectory="/uk.ac.kcl.inf.modelspeak.arguments.ecore.editor/src-gen" modelPluginID="uk.ac.kcl.inf.modelspeak.arguments.ecore"
+    modelName="Arguments" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="22.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>arguments.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Arguments" basePackage="uk.ac.kcl.inf.modelspeak.arguments.ecore"
+      disposableProviderFactory="true" ecorePackage="arguments.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arguments.ecore#//RelationshipType">
+      <genEnumLiterals ecoreEnumLiteral="arguments.ecore#//RelationshipType/SUPPORT"/>
+      <genEnumLiterals ecoreEnumLiteral="arguments.ecore#//RelationshipType/ATTACK"/>
+    </genEnums>
+    <genClasses ecoreClass="arguments.ecore#//ArgumentElement"/>
+    <genClasses ecoreClass="arguments.ecore#//ArgumentGraph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentGraph/argumentElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentGraph/relations"/>
+    </genClasses>
+    <genClasses ecoreClass="arguments.ecore#//ArgumentElementRelation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ArgumentElementRelation/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/evidence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/warrant"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/claim"/>
+    </genClasses>
+    <genClasses ecoreClass="arguments.ecore#//SimulationMechanismWarrant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//SimulationMechanismWarrant/inputDataSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//SimulationMechanismWarrant/outputDataSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//SimulationMechanismWarrant/explaining"/>
+    </genClasses>
+    <genClasses ecoreClass="arguments.ecore#//StandardSimulationWarrant"/>
+  </genPackages>
+</genmodel:GenModel>

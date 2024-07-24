@@ -2,7 +2,7 @@ grammar uk.ac.kcl.inf.modelspeak.TheoryStoreLang with org.eclipse.xtext.common.T
 
 generate theoryStoreLang "http://www.ac.uk/kcl/inf/modelspeak/TheoryStoreLang"
 
-TheoryStore:
+TheoryStore: // TODO: Could rename to something like `SimulationStudyState`
     elements+=Element*;
 
 Element:
