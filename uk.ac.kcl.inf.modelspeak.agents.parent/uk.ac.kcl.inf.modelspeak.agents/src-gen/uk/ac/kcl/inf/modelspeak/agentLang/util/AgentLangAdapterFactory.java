@@ -86,6 +86,11 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
         return createMoveAdapter();
       }
       @Override
+      public Adapter caseResearchQuestion(ResearchQuestion object)
+      {
+        return createResearchQuestionAdapter();
+      }
+      @Override
       public Adapter caseModel(Model object)
       {
         return createModelAdapter();
@@ -104,6 +109,21 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTheory(Theory object)
       {
         return createTheoryAdapter();
+      }
+      @Override
+      public Adapter caseGeneralTheory(GeneralTheory object)
+      {
+        return createGeneralTheoryAdapter();
+      }
+      @Override
+      public Adapter caseLiteratureReference(LiteratureReference object)
+      {
+        return createLiteratureReferenceAdapter();
+      }
+      @Override
+      public Adapter caseProposeRQ(ProposeRQ object)
+      {
+        return createProposeRQAdapter();
       }
       @Override
       public Adapter caseProposeRequirement(ProposeRequirement object)
@@ -243,6 +263,21 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.ResearchQuestion <em>Research Question</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.ResearchQuestion
+   * @generated
+   */
+  public Adapter createResearchQuestionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.Model <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -298,6 +333,51 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTheoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory <em>General Theory</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory
+   * @generated
+   */
+  public Adapter createGeneralTheoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference <em>Literature Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
+   * @generated
+   */
+  public Adapter createLiteratureReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ <em>Propose RQ</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ
+   * @generated
+   */
+  public Adapter createProposeRQAdapter()
   {
     return null;
   }

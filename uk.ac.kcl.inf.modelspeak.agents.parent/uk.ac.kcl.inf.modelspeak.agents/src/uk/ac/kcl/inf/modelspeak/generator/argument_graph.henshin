@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_MQxvAEnIEe-9Y9kM1QMG8w">
+  <imports href="http://www.example.org/arguments#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_OucrUEnIEe-9Y9kM1QMG8w" name="proposeRequirement">
+    <parameters xmi:id="_zfrXcEnIEe-9Y9kM1QMG8w" name="effect" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_zfrXcUnIEe-9Y9kM1QMG8w" name="data" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="__DsiUEnKEe-SBs4vzAeciA" name="reqName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_Ouo4kEnIEe-9Y9kM1QMG8w" name="Lhs">
+      <nodes xmi:id="_Tt6O8EnIEe-9Y9kM1QMG8w">
+        <type href="http://www.example.org/arguments#//ArgumentGraph"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_Ouo4kUnIEe-9Y9kM1QMG8w" name="Rhs">
+      <nodes xmi:id="_Tt6O8UnIEe-9Y9kM1QMG8w" outgoing="_cNCXYEnIEe-9Y9kM1QMG8w">
+        <type href="http://www.example.org/arguments#//ArgumentGraph"/>
+      </nodes>
+      <nodes xmi:id="_YkIXAEnIEe-9Y9kM1QMG8w" name="smw" incoming="_cNCXYEnIEe-9Y9kM1QMG8w">
+        <type href="http://www.example.org/arguments#//SimulationMechanismWarrant"/>
+        <attributes xmi:id="_gZ1H8EnIEe-9Y9kM1QMG8w" value="effect">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/explainedEffect"/>
+        </attributes>
+        <attributes xmi:id="_gh3CkEnIEe-9Y9kM1QMG8w" value="data">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/outputDataOverTime"/>
+        </attributes>
+        <attributes xmi:id="_HVR-AEnLEe-SBs4vzAeciA" value="reqName">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/generatingRequirement"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_cNCXYEnIEe-9Y9kM1QMG8w" source="_Tt6O8UnIEe-9Y9kM1QMG8w" target="_YkIXAEnIEe-9Y9kM1QMG8w">
+        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Tt6O8knIEe-9Y9kM1QMG8w" origin="_Tt6O8EnIEe-9Y9kM1QMG8w" image="_Tt6O8UnIEe-9Y9kM1QMG8w"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_UOXlwEnKEe-SBs4vzAeciA" name="supportRequirement">
+    <parameters xmi:id="_NmnZMEnLEe-SBs4vzAeciA" name="reqName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_PEhFIEnMEe-SBs4vzAeciA" name="litRef" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_PEjhYEnMEe-SBs4vzAeciA" name="effect" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_PEjhYUnMEe-SBs4vzAeciA" name="data" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_UOdsYEnKEe-SBs4vzAeciA" name="Lhs">
+      <nodes xmi:id="_XeVhsEnKEe-SBs4vzAeciA" outgoing="_bse9IEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentGraph"/>
+      </nodes>
+      <nodes xmi:id="_YoNT0EnKEe-SBs4vzAeciA" incoming="_bse9IEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//SimulationMechanismWarrant"/>
+        <attributes xmi:id="_PAPekEnLEe-SBs4vzAeciA" value="reqName">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/generatingRequirement"/>
+        </attributes>
+        <attributes xmi:id="_QZ3ugEnMEe-SBs4vzAeciA" value="effect">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/explainedEffect"/>
+        </attributes>
+        <attributes xmi:id="_QfdZIEnMEe-SBs4vzAeciA" value="data">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/outputDataOverTime"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_bse9IEnKEe-SBs4vzAeciA" source="_XeVhsEnKEe-SBs4vzAeciA" target="_YoNT0EnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_UOdsYUnKEe-SBs4vzAeciA" name="Rhs">
+      <nodes xmi:id="_XeWIwEnKEe-SBs4vzAeciA" outgoing="_bse9IUnKEe-SBs4vzAeciA _e7gd4EnKEe-SBs4vzAeciA _fQOwsEnKEe-SBs4vzAeciA _xIS-cEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentGraph"/>
+      </nodes>
+      <nodes xmi:id="_YoNT0UnKEe-SBs4vzAeciA" incoming="_bse9IUnKEe-SBs4vzAeciA _rA6wgEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//SimulationMechanismWarrant"/>
+        <attributes xmi:id="_PAPekUnLEe-SBs4vzAeciA" value="reqName">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/generatingRequirement"/>
+        </attributes>
+        <attributes xmi:id="_QZ4VkEnMEe-SBs4vzAeciA" value="effect">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/explainedEffect"/>
+        </attributes>
+        <attributes xmi:id="_QfeAMEnMEe-SBs4vzAeciA" value="data">
+          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/outputDataOverTime"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Zi3lQEnKEe-SBs4vzAeciA" incoming="_e7gd4EnKEe-SBs4vzAeciA _rZIcMEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//StandardSimulationWarrant"/>
+      </nodes>
+      <nodes xmi:id="_aPrA4EnKEe-SBs4vzAeciA" incoming="_fQOwsEnKEe-SBs4vzAeciA _rwDucEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//LiteratureEvidence"/>
+        <attributes xmi:id="_aok-MEnMEe-SBs4vzAeciA" value="litRef">
+          <type href="http://www.example.org/arguments#//LiteratureEvidence/reference"/>
+        </attributes>
+        <attributes xmi:id="_bFm4cEnMEe-SBs4vzAeciA" value="effect">
+          <type href="http://www.example.org/arguments#//LiteratureEvidence/describedEffect"/>
+        </attributes>
+        <attributes xmi:id="_bKTyQEnMEe-SBs4vzAeciA" value="data">
+          <type href="http://www.example.org/arguments#//LiteratureEvidence/observedDataOverTime"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_oCU4cEnKEe-SBs4vzAeciA" incoming="_xIS-cEnKEe-SBs4vzAeciA" outgoing="_rA6wgEnKEe-SBs4vzAeciA _rZIcMEnKEe-SBs4vzAeciA _rwDucEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//Support"/>
+      </nodes>
+      <edges xmi:id="_bse9IUnKEe-SBs4vzAeciA" source="_XeWIwEnKEe-SBs4vzAeciA" target="_YoNT0UnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
+      </edges>
+      <edges xmi:id="_e7gd4EnKEe-SBs4vzAeciA" source="_XeWIwEnKEe-SBs4vzAeciA" target="_Zi3lQEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
+      </edges>
+      <edges xmi:id="_fQOwsEnKEe-SBs4vzAeciA" source="_XeWIwEnKEe-SBs4vzAeciA" target="_aPrA4EnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
+      </edges>
+      <edges xmi:id="_rA6wgEnKEe-SBs4vzAeciA" source="_oCU4cEnKEe-SBs4vzAeciA" target="_YoNT0UnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentElementRelation/claim"/>
+      </edges>
+      <edges xmi:id="_rZIcMEnKEe-SBs4vzAeciA" source="_oCU4cEnKEe-SBs4vzAeciA" target="_Zi3lQEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentElementRelation/warrant"/>
+      </edges>
+      <edges xmi:id="_rwDucEnKEe-SBs4vzAeciA" source="_oCU4cEnKEe-SBs4vzAeciA" target="_aPrA4EnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentElementRelation/evidence"/>
+      </edges>
+      <edges xmi:id="_xIS-cEnKEe-SBs4vzAeciA" source="_XeWIwEnKEe-SBs4vzAeciA" target="_oCU4cEnKEe-SBs4vzAeciA">
+        <type href="http://www.example.org/arguments#//ArgumentGraph/relations"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_XeWIwUnKEe-SBs4vzAeciA" origin="_XeVhsEnKEe-SBs4vzAeciA" image="_XeWIwEnKEe-SBs4vzAeciA"/>
+    <mappings xmi:id="_YoN64EnKEe-SBs4vzAeciA" origin="_YoNT0EnKEe-SBs4vzAeciA" image="_YoNT0UnKEe-SBs4vzAeciA"/>
+  </units>
+</henshin:Module>

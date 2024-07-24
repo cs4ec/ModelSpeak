@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.Requirement#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.Requirement#getContent <em>Content</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.Requirement#getDataDescription <em>Data Description</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage#getRequirement()
@@ -67,5 +68,27 @@ public interface Requirement extends EObject
    * @generated
    */
   void setContent(String value);
+
+  /**
+   * Returns the value of the '<em><b>Data Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Data Description</em>' attribute.
+   * @see #setDataDescription(String)
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage#getRequirement_DataDescription()
+   * @model
+   * @generated
+   */
+  String getDataDescription();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.agentLang.Requirement#getDataDescription <em>Data Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Data Description</em>' attribute.
+   * @see #getDataDescription()
+   * @generated
+   */
+  void setDataDescription(String value);
 
 } // Requirement

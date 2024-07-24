@@ -67,10 +67,14 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
     {
       case AgentLangPackage.GAME: return createGame();
       case AgentLangPackage.MOVE: return createMove();
+      case AgentLangPackage.RESEARCH_QUESTION: return createResearchQuestion();
       case AgentLangPackage.MODEL: return createModel();
       case AgentLangPackage.REQUIREMENT: return createRequirement();
       case AgentLangPackage.EXPERIMENT: return createExperiment();
       case AgentLangPackage.THEORY: return createTheory();
+      case AgentLangPackage.GENERAL_THEORY: return createGeneralTheory();
+      case AgentLangPackage.LITERATURE_REFERENCE: return createLiteratureReference();
+      case AgentLangPackage.PROPOSE_RQ: return createProposeRQ();
       case AgentLangPackage.PROPOSE_REQUIREMENT: return createProposeRequirement();
       case AgentLangPackage.ATTACK_REQUIREMENT: return createAttackRequirement();
       case AgentLangPackage.REDEFINE_REQUIREMENT: return createRedefineRequirement();
@@ -123,6 +127,18 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
    * @generated
    */
   @Override
+  public ResearchQuestion createResearchQuestion()
+  {
+    ResearchQuestionImpl researchQuestion = new ResearchQuestionImpl();
+    return researchQuestion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Model createModel()
   {
     ModelImpl model = new ModelImpl();
@@ -163,6 +179,42 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
   {
     TheoryImpl theory = new TheoryImpl();
     return theory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GeneralTheory createGeneralTheory()
+  {
+    GeneralTheoryImpl generalTheory = new GeneralTheoryImpl();
+    return generalTheory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LiteratureReference createLiteratureReference()
+  {
+    LiteratureReferenceImpl literatureReference = new LiteratureReferenceImpl();
+    return literatureReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProposeRQ createProposeRQ()
+  {
+    ProposeRQImpl proposeRQ = new ProposeRQImpl();
+    return proposeRQ;
   }
 
   /**

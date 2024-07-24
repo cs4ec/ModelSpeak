@@ -22,7 +22,6 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Theory;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.TheoryImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.TheoryImpl#getContent <em>Content</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,26 +47,6 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected static final String CONTENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected String content = CONTENT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,39 +100,12 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory
    * @generated
    */
   @Override
-  public String getContent()
-  {
-    return content;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setContent(String newContent)
-  {
-    String oldContent = content;
-    content = newContent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AgentLangPackage.THEORY__CONTENT, oldContent, content));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case AgentLangPackage.THEORY__NAME:
         return getName();
-      case AgentLangPackage.THEORY__CONTENT:
-        return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -170,9 +122,6 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory
     {
       case AgentLangPackage.THEORY__NAME:
         setName((String)newValue);
-        return;
-      case AgentLangPackage.THEORY__CONTENT:
-        setContent((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,9 +140,6 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory
       case AgentLangPackage.THEORY__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AgentLangPackage.THEORY__CONTENT:
-        setContent(CONTENT_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -210,8 +156,6 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory
     {
       case AgentLangPackage.THEORY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AgentLangPackage.THEORY__CONTENT:
-        return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
     }
     return super.eIsSet(featureID);
   }
@@ -229,8 +173,6 @@ public class TheoryImpl extends MinimalEObjectImpl.Container implements Theory
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", content: ");
-    result.append(content);
     result.append(')');
     return result.toString();
   }

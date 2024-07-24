@@ -13,42 +13,16 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getType <em>Type</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getEvidence <em>Evidence</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getWarrant <em>Warrant</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getClaim <em>Claim</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage#getArgumentElementRelation()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface ArgumentElementRelation extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType
-	 * @see #setType(RelationshipType)
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage#getArgumentElementRelation_Type()
-	 * @model
-	 * @generated
-	 */
-	RelationshipType getType();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(RelationshipType value);
-
 	/**
 	 * Returns the value of the '<em><b>Evidence</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -31,15 +31,6 @@ public interface ArgumentsFactory extends EFactory {
 	ArgumentGraph createArgumentGraph();
 
 	/**
-	 * Returns a new object of class '<em>Argument Element Relation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Argument Element Relation</em>'.
-	 * @generated
-	 */
-	ArgumentElementRelation createArgumentElementRelation();
-
-	/**
 	 * Returns a new object of class '<em>Simulation Mechanism Warrant</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +74,24 @@ public interface ArgumentsFactory extends EFactory {
 	 * @generated
 	 */
 	MechanismExplainsEffect createMechanismExplainsEffect();
+
+	/**
+	 * Returns a new object of class '<em>Support</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Support</em>'.
+	 * @generated
+	 */
+	Support createSupport();
+
+	/**
+	 * Returns a new object of class '<em>Attack</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attack</em>'.
+	 * @generated
+	 */
+	Attack createAttack();
 
 	/**
 	 * Returns the package supported by this factory.

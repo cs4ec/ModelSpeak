@@ -4,7 +4,6 @@ package uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -142,22 +141,13 @@ public interface ArgumentsPackage extends EPackage {
 	int ARGUMENT_ELEMENT_RELATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARGUMENT_ELEMENT_RELATION__TYPE = 0;
-
-	/**
 	 * The feature id for the '<em><b>Evidence</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_ELEMENT_RELATION__EVIDENCE = 1;
+	int ARGUMENT_ELEMENT_RELATION__EVIDENCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Warrant</b></em>' reference.
@@ -166,7 +156,7 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_ELEMENT_RELATION__WARRANT = 2;
+	int ARGUMENT_ELEMENT_RELATION__WARRANT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Claim</b></em>' reference.
@@ -175,7 +165,7 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_ELEMENT_RELATION__CLAIM = 3;
+	int ARGUMENT_ELEMENT_RELATION__CLAIM = 2;
 
 	/**
 	 * The number of structural features of the '<em>Argument Element Relation</em>' class.
@@ -184,7 +174,7 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_ELEMENT_RELATION_FEATURE_COUNT = 4;
+	int ARGUMENT_ELEMENT_RELATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Argument Element Relation</em>' class.
@@ -224,13 +214,22 @@ public interface ArgumentsPackage extends EPackage {
 	int SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT = ARGUMENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Generating Requirement</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT = ARGUMENT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Simulation Mechanism Warrant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION_MECHANISM_WARRANT_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 2;
+	int SIMULATION_MECHANISM_WARRANT_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Simulation Mechanism Warrant</em>' class.
@@ -426,14 +425,114 @@ public interface ArgumentsPackage extends EPackage {
 	int MECHANISM_EXPLAINS_EFFECT_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType <em>Relationship Type</em>}' enum.
+	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SupportImpl <em>Support</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getRelationshipType()
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SupportImpl
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getSupport()
 	 * @generated
 	 */
-	int RELATIONSHIP_TYPE = 8;
+	int SUPPORT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Evidence</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPORT__EVIDENCE = ARGUMENT_ELEMENT_RELATION__EVIDENCE;
+
+	/**
+	 * The feature id for the '<em><b>Warrant</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPORT__WARRANT = ARGUMENT_ELEMENT_RELATION__WARRANT;
+
+	/**
+	 * The feature id for the '<em><b>Claim</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPORT__CLAIM = ARGUMENT_ELEMENT_RELATION__CLAIM;
+
+	/**
+	 * The number of structural features of the '<em>Support</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPORT_FEATURE_COUNT = ARGUMENT_ELEMENT_RELATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Support</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPORT_OPERATION_COUNT = ARGUMENT_ELEMENT_RELATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.AttackImpl <em>Attack</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.AttackImpl
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getAttack()
+	 * @generated
+	 */
+	int ATTACK = 9;
+
+	/**
+	 * The feature id for the '<em><b>Evidence</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK__EVIDENCE = ARGUMENT_ELEMENT_RELATION__EVIDENCE;
+
+	/**
+	 * The feature id for the '<em><b>Warrant</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK__WARRANT = ARGUMENT_ELEMENT_RELATION__WARRANT;
+
+	/**
+	 * The feature id for the '<em><b>Claim</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK__CLAIM = ARGUMENT_ELEMENT_RELATION__CLAIM;
+
+	/**
+	 * The number of structural features of the '<em>Attack</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_FEATURE_COUNT = ARGUMENT_ELEMENT_RELATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Attack</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_OPERATION_COUNT = ARGUMENT_ELEMENT_RELATION_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement <em>Argument Element</em>}'.
@@ -486,17 +585,6 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getArgumentElementRelation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getType()
-	 * @see #getArgumentElementRelation()
-	 * @generated
-	 */
-	EAttribute getArgumentElementRelation_Type();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getEvidence <em>Evidence</em>}'.
@@ -562,6 +650,17 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSimulationMechanismWarrant_ExplainedEffect();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant#getGeneratingRequirement <em>Generating Requirement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Generating Requirement</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant#getGeneratingRequirement()
+	 * @see #getSimulationMechanismWarrant()
+	 * @generated
+	 */
+	EAttribute getSimulationMechanismWarrant_GeneratingRequirement();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.StandardSimulationWarrant <em>Standard Simulation Warrant</em>}'.
@@ -692,14 +791,24 @@ public interface ArgumentsPackage extends EPackage {
 	EAttribute getMechanismExplainsEffect_ExplainedEffect();
 
 	/**
-	 * Returns the meta object for enum '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType <em>Relationship Type</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support <em>Support</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Relationship Type</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType
+	 * @return the meta object for class '<em>Support</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support
 	 * @generated
 	 */
-	EEnum getRelationshipType();
+	EClass getSupport();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack <em>Attack</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Attack</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack
+	 * @generated
+	 */
+	EClass getAttack();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -771,14 +880,6 @@ public interface ArgumentsPackage extends EPackage {
 		EClass ARGUMENT_ELEMENT_RELATION = eINSTANCE.getArgumentElementRelation();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARGUMENT_ELEMENT_RELATION__TYPE = eINSTANCE.getArgumentElementRelation_Type();
-
-		/**
 		 * The meta object literal for the '<em><b>Evidence</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -829,6 +930,15 @@ public interface ArgumentsPackage extends EPackage {
 		 */
 		EAttribute SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT = eINSTANCE
 				.getSimulationMechanismWarrant_ExplainedEffect();
+
+		/**
+		 * The meta object literal for the '<em><b>Generating Requirement</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT = eINSTANCE
+				.getSimulationMechanismWarrant_GeneratingRequirement();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.StandardSimulationWarrantImpl <em>Standard Simulation Warrant</em>}' class.
@@ -936,14 +1046,24 @@ public interface ArgumentsPackage extends EPackage {
 		EAttribute MECHANISM_EXPLAINS_EFFECT__EXPLAINED_EFFECT = eINSTANCE.getMechanismExplainsEffect_ExplainedEffect();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType <em>Relationship Type</em>}' enum.
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SupportImpl <em>Support</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType
-		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getRelationshipType()
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SupportImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getSupport()
 		 * @generated
 		 */
-		EEnum RELATIONSHIP_TYPE = eINSTANCE.getRelationshipType();
+		EClass SUPPORT = eINSTANCE.getSupport();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.AttackImpl <em>Attack</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.AttackImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getAttack()
+		 * @generated
+		 */
+		EClass ATTACK = eINSTANCE.getAttack();
 
 	}
 

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.Requirement;
+import uk.ac.kcl.inf.modelspeak.agentLang.ResearchQuestion;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +25,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Requirement;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeRequirementImpl#getRequirement <em>Requirement</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeRequirementImpl#getRq <em>Rq</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +41,16 @@ public class ProposeRequirementImpl extends MoveImpl implements ProposeRequireme
    * @ordered
    */
   protected Requirement requirement;
+
+  /**
+   * The cached value of the '{@link #getRq() <em>Rq</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRq()
+   * @generated
+   * @ordered
+   */
+  protected ResearchQuestion rq;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,6 +129,51 @@ public class ProposeRequirementImpl extends MoveImpl implements ProposeRequireme
    * @generated
    */
   @Override
+  public ResearchQuestion getRq()
+  {
+    if (rq != null && rq.eIsProxy())
+    {
+      InternalEObject oldRq = (InternalEObject)rq;
+      rq = (ResearchQuestion)eResolveProxy(oldRq);
+      if (rq != oldRq)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgentLangPackage.PROPOSE_REQUIREMENT__RQ, oldRq, rq));
+      }
+    }
+    return rq;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ResearchQuestion basicGetRq()
+  {
+    return rq;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRq(ResearchQuestion newRq)
+  {
+    ResearchQuestion oldRq = rq;
+    rq = newRq;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AgentLangPackage.PROPOSE_REQUIREMENT__RQ, oldRq, rq));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -139,6 +196,9 @@ public class ProposeRequirementImpl extends MoveImpl implements ProposeRequireme
     {
       case AgentLangPackage.PROPOSE_REQUIREMENT__REQUIREMENT:
         return getRequirement();
+      case AgentLangPackage.PROPOSE_REQUIREMENT__RQ:
+        if (resolve) return getRq();
+        return basicGetRq();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,6 +215,9 @@ public class ProposeRequirementImpl extends MoveImpl implements ProposeRequireme
     {
       case AgentLangPackage.PROPOSE_REQUIREMENT__REQUIREMENT:
         setRequirement((Requirement)newValue);
+        return;
+      case AgentLangPackage.PROPOSE_REQUIREMENT__RQ:
+        setRq((ResearchQuestion)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,6 +236,9 @@ public class ProposeRequirementImpl extends MoveImpl implements ProposeRequireme
       case AgentLangPackage.PROPOSE_REQUIREMENT__REQUIREMENT:
         setRequirement((Requirement)null);
         return;
+      case AgentLangPackage.PROPOSE_REQUIREMENT__RQ:
+        setRq((ResearchQuestion)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -189,6 +255,8 @@ public class ProposeRequirementImpl extends MoveImpl implements ProposeRequireme
     {
       case AgentLangPackage.PROPOSE_REQUIREMENT__REQUIREMENT:
         return requirement != null;
+      case AgentLangPackage.PROPOSE_REQUIREMENT__RQ:
+        return rq != null;
     }
     return super.eIsSet(featureID);
   }

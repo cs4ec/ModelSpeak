@@ -168,7 +168,10 @@ public class ArgumentGraphItemProvider extends ItemProviderAdapter implements IE
 				ArgumentsFactory.eINSTANCE.createMechanismExplainsEffect()));
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__RELATIONS,
-				ArgumentsFactory.eINSTANCE.createArgumentElementRelation()));
+				ArgumentsFactory.eINSTANCE.createSupport()));
+
+		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__RELATIONS,
+				ArgumentsFactory.eINSTANCE.createAttack()));
 	}
 
 	/**

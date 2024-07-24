@@ -17,13 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation} object.
@@ -54,28 +49,11 @@ public class ArgumentElementRelationItemProvider extends ItemProviderAdapter imp
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
 			addEvidencePropertyDescriptor(object);
 			addWarrantPropertyDescriptor(object);
 			addClaimPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ArgumentElementRelation_type_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ArgumentElementRelation_type_feature",
-						"_UI_ArgumentElementRelation_type"),
-				ArgumentsPackage.Literals.ARGUMENT_ELEMENT_RELATION__TYPE, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -152,10 +130,7 @@ public class ArgumentElementRelationItemProvider extends ItemProviderAdapter imp
 	 */
 	@Override
 	public String getText(Object object) {
-		RelationshipType labelValue = ((ArgumentElementRelation) object).getType();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_ArgumentElementRelation_type")
-				: getString("_UI_ArgumentElementRelation_type") + " " + label;
+		return getString("_UI_ArgumentElementRelation_type");
 	}
 
 	/**
@@ -168,12 +143,6 @@ public class ArgumentElementRelationItemProvider extends ItemProviderAdapter imp
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ArgumentElementRelation.class)) {
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__TYPE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

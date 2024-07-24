@@ -11,17 +11,12 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Arguments" basePackage="uk.ac.kcl.inf.modelspeak.arguments.ecore"
       disposableProviderFactory="true" ecorePackage="arguments.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arguments.ecore#//RelationshipType">
-      <genEnumLiterals ecoreEnumLiteral="arguments.ecore#//RelationshipType/SUPPORT"/>
-      <genEnumLiterals ecoreEnumLiteral="arguments.ecore#//RelationshipType/ATTACK"/>
-    </genEnums>
     <genClasses ecoreClass="arguments.ecore#//ArgumentElement"/>
     <genClasses ecoreClass="arguments.ecore#//ArgumentGraph">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentGraph/argumentElements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentGraph/relations"/>
     </genClasses>
     <genClasses ecoreClass="arguments.ecore#//ArgumentElementRelation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ArgumentElementRelation/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/evidence"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/warrant"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/claim"/>
@@ -29,6 +24,7 @@
     <genClasses ecoreClass="arguments.ecore#//SimulationMechanismWarrant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//SimulationMechanismWarrant/outputDataOverTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//SimulationMechanismWarrant/explainedEffect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//SimulationMechanismWarrant/generatingRequirement"/>
     </genClasses>
     <genClasses ecoreClass="arguments.ecore#//StandardSimulationWarrant"/>
     <genClasses ecoreClass="arguments.ecore#//LiteratureEvidence">
@@ -45,5 +41,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//MechanismExplainsEffect/mechanism"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//MechanismExplainsEffect/explainedEffect"/>
     </genClasses>
+    <genClasses ecoreClass="arguments.ecore#//Support"/>
+    <genClasses ecoreClass="arguments.ecore#//Attack"/>
   </genPackages>
 </genmodel:GenModel>

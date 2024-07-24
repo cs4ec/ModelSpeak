@@ -107,6 +107,16 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseSupport(Support object) {
+			return createSupportAdapter();
+		}
+
+		@Override
+		public Adapter caseAttack(Attack object) {
+			return createAttackAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -234,6 +244,34 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMechanismExplainsEffectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support <em>Support</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support
+	 * @generated
+	 */
+	public Adapter createSupportAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack <em>Attack</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack
+	 * @generated
+	 */
+	public Adapter createAttackAdapter() {
 		return null;
 	}
 

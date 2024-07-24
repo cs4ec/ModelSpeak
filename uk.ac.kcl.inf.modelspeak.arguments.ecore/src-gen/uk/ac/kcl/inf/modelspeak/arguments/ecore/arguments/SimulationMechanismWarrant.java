@@ -13,6 +13,7 @@ package uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant#getOutputDataOverTime <em>Output Data Over Time</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant#getExplainedEffect <em>Explained Effect</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant#getGeneratingRequirement <em>Generating Requirement</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage#getSimulationMechanismWarrant()
@@ -63,5 +64,27 @@ public interface SimulationMechanismWarrant extends ArgumentElement {
 	 * @generated
 	 */
 	void setExplainedEffect(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Generating Requirement</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Generating Requirement</em>' attribute.
+	 * @see #setGeneratingRequirement(String)
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage#getSimulationMechanismWarrant_GeneratingRequirement()
+	 * @model
+	 * @generated
+	 */
+	String getGeneratingRequirement();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant#getGeneratingRequirement <em>Generating Requirement</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Generating Requirement</em>' attribute.
+	 * @see #getGeneratingRequirement()
+	 * @generated
+	 */
+	void setGeneratingRequirement(String value);
 
 } // SimulationMechanismWarrant

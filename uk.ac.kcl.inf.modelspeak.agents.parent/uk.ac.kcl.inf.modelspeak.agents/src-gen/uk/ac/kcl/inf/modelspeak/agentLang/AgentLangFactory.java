@@ -42,6 +42,15 @@ public interface AgentLangFactory extends EFactory
   Move createMove();
 
   /**
+   * Returns a new object of class '<em>Research Question</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Research Question</em>'.
+   * @generated
+   */
+  ResearchQuestion createResearchQuestion();
+
+  /**
    * Returns a new object of class '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,6 +85,33 @@ public interface AgentLangFactory extends EFactory
    * @generated
    */
   Theory createTheory();
+
+  /**
+   * Returns a new object of class '<em>General Theory</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Theory</em>'.
+   * @generated
+   */
+  GeneralTheory createGeneralTheory();
+
+  /**
+   * Returns a new object of class '<em>Literature Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literature Reference</em>'.
+   * @generated
+   */
+  LiteratureReference createLiteratureReference();
+
+  /**
+   * Returns a new object of class '<em>Propose RQ</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Propose RQ</em>'.
+   * @generated
+   */
+  ProposeRQ createProposeRQ();
 
   /**
    * Returns a new object of class '<em>Propose Requirement</em>'.

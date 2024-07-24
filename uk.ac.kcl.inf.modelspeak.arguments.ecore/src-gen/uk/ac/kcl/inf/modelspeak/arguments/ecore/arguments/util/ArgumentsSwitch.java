@@ -132,6 +132,24 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ArgumentsPackage.SUPPORT: {
+			Support support = (Support) theEObject;
+			T result = caseSupport(support);
+			if (result == null)
+				result = caseArgumentElementRelation(support);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArgumentsPackage.ATTACK: {
+			Attack attack = (Attack) theEObject;
+			T result = caseAttack(attack);
+			if (result == null)
+				result = caseArgumentElementRelation(attack);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -254,6 +272,36 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMechanismExplainsEffect(MechanismExplainsEffect object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Support</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Support</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupport(Support object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attack</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attack</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttack(Attack object) {
 		return null;
 	}
 

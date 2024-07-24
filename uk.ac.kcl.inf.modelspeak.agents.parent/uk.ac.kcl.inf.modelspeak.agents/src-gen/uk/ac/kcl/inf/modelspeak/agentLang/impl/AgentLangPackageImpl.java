@@ -18,15 +18,19 @@ import uk.ac.kcl.inf.modelspeak.agentLang.AttackRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Experiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
+import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
+import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.RedefineRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.ReplaceModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Requirement;
+import uk.ac.kcl.inf.modelspeak.agentLang.ResearchQuestion;
 import uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.RetractRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.ReviseRequirement;
@@ -63,6 +67,13 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass researchQuestionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass modelEClass = null;
 
   /**
@@ -85,6 +96,27 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   private EClass theoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass generalTheoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass literatureReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass proposeRQEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -306,6 +338,39 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
+  public EClass getResearchQuestion()
+  {
+    return researchQuestionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResearchQuestion_Name()
+  {
+    return (EAttribute)researchQuestionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResearchQuestion_Effect()
+  {
+    return (EAttribute)researchQuestionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getModel()
   {
     return modelEClass;
@@ -372,6 +437,17 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
+  public EAttribute getRequirement_DataDescription()
+  {
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getExperiment()
   {
     return experimentEClass;
@@ -427,9 +503,64 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
-  public EAttribute getTheory_Content()
+  public EClass getGeneralTheory()
   {
-    return (EAttribute)theoryEClass.getEStructuralFeatures().get(1);
+    return generalTheoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGeneralTheory_Content()
+  {
+    return (EAttribute)generalTheoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLiteratureReference()
+  {
+    return literatureReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLiteratureReference_Ref()
+  {
+    return (EAttribute)literatureReferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProposeRQ()
+  {
+    return proposeRQEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProposeRQ_Rq()
+  {
+    return (EReference)proposeRQEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -452,6 +583,17 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
   public EReference getProposeRequirement_Requirement()
   {
     return (EReference)proposeRequirementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProposeRequirement_Rq()
+  {
+    return (EReference)proposeRequirementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1007,6 +1149,10 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
 
     moveEClass = createEClass(MOVE);
 
+    researchQuestionEClass = createEClass(RESEARCH_QUESTION);
+    createEAttribute(researchQuestionEClass, RESEARCH_QUESTION__NAME);
+    createEAttribute(researchQuestionEClass, RESEARCH_QUESTION__EFFECT);
+
     modelEClass = createEClass(MODEL);
     createEAttribute(modelEClass, MODEL__NAME);
     createEAttribute(modelEClass, MODEL__CONTENT);
@@ -1014,6 +1160,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     requirementEClass = createEClass(REQUIREMENT);
     createEAttribute(requirementEClass, REQUIREMENT__NAME);
     createEAttribute(requirementEClass, REQUIREMENT__CONTENT);
+    createEAttribute(requirementEClass, REQUIREMENT__DATA_DESCRIPTION);
 
     experimentEClass = createEClass(EXPERIMENT);
     createEAttribute(experimentEClass, EXPERIMENT__NAME);
@@ -1021,10 +1168,19 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
 
     theoryEClass = createEClass(THEORY);
     createEAttribute(theoryEClass, THEORY__NAME);
-    createEAttribute(theoryEClass, THEORY__CONTENT);
+
+    generalTheoryEClass = createEClass(GENERAL_THEORY);
+    createEAttribute(generalTheoryEClass, GENERAL_THEORY__CONTENT);
+
+    literatureReferenceEClass = createEClass(LITERATURE_REFERENCE);
+    createEAttribute(literatureReferenceEClass, LITERATURE_REFERENCE__REF);
+
+    proposeRQEClass = createEClass(PROPOSE_RQ);
+    createEReference(proposeRQEClass, PROPOSE_RQ__RQ);
 
     proposeRequirementEClass = createEClass(PROPOSE_REQUIREMENT);
     createEReference(proposeRequirementEClass, PROPOSE_REQUIREMENT__REQUIREMENT);
+    createEReference(proposeRequirementEClass, PROPOSE_REQUIREMENT__RQ);
 
     attackRequirementEClass = createEClass(ATTACK_REQUIREMENT);
     createEReference(attackRequirementEClass, ATTACK_REQUIREMENT__REQUIREMENT);
@@ -1119,6 +1275,9 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    generalTheoryEClass.getESuperTypes().add(this.getTheory());
+    literatureReferenceEClass.getESuperTypes().add(this.getTheory());
+    proposeRQEClass.getESuperTypes().add(this.getMove());
     proposeRequirementEClass.getESuperTypes().add(this.getMove());
     attackRequirementEClass.getESuperTypes().add(this.getMove());
     redefineRequirementEClass.getESuperTypes().add(this.getMove());
@@ -1143,6 +1302,10 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
 
     initEClass(moveEClass, Move.class, "Move", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(researchQuestionEClass, ResearchQuestion.class, "ResearchQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResearchQuestion_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResearchQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getResearchQuestion_Effect(), ecorePackage.getEString(), "effect", null, 0, 1, ResearchQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModel_Content(), ecorePackage.getEString(), "content", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1150,6 +1313,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRequirement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRequirement_Content(), ecorePackage.getEString(), "content", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_DataDescription(), ecorePackage.getEString(), "dataDescription", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(experimentEClass, Experiment.class, "Experiment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExperiment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Experiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1157,10 +1321,19 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
 
     initEClass(theoryEClass, Theory.class, "Theory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTheory_Name(), ecorePackage.getEString(), "name", null, 0, 1, Theory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTheory_Content(), ecorePackage.getEString(), "content", null, 0, 1, Theory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(generalTheoryEClass, GeneralTheory.class, "GeneralTheory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGeneralTheory_Content(), ecorePackage.getEString(), "content", null, 0, 1, GeneralTheory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(literatureReferenceEClass, LiteratureReference.class, "LiteratureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLiteratureReference_Ref(), ecorePackage.getEString(), "ref", null, 0, 1, LiteratureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(proposeRQEClass, ProposeRQ.class, "ProposeRQ", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProposeRQ_Rq(), this.getResearchQuestion(), null, "rq", null, 0, 1, ProposeRQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(proposeRequirementEClass, ProposeRequirement.class, "ProposeRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProposeRequirement_Requirement(), this.getRequirement(), null, "requirement", null, 0, 1, ProposeRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProposeRequirement_Rq(), this.getResearchQuestion(), null, "rq", null, 0, 1, ProposeRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attackRequirementEClass, AttackRequirement.class, "AttackRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttackRequirement_Requirement(), this.getRequirement(), null, "requirement", null, 0, 1, AttackRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
