@@ -34,6 +34,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.AttackModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
+import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment;
@@ -46,6 +47,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.RetractRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
+import uk.ac.kcl.inf.modelspeak.agentLang.Theory;
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStore;
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory;
 
@@ -127,8 +129,14 @@ public class TheoryStoreGenerator {
   }
 
   private Boolean _updateTheoryStore(final AttackRequirement move) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field content is undefined for the type Theory");
+    String _name = move.getRequirement().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("attackedRequirement", _name);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
+    Theory _theory = move.getTheory();
+    String _content = ((GeneralTheory) _theory).getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    return Boolean.valueOf(this.execute("attackRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final RedefineRequirement move) {
@@ -149,8 +157,15 @@ public class TheoryStoreGenerator {
   }
 
   private Boolean _updateTheoryStore(final SupportRequirement move) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field content is undefined for the type Theory");
+    String _name = move.getRequirement().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("requirementName", _name);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
+    Theory _theory = move.getTheory();
+    String _content = ((GeneralTheory) _theory).getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    return Boolean.valueOf(this.execute("supportRequirement", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final ProposeModel move) {
@@ -165,8 +180,15 @@ public class TheoryStoreGenerator {
   }
 
   private Boolean _updateTheoryStore(final SupportModel move) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field content is undefined for the type Theory");
+    String _name = move.getModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+    Theory _theory = move.getTheory();
+    String _content = ((GeneralTheory) _theory).getContent();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryContents", _content);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryName", _name_1);
+    return Boolean.valueOf(this.execute("supportModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final ReplaceModel move) {
@@ -194,8 +216,15 @@ public class TheoryStoreGenerator {
   }
 
   private Boolean _updateTheoryStore(final AttackModel move) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field content is undefined for the type Theory");
+    String _name = move.getModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+    Theory _theory = move.getTheory();
+    String _content = ((GeneralTheory) _theory).getContent();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryContents", _content);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryName", _name_1);
+    return Boolean.valueOf(this.execute("attackModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final ProposeExperiment move) {
@@ -212,13 +241,27 @@ public class TheoryStoreGenerator {
   }
 
   private Boolean _updateTheoryStore(final SupportExperiment move) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field content is undefined for the type Theory");
+    String _name = move.getExperiment().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("experimentName", _name);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
+    Theory _theory = move.getTheory();
+    String _content = ((GeneralTheory) _theory).getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    return Boolean.valueOf(this.execute("supportExperiment", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final AttackExperiment move) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field content is undefined for the type Theory");
+    String _name = move.getExperiment().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("experimentName", _name);
+    String _name_1 = move.getTheory().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
+    Theory _theory = move.getTheory();
+    String _content = ((GeneralTheory) _theory).getContent();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    return Boolean.valueOf(this.execute("attackExperiment", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
   private Boolean _updateTheoryStore(final RetractExperiment move) {

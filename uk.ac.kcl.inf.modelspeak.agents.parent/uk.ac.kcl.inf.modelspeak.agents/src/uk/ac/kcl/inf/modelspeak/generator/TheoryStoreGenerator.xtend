@@ -34,6 +34,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory
+import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory
 
 /**
  * Generate the theory store corresponding to the current agent dialogue state.
@@ -93,7 +94,7 @@ class TheoryStoreGenerator {
 
 	private dispatch def updateTheoryStore(AttackRequirement move) {
 		'attackRequirement'.execute(#['attackedRequirement' -> move.requirement.name, 'theoryName' -> move.theory.name,
-			'theoryContents' -> move.theory.content])
+			'theoryContents' -> (move.theory as GeneralTheory).content])
 	}
 
 	private dispatch def updateTheoryStore(RedefineRequirement move) {
@@ -109,7 +110,7 @@ class TheoryStoreGenerator {
 	private dispatch def updateTheoryStore(SupportRequirement move) {
 		'supportRequirement'.execute(
 			#['requirementName' -> move.requirement.name, 'theoryName' -> move.theory.name,
-				'theoryContents' -> move.theory.content])
+				'theoryContents' -> (move.theory as GeneralTheory).content])
 	}
 
 	// --------------- Model -----------------
@@ -121,7 +122,7 @@ class TheoryStoreGenerator {
 
 	private dispatch def updateTheoryStore(SupportModel move) {
 		'supportModel'.execute(
-			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.content,
+			#['modelName' -> move.model.name, 'theoryContents' -> (move.theory as GeneralTheory).content,
 				'theoryName' -> move.theory.name])
 	}
 
@@ -139,7 +140,7 @@ class TheoryStoreGenerator {
 
 	private dispatch def updateTheoryStore(AttackModel move) {
 		'attackModel'.execute(
-			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.content,
+			#['modelName' -> move.model.name, 'theoryContents' -> (move.theory as GeneralTheory).content,
 				'theoryName' -> move.theory.name])
 	}
 
@@ -153,13 +154,13 @@ class TheoryStoreGenerator {
 	private dispatch def updateTheoryStore(SupportExperiment move) {
 		'supportExperiment'.execute(
 			#['experimentName' -> move.experiment.name, 'theoryName' -> move.theory.name,
-				'theoryContents' -> move.theory.content])
+				'theoryContents' -> (move.theory as GeneralTheory).content])
 	}
 
 	private dispatch def updateTheoryStore(AttackExperiment move) {
 		'attackExperiment'.execute(
 			#['experimentName' -> move.experiment.name, 'theoryName' -> move.theory.name,
-				'theoryContents' -> move.theory.content])
+				'theoryContents' -> (move.theory as GeneralTheory).content])
 	}
 
 	private dispatch def updateTheoryStore(RetractExperiment move) {
