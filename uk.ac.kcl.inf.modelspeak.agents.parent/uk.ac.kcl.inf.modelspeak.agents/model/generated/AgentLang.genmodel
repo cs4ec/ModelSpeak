@@ -17,6 +17,7 @@
     <genClasses ecoreClass="AgentLang.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//Model/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//Model/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//Model/mechanism"/>
     </genClasses>
     <genClasses ecoreClass="AgentLang.ecore#//Requirement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//Requirement/name"/>

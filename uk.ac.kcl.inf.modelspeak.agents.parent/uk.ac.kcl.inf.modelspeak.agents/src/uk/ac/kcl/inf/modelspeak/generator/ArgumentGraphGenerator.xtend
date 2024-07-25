@@ -19,10 +19,11 @@ import org.eclipse.xtext.resource.SaveOptions
 import uk.ac.kcl.inf.modelspeak.agentLang.Game
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
 import uk.ac.kcl.inf.modelspeak.agentLang.Move
+import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel
+import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory
-import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ
 
 /**
  * Generate the argument graph corresponding to the current agent dialogue state.
@@ -75,12 +76,12 @@ class ArgumentGraphGenerator {
 		throw new UnsupportedOperationException('''Moves of type «move.eClass.name» not yet supported in argument generation.''')
 	}
 
-	// --------------- Requirements -----------------
+	// --------------- Research Questions -----------------
 	private dispatch def updateArgumentGraph(ProposeRQ move) {
 		// Consciously doing nothing: a research question on its own doesn't yet add anything to the argument
 		// TODO: We may wish to extend this at some point with bits of argument about the relevance of the RQ. For now, we consider this out of scope. 
 	}
-	
+
 	// --------------- Requirements -----------------
 	private dispatch def updateArgumentGraph(ProposeRequirement move) {
 		'proposeRequirement'.execute(#[
@@ -104,7 +105,6 @@ class ArgumentGraphGenerator {
 //	private dispatch def updateArgumentGraph(RetractRequirement move) {
 //		'retractRequirement'.execute(#['reqName' -> move.requirement.name])
 //	}
-
 	private dispatch def updateArgumentGraph(SupportRequirement move) {
 		if (move.theory instanceof LiteratureReference) {
 			// FIXME: Probably not actually correct. Should probably require that the data and effect are explicitly quoted again and then make the rule compare that these match the proposed warrant.
@@ -115,13 +115,12 @@ class ArgumentGraphGenerator {
 		}
 	}
 
-//	// --------------- Model -----------------
-//	private dispatch def updateArgumentGraph(ProposeModel move) {
-//		'proposeModel'.execute(
-//			#['requirementName' -> move.requirement.name, 'modelName' -> move.model.name,
-//				'modelContents' -> move.model.content])
-//	}
-//
+	// --------------- Model -----------------
+	private dispatch def updateArgumentGraph(ProposeModel move) {
+		'proposeModel'.execute(
+			#['reqName' -> move.requirement.name, 'modelName' -> move.model.name, 'mechanism' -> move.model.mechanism])
+	}
+
 //	private dispatch def updateArgumentGraph(SupportModel move) {
 //		'supportModel'.execute(
 //			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.content,

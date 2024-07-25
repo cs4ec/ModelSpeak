@@ -170,13 +170,22 @@ public interface AgentLangPackage extends EPackage
   int MODEL__CONTENT = 1;
 
   /**
+   * The feature id for the '<em><b>Mechanism</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__MECHANISM = 2;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RequirementImpl <em>Requirement</em>}' class.
@@ -1108,6 +1117,17 @@ public interface AgentLangPackage extends EPackage
   EAttribute getModel_Content();
 
   /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.agentLang.Model#getMechanism <em>Mechanism</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mechanism</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.Model#getMechanism()
+   * @see #getModel()
+   * @generated
+   */
+  EAttribute getModel_Mechanism();
+
+  /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.Requirement <em>Requirement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1901,6 +1921,14 @@ public interface AgentLangPackage extends EPackage
      * @generated
      */
     EAttribute MODEL__CONTENT = eINSTANCE.getModel_Content();
+
+    /**
+     * The meta object literal for the '<em><b>Mechanism</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODEL__MECHANISM = eINSTANCE.getModel_Mechanism();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RequirementImpl <em>Requirement</em>}' class.

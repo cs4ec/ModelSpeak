@@ -17,7 +17,7 @@ ResearchQuestion:
 ;
     
 Model:
-	name=ID '[' content=STRING ']'
+	name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 ;
 Requirement:
 	name=ID ('[' content=STRING ']')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>' 

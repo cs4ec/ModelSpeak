@@ -33,6 +33,7 @@ import org.eclipse.xtext.xbase.lib.Pair;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
+import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
@@ -146,6 +147,17 @@ public class ArgumentGraphGenerator {
     return Boolean.valueOf(_xifexpression);
   }
 
+  private Boolean _updateArgumentGraph(final ProposeModel move) {
+    String _name = move.getRequirement().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", _name);
+    String _name_1 = move.getModel().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("modelName", _name_1);
+    String _mechanism = move.getModel().getMechanism();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("mechanism", _mechanism);
+    return Boolean.valueOf(this.execute("proposeModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
+  }
+
   private boolean execute(final String ruleName, final List<Pair<String, String>> parameters) {
     boolean _xblockexpression = false;
     {
@@ -164,7 +176,9 @@ public class ArgumentGraphGenerator {
   }
 
   private Boolean updateArgumentGraph(final Move move) {
-    if (move instanceof ProposeRQ) {
+    if (move instanceof ProposeModel) {
+      return _updateArgumentGraph((ProposeModel)move);
+    } else if (move instanceof ProposeRQ) {
       return _updateArgumentGraph((ProposeRQ)move);
     } else if (move instanceof ProposeRequirement) {
       return _updateArgumentGraph((ProposeRequirement)move);

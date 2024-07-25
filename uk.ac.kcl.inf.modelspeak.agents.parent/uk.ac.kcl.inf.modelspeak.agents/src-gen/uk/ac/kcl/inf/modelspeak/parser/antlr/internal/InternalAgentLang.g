@@ -389,15 +389,51 @@ ruleModel returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='['
+		(
+			otherlv_1='['
+			{
+				newLeafNode(otherlv_1, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_1_0());
+			}
+			(
+				(
+					lv_content_2_0=RULE_STRING
+					{
+						newLeafNode(lv_content_2_0, grammarAccess.getModelAccess().getContentSTRINGTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getModelRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"content",
+							lv_content_2_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			otherlv_3=']'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getModelAccess().getRightSquareBracketKeyword_1_2());
+			}
+		)?
+		otherlv_4='<'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_1());
+			newLeafNode(otherlv_4, grammarAccess.getModelAccess().getLessThanSignKeyword_2());
+		}
+		otherlv_5='incorporates'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getModelAccess().getIncorporatesKeyword_3());
+		}
+		otherlv_6='mechanism'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getModelAccess().getMechanismKeyword_4());
 		}
 		(
 			(
-				lv_content_2_0=RULE_STRING
+				lv_mechanism_7_0=RULE_STRING
 				{
-					newLeafNode(lv_content_2_0, grammarAccess.getModelAccess().getContentSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_mechanism_7_0, grammarAccess.getModelAccess().getMechanismSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -405,15 +441,15 @@ ruleModel returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"content",
-						lv_content_2_0,
+						"mechanism",
+						lv_mechanism_7_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3=']'
+		otherlv_8='>'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getRightSquareBracketKeyword_3());
+			newLeafNode(otherlv_8, grammarAccess.getModelAccess().getGreaterThanSignKeyword_6());
 		}
 	)
 ;

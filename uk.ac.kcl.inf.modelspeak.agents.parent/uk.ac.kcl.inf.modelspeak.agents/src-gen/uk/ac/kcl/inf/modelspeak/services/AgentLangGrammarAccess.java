@@ -187,17 +187,24 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cContentAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cContentSTRINGTerminalRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cContentAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cContentSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cContentAssignment_1_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cIncorporatesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cMechanismKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMechanismAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cMechanismSTRINGTerminalRuleCall_5_0 = (RuleCall)cMechanismAssignment_5.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Model:
-		//    name=ID '[' content=STRING ']'
+		//    name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '[' content=STRING ']'
+		//name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -206,17 +213,38 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
+		//('[' content=STRING ']')?
+		public Group getGroup_1() { return cGroup_1; }
+		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
 		
 		//content=STRING
-		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
+		public Assignment getContentAssignment_1_1() { return cContentAssignment_1_1; }
 		
 		//STRING
-		public RuleCall getContentSTRINGTerminalRuleCall_2_0() { return cContentSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getContentSTRINGTerminalRuleCall_1_1_0() { return cContentSTRINGTerminalRuleCall_1_1_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
+		
+		//'<'
+		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
+		
+		//'incorporates'
+		public Keyword getIncorporatesKeyword_3() { return cIncorporatesKeyword_3; }
+		
+		//'mechanism'
+		public Keyword getMechanismKeyword_4() { return cMechanismKeyword_4; }
+		
+		//mechanism=STRING
+		public Assignment getMechanismAssignment_5() { return cMechanismAssignment_5; }
+		
+		//STRING
+		public RuleCall getMechanismSTRINGTerminalRuleCall_5_0() { return cMechanismSTRINGTerminalRuleCall_5_0; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_6() { return cGreaterThanSignKeyword_6; }
 	}
 	public class RequirementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.Requirement");
@@ -1391,7 +1419,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Model:
-	//    name=ID '[' content=STRING ']'
+	//    name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 	//;
 	public ModelElements getModelAccess() {
 		return pModel;

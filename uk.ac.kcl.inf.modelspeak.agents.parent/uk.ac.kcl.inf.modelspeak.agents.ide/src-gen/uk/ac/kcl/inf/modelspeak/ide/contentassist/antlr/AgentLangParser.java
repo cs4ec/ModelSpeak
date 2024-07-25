@@ -35,6 +35,7 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTheoryAccess().getAlternatives(), "rule__Theory__Alternatives");
 			builder.put(grammarAccess.getResearchQuestionAccess().getGroup(), "rule__ResearchQuestion__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+			builder.put(grammarAccess.getModelAccess().getGroup_1(), "rule__Model__Group_1__0");
 			builder.put(grammarAccess.getRequirementAccess().getGroup(), "rule__Requirement__Group__0");
 			builder.put(grammarAccess.getRequirementAccess().getGroup_1(), "rule__Requirement__Group_1__0");
 			builder.put(grammarAccess.getExperimentAccess().getGroup(), "rule__Experiment__Group__0");
@@ -62,7 +63,8 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getResearchQuestionAccess().getNameAssignment_0(), "rule__ResearchQuestion__NameAssignment_0");
 			builder.put(grammarAccess.getResearchQuestionAccess().getEffectAssignment_6(), "rule__ResearchQuestion__EffectAssignment_6");
 			builder.put(grammarAccess.getModelAccess().getNameAssignment_0(), "rule__Model__NameAssignment_0");
-			builder.put(grammarAccess.getModelAccess().getContentAssignment_2(), "rule__Model__ContentAssignment_2");
+			builder.put(grammarAccess.getModelAccess().getContentAssignment_1_1(), "rule__Model__ContentAssignment_1_1");
+			builder.put(grammarAccess.getModelAccess().getMechanismAssignment_5(), "rule__Model__MechanismAssignment_5");
 			builder.put(grammarAccess.getRequirementAccess().getNameAssignment_0(), "rule__Requirement__NameAssignment_0");
 			builder.put(grammarAccess.getRequirementAccess().getContentAssignment_1_1(), "rule__Requirement__ContentAssignment_1_1");
 			builder.put(grammarAccess.getRequirementAccess().getDataDescriptionAssignment_6(), "rule__Requirement__DataDescriptionAssignment_6");

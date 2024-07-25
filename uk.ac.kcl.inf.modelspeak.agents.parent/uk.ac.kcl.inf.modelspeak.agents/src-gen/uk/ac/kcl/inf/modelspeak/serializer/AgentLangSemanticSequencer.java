@@ -326,20 +326,11 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (name=ID content=STRING)
+	 *     (name=ID content=STRING? mechanism=STRING)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.MODEL__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.MODEL__NAME));
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.MODEL__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.MODEL__CONTENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModelAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getModelAccess().getContentSTRINGTerminalRuleCall_2_0(), semanticObject.getContent());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

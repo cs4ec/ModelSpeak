@@ -404,6 +404,17 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
+  public EAttribute getModel_Mechanism()
+  {
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getRequirement()
   {
     return requirementEClass;
@@ -1156,6 +1167,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     modelEClass = createEClass(MODEL);
     createEAttribute(modelEClass, MODEL__NAME);
     createEAttribute(modelEClass, MODEL__CONTENT);
+    createEAttribute(modelEClass, MODEL__MECHANISM);
 
     requirementEClass = createEClass(REQUIREMENT);
     createEAttribute(requirementEClass, REQUIREMENT__NAME);
@@ -1309,6 +1321,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModel_Content(), ecorePackage.getEString(), "content", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModel_Mechanism(), ecorePackage.getEString(), "mechanism", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRequirement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
