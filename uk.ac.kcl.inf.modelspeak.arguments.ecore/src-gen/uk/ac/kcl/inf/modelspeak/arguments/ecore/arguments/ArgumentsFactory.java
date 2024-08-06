@@ -94,6 +94,15 @@ public interface ArgumentsFactory extends EFactory {
 	Attack createAttack();
 
 	/**
+	 * Returns a new object of class '<em>Experiment Results</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Experiment Results</em>'.
+	 * @generated
+	 */
+	ExperimentResults createExperimentResults();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

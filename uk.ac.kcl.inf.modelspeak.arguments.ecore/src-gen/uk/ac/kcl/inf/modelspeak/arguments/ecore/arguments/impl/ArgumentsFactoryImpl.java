@@ -72,6 +72,8 @@ public class ArgumentsFactoryImpl extends EFactoryImpl implements ArgumentsFacto
 			return createSupport();
 		case ArgumentsPackage.ATTACK:
 			return createAttack();
+		case ArgumentsPackage.EXPERIMENT_RESULTS:
+			return createExperimentResults();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -163,6 +165,17 @@ public class ArgumentsFactoryImpl extends EFactoryImpl implements ArgumentsFacto
 	public Attack createAttack() {
 		AttackImpl attack = new AttackImpl();
 		return attack;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ExperimentResults createExperimentResults() {
+		ExperimentResultsImpl experimentResults = new ExperimentResultsImpl();
+		return experimentResults;
 	}
 
 	/**

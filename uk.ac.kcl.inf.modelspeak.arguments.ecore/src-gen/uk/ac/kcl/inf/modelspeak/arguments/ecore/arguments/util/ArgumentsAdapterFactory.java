@@ -117,6 +117,11 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseExperimentResults(ExperimentResults object) {
+			return createExperimentResultsAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -272,6 +277,20 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAttackAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults <em>Experiment Results</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults
+	 * @generated
+	 */
+	public Adapter createExperimentResultsAdapter() {
 		return null;
 	}
 

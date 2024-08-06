@@ -15,6 +15,7 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.MechanismExplainsEffect;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime;
@@ -98,6 +99,13 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	private EClass attackEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass experimentResultsEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -429,6 +437,36 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
+	public EClass getExperimentResults() {
+		return experimentResultsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getExperimentResults_ExperimentName() {
+		return (EAttribute) experimentResultsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getExperimentResults_Results() {
+		return (EAttribute) experimentResultsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ArgumentsFactory getArgumentsFactory() {
 		return (ArgumentsFactory) getEFactoryInstance();
 	}
@@ -488,6 +526,10 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		supportEClass = createEClass(SUPPORT);
 
 		attackEClass = createEClass(ATTACK);
+
+		experimentResultsEClass = createEClass(EXPERIMENT_RESULTS);
+		createEAttribute(experimentResultsEClass, EXPERIMENT_RESULTS__EXPERIMENT_NAME);
+		createEAttribute(experimentResultsEClass, EXPERIMENT_RESULTS__RESULTS);
 	}
 
 	/**
@@ -526,6 +568,7 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		mechanismExplainsEffectEClass.getESuperTypes().add(this.getArgumentElement());
 		supportEClass.getESuperTypes().add(this.getArgumentElementRelation());
 		attackEClass.getESuperTypes().add(this.getArgumentElementRelation());
+		experimentResultsEClass.getESuperTypes().add(this.getArgumentElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(argumentElementEClass, ArgumentElement.class, "ArgumentElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -603,6 +646,15 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		initEClass(supportEClass, Support.class, "Support", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(attackEClass, Attack.class, "Attack", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(experimentResultsEClass, ExperimentResults.class, "ExperimentResults", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExperimentResults_ExperimentName(), ecorePackage.getEString(), "experimentName", null, 0, 1,
+				ExperimentResults.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExperimentResults_Results(), ecorePackage.getEString(), "results", null, 0, 1,
+				ExperimentResults.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

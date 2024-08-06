@@ -43,5 +43,9 @@
     </genClasses>
     <genClasses ecoreClass="arguments.ecore#//Support"/>
     <genClasses ecoreClass="arguments.ecore#//Attack"/>
+    <genClasses ecoreClass="arguments.ecore#//ExperimentResults">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ExperimentResults/experimentName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ExperimentResults/results"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

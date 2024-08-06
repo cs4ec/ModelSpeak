@@ -38,4 +38,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Support" eSuperTypes="#//ArgumentElementRelation"/>
   <eClassifiers xsi:type="ecore:EClass" name="Attack" eSuperTypes="#//ArgumentElementRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExperimentResults" eSuperTypes="#//ArgumentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="experimentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="results" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

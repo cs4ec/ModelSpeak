@@ -1,9 +1,12 @@
 ProposeRQ(rq1[What mechanism best explains "LRP6 receptor internalisation"])
-ProposeRequirement (r1["First requirement"]<Models must replicate "time data of LRP receptor internalisation">, rq1)
+ProposeRequirement (r1["First requirement"]
+	                  <Models must replicate "time data of LRP receptor internalisation">, 
+	                rq1)
 SupportRequirement (r1, ref1{"Yamamoto et al. (2006)"})
 ProposeModel(m1["First model"]<incorporates mechanism "Simple internalisation mechanism">, r1)
+CounterModel(m1, e1["Some data not matching time data of LRP receptor internalisation"], r1)
+
 //AttackModel(m1, t1["Attack on model formulation"])
 //ReplaceModel(m1, m2["Refined model"])
 //RedefineRequirement(r1, r1Prime["First requirement, refined"])
 //SupportModel(m1, t2["Supportive theory"])
-//CounterModel(m1, e1["An experiment"], r1)

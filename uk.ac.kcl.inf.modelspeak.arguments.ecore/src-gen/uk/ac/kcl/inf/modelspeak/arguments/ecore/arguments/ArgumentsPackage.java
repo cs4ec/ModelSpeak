@@ -535,6 +535,52 @@ public interface ArgumentsPackage extends EPackage {
 	int ATTACK_OPERATION_COUNT = ARGUMENT_ELEMENT_RELATION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ExperimentResultsImpl <em>Experiment Results</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ExperimentResultsImpl
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getExperimentResults()
+	 * @generated
+	 */
+	int EXPERIMENT_RESULTS = 10;
+
+	/**
+	 * The feature id for the '<em><b>Experiment Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENT_RESULTS__EXPERIMENT_NAME = ARGUMENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Results</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENT_RESULTS__RESULTS = ARGUMENT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Experiment Results</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENT_RESULTS_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Experiment Results</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENT_RESULTS_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement <em>Argument Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -811,6 +857,38 @@ public interface ArgumentsPackage extends EPackage {
 	EClass getAttack();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults <em>Experiment Results</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Experiment Results</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults
+	 * @generated
+	 */
+	EClass getExperimentResults();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults#getExperimentName <em>Experiment Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Experiment Name</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults#getExperimentName()
+	 * @see #getExperimentResults()
+	 * @generated
+	 */
+	EAttribute getExperimentResults_ExperimentName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults#getResults <em>Results</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Results</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults#getResults()
+	 * @see #getExperimentResults()
+	 * @generated
+	 */
+	EAttribute getExperimentResults_Results();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1064,6 +1142,32 @@ public interface ArgumentsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ATTACK = eINSTANCE.getAttack();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ExperimentResultsImpl <em>Experiment Results</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ExperimentResultsImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getExperimentResults()
+		 * @generated
+		 */
+		EClass EXPERIMENT_RESULTS = eINSTANCE.getExperimentResults();
+
+		/**
+		 * The meta object literal for the '<em><b>Experiment Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXPERIMENT_RESULTS__EXPERIMENT_NAME = eINSTANCE.getExperimentResults_ExperimentName();
+
+		/**
+		 * The meta object literal for the '<em><b>Results</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXPERIMENT_RESULTS__RESULTS = eINSTANCE.getExperimentResults_Results();
 
 	}
 

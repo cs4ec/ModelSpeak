@@ -30,6 +30,7 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
+import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
@@ -158,6 +159,19 @@ public class ArgumentGraphGenerator {
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
+  private Boolean _updateArgumentGraph(final CounterModel move) {
+    String _name = move.getModel().getName();
+    Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+    String _name_1 = move.getRequirement().getName();
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("reqName", _name_1);
+    String _name_2 = move.getExperiment().getName();
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("experimentName", _name_2);
+    String _content = move.getExperiment().getContent();
+    Pair<String, String> _mappedTo_3 = Pair.<String, String>of("experimentData", _content);
+    return Boolean.valueOf(this.execute("counterModel", 
+      Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2, _mappedTo_3))));
+  }
+
   private boolean execute(final String ruleName, final List<Pair<String, String>> parameters) {
     boolean _xblockexpression = false;
     {
@@ -176,7 +190,9 @@ public class ArgumentGraphGenerator {
   }
 
   private Boolean updateArgumentGraph(final Move move) {
-    if (move instanceof ProposeModel) {
+    if (move instanceof CounterModel) {
+      return _updateArgumentGraph((CounterModel)move);
+    } else if (move instanceof ProposeModel) {
       return _updateArgumentGraph((ProposeModel)move);
     } else if (move instanceof ProposeRQ) {
       return _updateArgumentGraph((ProposeRQ)move);

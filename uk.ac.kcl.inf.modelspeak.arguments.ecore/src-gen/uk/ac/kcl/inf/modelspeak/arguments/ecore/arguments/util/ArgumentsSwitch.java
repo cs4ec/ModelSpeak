@@ -150,6 +150,15 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ArgumentsPackage.EXPERIMENT_RESULTS: {
+			ExperimentResults experimentResults = (ExperimentResults) theEObject;
+			T result = caseExperimentResults(experimentResults);
+			if (result == null)
+				result = caseArgumentElement(experimentResults);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -302,6 +311,21 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAttack(Attack object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Experiment Results</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Experiment Results</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExperimentResults(ExperimentResults object) {
 		return null;
 	}
 

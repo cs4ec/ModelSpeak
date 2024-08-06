@@ -16,6 +16,7 @@ import org.eclipse.emf.henshin.model.Rule
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.resource.SaveOptions
+import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel
 import uk.ac.kcl.inf.modelspeak.agentLang.Game
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
 import uk.ac.kcl.inf.modelspeak.agentLang.Move
@@ -132,13 +133,12 @@ class ArgumentGraphGenerator {
 //			#['newModelName' -> move.newModel.name, 'newModelContents' -> move.newModel.content,
 //				'oldModelName' -> move.model.name])
 //	}
-//
-//	private dispatch def updateArgumentGraph(CounterModel move) {
-//		'counterModel'.execute(
-//			#['modelName' -> move.model.name, 'requirementName' -> move.requirement.name,
-//				'experimentName' -> move.experiment.name, 'experimentContents' -> move.experiment.content])
-//	}
-//
+	private dispatch def updateArgumentGraph(CounterModel move) {
+		'counterModel'.execute(
+			#['modelName' -> move.model.name, 'reqName' -> move.requirement.name,
+				'experimentName' -> move.experiment.name, 'experimentData' -> move.experiment.content])
+	}
+
 //	private dispatch def updateArgumentGraph(AttackModel move) {
 //		'attackModel'.execute(
 //			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.content,

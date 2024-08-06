@@ -257,6 +257,29 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExperimentResultsItemProvider experimentResultsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExperimentResultsAdapter() {
+		if (experimentResultsItemProvider == null) {
+			experimentResultsItemProvider = new ExperimentResultsItemProvider(this);
+		}
+
+		return experimentResultsItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,6 +400,8 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 			supportItemProvider.dispose();
 		if (attackItemProvider != null)
 			attackItemProvider.dispose();
+		if (experimentResultsItemProvider != null)
+			experimentResultsItemProvider.dispose();
 	}
 
 }
