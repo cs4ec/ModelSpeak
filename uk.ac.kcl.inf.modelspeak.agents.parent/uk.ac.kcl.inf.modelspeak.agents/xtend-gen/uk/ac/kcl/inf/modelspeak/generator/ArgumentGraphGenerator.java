@@ -41,6 +41,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.generate.Argument2PlatoGenerator;
 
 /**
  * Generate the argument graph corresponding to the current agent dialogue state.
@@ -66,20 +67,20 @@ public class ArgumentGraphGenerator {
     EObject _head = IterableExtensions.<EObject>head(rulesResource.getContents());
     this.rules = ((org.eclipse.emf.henshin.model.Module) _head).getAllRules();
     final Consumer<Game> _function = (Game it) -> {
-      this.generateArgumentGraph(it, resource, fsa);
+      this.generateArgumentGraph(it, resource, fsa, context);
     };
     Iterables.<Game>filter(resource.getContents(), Game.class).forEach(_function);
   }
 
-  public void generateArgumentGraph(final Game game, final Resource resource, final IFileSystemAccess2 fsa) {
+  public void generateArgumentGraph(final Game game, final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     try {
-      final ArgumentGraph theoryStore = this.factory.createArgumentGraph();
+      final ArgumentGraph argumentGraph = this.factory.createArgumentGraph();
       final URI outputUri = fsa.getURI(this.getArgumentGraphFileName(resource));
       final ResourceSet resourceSet = resource.getResourceSet();
       final Resource newResource = resourceSet.createResource(outputUri);
       EList<EObject> _contents = newResource.getContents();
-      _contents.add(theoryStore);
-      EGraphImpl _eGraphImpl = new EGraphImpl(theoryStore);
+      _contents.add(argumentGraph);
+      EGraphImpl _eGraphImpl = new EGraphImpl(argumentGraph);
       this.modelGraph = _eGraphImpl;
       this.ruleRunner.setEGraph(this.modelGraph);
       final Consumer<Move> _function = (Move it) -> {
@@ -87,6 +88,7 @@ public class ArgumentGraphGenerator {
       };
       game.getMoves().forEach(_function);
       newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
+      new Argument2PlatoGenerator().doGenerate(newResource, fsa, context);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
