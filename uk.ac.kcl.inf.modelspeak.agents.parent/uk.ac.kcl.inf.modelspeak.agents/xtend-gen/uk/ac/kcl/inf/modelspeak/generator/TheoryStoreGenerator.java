@@ -20,6 +20,7 @@ import org.eclipse.emf.henshin.interpreter.InterpreterFactory;
 import org.eclipse.emf.henshin.interpreter.RuleApplication;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.model.Rule;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.resource.SaveOptions;
@@ -35,6 +36,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.AttackRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment;
@@ -133,9 +135,8 @@ public class TheoryStoreGenerator {
     Pair<String, String> _mappedTo = Pair.<String, String>of("attackedRequirement", _name);
     String _name_1 = move.getTheory().getName();
     Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
-    Theory _theory = move.getTheory();
-    String _content = ((GeneralTheory) _theory).getContent();
-    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    String _renderTheory = this.renderTheory(move.getTheory());
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _renderTheory);
     return Boolean.valueOf(this.execute("attackRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
 
@@ -161,9 +162,8 @@ public class TheoryStoreGenerator {
     Pair<String, String> _mappedTo = Pair.<String, String>of("requirementName", _name);
     String _name_1 = move.getTheory().getName();
     Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
-    Theory _theory = move.getTheory();
-    String _content = ((GeneralTheory) _theory).getContent();
-    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    String _renderTheory = this.renderTheory(move.getTheory());
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _renderTheory);
     return Boolean.valueOf(this.execute("supportRequirement", 
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
@@ -182,9 +182,8 @@ public class TheoryStoreGenerator {
   private Boolean _updateTheoryStore(final SupportModel move) {
     String _name = move.getModel().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
-    Theory _theory = move.getTheory();
-    String _content = ((GeneralTheory) _theory).getContent();
-    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryContents", _content);
+    String _renderTheory = this.renderTheory(move.getTheory());
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryContents", _renderTheory);
     String _name_1 = move.getTheory().getName();
     Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryName", _name_1);
     return Boolean.valueOf(this.execute("supportModel", 
@@ -218,9 +217,8 @@ public class TheoryStoreGenerator {
   private Boolean _updateTheoryStore(final AttackModel move) {
     String _name = move.getModel().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
-    Theory _theory = move.getTheory();
-    String _content = ((GeneralTheory) _theory).getContent();
-    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryContents", _content);
+    String _renderTheory = this.renderTheory(move.getTheory());
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryContents", _renderTheory);
     String _name_1 = move.getTheory().getName();
     Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryName", _name_1);
     return Boolean.valueOf(this.execute("attackModel", 
@@ -245,9 +243,8 @@ public class TheoryStoreGenerator {
     Pair<String, String> _mappedTo = Pair.<String, String>of("experimentName", _name);
     String _name_1 = move.getTheory().getName();
     Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
-    Theory _theory = move.getTheory();
-    String _content = ((GeneralTheory) _theory).getContent();
-    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    String _renderTheory = this.renderTheory(move.getTheory());
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _renderTheory);
     return Boolean.valueOf(this.execute("supportExperiment", 
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
@@ -257,9 +254,8 @@ public class TheoryStoreGenerator {
     Pair<String, String> _mappedTo = Pair.<String, String>of("experimentName", _name);
     String _name_1 = move.getTheory().getName();
     Pair<String, String> _mappedTo_1 = Pair.<String, String>of("theoryName", _name_1);
-    Theory _theory = move.getTheory();
-    String _content = ((GeneralTheory) _theory).getContent();
-    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _content);
+    String _renderTheory = this.renderTheory(move.getTheory());
+    Pair<String, String> _mappedTo_2 = Pair.<String, String>of("theoryContents", _renderTheory);
     return Boolean.valueOf(this.execute("attackExperiment", 
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
   }
@@ -274,6 +270,23 @@ public class TheoryStoreGenerator {
     String _name = move.getModel().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
     return Boolean.valueOf(this.execute("notConvinced", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo))));
+  }
+
+  private String _renderTheory(final Theory t) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Theories of type ");
+    String _name = t.eClass().getName();
+    _builder.append(_name);
+    _builder.append(" not currently supported by theory-store generator.");
+    throw new UnsupportedOperationException(_builder.toString());
+  }
+
+  private String _renderTheory(final GeneralTheory gt) {
+    return gt.getContent();
+  }
+
+  private String _renderTheory(final LiteratureReference lr) {
+    return lr.getRef();
   }
 
   private boolean execute(final String ruleName, final List<Pair<String, String>> parameters) {
@@ -329,6 +342,19 @@ public class TheoryStoreGenerator {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(move).toString());
+    }
+  }
+
+  private String renderTheory(final Theory gt) {
+    if (gt instanceof GeneralTheory) {
+      return _renderTheory((GeneralTheory)gt);
+    } else if (gt instanceof LiteratureReference) {
+      return _renderTheory((LiteratureReference)gt);
+    } else if (gt != null) {
+      return _renderTheory(gt);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(gt).toString());
     }
   }
 }

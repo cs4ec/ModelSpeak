@@ -1,2 +1,4 @@
 Requirement r1 { "First requirement" }
-Model m2 { "Refined model" } -> r1
+Theory ref1 { "Yamamoto et al. (2006)" } -> r1
+Model m1 { "First model" } -> r1
+Experiment e1 { "Some data not matching time data of LRP receptor internalisation" } -> m1 -> r1
