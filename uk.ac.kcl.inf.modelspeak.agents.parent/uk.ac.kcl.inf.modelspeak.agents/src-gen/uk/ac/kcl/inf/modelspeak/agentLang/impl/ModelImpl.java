@@ -23,6 +23,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Model;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ModelImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ModelImpl#getMechanism <em>Mechanism</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +69,26 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected String content = CONTENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMechanism()
+   * @generated
+   * @ordered
+   */
+  protected static final String MECHANISM_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMechanism()
+   * @generated
+   * @ordered
+   */
+  protected String mechanism = MECHANISM_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +167,31 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public String getMechanism()
+  {
+    return mechanism;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMechanism(String newMechanism)
+  {
+    String oldMechanism = mechanism;
+    mechanism = newMechanism;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AgentLangPackage.MODEL__MECHANISM, oldMechanism, mechanism));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -154,6 +200,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getName();
       case AgentLangPackage.MODEL__CONTENT:
         return getContent();
+      case AgentLangPackage.MODEL__MECHANISM:
+        return getMechanism();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -173,6 +221,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case AgentLangPackage.MODEL__CONTENT:
         setContent((String)newValue);
+        return;
+      case AgentLangPackage.MODEL__MECHANISM:
+        setMechanism((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,6 +245,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case AgentLangPackage.MODEL__CONTENT:
         setContent(CONTENT_EDEFAULT);
         return;
+      case AgentLangPackage.MODEL__MECHANISM:
+        setMechanism(MECHANISM_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -212,6 +266,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AgentLangPackage.MODEL__CONTENT:
         return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+      case AgentLangPackage.MODEL__MECHANISM:
+        return MECHANISM_EDEFAULT == null ? mechanism != null : !MECHANISM_EDEFAULT.equals(mechanism);
     }
     return super.eIsSet(featureID);
   }
@@ -231,6 +287,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     result.append(name);
     result.append(", content: ");
     result.append(content);
+    result.append(", mechanism: ");
+    result.append(mechanism);
     result.append(')');
     return result.toString();
   }

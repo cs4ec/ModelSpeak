@@ -21,6 +21,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.AttackModel
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel
 import uk.ac.kcl.inf.modelspeak.agentLang.Game
+import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory
 import uk.ac.kcl.inf.modelspeak.agentLang.Move
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment
@@ -33,7 +34,9 @@ import uk.ac.kcl.inf.modelspeak.agentLang.RetractRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
+import uk.ac.kcl.inf.modelspeak.agentLang.Theory
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
 
 /**
  * Generate the theory store corresponding to the current agent dialogue state.
@@ -93,7 +96,7 @@ class TheoryStoreGenerator {
 
 	private dispatch def updateTheoryStore(AttackRequirement move) {
 		'attackRequirement'.execute(#['attackedRequirement' -> move.requirement.name, 'theoryName' -> move.theory.name,
-			'theoryContents' -> move.theory.content])
+			'theoryContents' -> move.theory.renderTheory])
 	}
 
 	private dispatch def updateTheoryStore(RedefineRequirement move) {
@@ -109,7 +112,7 @@ class TheoryStoreGenerator {
 	private dispatch def updateTheoryStore(SupportRequirement move) {
 		'supportRequirement'.execute(
 			#['requirementName' -> move.requirement.name, 'theoryName' -> move.theory.name,
-				'theoryContents' -> move.theory.content])
+				'theoryContents' -> move.theory.renderTheory])
 	}
 
 	// --------------- Model -----------------
@@ -121,7 +124,7 @@ class TheoryStoreGenerator {
 
 	private dispatch def updateTheoryStore(SupportModel move) {
 		'supportModel'.execute(
-			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.content,
+			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.renderTheory,
 				'theoryName' -> move.theory.name])
 	}
 
@@ -139,7 +142,7 @@ class TheoryStoreGenerator {
 
 	private dispatch def updateTheoryStore(AttackModel move) {
 		'attackModel'.execute(
-			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.content,
+			#['modelName' -> move.model.name, 'theoryContents' -> move.theory.renderTheory,
 				'theoryName' -> move.theory.name])
 	}
 
@@ -153,13 +156,13 @@ class TheoryStoreGenerator {
 	private dispatch def updateTheoryStore(SupportExperiment move) {
 		'supportExperiment'.execute(
 			#['experimentName' -> move.experiment.name, 'theoryName' -> move.theory.name,
-				'theoryContents' -> move.theory.content])
+				'theoryContents' -> move.theory.renderTheory])
 	}
 
 	private dispatch def updateTheoryStore(AttackExperiment move) {
 		'attackExperiment'.execute(
 			#['experimentName' -> move.experiment.name, 'theoryName' -> move.theory.name,
-				'theoryContents' -> move.theory.content])
+				'theoryContents' -> move.theory.renderTheory])
 	}
 
 	private dispatch def updateTheoryStore(RetractExperiment move) {
@@ -169,6 +172,13 @@ class TheoryStoreGenerator {
 	private dispatch def updateTheoryStore(NotConvinced move) {
 		'notConvinced'.execute(#['modelName' -> move.model.name])
 	}
+
+	// theory handling
+	private dispatch def renderTheory(Theory t) {
+		throw new UnsupportedOperationException('''Theories of type «t.eClass.name» not currently supported by theory-store generator.''')
+	}
+	private dispatch def renderTheory(GeneralTheory gt) { gt.content }
+	private dispatch def renderTheory(LiteratureReference lr) { lr.ref }
 
 	// -- rule execution --
 	private def execute(String ruleName, List<Pair<String, String>> parameters) {

@@ -23,6 +23,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Requirement;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RequirementImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RequirementImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RequirementImpl#getDataDescription <em>Data Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +69,26 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
    * @ordered
    */
   protected String content = CONTENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDataDescription() <em>Data Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDataDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DATA_DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDataDescription() <em>Data Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDataDescription()
+   * @generated
+   * @ordered
+   */
+  protected String dataDescription = DATA_DESCRIPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +167,31 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
    * @generated
    */
   @Override
+  public String getDataDescription()
+  {
+    return dataDescription;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDataDescription(String newDataDescription)
+  {
+    String oldDataDescription = dataDescription;
+    dataDescription = newDataDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AgentLangPackage.REQUIREMENT__DATA_DESCRIPTION, oldDataDescription, dataDescription));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -154,6 +200,8 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
         return getName();
       case AgentLangPackage.REQUIREMENT__CONTENT:
         return getContent();
+      case AgentLangPackage.REQUIREMENT__DATA_DESCRIPTION:
+        return getDataDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -173,6 +221,9 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
         return;
       case AgentLangPackage.REQUIREMENT__CONTENT:
         setContent((String)newValue);
+        return;
+      case AgentLangPackage.REQUIREMENT__DATA_DESCRIPTION:
+        setDataDescription((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,6 +245,9 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
       case AgentLangPackage.REQUIREMENT__CONTENT:
         setContent(CONTENT_EDEFAULT);
         return;
+      case AgentLangPackage.REQUIREMENT__DATA_DESCRIPTION:
+        setDataDescription(DATA_DESCRIPTION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -212,6 +266,8 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AgentLangPackage.REQUIREMENT__CONTENT:
         return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+      case AgentLangPackage.REQUIREMENT__DATA_DESCRIPTION:
+        return DATA_DESCRIPTION_EDEFAULT == null ? dataDescription != null : !DATA_DESCRIPTION_EDEFAULT.equals(dataDescription);
     }
     return super.eIsSet(featureID);
   }
@@ -231,6 +287,8 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
     result.append(name);
     result.append(", content: ");
     result.append(content);
+    result.append(", dataDescription: ");
+    result.append(dataDescription);
     result.append(')');
     return result.toString();
   }

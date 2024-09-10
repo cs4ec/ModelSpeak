@@ -6,27 +6,43 @@ Game:
     moves+=Move*;
 
 Move:
+	ProposeRQ |
     ProposeRequirement | AttackRequirement | RedefineRequirement | RetractRequirement | 
     SupportRequirement | ProposeModel | SupportModel | ReplaceModel | CounterModel | 
     AttackModel | ReviseRequirement | ProposeExperiment | SupportExperiment | 
     AttackExperiment | RetractExperiment | StudyDone | NotConvinced;
     
+ResearchQuestion:
+	name=ID '[' 'What' 'mechanism' 'best' 'explains' effect=STRING ']'
+;
+    
 Model:
-	name=ID '[' content=STRING ']'
+	name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 ;
 Requirement:
-	name=ID '[' content=STRING ']'
+	name=ID ('[' content=STRING ']')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>' 
 ;
 
 Experiment:
 	name=ID '[' content=STRING ']'
 ;
 Theory:
+	GeneralTheory | LiteratureReference
+;
+
+GeneralTheory:
 	name=ID '[' content=STRING ']'
 ;
 
+LiteratureReference:
+	name=ID '{' ref=STRING '}'
+;
+
+ProposeRQ:
+	'ProposeRQ' '(' rq = ResearchQuestion ')';
+
 ProposeRequirement:
-    'ProposeRequirement' '(' requirement=Requirement ')';
+    'ProposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')';
 
 AttackRequirement:
     'AttackRequirement' '(' requirement=[Requirement] ',' theory=Theory ')';

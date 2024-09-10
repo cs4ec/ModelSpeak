@@ -4,7 +4,6 @@ package uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -15,12 +14,14 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelatio
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.MechanismExplainsEffect;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime;
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.StandardSimulationWarrant;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,7 +91,21 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum relationshipTypeEEnum = null;
+	private EClass supportEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attackEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass experimentResultsEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -212,18 +227,8 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getArgumentElementRelation_Type() {
-		return (EAttribute) argumentElementRelationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getArgumentElementRelation_Evidence() {
-		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(1);
+		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -233,7 +238,7 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 */
 	@Override
 	public EReference getArgumentElementRelation_Warrant() {
-		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(2);
+		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -243,7 +248,7 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 */
 	@Override
 	public EReference getArgumentElementRelation_Claim() {
-		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(3);
+		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -274,6 +279,16 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	@Override
 	public EAttribute getSimulationMechanismWarrant_ExplainedEffect() {
 		return (EAttribute) simulationMechanismWarrantEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSimulationMechanismWarrant_GeneratingRequirement() {
+		return (EAttribute) simulationMechanismWarrantEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -402,8 +417,48 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
-	public EEnum getRelationshipType() {
-		return relationshipTypeEEnum;
+	public EClass getSupport() {
+		return supportEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAttack() {
+		return attackEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getExperimentResults() {
+		return experimentResultsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getExperimentResults_ExperimentName() {
+		return (EAttribute) experimentResultsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getExperimentResults_Results() {
+		return (EAttribute) experimentResultsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -443,7 +498,6 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		createEReference(argumentGraphEClass, ARGUMENT_GRAPH__RELATIONS);
 
 		argumentElementRelationEClass = createEClass(ARGUMENT_ELEMENT_RELATION);
-		createEAttribute(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__TYPE);
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__EVIDENCE);
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__WARRANT);
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__CLAIM);
@@ -451,6 +505,7 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		simulationMechanismWarrantEClass = createEClass(SIMULATION_MECHANISM_WARRANT);
 		createEAttribute(simulationMechanismWarrantEClass, SIMULATION_MECHANISM_WARRANT__OUTPUT_DATA_OVER_TIME);
 		createEAttribute(simulationMechanismWarrantEClass, SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT);
+		createEAttribute(simulationMechanismWarrantEClass, SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT);
 
 		standardSimulationWarrantEClass = createEClass(STANDARD_SIMULATION_WARRANT);
 
@@ -468,8 +523,13 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		createEAttribute(mechanismExplainsEffectEClass, MECHANISM_EXPLAINS_EFFECT__MECHANISM);
 		createEAttribute(mechanismExplainsEffectEClass, MECHANISM_EXPLAINS_EFFECT__EXPLAINED_EFFECT);
 
-		// Create enums
-		relationshipTypeEEnum = createEEnum(RELATIONSHIP_TYPE);
+		supportEClass = createEClass(SUPPORT);
+
+		attackEClass = createEClass(ATTACK);
+
+		experimentResultsEClass = createEClass(EXPERIMENT_RESULTS);
+		createEAttribute(experimentResultsEClass, EXPERIMENT_RESULTS__EXPERIMENT_NAME);
+		createEAttribute(experimentResultsEClass, EXPERIMENT_RESULTS__RESULTS);
 	}
 
 	/**
@@ -506,6 +566,9 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		literatureEvidenceEClass.getESuperTypes().add(this.getArgumentElement());
 		modelMatchesDataOverTimeEClass.getESuperTypes().add(this.getArgumentElement());
 		mechanismExplainsEffectEClass.getESuperTypes().add(this.getArgumentElement());
+		supportEClass.getESuperTypes().add(this.getArgumentElementRelation());
+		attackEClass.getESuperTypes().add(this.getArgumentElementRelation());
+		experimentResultsEClass.getESuperTypes().add(this.getArgumentElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(argumentElementEClass, ArgumentElement.class, "ArgumentElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -520,11 +583,8 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 				ArgumentGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(argumentElementRelationEClass, ArgumentElementRelation.class, "ArgumentElementRelation",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArgumentElementRelation_Type(), this.getRelationshipType(), "type", null, 0, 1,
-				ArgumentElementRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(argumentElementRelationEClass, ArgumentElementRelation.class, "ArgumentElementRelation", IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArgumentElementRelation_Evidence(), this.getArgumentElement(), null, "evidence", null, 1, 1,
 				ArgumentElementRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -543,6 +603,9 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		initEAttribute(getSimulationMechanismWarrant_ExplainedEffect(), ecorePackage.getEString(), "explainedEffect",
 				null, 0, 1, SimulationMechanismWarrant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimulationMechanismWarrant_GeneratingRequirement(), ecorePackage.getEString(),
+				"generatingRequirement", null, 0, 1, SimulationMechanismWarrant.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(standardSimulationWarrantEClass, StandardSimulationWarrant.class, "StandardSimulationWarrant",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -580,10 +643,18 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 				0, 1, MechanismExplainsEffect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(relationshipTypeEEnum, RelationshipType.class, "RelationshipType");
-		addEEnumLiteral(relationshipTypeEEnum, RelationshipType.SUPPORT);
-		addEEnumLiteral(relationshipTypeEEnum, RelationshipType.ATTACK);
+		initEClass(supportEClass, Support.class, "Support", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(attackEClass, Attack.class, "Attack", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(experimentResultsEClass, ExperimentResults.class, "ExperimentResults", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExperimentResults_ExperimentName(), ecorePackage.getEString(), "experimentName", null, 0, 1,
+				ExperimentResults.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExperimentResults_Results(), ecorePackage.getEString(), "results", null, 0, 1,
+				ExperimentResults.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -32,10 +32,16 @@ public class AgentLangParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, AgentLangGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getMoveAccess().getAlternatives(), "rule__Move__Alternatives");
+			builder.put(grammarAccess.getTheoryAccess().getAlternatives(), "rule__Theory__Alternatives");
+			builder.put(grammarAccess.getResearchQuestionAccess().getGroup(), "rule__ResearchQuestion__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+			builder.put(grammarAccess.getModelAccess().getGroup_1(), "rule__Model__Group_1__0");
 			builder.put(grammarAccess.getRequirementAccess().getGroup(), "rule__Requirement__Group__0");
+			builder.put(grammarAccess.getRequirementAccess().getGroup_1(), "rule__Requirement__Group_1__0");
 			builder.put(grammarAccess.getExperimentAccess().getGroup(), "rule__Experiment__Group__0");
-			builder.put(grammarAccess.getTheoryAccess().getGroup(), "rule__Theory__Group__0");
+			builder.put(grammarAccess.getGeneralTheoryAccess().getGroup(), "rule__GeneralTheory__Group__0");
+			builder.put(grammarAccess.getLiteratureReferenceAccess().getGroup(), "rule__LiteratureReference__Group__0");
+			builder.put(grammarAccess.getProposeRQAccess().getGroup(), "rule__ProposeRQ__Group__0");
 			builder.put(grammarAccess.getProposeRequirementAccess().getGroup(), "rule__ProposeRequirement__Group__0");
 			builder.put(grammarAccess.getAttackRequirementAccess().getGroup(), "rule__AttackRequirement__Group__0");
 			builder.put(grammarAccess.getRedefineRequirementAccess().getGroup(), "rule__RedefineRequirement__Group__0");
@@ -54,15 +60,23 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStudyDoneAccess().getGroup(), "rule__StudyDone__Group__0");
 			builder.put(grammarAccess.getNotConvincedAccess().getGroup(), "rule__NotConvinced__Group__0");
 			builder.put(grammarAccess.getGameAccess().getMovesAssignment(), "rule__Game__MovesAssignment");
+			builder.put(grammarAccess.getResearchQuestionAccess().getNameAssignment_0(), "rule__ResearchQuestion__NameAssignment_0");
+			builder.put(grammarAccess.getResearchQuestionAccess().getEffectAssignment_6(), "rule__ResearchQuestion__EffectAssignment_6");
 			builder.put(grammarAccess.getModelAccess().getNameAssignment_0(), "rule__Model__NameAssignment_0");
-			builder.put(grammarAccess.getModelAccess().getContentAssignment_2(), "rule__Model__ContentAssignment_2");
+			builder.put(grammarAccess.getModelAccess().getContentAssignment_1_1(), "rule__Model__ContentAssignment_1_1");
+			builder.put(grammarAccess.getModelAccess().getMechanismAssignment_5(), "rule__Model__MechanismAssignment_5");
 			builder.put(grammarAccess.getRequirementAccess().getNameAssignment_0(), "rule__Requirement__NameAssignment_0");
-			builder.put(grammarAccess.getRequirementAccess().getContentAssignment_2(), "rule__Requirement__ContentAssignment_2");
+			builder.put(grammarAccess.getRequirementAccess().getContentAssignment_1_1(), "rule__Requirement__ContentAssignment_1_1");
+			builder.put(grammarAccess.getRequirementAccess().getDataDescriptionAssignment_6(), "rule__Requirement__DataDescriptionAssignment_6");
 			builder.put(grammarAccess.getExperimentAccess().getNameAssignment_0(), "rule__Experiment__NameAssignment_0");
 			builder.put(grammarAccess.getExperimentAccess().getContentAssignment_2(), "rule__Experiment__ContentAssignment_2");
-			builder.put(grammarAccess.getTheoryAccess().getNameAssignment_0(), "rule__Theory__NameAssignment_0");
-			builder.put(grammarAccess.getTheoryAccess().getContentAssignment_2(), "rule__Theory__ContentAssignment_2");
+			builder.put(grammarAccess.getGeneralTheoryAccess().getNameAssignment_0(), "rule__GeneralTheory__NameAssignment_0");
+			builder.put(grammarAccess.getGeneralTheoryAccess().getContentAssignment_2(), "rule__GeneralTheory__ContentAssignment_2");
+			builder.put(grammarAccess.getLiteratureReferenceAccess().getNameAssignment_0(), "rule__LiteratureReference__NameAssignment_0");
+			builder.put(grammarAccess.getLiteratureReferenceAccess().getRefAssignment_2(), "rule__LiteratureReference__RefAssignment_2");
+			builder.put(grammarAccess.getProposeRQAccess().getRqAssignment_2(), "rule__ProposeRQ__RqAssignment_2");
 			builder.put(grammarAccess.getProposeRequirementAccess().getRequirementAssignment_2(), "rule__ProposeRequirement__RequirementAssignment_2");
+			builder.put(grammarAccess.getProposeRequirementAccess().getRqAssignment_4(), "rule__ProposeRequirement__RqAssignment_4");
 			builder.put(grammarAccess.getAttackRequirementAccess().getRequirementAssignment_2(), "rule__AttackRequirement__RequirementAssignment_2");
 			builder.put(grammarAccess.getAttackRequirementAccess().getTheoryAssignment_4(), "rule__AttackRequirement__TheoryAssignment_4");
 			builder.put(grammarAccess.getRedefineRequirementAccess().getRequirementAssignment_2(), "rule__RedefineRequirement__RequirementAssignment_2");

@@ -46,6 +46,7 @@ public class SimulationMechanismWarrantItemProvider extends ArgumentElementItemP
 
 			addOutputDataOverTimePropertyDescriptor(object);
 			addExplainedEffectPropertyDescriptor(object);
+			addGeneratingRequirementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +83,23 @@ public class SimulationMechanismWarrantItemProvider extends ArgumentElementItemP
 								"_UI_SimulationMechanismWarrant_type"),
 						ArgumentsPackage.Literals.SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Generating Requirement feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGeneratingRequirementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_SimulationMechanismWarrant_generatingRequirement_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_SimulationMechanismWarrant_generatingRequirement_feature",
+								"_UI_SimulationMechanismWarrant_type"),
+						ArgumentsPackage.Literals.SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT, true, false,
+						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -132,6 +150,7 @@ public class SimulationMechanismWarrantItemProvider extends ArgumentElementItemP
 		switch (notification.getFeatureID(SimulationMechanismWarrant.class)) {
 		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__OUTPUT_DATA_OVER_TIME:
 		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT:
+		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

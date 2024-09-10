@@ -8,21 +8,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
         eType="#//ArgumentElementRelation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArgumentElementRelation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RelationshipType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentElementRelation" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="evidence" lowerBound="1"
         eType="#//ArgumentElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="warrant" lowerBound="1"
         eType="#//ArgumentElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="claim" lowerBound="1" eType="#//ArgumentElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="RelationshipType">
-    <eLiterals name="SUPPORT"/>
-    <eLiterals name="ATTACK" value="1"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimulationMechanismWarrant" eSuperTypes="#//ArgumentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputDataOverTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="explainedEffect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generatingRequirement"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardSimulationWarrant" eSuperTypes="#//ArgumentElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="LiteratureEvidence" eSuperTypes="#//ArgumentElement">
@@ -38,5 +35,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="MechanismExplainsEffect" eSuperTypes="#//ArgumentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanism" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="explainedEffect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Support" eSuperTypes="#//ArgumentElementRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attack" eSuperTypes="#//ArgumentElementRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExperimentResults" eSuperTypes="#//ArgumentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="experimentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="results" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

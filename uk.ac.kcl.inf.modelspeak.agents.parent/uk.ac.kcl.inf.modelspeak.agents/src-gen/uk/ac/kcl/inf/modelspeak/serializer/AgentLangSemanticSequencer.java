@@ -21,14 +21,18 @@ import uk.ac.kcl.inf.modelspeak.agentLang.AttackRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Experiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
+import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
+import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.RedefineRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.ReplaceModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Requirement;
+import uk.ac.kcl.inf.modelspeak.agentLang.ResearchQuestion;
 import uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.RetractRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.ReviseRequirement;
@@ -36,7 +40,6 @@ import uk.ac.kcl.inf.modelspeak.agentLang.StudyDone;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
-import uk.ac.kcl.inf.modelspeak.agentLang.Theory;
 import uk.ac.kcl.inf.modelspeak.services.AgentLangGrammarAccess;
 
 @SuppressWarnings("all")
@@ -71,6 +74,12 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case AgentLangPackage.GAME:
 				sequence_Game(context, (Game) semanticObject); 
 				return; 
+			case AgentLangPackage.GENERAL_THEORY:
+				sequence_GeneralTheory(context, (GeneralTheory) semanticObject); 
+				return; 
+			case AgentLangPackage.LITERATURE_REFERENCE:
+				sequence_LiteratureReference(context, (LiteratureReference) semanticObject); 
+				return; 
 			case AgentLangPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -83,6 +92,9 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case AgentLangPackage.PROPOSE_MODEL:
 				sequence_ProposeModel(context, (ProposeModel) semanticObject); 
 				return; 
+			case AgentLangPackage.PROPOSE_RQ:
+				sequence_ProposeRQ(context, (ProposeRQ) semanticObject); 
+				return; 
 			case AgentLangPackage.PROPOSE_REQUIREMENT:
 				sequence_ProposeRequirement(context, (ProposeRequirement) semanticObject); 
 				return; 
@@ -94,6 +106,9 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case AgentLangPackage.REQUIREMENT:
 				sequence_Requirement(context, (Requirement) semanticObject); 
+				return; 
+			case AgentLangPackage.RESEARCH_QUESTION:
+				sequence_ResearchQuestion(context, (ResearchQuestion) semanticObject); 
 				return; 
 			case AgentLangPackage.RETRACT_EXPERIMENT:
 				sequence_RetractExperiment(context, (RetractExperiment) semanticObject); 
@@ -115,9 +130,6 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case AgentLangPackage.SUPPORT_REQUIREMENT:
 				sequence_SupportRequirement(context, (SupportRequirement) semanticObject); 
-				return; 
-			case AgentLangPackage.THEORY:
-				sequence_Theory(context, (Theory) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -263,23 +275,62 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Model returns Model
+	 *     Theory returns GeneralTheory
+	 *     GeneralTheory returns GeneralTheory
 	 *
 	 * Constraint:
 	 *     (name=ID content=STRING)
 	 * </pre>
 	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+	protected void sequence_GeneralTheory(ISerializationContext context, GeneralTheory semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.MODEL__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.MODEL__NAME));
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.MODEL__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.MODEL__CONTENT));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.THEORY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.THEORY__NAME));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.GENERAL_THEORY__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.GENERAL_THEORY__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModelAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getModelAccess().getContentSTRINGTerminalRuleCall_2_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getGeneralTheoryAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGeneralTheoryAccess().getContentSTRINGTerminalRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Theory returns LiteratureReference
+	 *     LiteratureReference returns LiteratureReference
+	 *
+	 * Constraint:
+	 *     (name=ID ref=STRING)
+	 * </pre>
+	 */
+	protected void sequence_LiteratureReference(ISerializationContext context, LiteratureReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.THEORY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.THEORY__NAME));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.LITERATURE_REFERENCE__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.LITERATURE_REFERENCE__REF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLiteratureReferenceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLiteratureReferenceAccess().getRefSTRINGTerminalRuleCall_2_0(), semanticObject.getRef());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Model returns Model
+	 *
+	 * Constraint:
+	 *     (name=ID content=STRING? mechanism=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -358,20 +409,44 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Move returns ProposeRQ
+	 *     ProposeRQ returns ProposeRQ
+	 *
+	 * Constraint:
+	 *     rq=ResearchQuestion
+	 * </pre>
+	 */
+	protected void sequence_ProposeRQ(ISerializationContext context, ProposeRQ semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.PROPOSE_RQ__RQ) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.PROPOSE_RQ__RQ));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProposeRQAccess().getRqResearchQuestionParserRuleCall_2_0(), semanticObject.getRq());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Move returns ProposeRequirement
 	 *     ProposeRequirement returns ProposeRequirement
 	 *
 	 * Constraint:
-	 *     requirement=Requirement
+	 *     (requirement=Requirement rq=[ResearchQuestion|ID])
 	 * </pre>
 	 */
 	protected void sequence_ProposeRequirement(ISerializationContext context, ProposeRequirement semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.PROPOSE_REQUIREMENT__REQUIREMENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.PROPOSE_REQUIREMENT__REQUIREMENT));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.PROPOSE_REQUIREMENT__RQ) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.PROPOSE_REQUIREMENT__RQ));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getProposeRequirementAccess().getRequirementRequirementParserRuleCall_2_0(), semanticObject.getRequirement());
+		feeder.accept(grammarAccess.getProposeRequirementAccess().getRqResearchQuestionIDTerminalRuleCall_4_0_1(), semanticObject.eGet(AgentLangPackage.Literals.PROPOSE_REQUIREMENT__RQ, false));
 		feeder.finish();
 	}
 	
@@ -430,19 +505,33 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Requirement returns Requirement
 	 *
 	 * Constraint:
-	 *     (name=ID content=STRING)
+	 *     (name=ID content=STRING? dataDescription=STRING)
 	 * </pre>
 	 */
 	protected void sequence_Requirement(ISerializationContext context, Requirement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ResearchQuestion returns ResearchQuestion
+	 *
+	 * Constraint:
+	 *     (name=ID effect=STRING)
+	 * </pre>
+	 */
+	protected void sequence_ResearchQuestion(ISerializationContext context, ResearchQuestion semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.REQUIREMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.REQUIREMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.REQUIREMENT__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.REQUIREMENT__CONTENT));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.RESEARCH_QUESTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.RESEARCH_QUESTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.RESEARCH_QUESTION__EFFECT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.RESEARCH_QUESTION__EFFECT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRequirementAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getRequirementAccess().getContentSTRINGTerminalRuleCall_2_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getResearchQuestionAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getResearchQuestionAccess().getEffectSTRINGTerminalRuleCall_6_0(), semanticObject.getEffect());
 		feeder.finish();
 	}
 	
@@ -602,29 +691,6 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSupportRequirementAccess().getRequirementRequirementIDTerminalRuleCall_2_0_1(), semanticObject.eGet(AgentLangPackage.Literals.SUPPORT_REQUIREMENT__REQUIREMENT, false));
 		feeder.accept(grammarAccess.getSupportRequirementAccess().getTheoryTheoryParserRuleCall_4_0(), semanticObject.getTheory());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Theory returns Theory
-	 *
-	 * Constraint:
-	 *     (name=ID content=STRING)
-	 * </pre>
-	 */
-	protected void sequence_Theory(ISerializationContext context, Theory semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.THEORY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.THEORY__NAME));
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.THEORY__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.THEORY__CONTENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTheoryAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getTheoryAccess().getContentSTRINGTerminalRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	

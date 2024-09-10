@@ -87,6 +87,13 @@ public class AgentLangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AgentLangPackage.RESEARCH_QUESTION:
+      {
+        ResearchQuestion researchQuestion = (ResearchQuestion)theEObject;
+        T result = caseResearchQuestion(researchQuestion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AgentLangPackage.MODEL:
       {
         Model model = (Model)theEObject;
@@ -112,6 +119,30 @@ public class AgentLangSwitch<T> extends Switch<T>
       {
         Theory theory = (Theory)theEObject;
         T result = caseTheory(theory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AgentLangPackage.GENERAL_THEORY:
+      {
+        GeneralTheory generalTheory = (GeneralTheory)theEObject;
+        T result = caseGeneralTheory(generalTheory);
+        if (result == null) result = caseTheory(generalTheory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AgentLangPackage.LITERATURE_REFERENCE:
+      {
+        LiteratureReference literatureReference = (LiteratureReference)theEObject;
+        T result = caseLiteratureReference(literatureReference);
+        if (result == null) result = caseTheory(literatureReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AgentLangPackage.PROPOSE_RQ:
+      {
+        ProposeRQ proposeRQ = (ProposeRQ)theEObject;
+        T result = caseProposeRQ(proposeRQ);
+        if (result == null) result = caseMove(proposeRQ);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -288,6 +319,22 @@ public class AgentLangSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Research Question</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Research Question</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResearchQuestion(ResearchQuestion object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -347,6 +394,54 @@ public class AgentLangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTheory(Theory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General Theory</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General Theory</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneralTheory(GeneralTheory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Literature Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Literature Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiteratureReference(LiteratureReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Propose RQ</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Propose RQ</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProposeRQ(ProposeRQ object)
   {
     return null;
   }

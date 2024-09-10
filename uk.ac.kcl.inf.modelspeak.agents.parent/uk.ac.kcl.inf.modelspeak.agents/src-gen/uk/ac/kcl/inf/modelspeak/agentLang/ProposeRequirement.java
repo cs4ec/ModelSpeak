@@ -14,6 +14,7 @@ package uk.ac.kcl.inf.modelspeak.agentLang;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement#getRequirement <em>Requirement</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement#getRq <em>Rq</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage#getProposeRequirement()
@@ -43,5 +44,27 @@ public interface ProposeRequirement extends Move
    * @generated
    */
   void setRequirement(Requirement value);
+
+  /**
+   * Returns the value of the '<em><b>Rq</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rq</em>' reference.
+   * @see #setRq(ResearchQuestion)
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage#getProposeRequirement_Rq()
+   * @model
+   * @generated
+   */
+  ResearchQuestion getRq();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement#getRq <em>Rq</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rq</em>' reference.
+   * @see #getRq()
+   * @generated
+   */
+  void setRq(ResearchQuestion value);
 
 } // ProposeRequirement

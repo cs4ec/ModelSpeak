@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,6 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentElementRelationImpl#getType <em>Type</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentElementRelationImpl#getEvidence <em>Evidence</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentElementRelationImpl#getWarrant <em>Warrant</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentElementRelationImpl#getClaim <em>Claim</em>}</li>
@@ -31,27 +29,8 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.RelationshipType;
  *
  * @generated
  */
-public class ArgumentElementRelationImpl extends MinimalEObjectImpl.Container implements ArgumentElementRelation {
-	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final RelationshipType TYPE_EDEFAULT = RelationshipType.SUPPORT;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected RelationshipType type = TYPE_EDEFAULT;
-
+public abstract class ArgumentElementRelationImpl extends MinimalEObjectImpl.Container
+		implements ArgumentElementRelation {
 	/**
 	 * The cached value of the '{@link #getEvidence() <em>Evidence</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -99,30 +78,6 @@ public class ArgumentElementRelationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	protected EClass eStaticClass() {
 		return ArgumentsPackage.Literals.ARGUMENT_ELEMENT_RELATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RelationshipType getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setType(RelationshipType newType) {
-		RelationshipType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__TYPE,
-					oldType, type));
 	}
 
 	/**
@@ -259,8 +214,6 @@ public class ArgumentElementRelationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__TYPE:
-			return getType();
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__EVIDENCE:
 			if (resolve)
 				return getEvidence();
@@ -285,9 +238,6 @@ public class ArgumentElementRelationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__TYPE:
-			setType((RelationshipType) newValue);
-			return;
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__EVIDENCE:
 			setEvidence((ArgumentElement) newValue);
 			return;
@@ -309,9 +259,6 @@ public class ArgumentElementRelationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__TYPE:
-			setType(TYPE_EDEFAULT);
-			return;
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__EVIDENCE:
 			setEvidence((ArgumentElement) null);
 			return;
@@ -333,8 +280,6 @@ public class ArgumentElementRelationImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__TYPE:
-			return type != TYPE_EDEFAULT;
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__EVIDENCE:
 			return evidence != null;
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__WARRANT:
@@ -343,23 +288,6 @@ public class ArgumentElementRelationImpl extends MinimalEObjectImpl.Container im
 			return claim != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (type: ");
-		result.append(type);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ArgumentElementRelationImpl

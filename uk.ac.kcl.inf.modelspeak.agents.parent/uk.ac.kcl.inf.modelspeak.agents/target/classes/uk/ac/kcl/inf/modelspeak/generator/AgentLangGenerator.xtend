@@ -16,5 +16,6 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class AgentLangGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		new TheoryStoreGenerator().doGenerate(resource, fsa, context)
+		new ArgumentGraphGenerator().doGenerate(resource, fsa, context)
 	}
 }

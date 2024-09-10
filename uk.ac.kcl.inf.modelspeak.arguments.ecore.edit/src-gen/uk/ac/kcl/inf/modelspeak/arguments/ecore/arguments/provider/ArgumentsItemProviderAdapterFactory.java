@@ -96,29 +96,6 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ArgumentElementRelationItemProvider argumentElementRelationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createArgumentElementRelationAdapter() {
-		if (argumentElementRelationItemProvider == null) {
-			argumentElementRelationItemProvider = new ArgumentElementRelationItemProvider(this);
-		}
-
-		return argumentElementRelationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,6 +211,75 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SupportItemProvider supportItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSupportAdapter() {
+		if (supportItemProvider == null) {
+			supportItemProvider = new SupportItemProvider(this);
+		}
+
+		return supportItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttackItemProvider attackItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttackAdapter() {
+		if (attackItemProvider == null) {
+			attackItemProvider = new AttackItemProvider(this);
+		}
+
+		return attackItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExperimentResultsItemProvider experimentResultsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExperimentResultsAdapter() {
+		if (experimentResultsItemProvider == null) {
+			experimentResultsItemProvider = new ExperimentResultsItemProvider(this);
+		}
+
+		return experimentResultsItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,8 +386,6 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 	public void dispose() {
 		if (argumentGraphItemProvider != null)
 			argumentGraphItemProvider.dispose();
-		if (argumentElementRelationItemProvider != null)
-			argumentElementRelationItemProvider.dispose();
 		if (simulationMechanismWarrantItemProvider != null)
 			simulationMechanismWarrantItemProvider.dispose();
 		if (standardSimulationWarrantItemProvider != null)
@@ -352,6 +396,12 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 			modelMatchesDataOverTimeItemProvider.dispose();
 		if (mechanismExplainsEffectItemProvider != null)
 			mechanismExplainsEffectItemProvider.dispose();
+		if (supportItemProvider != null)
+			supportItemProvider.dispose();
+		if (attackItemProvider != null)
+			attackItemProvider.dispose();
+		if (experimentResultsItemProvider != null)
+			experimentResultsItemProvider.dispose();
 	}
 
 }

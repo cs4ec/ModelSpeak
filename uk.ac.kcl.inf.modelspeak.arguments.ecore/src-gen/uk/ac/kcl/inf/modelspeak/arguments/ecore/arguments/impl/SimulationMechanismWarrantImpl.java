@@ -21,6 +21,7 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWar
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SimulationMechanismWarrantImpl#getOutputDataOverTime <em>Output Data Over Time</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SimulationMechanismWarrantImpl#getExplainedEffect <em>Explained Effect</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SimulationMechanismWarrantImpl#getGeneratingRequirement <em>Generating Requirement</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +66,26 @@ public class SimulationMechanismWarrantImpl extends ArgumentElementImpl implemen
 	 * @ordered
 	 */
 	protected String explainedEffect = EXPLAINED_EFFECT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getGeneratingRequirement() <em>Generating Requirement</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeneratingRequirement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GENERATING_REQUIREMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGeneratingRequirement() <em>Generating Requirement</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeneratingRequirement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String generatingRequirement = GENERATING_REQUIREMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,12 +162,39 @@ public class SimulationMechanismWarrantImpl extends ArgumentElementImpl implemen
 	 * @generated
 	 */
 	@Override
+	public String getGeneratingRequirement() {
+		return generatingRequirement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGeneratingRequirement(String newGeneratingRequirement) {
+		String oldGeneratingRequirement = generatingRequirement;
+		generatingRequirement = newGeneratingRequirement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT, oldGeneratingRequirement,
+					generatingRequirement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__OUTPUT_DATA_OVER_TIME:
 			return getOutputDataOverTime();
 		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT:
 			return getExplainedEffect();
+		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT:
+			return getGeneratingRequirement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,6 +212,9 @@ public class SimulationMechanismWarrantImpl extends ArgumentElementImpl implemen
 			return;
 		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT:
 			setExplainedEffect((String) newValue);
+			return;
+		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT:
+			setGeneratingRequirement((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,6 +234,9 @@ public class SimulationMechanismWarrantImpl extends ArgumentElementImpl implemen
 		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT:
 			setExplainedEffect(EXPLAINED_EFFECT_EDEFAULT);
 			return;
+		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT:
+			setGeneratingRequirement(GENERATING_REQUIREMENT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,6 +255,9 @@ public class SimulationMechanismWarrantImpl extends ArgumentElementImpl implemen
 		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__EXPLAINED_EFFECT:
 			return EXPLAINED_EFFECT_EDEFAULT == null ? explainedEffect != null
 					: !EXPLAINED_EFFECT_EDEFAULT.equals(explainedEffect);
+		case ArgumentsPackage.SIMULATION_MECHANISM_WARRANT__GENERATING_REQUIREMENT:
+			return GENERATING_REQUIREMENT_EDEFAULT == null ? generatingRequirement != null
+					: !GENERATING_REQUIREMENT_EDEFAULT.equals(generatingRequirement);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,6 +277,8 @@ public class SimulationMechanismWarrantImpl extends ArgumentElementImpl implemen
 		result.append(outputDataOverTime);
 		result.append(", explainedEffect: ");
 		result.append(explainedEffect);
+		result.append(", generatingRequirement: ");
+		result.append(generatingRequirement);
 		result.append(')');
 		return result.toString();
 	}
