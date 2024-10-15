@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAgentLangParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_LITREF", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'What'", "'mechanism'", "'best'", "'explains'", "'}'", "'<'", "'incorporates'", "'>'", "'Models'", "'must'", "'replicate'", "'{{'", "','", "'}}'", "'proposeResearchQuestion'", "'('", "')'", "'proposeRequirement'", "'AttackRequirement'", "'RedefineRequirement'", "'RetractRequirement'", "'supportRequirement'", "'proposeModel'", "'supportModel'", "'ReplaceModel'", "'CounterModel'", "'AttackModel'", "'ReviseRequirement'", "'ProposeExperiment'", "'SupportExperiment'", "'AttackExperiment'", "'RetractExperiment'", "'StudyDone'", "'NotConvinced'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_LITREF", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'What'", "'mechanism'", "'best'", "'explains'", "'}'", "'<'", "'incorporates'", "'>'", "'Models'", "'must'", "'replicate'", "'{{'", "','", "'}}'", "'proposeResearchQuestion'", "'('", "')'", "'proposeRequirement'", "'AttackRequirement'", "'RedefineRequirement'", "'RetractRequirement'", "'supportRequirement'", "'proposeModel'", "'supportModel'", "'replaceModel'", "'counterModel'", "'AttackModel'", "'ReviseRequirement'", "'ProposeExperiment'", "'SupportExperiment'", "'AttackExperiment'", "'RetractExperiment'", "'StudyDone'", "'NotConvinced'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -3271,7 +3271,7 @@ public class InternalAgentLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReplaceModel"
-    // InternalAgentLang.g:1379:1: ruleReplaceModel returns [EObject current=null] : (otherlv_0= 'ReplaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')' ) ;
+    // InternalAgentLang.g:1379:1: ruleReplaceModel returns [EObject current=null] : (otherlv_0= 'replaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')' ) ;
     public final EObject ruleReplaceModel() throws RecognitionException {
         EObject current = null;
 
@@ -3287,11 +3287,11 @@ public class InternalAgentLangParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAgentLang.g:1385:2: ( (otherlv_0= 'ReplaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')' ) )
-            // InternalAgentLang.g:1386:2: (otherlv_0= 'ReplaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')' )
+            // InternalAgentLang.g:1385:2: ( (otherlv_0= 'replaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')' ) )
+            // InternalAgentLang.g:1386:2: (otherlv_0= 'replaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')' )
             {
-            // InternalAgentLang.g:1386:2: (otherlv_0= 'ReplaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')' )
-            // InternalAgentLang.g:1387:3: otherlv_0= 'ReplaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')'
+            // InternalAgentLang.g:1386:2: (otherlv_0= 'replaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')' )
+            // InternalAgentLang.g:1387:3: otherlv_0= 'replaceModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_newModel_4_0= ruleModel ) ) otherlv_5= ')'
             {
             otherlv_0=(Token)match(input,37,FOLLOW_23); 
 
@@ -3420,7 +3420,7 @@ public class InternalAgentLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCounterModel"
-    // InternalAgentLang.g:1446:1: ruleCounterModel returns [EObject current=null] : (otherlv_0= 'CounterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')' ) ;
+    // InternalAgentLang.g:1446:1: ruleCounterModel returns [EObject current=null] : (otherlv_0= 'counterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')' ) ;
     public final EObject ruleCounterModel() throws RecognitionException {
         EObject current = null;
 
@@ -3438,11 +3438,11 @@ public class InternalAgentLangParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAgentLang.g:1452:2: ( (otherlv_0= 'CounterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')' ) )
-            // InternalAgentLang.g:1453:2: (otherlv_0= 'CounterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')' )
+            // InternalAgentLang.g:1452:2: ( (otherlv_0= 'counterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')' ) )
+            // InternalAgentLang.g:1453:2: (otherlv_0= 'counterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')' )
             {
-            // InternalAgentLang.g:1453:2: (otherlv_0= 'CounterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')' )
-            // InternalAgentLang.g:1454:3: otherlv_0= 'CounterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')'
+            // InternalAgentLang.g:1453:2: (otherlv_0= 'counterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')' )
+            // InternalAgentLang.g:1454:3: otherlv_0= 'counterModel' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= ',' ( (lv_experiment_4_0= ruleExperiment ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= ')'
             {
             otherlv_0=(Token)match(input,38,FOLLOW_23); 
 

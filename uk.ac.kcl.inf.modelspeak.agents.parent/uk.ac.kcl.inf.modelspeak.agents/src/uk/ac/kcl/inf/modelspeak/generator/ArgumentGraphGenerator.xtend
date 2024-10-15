@@ -20,11 +20,14 @@ import org.eclipse.xtext.resource.SaveOptions
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel
 import uk.ac.kcl.inf.modelspeak.agentLang.Game
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
+import uk.ac.kcl.inf.modelspeak.agentLang.Model
 import uk.ac.kcl.inf.modelspeak.agentLang.Move
 import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement
+import uk.ac.kcl.inf.modelspeak.agentLang.ReplaceModel
+import uk.ac.kcl.inf.modelspeak.agentLang.Requirement
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory
@@ -146,12 +149,14 @@ class ArgumentGraphGenerator {
 		])
 	}
 
-//
-//	private dispatch def updateArgumentGraph(ReplaceModel move) {
-//		'replaceModel'.execute(
-//			#['newModelName' -> move.newModel.name, 'newModelContents' -> move.newModel.content,
-//				'oldModelName' -> move.model.name])
-//	}
+	private dispatch def updateArgumentGraph(ReplaceModel move) {
+		val req = move.model.findRequirement
+
+		'replaceModel'.execute(
+			#['reqName' -> req.name, 'oldModelName' -> move.model.name, 'mechanism' -> move.newModel.mechanism,
+				'newModelName' -> move.newModel.name])
+	}
+
 	private dispatch def updateArgumentGraph(CounterModel move) {
 		'counterModel'.execute(
 			#['modelName' -> move.model.name, 'reqName' -> move.requirement.name,
@@ -200,6 +205,28 @@ class ArgumentGraphGenerator {
 		ruleRunner.execute(null)
 	}
 
+	/**
+	 * Find the requirement for the given model
+	 */
+	private def Requirement findRequirement(Model m) {
+		val modelProposal = m.eResource.allContents.filter(ProposeModel).findFirst[model === m]
+
+		if (modelProposal !== null) {
+			modelProposal.requirement
+		} else {
+			val modelIntro = m.eResource.allContents.filter(ReplaceModel).findFirst[newModel === m]
+
+			if (modelIntro !== null) {
+				modelIntro.model.findRequirement
+			} else {
+				null
+			}
+		}
+	}
+
+	/**
+	 * Dispatch function across all theories
+	 */
 	private dispatch def void dispatchTheory(Theory t, extension Consumer<Theory> tf) {
 		accept(t)
 	}

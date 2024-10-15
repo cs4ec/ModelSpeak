@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAgentLangParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_LITREF", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'What'", "'mechanism'", "'best'", "'explains'", "'}'", "'<'", "'incorporates'", "'>'", "'Models'", "'must'", "'replicate'", "'{{'", "'}}'", "','", "'proposeResearchQuestion'", "'('", "')'", "'proposeRequirement'", "'AttackRequirement'", "'RedefineRequirement'", "'RetractRequirement'", "'supportRequirement'", "'proposeModel'", "'supportModel'", "'ReplaceModel'", "'CounterModel'", "'AttackModel'", "'ReviseRequirement'", "'ProposeExperiment'", "'SupportExperiment'", "'AttackExperiment'", "'RetractExperiment'", "'StudyDone'", "'NotConvinced'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_LITREF", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'What'", "'mechanism'", "'best'", "'explains'", "'}'", "'<'", "'incorporates'", "'>'", "'Models'", "'must'", "'replicate'", "'{{'", "'}}'", "','", "'proposeResearchQuestion'", "'('", "')'", "'proposeRequirement'", "'AttackRequirement'", "'RedefineRequirement'", "'RetractRequirement'", "'supportRequirement'", "'proposeModel'", "'supportModel'", "'replaceModel'", "'counterModel'", "'AttackModel'", "'ReviseRequirement'", "'ProposeExperiment'", "'SupportExperiment'", "'AttackExperiment'", "'RetractExperiment'", "'StudyDone'", "'NotConvinced'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -9966,17 +9966,17 @@ public class InternalAgentLangParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__ReplaceModel__Group__0__Impl"
-    // InternalAgentLang.g:3345:1: rule__ReplaceModel__Group__0__Impl : ( 'ReplaceModel' ) ;
+    // InternalAgentLang.g:3345:1: rule__ReplaceModel__Group__0__Impl : ( 'replaceModel' ) ;
     public final void rule__ReplaceModel__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAgentLang.g:3349:1: ( ( 'ReplaceModel' ) )
-            // InternalAgentLang.g:3350:1: ( 'ReplaceModel' )
+            // InternalAgentLang.g:3349:1: ( ( 'replaceModel' ) )
+            // InternalAgentLang.g:3350:1: ( 'replaceModel' )
             {
-            // InternalAgentLang.g:3350:1: ( 'ReplaceModel' )
-            // InternalAgentLang.g:3351:2: 'ReplaceModel'
+            // InternalAgentLang.g:3350:1: ( 'replaceModel' )
+            // InternalAgentLang.g:3351:2: 'replaceModel'
             {
              before(grammarAccess.getReplaceModelAccess().getReplaceModelKeyword_0()); 
             match(input,37,FOLLOW_2); 
@@ -10431,17 +10431,17 @@ public class InternalAgentLangParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__CounterModel__Group__0__Impl"
-    // InternalAgentLang.g:3507:1: rule__CounterModel__Group__0__Impl : ( 'CounterModel' ) ;
+    // InternalAgentLang.g:3507:1: rule__CounterModel__Group__0__Impl : ( 'counterModel' ) ;
     public final void rule__CounterModel__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAgentLang.g:3511:1: ( ( 'CounterModel' ) )
-            // InternalAgentLang.g:3512:1: ( 'CounterModel' )
+            // InternalAgentLang.g:3511:1: ( ( 'counterModel' ) )
+            // InternalAgentLang.g:3512:1: ( 'counterModel' )
             {
-            // InternalAgentLang.g:3512:1: ( 'CounterModel' )
-            // InternalAgentLang.g:3513:2: 'CounterModel'
+            // InternalAgentLang.g:3512:1: ( 'counterModel' )
+            // InternalAgentLang.g:3513:2: 'counterModel'
             {
              before(grammarAccess.getCounterModelAccess().getCounterModelKeyword_0()); 
             match(input,38,FOLLOW_2); 

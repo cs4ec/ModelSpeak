@@ -73,10 +73,10 @@ SupportModel:
     'supportModel' '(' model=[Model] ',' theory=Theory ')';
 
 ReplaceModel:
-    'ReplaceModel' '(' model=[Model] ',' newModel=Model ')';
+    'replaceModel' '(' model=[Model] ',' newModel=Model ')';
 
 CounterModel:
-    'CounterModel' '(' model=[Model] ',' experiment=Experiment ',' requirement=[Requirement] ')';
+    'counterModel' '(' model=[Model] ',' experiment=Experiment ',' requirement=[Requirement] ')';
 
 AttackModel:
     'AttackModel' '(' model=[Model] ',' theory=Theory ')';

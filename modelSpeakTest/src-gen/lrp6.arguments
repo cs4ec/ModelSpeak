@@ -15,6 +15,14 @@
   <argumentElements xsi:type="arguments:LiteratureEvidence" reference="[Yamamoto et al. (2006)]"/>
   <argumentElements xsi:type="arguments:LiteratureEvidence" reference="[Bourhis et al. (2010)]"/>
   <argumentElements xsi:type="arguments:LiteratureEvidence" reference="[Goh and Sorkin (2013)]"/>
+  <argumentElements xsi:type="arguments:ExperimentResults" experimentName="s1" results="Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m."/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" mechanism="compartmentalised internalization mechanism of WNT/LRP6" explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" model="m2" dataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" mechanism="compartmentalised internalization mechanism of WNT/LRP6"/>
+  <argumentElements xsi:type="arguments:ModelInvalidClaim" model="m2"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidence" reference="[Howard et al. (2001)]"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidence" reference="[Di Guglielmo et al. (2003)]"/>
+  <argumentElements xsi:type="arguments:ExperimentResults" experimentName="s2" results="Simulation experiment (parameter scan) with either one or both internalization pathways active. In the case where only CIE is active, the predicted fraction of internalized LRP6 is lower than the experimentally derived values. In contrast, CME provides internalization dynamics that are too fast compared with in vitro measurements."/>
+  <argumentElements xsi:type="arguments:ExperimentResults" experimentName="s3" results="Another parameter scan applied CIE-based parameter values for the internalization rate of WNT/LRP6 complexes in both membrane domains (i.e. inside as well as outside of lipid rafts; using model configurations with CIE either fit the early or the late internalization dynamics of LRP6, but none allows the exact reproduction of in vitro measurements."/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.2" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.3" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.6" warrant="//@argumentElements.5" claim="//@argumentElements.0"/>
@@ -24,4 +32,14 @@
   <relations xsi:type="arguments:Attack" evidence="//@argumentElements.12" claim="//@argumentElements.9"/>
   <relations xsi:type="arguments:Attack" evidence="//@argumentElements.13" claim="//@argumentElements.9"/>
   <relations xsi:type="arguments:Attack" evidence="//@argumentElements.14" claim="//@argumentElements.9"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.15" claim="//@argumentElements.7"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.15" claim="//@argumentElements.8"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.17" warrant="//@argumentElements.0" claim="//@argumentElements.16" rebuttalConditions="//@argumentElements.18"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.17" claim="//@argumentElements.9"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.19" claim="//@argumentElements.18"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.20" claim="//@argumentElements.18"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.21" claim="//@argumentElements.16"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.21" claim="//@argumentElements.17"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.22" claim="//@argumentElements.16"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.22" claim="//@argumentElements.17"/>
 </arguments:ArgumentGraph>

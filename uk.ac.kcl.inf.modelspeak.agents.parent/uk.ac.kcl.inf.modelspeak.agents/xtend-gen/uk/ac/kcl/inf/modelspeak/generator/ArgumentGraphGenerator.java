@@ -4,6 +4,7 @@
 package uk.ac.kcl.inf.modelspeak.generator;
 
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -29,16 +30,20 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
 import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
+import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
 import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement;
+import uk.ac.kcl.inf.modelspeak.agentLang.ReplaceModel;
+import uk.ac.kcl.inf.modelspeak.agentLang.Requirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory;
@@ -196,6 +201,24 @@ public class ArgumentGraphGenerator {
     return null;
   }
 
+  private Boolean _updateArgumentGraph(final ReplaceModel move) {
+    boolean _xblockexpression = false;
+    {
+      final Requirement req = this.findRequirement(move.getModel());
+      String _name = req.getName();
+      Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", _name);
+      String _name_1 = move.getModel().getName();
+      Pair<String, String> _mappedTo_1 = Pair.<String, String>of("oldModelName", _name_1);
+      String _mechanism = move.getNewModel().getMechanism();
+      Pair<String, String> _mappedTo_2 = Pair.<String, String>of("mechanism", _mechanism);
+      String _name_2 = move.getNewModel().getName();
+      Pair<String, String> _mappedTo_3 = Pair.<String, String>of("newModelName", _name_2);
+      _xblockexpression = this.execute("replaceModel", 
+        Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2, _mappedTo_3)));
+    }
+    return Boolean.valueOf(_xblockexpression);
+  }
+
   private Boolean _updateArgumentGraph(final CounterModel move) {
     String _name = move.getModel().getName();
     Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
@@ -226,6 +249,46 @@ public class ArgumentGraphGenerator {
     return _xblockexpression;
   }
 
+  /**
+   * Find the requirement for the given model
+   */
+  private Requirement findRequirement(final Model m) {
+    Requirement _xblockexpression = null;
+    {
+      final Function1<ProposeModel, Boolean> _function = (ProposeModel it) -> {
+        Model _model = it.getModel();
+        return Boolean.valueOf((_model == m));
+      };
+      final ProposeModel modelProposal = IteratorExtensions.<ProposeModel>findFirst(Iterators.<ProposeModel>filter(m.eResource().getAllContents(), ProposeModel.class), _function);
+      Requirement _xifexpression = null;
+      if ((modelProposal != null)) {
+        _xifexpression = modelProposal.getRequirement();
+      } else {
+        Requirement _xblockexpression_1 = null;
+        {
+          final Function1<ReplaceModel, Boolean> _function_1 = (ReplaceModel it) -> {
+            Model _newModel = it.getNewModel();
+            return Boolean.valueOf((_newModel == m));
+          };
+          final ReplaceModel modelIntro = IteratorExtensions.<ReplaceModel>findFirst(Iterators.<ReplaceModel>filter(m.eResource().getAllContents(), ReplaceModel.class), _function_1);
+          Requirement _xifexpression_1 = null;
+          if ((modelIntro != null)) {
+            _xifexpression_1 = this.findRequirement(modelIntro.getModel());
+          } else {
+            _xifexpression_1 = null;
+          }
+          _xblockexpression_1 = _xifexpression_1;
+        }
+        _xifexpression = _xblockexpression_1;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+
+  /**
+   * Dispatch function across all theories
+   */
   private void _dispatchTheory(final Theory t, @Extension final Consumer<Theory> tf) {
     tf.accept(t);
   }
@@ -247,6 +310,8 @@ public class ArgumentGraphGenerator {
       return _updateArgumentGraph((ProposeRQ)move);
     } else if (move instanceof ProposeRequirement) {
       return _updateArgumentGraph((ProposeRequirement)move);
+    } else if (move instanceof ReplaceModel) {
+      return _updateArgumentGraph((ReplaceModel)move);
     } else if (move instanceof SupportModel) {
       return _updateArgumentGraph((SupportModel)move);
     } else if (move instanceof SupportRequirement) {

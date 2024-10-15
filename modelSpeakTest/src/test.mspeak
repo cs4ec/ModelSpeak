@@ -4,7 +4,7 @@ proposeRequirement (r1{"First requirement"}
 	                rq1)
 supportRequirement (r1, ref1[Yamamoto et al. (2006)])
 proposeModel(m1{"First model"}<incorporates mechanism "Simple internalisation mechanism">, r1)
-CounterModel(m1, e1{"Some data not matching time data of LRP receptor internalisation"}, r1)
+counterModel(m1, e1{"Some data not matching time data of LRP receptor internalisation"}, r1)
 
 //AttackModel(m1, t1["Attack on model formulation"])
 //ReplaceModel(m1, m2["Refined model"])

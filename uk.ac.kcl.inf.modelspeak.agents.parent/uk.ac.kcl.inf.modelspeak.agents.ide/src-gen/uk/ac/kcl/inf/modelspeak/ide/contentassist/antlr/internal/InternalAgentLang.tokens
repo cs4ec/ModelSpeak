@@ -6,12 +6,10 @@
 'AttackExperiment'=43
 'AttackModel'=39
 'AttackRequirement'=31
-'CounterModel'=38
 'Models'=21
 'NotConvinced'=46
 'ProposeExperiment'=41
 'RedefineRequirement'=32
-'ReplaceModel'=37
 'RetractExperiment'=44
 'RetractRequirement'=33
 'ReviseRequirement'=40
@@ -19,6 +17,7 @@
 'SupportExperiment'=42
 'What'=13
 'best'=15
+'counterModel'=38
 'explains'=16
 'incorporates'=19
 'mechanism'=14
@@ -26,6 +25,7 @@
 'proposeModel'=35
 'proposeRequirement'=30
 'proposeResearchQuestion'=27
+'replaceModel'=37
 'replicate'=23
 'supportModel'=36
 'supportRequirement'=34
