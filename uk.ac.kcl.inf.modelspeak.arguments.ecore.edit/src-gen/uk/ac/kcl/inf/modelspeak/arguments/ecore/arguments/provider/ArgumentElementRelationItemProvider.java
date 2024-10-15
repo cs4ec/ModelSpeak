@@ -52,6 +52,7 @@ public class ArgumentElementRelationItemProvider extends ItemProviderAdapter imp
 			addEvidencePropertyDescriptor(object);
 			addWarrantPropertyDescriptor(object);
 			addClaimPropertyDescriptor(object);
+			addRebuttalConditionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -99,6 +100,22 @@ public class ArgumentElementRelationItemProvider extends ItemProviderAdapter imp
 				getString("_UI_PropertyDescriptor_description", "_UI_ArgumentElementRelation_claim_feature",
 						"_UI_ArgumentElementRelation_type"),
 				ArgumentsPackage.Literals.ARGUMENT_ELEMENT_RELATION__CLAIM, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rebuttal Conditions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRebuttalConditionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ArgumentElementRelation_rebuttalConditions_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ArgumentElementRelation_rebuttalConditions_feature", "_UI_ArgumentElementRelation_type"),
+				ArgumentsPackage.Literals.ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS, true, false, true, null, null,
+				null));
 	}
 
 	/**

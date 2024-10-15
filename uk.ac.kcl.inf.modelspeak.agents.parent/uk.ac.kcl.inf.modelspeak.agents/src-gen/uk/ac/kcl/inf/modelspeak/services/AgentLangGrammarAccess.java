@@ -135,21 +135,21 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cWhatKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cMechanismKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cBestKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cExplainsKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cEffectAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cEffectSTRINGTerminalRuleCall_6_0 = (RuleCall)cEffectAssignment_6.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ResearchQuestion:
-		//    name=ID '[' 'What' 'mechanism' 'best' 'explains' effect=STRING ']'
+		//    name=ID '{' 'What' 'mechanism' 'best' 'explains' effect=STRING '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '[' 'What' 'mechanism' 'best' 'explains' effect=STRING ']'
+		//name=ID '{' 'What' 'mechanism' 'best' 'explains' effect=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -158,8 +158,8 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//'What'
 		public Keyword getWhatKeyword_2() { return cWhatKeyword_2; }
@@ -179,8 +179,8 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//STRING
 		public RuleCall getEffectSTRINGTerminalRuleCall_6_0() { return cEffectSTRINGTerminalRuleCall_6_0; }
 		
-		//']'
-		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.Model");
@@ -188,10 +188,10 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cContentAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cContentSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cContentAssignment_1_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cIncorporatesKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cMechanismKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -200,11 +200,11 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cGreaterThanSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Model:
-		//    name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
+		//    name=ID ('{' content=STRING '}')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
+		//name=ID ('{' content=STRING '}')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -213,11 +213,11 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//('[' content=STRING ']')?
+		//('{' content=STRING '}')?
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//content=STRING
 		public Assignment getContentAssignment_1_1() { return cContentAssignment_1_1; }
@@ -225,8 +225,8 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//STRING
 		public RuleCall getContentSTRINGTerminalRuleCall_1_1_0() { return cContentSTRINGTerminalRuleCall_1_1_0; }
 		
-		//']'
-		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 		
 		//'<'
 		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
@@ -252,10 +252,10 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cContentAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cContentSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cContentAssignment_1_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cModelsKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cMustKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -265,11 +265,11 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Requirement:
-		//    name=ID ('[' content=STRING ']')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>'
+		//    name=ID ('{' content=STRING '}')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ('[' content=STRING ']')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>'
+		//name=ID ('{' content=STRING '}')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -278,11 +278,11 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//('[' content=STRING ']')?
+		//('{' content=STRING '}')?
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//content=STRING
 		public Assignment getContentAssignment_1_1() { return cContentAssignment_1_1; }
@@ -290,8 +290,8 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//STRING
 		public RuleCall getContentSTRINGTerminalRuleCall_1_1_0() { return cContentSTRINGTerminalRuleCall_1_1_0; }
 		
-		//']'
-		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 		
 		//'<'
 		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
@@ -319,109 +319,17 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cContentAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cContentSTRINGTerminalRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//Experiment:
-		//    name=ID '[' content=STRING ']'
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//name=ID '[' content=STRING ']'
-		public Group getGroup() { return cGroup; }
-		
-		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
-		
-		//content=STRING
-		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
-		
-		//STRING
-		public RuleCall getContentSTRINGTerminalRuleCall_2_0() { return cContentSTRINGTerminalRuleCall_2_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
-	}
-	public class TheoryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.Theory");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cGeneralTheoryParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cLiteratureReferenceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Theory:
-		//    GeneralTheory | LiteratureReference
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//GeneralTheory | LiteratureReference
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//GeneralTheory
-		public RuleCall getGeneralTheoryParserRuleCall_0() { return cGeneralTheoryParserRuleCall_0; }
-		
-		//LiteratureReference
-		public RuleCall getLiteratureReferenceParserRuleCall_1() { return cLiteratureReferenceParserRuleCall_1; }
-	}
-	public class GeneralTheoryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.GeneralTheory");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cContentAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cContentSTRINGTerminalRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//GeneralTheory:
-		//    name=ID '[' content=STRING ']'
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//name=ID '[' content=STRING ']'
-		public Group getGroup() { return cGroup; }
-		
-		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
-		
-		//content=STRING
-		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
-		
-		//STRING
-		public RuleCall getContentSTRINGTerminalRuleCall_2_0() { return cContentSTRINGTerminalRuleCall_2_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
-	}
-	public class LiteratureReferenceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.LiteratureReference");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cRefAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRefSTRINGTerminalRuleCall_2_0 = (RuleCall)cRefAssignment_2.eContents().get(0);
+		private final Assignment cContentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cContentSTRINGTerminalRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//LiteratureReference:
-		//    name=ID '{' ref=STRING '}'
+		//Experiment:
+		//    name=ID '{' content=STRING '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '{' ref=STRING '}'
+		//name=ID '{' content=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -433,33 +341,176 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//ref=STRING
-		public Assignment getRefAssignment_2() { return cRefAssignment_2; }
+		//content=STRING
+		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
 		
 		//STRING
-		public RuleCall getRefSTRINGTerminalRuleCall_2_0() { return cRefSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getContentSTRINGTerminalRuleCall_2_0() { return cContentSTRINGTerminalRuleCall_2_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
+	public class TheoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.Theory");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cGeneralTheoryParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLiteratureReferenceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMultiTheoryParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Theory:
+		//    GeneralTheory | LiteratureReference | MultiTheory
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//GeneralTheory | LiteratureReference | MultiTheory
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//GeneralTheory
+		public RuleCall getGeneralTheoryParserRuleCall_0() { return cGeneralTheoryParserRuleCall_0; }
+		
+		//LiteratureReference
+		public RuleCall getLiteratureReferenceParserRuleCall_1() { return cLiteratureReferenceParserRuleCall_1; }
+		
+		//MultiTheory
+		public RuleCall getMultiTheoryParserRuleCall_2() { return cMultiTheoryParserRuleCall_2; }
+	}
+	public class MultiTheoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.MultiTheory");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTheoriesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTheoriesTheoryParserRuleCall_2_0 = (RuleCall)cTheoriesAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTheoriesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTheoriesTheoryParserRuleCall_3_1_0 = (RuleCall)cTheoriesAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//MultiTheory:
+		//    // FIXME: Adding a name here for simplicity of generator code. Should allow theories without names.
+		//    name=ID '{{' theories+=Theory (',' theories+=Theory)+ '}}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//// FIXME: Adding a name here for simplicity of generator code. Should allow theories without names.
+		//name=ID '{{' theories+=Theory (',' theories+=Theory)+ '}}'
+		public Group getGroup() { return cGroup; }
+		
+		//// FIXME: Adding a name here for simplicity of generator code. Should allow theories without names.
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//'{{'
+		public Keyword getLeftCurlyBracketLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketLeftCurlyBracketKeyword_1; }
+		
+		//theories+=Theory
+		public Assignment getTheoriesAssignment_2() { return cTheoriesAssignment_2; }
+		
+		//Theory
+		public RuleCall getTheoriesTheoryParserRuleCall_2_0() { return cTheoriesTheoryParserRuleCall_2_0; }
+		
+		//(',' theories+=Theory)+
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//','
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//theories+=Theory
+		public Assignment getTheoriesAssignment_3_1() { return cTheoriesAssignment_3_1; }
+		
+		//Theory
+		public RuleCall getTheoriesTheoryParserRuleCall_3_1_0() { return cTheoriesTheoryParserRuleCall_3_1_0; }
+		
+		//'}}'
+		public Keyword getRightCurlyBracketRightCurlyBracketKeyword_4() { return cRightCurlyBracketRightCurlyBracketKeyword_4; }
+	}
+	public class GeneralTheoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.GeneralTheory");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cContentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cContentSTRINGTerminalRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//GeneralTheory:
+		//    name=ID '{' content=STRING '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID '{' content=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//content=STRING
+		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
+		
+		//STRING
+		public RuleCall getContentSTRINGTerminalRuleCall_2_0() { return cContentSTRINGTerminalRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class LiteratureReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.LiteratureReference");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRefLITREFTerminalRuleCall_1_0 = (RuleCall)cRefAssignment_1.eContents().get(0);
+		
+		//LiteratureReference:
+		//    name=ID ref=LITREF
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID ref=LITREF
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//ref=LITREF
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
+		
+		//LITREF
+		public RuleCall getRefLITREFTerminalRuleCall_1_0() { return cRefLITREFTerminalRuleCall_1_0; }
+	}
 	public class ProposeRQElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.ProposeRQ");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cProposeRQKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cProposeResearchQuestionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cRqAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRqResearchQuestionParserRuleCall_2_0 = (RuleCall)cRqAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ProposeRQ:
-		//    'ProposeRQ' '(' rq = ResearchQuestion ')';
+		//    'proposeResearchQuestion' '(' rq = ResearchQuestion ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ProposeRQ' '(' rq = ResearchQuestion ')'
+		//'proposeResearchQuestion' '(' rq = ResearchQuestion ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'ProposeRQ'
-		public Keyword getProposeRQKeyword_0() { return cProposeRQKeyword_0; }
+		//'proposeResearchQuestion'
+		public Keyword getProposeResearchQuestionKeyword_0() { return cProposeResearchQuestionKeyword_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
@@ -487,13 +538,13 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ProposeRequirement:
-		//    'ProposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')';
+		//    'proposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ProposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')'
+		//'proposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'ProposeRequirement'
+		//'proposeRequirement'
 		public Keyword getProposeRequirementKeyword_0() { return cProposeRequirementKeyword_0; }
 		
 		//'('
@@ -663,13 +714,13 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SupportRequirement:
-		//    'SupportRequirement' '(' requirement=[Requirement] ',' theory=Theory ')';
+		//    'supportRequirement' '(' requirement=[Requirement] ',' theory=Theory ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SupportRequirement' '(' requirement=[Requirement] ',' theory=Theory ')'
+		//'supportRequirement' '(' requirement=[Requirement] ',' theory=Theory ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'SupportRequirement'
+		//'supportRequirement'
 		public Keyword getSupportRequirementKeyword_0() { return cSupportRequirementKeyword_0; }
 		
 		//'('
@@ -710,13 +761,13 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ProposeModel:
-		//    'ProposeModel' '(' model=Model ',' requirement=[Requirement] ')';
+		//    'proposeModel' '(' model=Model ',' requirement=[Requirement] ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ProposeModel' '(' model=Model ',' requirement=[Requirement] ')'
+		//'proposeModel' '(' model=Model ',' requirement=[Requirement] ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'ProposeModel'
+		//'proposeModel'
 		public Keyword getProposeModelKeyword_0() { return cProposeModelKeyword_0; }
 		
 		//'('
@@ -757,13 +808,13 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SupportModel:
-		//    'SupportModel' '(' model=[Model] ',' theory=Theory ')';
+		//    'supportModel' '(' model=[Model] ',' theory=Theory ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SupportModel' '(' model=[Model] ',' theory=Theory ')'
+		//'supportModel' '(' model=[Model] ',' theory=Theory ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'SupportModel'
+		//'supportModel'
 		public Keyword getSupportModelKeyword_0() { return cSupportModelKeyword_0; }
 		
 		//'('
@@ -1297,8 +1348,10 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final RequirementElements pRequirement;
 	private final ExperimentElements pExperiment;
 	private final TheoryElements pTheory;
+	private final MultiTheoryElements pMultiTheory;
 	private final GeneralTheoryElements pGeneralTheory;
 	private final LiteratureReferenceElements pLiteratureReference;
+	private final TerminalRule tLITREF;
 	private final ProposeRQElements pProposeRQ;
 	private final ProposeRequirementElements pProposeRequirement;
 	private final AttackRequirementElements pAttackRequirement;
@@ -1334,8 +1387,10 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pRequirement = new RequirementElements();
 		this.pExperiment = new ExperimentElements();
 		this.pTheory = new TheoryElements();
+		this.pMultiTheory = new MultiTheoryElements();
 		this.pGeneralTheory = new GeneralTheoryElements();
 		this.pLiteratureReference = new LiteratureReferenceElements();
+		this.tLITREF = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.LITREF");
 		this.pProposeRQ = new ProposeRQElements();
 		this.pProposeRequirement = new ProposeRequirementElements();
 		this.pAttackRequirement = new AttackRequirementElements();
@@ -1408,7 +1463,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//ResearchQuestion:
-	//    name=ID '[' 'What' 'mechanism' 'best' 'explains' effect=STRING ']'
+	//    name=ID '{' 'What' 'mechanism' 'best' 'explains' effect=STRING '}'
 	//;
 	public ResearchQuestionElements getResearchQuestionAccess() {
 		return pResearchQuestion;
@@ -1419,7 +1474,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Model:
-	//    name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
+	//    name=ID ('{' content=STRING '}')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 	//;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -1430,7 +1485,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Requirement:
-	//    name=ID ('[' content=STRING ']')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>'
+	//    name=ID ('{' content=STRING '}')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>'
 	//;
 	public RequirementElements getRequirementAccess() {
 		return pRequirement;
@@ -1441,7 +1496,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Experiment:
-	//    name=ID '[' content=STRING ']'
+	//    name=ID '{' content=STRING '}'
 	//;
 	public ExperimentElements getExperimentAccess() {
 		return pExperiment;
@@ -1452,7 +1507,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Theory:
-	//    GeneralTheory | LiteratureReference
+	//    GeneralTheory | LiteratureReference | MultiTheory
 	//;
 	public TheoryElements getTheoryAccess() {
 		return pTheory;
@@ -1462,8 +1517,20 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getTheoryAccess().getRule();
 	}
 	
+	//MultiTheory:
+	//    // FIXME: Adding a name here for simplicity of generator code. Should allow theories without names.
+	//    name=ID '{{' theories+=Theory (',' theories+=Theory)+ '}}'
+	//;
+	public MultiTheoryElements getMultiTheoryAccess() {
+		return pMultiTheory;
+	}
+	
+	public ParserRule getMultiTheoryRule() {
+		return getMultiTheoryAccess().getRule();
+	}
+	
 	//GeneralTheory:
-	//    name=ID '[' content=STRING ']'
+	//    name=ID '{' content=STRING '}'
 	//;
 	public GeneralTheoryElements getGeneralTheoryAccess() {
 		return pGeneralTheory;
@@ -1474,7 +1541,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//LiteratureReference:
-	//    name=ID '{' ref=STRING '}'
+	//    name=ID ref=LITREF
 	//;
 	public LiteratureReferenceElements getLiteratureReferenceAccess() {
 		return pLiteratureReference;
@@ -1484,8 +1551,16 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getLiteratureReferenceAccess().getRule();
 	}
 	
+	//// Not ideal (should be a datatype rule), but seems the only way to make this work...
+	//terminal LITREF:
+	//  '[' (!']')* ']'
+	//;
+	public TerminalRule getLITREFRule() {
+		return tLITREF;
+	}
+	
 	//ProposeRQ:
-	//    'ProposeRQ' '(' rq = ResearchQuestion ')';
+	//    'proposeResearchQuestion' '(' rq = ResearchQuestion ')';
 	public ProposeRQElements getProposeRQAccess() {
 		return pProposeRQ;
 	}
@@ -1495,7 +1570,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//ProposeRequirement:
-	//    'ProposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')';
+	//    'proposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')';
 	public ProposeRequirementElements getProposeRequirementAccess() {
 		return pProposeRequirement;
 	}
@@ -1535,7 +1610,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//SupportRequirement:
-	//    'SupportRequirement' '(' requirement=[Requirement] ',' theory=Theory ')';
+	//    'supportRequirement' '(' requirement=[Requirement] ',' theory=Theory ')';
 	public SupportRequirementElements getSupportRequirementAccess() {
 		return pSupportRequirement;
 	}
@@ -1545,7 +1620,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//ProposeModel:
-	//    'ProposeModel' '(' model=Model ',' requirement=[Requirement] ')';
+	//    'proposeModel' '(' model=Model ',' requirement=[Requirement] ')';
 	public ProposeModelElements getProposeModelAccess() {
 		return pProposeModel;
 	}
@@ -1555,7 +1630,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//SupportModel:
-	//    'SupportModel' '(' model=[Model] ',' theory=Theory ')';
+	//    'supportModel' '(' model=[Model] ',' theory=Theory ')';
 	public SupportModelElements getSupportModelAccess() {
 		return pSupportModel;
 	}

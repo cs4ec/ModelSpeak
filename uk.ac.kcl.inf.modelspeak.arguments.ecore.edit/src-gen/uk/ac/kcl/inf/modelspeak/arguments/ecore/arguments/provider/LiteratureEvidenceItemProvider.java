@@ -45,8 +45,6 @@ public class LiteratureEvidenceItemProvider extends ArgumentElementItemProvider 
 			super.getPropertyDescriptors(object);
 
 			addReferencePropertyDescriptor(object);
-			addObservedDataOverTimePropertyDescriptor(object);
-			addDescribedEffectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,38 +62,6 @@ public class LiteratureEvidenceItemProvider extends ArgumentElementItemProvider 
 				getString("_UI_PropertyDescriptor_description", "_UI_LiteratureEvidence_reference_feature",
 						"_UI_LiteratureEvidence_type"),
 				ArgumentsPackage.Literals.LITERATURE_EVIDENCE__REFERENCE, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Observed Data Over Time feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addObservedDataOverTimePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_LiteratureEvidence_observedDataOverTime_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_LiteratureEvidence_observedDataOverTime_feature", "_UI_LiteratureEvidence_type"),
-						ArgumentsPackage.Literals.LITERATURE_EVIDENCE__OBSERVED_DATA_OVER_TIME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Described Effect feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDescribedEffectPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_LiteratureEvidence_describedEffect_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_LiteratureEvidence_describedEffect_feature",
-						"_UI_LiteratureEvidence_type"),
-				ArgumentsPackage.Literals.LITERATURE_EVIDENCE__DESCRIBED_EFFECT, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -146,8 +112,6 @@ public class LiteratureEvidenceItemProvider extends ArgumentElementItemProvider 
 
 		switch (notification.getFeatureID(LiteratureEvidence.class)) {
 		case ArgumentsPackage.LITERATURE_EVIDENCE__REFERENCE:
-		case ArgumentsPackage.LITERATURE_EVIDENCE__OBSERVED_DATA_OVER_TIME:
-		case ArgumentsPackage.LITERATURE_EVIDENCE__DESCRIBED_EFFECT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

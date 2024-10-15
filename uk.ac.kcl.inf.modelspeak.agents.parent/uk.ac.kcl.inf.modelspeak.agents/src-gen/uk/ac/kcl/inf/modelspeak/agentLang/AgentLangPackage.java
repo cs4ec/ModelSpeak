@@ -299,6 +299,43 @@ public interface AgentLangPackage extends EPackage
   int THEORY_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.MultiTheoryImpl <em>Multi Theory</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.MultiTheoryImpl
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getMultiTheory()
+   * @generated
+   */
+  int MULTI_THEORY = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_THEORY__NAME = THEORY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Theories</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_THEORY__THEORIES = THEORY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Multi Theory</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_THEORY_FEATURE_COUNT = THEORY_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.GeneralTheoryImpl <em>General Theory</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -306,7 +343,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getGeneralTheory()
    * @generated
    */
-  int GENERAL_THEORY = 7;
+  int GENERAL_THEORY = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -343,7 +380,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getLiteratureReference()
    * @generated
    */
-  int LITERATURE_REFERENCE = 8;
+  int LITERATURE_REFERENCE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -380,7 +417,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeRQ()
    * @generated
    */
-  int PROPOSE_RQ = 9;
+  int PROPOSE_RQ = 10;
 
   /**
    * The feature id for the '<em><b>Rq</b></em>' containment reference.
@@ -408,7 +445,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeRequirement()
    * @generated
    */
-  int PROPOSE_REQUIREMENT = 10;
+  int PROPOSE_REQUIREMENT = 11;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' containment reference.
@@ -445,7 +482,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getAttackRequirement()
    * @generated
    */
-  int ATTACK_REQUIREMENT = 11;
+  int ATTACK_REQUIREMENT = 12;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
@@ -482,7 +519,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRedefineRequirement()
    * @generated
    */
-  int REDEFINE_REQUIREMENT = 12;
+  int REDEFINE_REQUIREMENT = 13;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
@@ -519,7 +556,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRetractRequirement()
    * @generated
    */
-  int RETRACT_REQUIREMENT = 13;
+  int RETRACT_REQUIREMENT = 14;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
@@ -547,7 +584,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getSupportRequirement()
    * @generated
    */
-  int SUPPORT_REQUIREMENT = 14;
+  int SUPPORT_REQUIREMENT = 15;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
@@ -584,7 +621,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeModel()
    * @generated
    */
-  int PROPOSE_MODEL = 15;
+  int PROPOSE_MODEL = 16;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' containment reference.
@@ -621,7 +658,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getSupportModel()
    * @generated
    */
-  int SUPPORT_MODEL = 16;
+  int SUPPORT_MODEL = 17;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -658,7 +695,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getReplaceModel()
    * @generated
    */
-  int REPLACE_MODEL = 17;
+  int REPLACE_MODEL = 18;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -695,7 +732,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getCounterModel()
    * @generated
    */
-  int COUNTER_MODEL = 18;
+  int COUNTER_MODEL = 19;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -741,7 +778,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getAttackModel()
    * @generated
    */
-  int ATTACK_MODEL = 19;
+  int ATTACK_MODEL = 20;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -778,7 +815,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getReviseRequirement()
    * @generated
    */
-  int REVISE_REQUIREMENT = 20;
+  int REVISE_REQUIREMENT = 21;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -833,7 +870,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeExperiment()
    * @generated
    */
-  int PROPOSE_EXPERIMENT = 21;
+  int PROPOSE_EXPERIMENT = 22;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -879,7 +916,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getSupportExperiment()
    * @generated
    */
-  int SUPPORT_EXPERIMENT = 22;
+  int SUPPORT_EXPERIMENT = 23;
 
   /**
    * The feature id for the '<em><b>Experiment</b></em>' reference.
@@ -916,7 +953,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getAttackExperiment()
    * @generated
    */
-  int ATTACK_EXPERIMENT = 23;
+  int ATTACK_EXPERIMENT = 24;
 
   /**
    * The feature id for the '<em><b>Experiment</b></em>' reference.
@@ -953,7 +990,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRetractExperiment()
    * @generated
    */
-  int RETRACT_EXPERIMENT = 24;
+  int RETRACT_EXPERIMENT = 25;
 
   /**
    * The feature id for the '<em><b>Experiment</b></em>' reference.
@@ -981,7 +1018,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getStudyDone()
    * @generated
    */
-  int STUDY_DONE = 25;
+  int STUDY_DONE = 26;
 
   /**
    * The number of structural features of the '<em>Study Done</em>' class.
@@ -1000,7 +1037,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getNotConvinced()
    * @generated
    */
-  int NOT_CONVINCED = 26;
+  int NOT_CONVINCED = 27;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -1222,6 +1259,27 @@ public interface AgentLangPackage extends EPackage
    * @generated
    */
   EAttribute getTheory_Name();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory <em>Multi Theory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multi Theory</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory
+   * @generated
+   */
+  EClass getMultiTheory();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory#getTheories <em>Theories</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Theories</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory#getTheories()
+   * @see #getMultiTheory()
+   * @generated
+   */
+  EReference getMultiTheory_Theories();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory <em>General Theory</em>}'.
@@ -2007,6 +2065,24 @@ public interface AgentLangPackage extends EPackage
      * @generated
      */
     EAttribute THEORY__NAME = eINSTANCE.getTheory_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.MultiTheoryImpl <em>Multi Theory</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.MultiTheoryImpl
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getMultiTheory()
+     * @generated
+     */
+    EClass MULTI_THEORY = eINSTANCE.getMultiTheory();
+
+    /**
+     * The meta object literal for the '<em><b>Theories</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTI_THEORY__THEORIES = eINSTANCE.getMultiTheory_Theories();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.GeneralTheoryImpl <em>General Theory</em>}' class.

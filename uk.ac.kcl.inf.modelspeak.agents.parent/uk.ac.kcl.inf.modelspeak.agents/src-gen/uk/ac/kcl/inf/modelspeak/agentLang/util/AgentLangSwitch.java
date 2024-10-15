@@ -122,6 +122,14 @@ public class AgentLangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AgentLangPackage.MULTI_THEORY:
+      {
+        MultiTheory multiTheory = (MultiTheory)theEObject;
+        T result = caseMultiTheory(multiTheory);
+        if (result == null) result = caseTheory(multiTheory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AgentLangPackage.GENERAL_THEORY:
       {
         GeneralTheory generalTheory = (GeneralTheory)theEObject;
@@ -394,6 +402,22 @@ public class AgentLangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTheory(Theory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multi Theory</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multi Theory</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiTheory(MultiTheory object)
   {
     return null;
   }

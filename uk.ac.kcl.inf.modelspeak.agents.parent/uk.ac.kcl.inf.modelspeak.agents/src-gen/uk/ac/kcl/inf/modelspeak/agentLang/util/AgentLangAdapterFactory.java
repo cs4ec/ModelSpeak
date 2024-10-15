@@ -111,6 +111,11 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
         return createTheoryAdapter();
       }
       @Override
+      public Adapter caseMultiTheory(MultiTheory object)
+      {
+        return createMultiTheoryAdapter();
+      }
+      @Override
       public Adapter caseGeneralTheory(GeneralTheory object)
       {
         return createGeneralTheoryAdapter();
@@ -333,6 +338,21 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTheoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory <em>Multi Theory</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory
+   * @generated
+   */
+  public Adapter createMultiTheoryAdapter()
   {
     return null;
   }

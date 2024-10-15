@@ -13,36 +13,46 @@ Move:
     AttackExperiment | RetractExperiment | StudyDone | NotConvinced;
     
 ResearchQuestion:
-	name=ID '[' 'What' 'mechanism' 'best' 'explains' effect=STRING ']'
+	name=ID '{' 'What' 'mechanism' 'best' 'explains' effect=STRING '}'
 ;
     
 Model:
-	name=ID ('[' content=STRING ']')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
+	name=ID ('{' content=STRING '}')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 ;
 Requirement:
-	name=ID ('[' content=STRING ']')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>' 
+	name=ID ('{' content=STRING '}')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>' 
 ;
 
 Experiment:
-	name=ID '[' content=STRING ']'
+	name=ID '{' content=STRING '}'
 ;
 Theory:
-	GeneralTheory | LiteratureReference
+	GeneralTheory | LiteratureReference | MultiTheory
+;
+
+MultiTheory:
+	// FIXME: Adding a name here for simplicity of generator code. Should allow theories without names.
+	name=ID '{{' theories+=Theory (',' theories+=Theory)+ '}}'
 ;
 
 GeneralTheory:
-	name=ID '[' content=STRING ']'
+	name=ID '{' content=STRING '}'
 ;
 
 LiteratureReference:
-	name=ID '{' ref=STRING '}'
+	name=ID ref=LITREF
+;
+
+// Not ideal (should be a datatype rule), but seems the only way to make this work...
+terminal LITREF:
+  '[' (!']')* ']'
 ;
 
 ProposeRQ:
-	'ProposeRQ' '(' rq = ResearchQuestion ')';
+	'proposeResearchQuestion' '(' rq = ResearchQuestion ')';
 
 ProposeRequirement:
-    'ProposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')';
+    'proposeRequirement' '(' requirement=Requirement ',' rq=[ResearchQuestion] ')';
 
 AttackRequirement:
     'AttackRequirement' '(' requirement=[Requirement] ',' theory=Theory ')';
@@ -54,13 +64,13 @@ RetractRequirement:
     'RetractRequirement' '(' requirement=[Requirement] ')';
 
 SupportRequirement:
-    'SupportRequirement' '(' requirement=[Requirement] ',' theory=Theory ')';
+    'supportRequirement' '(' requirement=[Requirement] ',' theory=Theory ')';
 
 ProposeModel:
-    'ProposeModel' '(' model=Model ',' requirement=[Requirement] ')';
+    'proposeModel' '(' model=Model ',' requirement=[Requirement] ')';
 
 SupportModel:
-    'SupportModel' '(' model=[Model] ',' theory=Theory ')';
+    'supportModel' '(' model=[Model] ',' theory=Theory ')';
 
 ReplaceModel:
     'ReplaceModel' '(' model=[Model] ',' newModel=Model ')';

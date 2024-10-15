@@ -24,6 +24,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
+import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
@@ -82,6 +83,9 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case AgentLangPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case AgentLangPackage.MULTI_THEORY:
+				sequence_MultiTheory(context, (MultiTheory) semanticObject); 
 				return; 
 			case AgentLangPackage.NOT_CONVINCED:
 				sequence_NotConvinced(context, (NotConvinced) semanticObject); 
@@ -303,7 +307,7 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     LiteratureReference returns LiteratureReference
 	 *
 	 * Constraint:
-	 *     (name=ID ref=STRING)
+	 *     (name=ID ref=LITREF)
 	 * </pre>
 	 */
 	protected void sequence_LiteratureReference(ISerializationContext context, LiteratureReference semanticObject) {
@@ -315,7 +319,7 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLiteratureReferenceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getLiteratureReferenceAccess().getRefSTRINGTerminalRuleCall_2_0(), semanticObject.getRef());
+		feeder.accept(grammarAccess.getLiteratureReferenceAccess().getRefLITREFTerminalRuleCall_1_0(), semanticObject.getRef());
 		feeder.finish();
 	}
 	
@@ -330,6 +334,21 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Theory returns MultiTheory
+	 *     MultiTheory returns MultiTheory
+	 *
+	 * Constraint:
+	 *     (name=ID theories+=Theory theories+=Theory+)
+	 * </pre>
+	 */
+	protected void sequence_MultiTheory(ISerializationContext context, MultiTheory semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

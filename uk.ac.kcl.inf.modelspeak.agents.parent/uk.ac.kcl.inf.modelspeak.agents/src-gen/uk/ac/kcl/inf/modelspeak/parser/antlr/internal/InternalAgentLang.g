@@ -310,9 +310,9 @@ ruleResearchQuestion returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='['
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getResearchQuestionAccess().getLeftSquareBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getResearchQuestionAccess().getLeftCurlyBracketKeyword_1());
 		}
 		otherlv_2='What'
 		{
@@ -348,9 +348,9 @@ ruleResearchQuestion returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_7=']'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getResearchQuestionAccess().getRightSquareBracketKeyword_7());
+			newLeafNode(otherlv_7, grammarAccess.getResearchQuestionAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -390,9 +390,9 @@ ruleModel returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_1='['
+			otherlv_1='{'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getModelAccess().getLeftCurlyBracketKeyword_1_0());
 			}
 			(
 				(
@@ -412,9 +412,9 @@ ruleModel returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_3=']'
+			otherlv_3='}'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getModelAccess().getRightSquareBracketKeyword_1_2());
+				newLeafNode(otherlv_3, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_1_2());
 			}
 		)?
 		otherlv_4='<'
@@ -489,9 +489,9 @@ ruleRequirement returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_1='['
+			otherlv_1='{'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getRequirementAccess().getLeftSquareBracketKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getRequirementAccess().getLeftCurlyBracketKeyword_1_0());
 			}
 			(
 				(
@@ -511,9 +511,9 @@ ruleRequirement returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_3=']'
+			otherlv_3='}'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getRequirementAccess().getRightSquareBracketKeyword_1_2());
+				newLeafNode(otherlv_3, grammarAccess.getRequirementAccess().getRightCurlyBracketKeyword_1_2());
 			}
 		)?
 		otherlv_4='<'
@@ -591,9 +591,9 @@ ruleExperiment returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='['
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getExperimentAccess().getLeftSquareBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getExperimentAccess().getLeftCurlyBracketKeyword_1());
 		}
 		(
 			(
@@ -613,9 +613,9 @@ ruleExperiment returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=']'
+		otherlv_3='}'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getExperimentAccess().getRightSquareBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getExperimentAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -652,6 +652,104 @@ ruleTheory returns [EObject current=null]
 		{
 			$current = $this_LiteratureReference_1.current;
 			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getTheoryAccess().getMultiTheoryParserRuleCall_2());
+		}
+		this_MultiTheory_2=ruleMultiTheory
+		{
+			$current = $this_MultiTheory_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleMultiTheory
+entryRuleMultiTheory returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMultiTheoryRule()); }
+	iv_ruleMultiTheory=ruleMultiTheory
+	{ $current=$iv_ruleMultiTheory.current; }
+	EOF;
+
+// Rule MultiTheory
+ruleMultiTheory returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_name_0_0=RULE_ID
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getMultiTheoryAccess().getNameIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMultiTheoryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_1='{{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getMultiTheoryAccess().getLeftCurlyBracketLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMultiTheoryAccess().getTheoriesTheoryParserRuleCall_2_0());
+				}
+				lv_theories_2_0=ruleTheory
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMultiTheoryRule());
+					}
+					add(
+						$current,
+						"theories",
+						lv_theories_2_0,
+						"uk.ac.kcl.inf.modelspeak.AgentLang.Theory");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getMultiTheoryAccess().getCommaKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMultiTheoryAccess().getTheoriesTheoryParserRuleCall_3_1_0());
+					}
+					lv_theories_4_0=ruleTheory
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMultiTheoryRule());
+						}
+						add(
+							$current,
+							"theories",
+							lv_theories_4_0,
+							"uk.ac.kcl.inf.modelspeak.AgentLang.Theory");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)+
+		otherlv_5='}}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getMultiTheoryAccess().getRightCurlyBracketRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -690,9 +788,9 @@ ruleGeneralTheory returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='['
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGeneralTheoryAccess().getLeftSquareBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getGeneralTheoryAccess().getLeftCurlyBracketKeyword_1());
 		}
 		(
 			(
@@ -712,9 +810,9 @@ ruleGeneralTheory returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=']'
+		otherlv_3='}'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getGeneralTheoryAccess().getRightSquareBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getGeneralTheoryAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -753,15 +851,11 @@ ruleLiteratureReference returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getLiteratureReferenceAccess().getLeftCurlyBracketKeyword_1());
-		}
 		(
 			(
-				lv_ref_2_0=RULE_STRING
+				lv_ref_1_0=RULE_LITREF
 				{
-					newLeafNode(lv_ref_2_0, grammarAccess.getLiteratureReferenceAccess().getRefSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_ref_1_0, grammarAccess.getLiteratureReferenceAccess().getRefLITREFTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -770,15 +864,11 @@ ruleLiteratureReference returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"ref",
-						lv_ref_2_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						lv_ref_1_0,
+						"uk.ac.kcl.inf.modelspeak.AgentLang.LITREF");
 				}
 			)
 		)
-		otherlv_3='}'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getLiteratureReferenceAccess().getRightCurlyBracketKeyword_3());
-		}
 	)
 ;
 
@@ -798,9 +888,9 @@ ruleProposeRQ returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ProposeRQ'
+		otherlv_0='proposeResearchQuestion'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getProposeRQAccess().getProposeRQKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getProposeRQAccess().getProposeResearchQuestionKeyword_0());
 		}
 		otherlv_1='('
 		{
@@ -848,7 +938,7 @@ ruleProposeRequirement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ProposeRequirement'
+		otherlv_0='proposeRequirement'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getProposeRequirementAccess().getProposeRequirementKeyword_0());
 		}
@@ -1093,7 +1183,7 @@ ruleSupportRequirement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='SupportRequirement'
+		otherlv_0='supportRequirement'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getSupportRequirementAccess().getSupportRequirementKeyword_0());
 		}
@@ -1160,7 +1250,7 @@ ruleProposeModel returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ProposeModel'
+		otherlv_0='proposeModel'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getProposeModelAccess().getProposeModelKeyword_0());
 		}
@@ -1227,7 +1317,7 @@ ruleSupportModel returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='SupportModel'
+		otherlv_0='supportModel'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getSupportModelAccess().getSupportModelKeyword_0());
 		}
@@ -1940,6 +2030,8 @@ ruleNotConvinced returns [EObject current=null]
 		}
 	)
 ;
+
+RULE_LITREF : '[' ~(']')* ']';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

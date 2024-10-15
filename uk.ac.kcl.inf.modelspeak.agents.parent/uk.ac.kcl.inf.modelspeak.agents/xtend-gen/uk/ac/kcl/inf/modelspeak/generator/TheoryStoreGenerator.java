@@ -29,7 +29,9 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
+import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.AttackRequirement;
@@ -38,6 +40,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
+import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
@@ -289,6 +292,13 @@ public class TheoryStoreGenerator {
     return lr.getRef();
   }
 
+  private String _renderTheory(final MultiTheory mt) {
+    final Function1<Theory, Object> _function = (Theory it) -> {
+      return this.renderTheory(it);
+    };
+    return IterableExtensions.join(ListExtensions.<Theory, Object>map(mt.getTheories(), _function), "&&");
+  }
+
   private boolean execute(final String ruleName, final List<Pair<String, String>> parameters) {
     boolean _xblockexpression = false;
     {
@@ -306,6 +316,7 @@ public class TheoryStoreGenerator {
     return _xblockexpression;
   }
 
+  @XbaseGenerated
   private Boolean updateTheoryStore(final Move move) {
     if (move instanceof AttackExperiment) {
       return _updateTheoryStore((AttackExperiment)move);
@@ -345,11 +356,14 @@ public class TheoryStoreGenerator {
     }
   }
 
+  @XbaseGenerated
   private String renderTheory(final Theory gt) {
     if (gt instanceof GeneralTheory) {
       return _renderTheory((GeneralTheory)gt);
     } else if (gt instanceof LiteratureReference) {
       return _renderTheory((LiteratureReference)gt);
+    } else if (gt instanceof MultiTheory) {
+      return _renderTheory((MultiTheory)gt);
     } else if (gt != null) {
       return _renderTheory(gt);
     } else {

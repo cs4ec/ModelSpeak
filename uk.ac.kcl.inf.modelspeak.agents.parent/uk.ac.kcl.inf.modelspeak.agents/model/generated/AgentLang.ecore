@@ -28,6 +28,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Theory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiTheory" eSuperTypes="#//Theory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theories" upperBound="-1"
+        eType="#//Theory" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralTheory" eSuperTypes="#//Theory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

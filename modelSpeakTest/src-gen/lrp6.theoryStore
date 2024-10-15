@@ -1,0 +1,6 @@
+Requirement r1 { "Develop a simulation model that matches the quantitative measurements of the cell surface receptor LRP6 over time" }
+Theory ref1 { "[Yamamoto et al. (2006)]" } -> r1
+Theory ref2 { "[Khan et al. (2007)]" } -> r1
+Theory ref3 { "[Liu et al. (2014)]" } -> r1
+Model m1 { "Basic internalization model of WNT/LRP6" } -> r1
+Theory set { "[Lauffenburger and Linderman (1996)]&&[Bafico et al. (2001)]&&[Yamamoto et al. (2006)]&&[Bourhis et al. (2010)]&&[Goh and Sorkin (2013)]" } -> m1

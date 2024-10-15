@@ -72,6 +72,7 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
       case AgentLangPackage.REQUIREMENT: return createRequirement();
       case AgentLangPackage.EXPERIMENT: return createExperiment();
       case AgentLangPackage.THEORY: return createTheory();
+      case AgentLangPackage.MULTI_THEORY: return createMultiTheory();
       case AgentLangPackage.GENERAL_THEORY: return createGeneralTheory();
       case AgentLangPackage.LITERATURE_REFERENCE: return createLiteratureReference();
       case AgentLangPackage.PROPOSE_RQ: return createProposeRQ();
@@ -179,6 +180,18 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
   {
     TheoryImpl theory = new TheoryImpl();
     return theory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MultiTheory createMultiTheory()
+  {
+    MultiTheoryImpl multiTheory = new MultiTheoryImpl();
+    return multiTheory;
   }
 
   /**

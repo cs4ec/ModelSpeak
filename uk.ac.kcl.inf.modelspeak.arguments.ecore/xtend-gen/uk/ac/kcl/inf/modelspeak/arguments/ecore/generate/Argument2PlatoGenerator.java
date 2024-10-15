@@ -15,6 +15,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
+import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack;
@@ -153,6 +154,7 @@ public class Argument2PlatoGenerator {
     return s.replaceAll("[\\s(){}\\[\\]\\.]", "");
   }
 
+  @XbaseGenerated
   private CharSequence getLabel(final ArgumentElement er) {
     if (er instanceof ExperimentResults) {
       return _getLabel((ExperimentResults)er);

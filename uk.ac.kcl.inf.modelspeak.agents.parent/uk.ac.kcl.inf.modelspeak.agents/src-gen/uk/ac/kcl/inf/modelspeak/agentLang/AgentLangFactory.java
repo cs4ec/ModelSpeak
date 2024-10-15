@@ -87,6 +87,15 @@ public interface AgentLangFactory extends EFactory
   Theory createTheory();
 
   /**
+   * Returns a new object of class '<em>Multi Theory</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi Theory</em>'.
+   * @generated
+   */
+  MultiTheory createMultiTheory();
+
+  /**
    * Returns a new object of class '<em>General Theory</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

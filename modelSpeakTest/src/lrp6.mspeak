@@ -1,0 +1,35 @@
+proposeResearchQuestion(rq1{What mechanism best explains "LRP6 receptor internalisation"})
+proposeRequirement(r1{"Develop a simulation model that matches the quantitative measurements of the cell surface receptor LRP6 over time"}
+	                 <Models must replicate "the quantitative measurements of the cell surface receptor LRP6 over time">,
+	               rq1)
+supportRequirement(r1, ref1[Yamamoto et al. (2006)])
+supportRequirement(r1, ref2[Khan et al. (2007)])
+supportRequirement(r1, ref3[Liu et al. (2014)])
+proposeModel(m1{"Basic internalization model of WNT/LRP6"}<incorporates mechanism "Basic internalization mechanism of WNT/LRP6">, r1)
+
+// TODO: What argument does this move actually establish?
+supportModel(m1, set{{ref4[Lauffenburger and Linderman (1996)], 
+	                  ref5[Bafico et al. (2001)], 
+	                  ref1[Yamamoto et al. (2006)], 
+	                  ref6[Bourhis et al. (2010)], 
+	                  ref7[Goh and Sorkin (2013)]}})
+
+// TODO: Implement support for the moves below
+//counterModel(m1, s1["Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m.], r1)
+//replaceModel(m1, m2["Compartment-based model of LRP6 endocytosis with microdomains"], r1)
+//supportModel(m2,  {ref8[Howard et al. (2001)], ref9[Di Guglielmo et al. (2003)]})
+//counterModel(m2, s2["Simulation experiment (parameter scan) with either one or both internalization pathways active. In the case where only CIE is active, the predicted fraction of internalized LRP6 is lower than the experimentally derived values. In contrast, CME provides internalization dynamics that are too fast compared with in vitro measurements."], r1)
+//counterModel(m2, s3["Another parameter scan applied CIE-based parameter values for the internalization rate of WNT/LRP6 complexes in both membrane domains (i.e. inside as well as outside of lipid rafts; using model configurations with CIE either fit the early or the late internalization dynamics of LRP6, but none allows the exact reproduction of in vitro measurements."], r1)
+////todo next to the references, we need explanations of how the references relate to the experiment or model
+//supportExperiment(s3, {ref10[Hansen and Nichols (2009)], ref11[Johannes et al. (2015)]}, "Several studies observed the occurrence of CIE in non-raft domains, independenly of lipid rafts. In contrast, CME of raft fractions has not been observed.")
+//replaceModel(m2, m3["Coupled compartment-based internalization model with intracellular WNT model"], r1)
+//supportModel(m3, ref12[Haack et al. (2015)], "It implements the formation and activation of signalosomes, which is a candidate process for delaying endocytosis as described by Bilic (?) et al. (2007)")
+//supportModel(m3, s5["Again ran parameter scan of all internalization mechanisms. The configuration in which CIE occurs within the raft domains (restricted to the signalosome) and where CIE can also occur outside of raft domains now perfectly fits the experimental data."], r1)
+////todo this could be of type hypothesis (h)
+//attackModel(m3, h["The model is overfitted to the given experimental data."])
+//defendModel() //todo all of the following is part of the defense. Need to check how this fits with the current state of our language
+//replaceModel(m3, m4["Combined model with Dkk1-mediated shift of the internalization pathway"], r1)
+//supportModel(m4, ref13[Yamamoto et al. (2008)])
+//supportModel(m4, s6["The experiments were repeated. The internalization dynamics of LRP6 after binding to Dkk1 can reproduce data of Dkk1-induced LRP6 endocytosis"], r1)
+//supportExperiment(s6, "The data was measured by Sakane et al. [14]")
+////todo we could build some attack on the experiment and defend the experiment

@@ -30,13 +30,16 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
+import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
+import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement;
+import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
@@ -132,22 +135,36 @@ public class ArgumentGraphGenerator {
   }
 
   private Boolean _updateArgumentGraph(final SupportRequirement move) {
-    boolean _xifexpression = false;
+    boolean _switchResult = false;
     Theory _theory = move.getTheory();
-    if ((_theory instanceof LiteratureReference)) {
-      String _name = move.getRequirement().getName();
-      Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", _name);
+    boolean _matched = false;
+    if (_theory instanceof LiteratureReference) {
+      _matched=true;
       Theory _theory_1 = move.getTheory();
-      String _ref = ((LiteratureReference) _theory_1).getRef();
-      Pair<String, String> _mappedTo_1 = Pair.<String, String>of("litRef", _ref);
-      _xifexpression = this.execute("supportRequirement", 
-        Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1)));
-    } else {
+      _switchResult = this.supportRequirementWithLitRef(move.getRequirement().getName(), ((LiteratureReference) _theory_1).getRef());
+    }
+    if (!_matched) {
+      if (_theory instanceof MultiTheory) {
+        _matched=true;
+        Theory _theory_1 = move.getTheory();
+        final Consumer<Theory> _function = (Theory it) -> {
+          this.supportRequirementWithLitRef(move.getRequirement().getName(), ((LiteratureReference) it).getRef());
+        };
+        ((MultiTheory) _theory_1).getTheories().forEach(_function);
+      }
+    }
+    if (!_matched) {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Cannot currently process support requirement moves with anything else than a literature reference.");
       throw new IllegalArgumentException(_builder.toString());
     }
-    return Boolean.valueOf(_xifexpression);
+    return Boolean.valueOf(_switchResult);
+  }
+
+  private boolean supportRequirementWithLitRef(final String reqName, final String ref) {
+    Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", reqName);
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("litRef", ref);
+    return this.execute("supportRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1)));
   }
 
   private Boolean _updateArgumentGraph(final ProposeModel move) {
@@ -159,6 +176,24 @@ public class ArgumentGraphGenerator {
     Pair<String, String> _mappedTo_2 = Pair.<String, String>of("mechanism", _mechanism);
     return Boolean.valueOf(this.execute("proposeModel", 
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
+  }
+
+  private Boolean _updateArgumentGraph(final SupportModel move) {
+    final Consumer<Theory> _function = (Theory t) -> {
+      if ((t instanceof LiteratureReference)) {
+        String _name = move.getModel().getName();
+        Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+        String _ref = ((LiteratureReference)t).getRef();
+        Pair<String, String> _mappedTo_1 = Pair.<String, String>of("literatureRef", _ref);
+        this.execute("supportModel", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1)));
+      } else {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Cannot currently process support model moves with anything else than a literature reference.");
+        throw new IllegalArgumentException(_builder.toString());
+      }
+    };
+    this.dispatchTheory(move.getTheory(), _function);
+    return null;
   }
 
   private Boolean _updateArgumentGraph(final CounterModel move) {
@@ -191,6 +226,18 @@ public class ArgumentGraphGenerator {
     return _xblockexpression;
   }
 
+  private void _dispatchTheory(final Theory t, @Extension final Consumer<Theory> tf) {
+    tf.accept(t);
+  }
+
+  private void _dispatchTheory(final MultiTheory mt, final Consumer<Theory> tf) {
+    final Consumer<Theory> _function = (Theory it) -> {
+      this.dispatchTheory(it, tf);
+    };
+    mt.getTheories().forEach(_function);
+  }
+
+  @XbaseGenerated
   private Boolean updateArgumentGraph(final Move move) {
     if (move instanceof CounterModel) {
       return _updateArgumentGraph((CounterModel)move);
@@ -200,6 +247,8 @@ public class ArgumentGraphGenerator {
       return _updateArgumentGraph((ProposeRQ)move);
     } else if (move instanceof ProposeRequirement) {
       return _updateArgumentGraph((ProposeRequirement)move);
+    } else if (move instanceof SupportModel) {
+      return _updateArgumentGraph((SupportModel)move);
     } else if (move instanceof SupportRequirement) {
       return _updateArgumentGraph((SupportRequirement)move);
     } else if (move != null) {
@@ -207,6 +256,20 @@ public class ArgumentGraphGenerator {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(move).toString());
+    }
+  }
+
+  @XbaseGenerated
+  private void dispatchTheory(final Theory mt, final Consumer<Theory> tf) {
+    if (mt instanceof MultiTheory) {
+      _dispatchTheory((MultiTheory)mt, tf);
+      return;
+    } else if (mt != null) {
+      _dispatchTheory(mt, tf);
+      return;
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(mt, tf).toString());
     }
   }
 }

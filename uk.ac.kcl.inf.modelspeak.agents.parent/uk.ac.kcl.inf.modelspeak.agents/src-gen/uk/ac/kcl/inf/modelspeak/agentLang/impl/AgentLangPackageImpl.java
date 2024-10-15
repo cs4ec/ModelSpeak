@@ -22,6 +22,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
+import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
@@ -96,6 +97,13 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   private EClass theoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiTheoryEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -506,6 +514,28 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
   public EAttribute getTheory_Name()
   {
     return (EAttribute)theoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMultiTheory()
+  {
+    return multiTheoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMultiTheory_Theories()
+  {
+    return (EReference)multiTheoryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1181,6 +1211,9 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     theoryEClass = createEClass(THEORY);
     createEAttribute(theoryEClass, THEORY__NAME);
 
+    multiTheoryEClass = createEClass(MULTI_THEORY);
+    createEReference(multiTheoryEClass, MULTI_THEORY__THEORIES);
+
     generalTheoryEClass = createEClass(GENERAL_THEORY);
     createEAttribute(generalTheoryEClass, GENERAL_THEORY__CONTENT);
 
@@ -1287,6 +1320,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    multiTheoryEClass.getESuperTypes().add(this.getTheory());
     generalTheoryEClass.getESuperTypes().add(this.getTheory());
     literatureReferenceEClass.getESuperTypes().add(this.getTheory());
     proposeRQEClass.getESuperTypes().add(this.getMove());
@@ -1334,6 +1368,9 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
 
     initEClass(theoryEClass, Theory.class, "Theory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTheory_Name(), ecorePackage.getEString(), "name", null, 0, 1, Theory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiTheoryEClass, MultiTheory.class, "MultiTheory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMultiTheory_Theories(), this.getTheory(), null, "theories", null, 0, -1, MultiTheory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalTheoryEClass, GeneralTheory.class, "GeneralTheory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralTheory_Content(), ecorePackage.getEString(), "content", null, 0, 1, GeneralTheory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
