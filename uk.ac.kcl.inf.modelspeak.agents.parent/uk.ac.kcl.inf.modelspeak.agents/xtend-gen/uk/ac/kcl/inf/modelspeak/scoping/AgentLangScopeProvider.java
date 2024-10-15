@@ -11,6 +11,7 @@ import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Experiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
@@ -126,6 +127,7 @@ public class AgentLangScopeProvider extends AbstractDeclarativeScopeProvider {
     return m.getExperiment();
   }
 
+  @XbaseGenerated
   public Requirement getReq(final Move m) {
     if (m instanceof ProposeRequirement) {
       return _getReq((ProposeRequirement)m);
@@ -141,6 +143,7 @@ public class AgentLangScopeProvider extends AbstractDeclarativeScopeProvider {
     }
   }
 
+  @XbaseGenerated
   public Model getModel(final Move m) {
     if (m instanceof ProposeModel) {
       return _getModel((ProposeModel)m);
@@ -154,6 +157,7 @@ public class AgentLangScopeProvider extends AbstractDeclarativeScopeProvider {
     }
   }
 
+  @XbaseGenerated
   public Experiment getExperiment(final Move m) {
     if (m instanceof CounterModel) {
       return _getExperiment((CounterModel)m);

@@ -62,8 +62,8 @@ public class ArgumentsFactoryImpl extends EFactoryImpl implements ArgumentsFacto
 			return createSimulationMechanismWarrant();
 		case ArgumentsPackage.STANDARD_SIMULATION_WARRANT:
 			return createStandardSimulationWarrant();
-		case ArgumentsPackage.LITERATURE_EVIDENCE:
-			return createLiteratureEvidence();
+		case ArgumentsPackage.LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT:
+			return createLiteratureEvidenceForDataAndEffect();
 		case ArgumentsPackage.MODEL_MATCHES_DATA_OVER_TIME:
 			return createModelMatchesDataOverTime();
 		case ArgumentsPackage.MECHANISM_EXPLAINS_EFFECT:
@@ -74,6 +74,10 @@ public class ArgumentsFactoryImpl extends EFactoryImpl implements ArgumentsFacto
 			return createAttack();
 		case ArgumentsPackage.EXPERIMENT_RESULTS:
 			return createExperimentResults();
+		case ArgumentsPackage.LITERATURE_EVIDENCE:
+			return createLiteratureEvidence();
+		case ArgumentsPackage.MODEL_INVALID_CLAIM:
+			return createModelInvalidClaim();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -118,9 +122,9 @@ public class ArgumentsFactoryImpl extends EFactoryImpl implements ArgumentsFacto
 	 * @generated
 	 */
 	@Override
-	public LiteratureEvidence createLiteratureEvidence() {
-		LiteratureEvidenceImpl literatureEvidence = new LiteratureEvidenceImpl();
-		return literatureEvidence;
+	public LiteratureEvidenceForDataAndEffect createLiteratureEvidenceForDataAndEffect() {
+		LiteratureEvidenceForDataAndEffectImpl literatureEvidenceForDataAndEffect = new LiteratureEvidenceForDataAndEffectImpl();
+		return literatureEvidenceForDataAndEffect;
 	}
 
 	/**
@@ -176,6 +180,28 @@ public class ArgumentsFactoryImpl extends EFactoryImpl implements ArgumentsFacto
 	public ExperimentResults createExperimentResults() {
 		ExperimentResultsImpl experimentResults = new ExperimentResultsImpl();
 		return experimentResults;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LiteratureEvidence createLiteratureEvidence() {
+		LiteratureEvidenceImpl literatureEvidence = new LiteratureEvidenceImpl();
+		return literatureEvidence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ModelInvalidClaim createModelInvalidClaim() {
+		ModelInvalidClaimImpl modelInvalidClaim = new ModelInvalidClaimImpl();
+		return modelInvalidClaim;
 	}
 
 	/**

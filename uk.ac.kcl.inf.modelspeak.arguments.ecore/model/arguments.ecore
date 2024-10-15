@@ -14,6 +14,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="warrant" lowerBound="1"
         eType="#//ArgumentElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="claim" lowerBound="1" eType="#//ArgumentElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rebuttalConditions" upperBound="-1"
+        eType="#//ArgumentElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimulationMechanismWarrant" eSuperTypes="#//ArgumentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputDataOverTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -22,8 +24,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardSimulationWarrant" eSuperTypes="#//ArgumentElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LiteratureEvidence" eSuperTypes="#//ArgumentElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteratureEvidenceForDataAndEffect"
+      eSuperTypes="#//LiteratureEvidence">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="observedDataOverTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="describedEffect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -41,5 +43,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExperimentResults" eSuperTypes="#//ArgumentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="experimentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="results" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteratureEvidence" eSuperTypes="#//ArgumentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelInvalidClaim" eSuperTypes="#//ArgumentElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

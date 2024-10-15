@@ -142,26 +142,26 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LiteratureEvidenceItemProvider literatureEvidenceItemProvider;
+	protected LiteratureEvidenceForDataAndEffectItemProvider literatureEvidenceForDataAndEffectItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence}.
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLiteratureEvidenceAdapter() {
-		if (literatureEvidenceItemProvider == null) {
-			literatureEvidenceItemProvider = new LiteratureEvidenceItemProvider(this);
+	public Adapter createLiteratureEvidenceForDataAndEffectAdapter() {
+		if (literatureEvidenceForDataAndEffectItemProvider == null) {
+			literatureEvidenceForDataAndEffectItemProvider = new LiteratureEvidenceForDataAndEffectItemProvider(this);
 		}
 
-		return literatureEvidenceItemProvider;
+		return literatureEvidenceForDataAndEffectItemProvider;
 	}
 
 	/**
@@ -280,6 +280,52 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LiteratureEvidenceItemProvider literatureEvidenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLiteratureEvidenceAdapter() {
+		if (literatureEvidenceItemProvider == null) {
+			literatureEvidenceItemProvider = new LiteratureEvidenceItemProvider(this);
+		}
+
+		return literatureEvidenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelInvalidClaimItemProvider modelInvalidClaimItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelInvalidClaimAdapter() {
+		if (modelInvalidClaimItemProvider == null) {
+			modelInvalidClaimItemProvider = new ModelInvalidClaimItemProvider(this);
+		}
+
+		return modelInvalidClaimItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -390,8 +436,8 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 			simulationMechanismWarrantItemProvider.dispose();
 		if (standardSimulationWarrantItemProvider != null)
 			standardSimulationWarrantItemProvider.dispose();
-		if (literatureEvidenceItemProvider != null)
-			literatureEvidenceItemProvider.dispose();
+		if (literatureEvidenceForDataAndEffectItemProvider != null)
+			literatureEvidenceForDataAndEffectItemProvider.dispose();
 		if (modelMatchesDataOverTimeItemProvider != null)
 			modelMatchesDataOverTimeItemProvider.dispose();
 		if (mechanismExplainsEffectItemProvider != null)
@@ -402,6 +448,10 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 			attackItemProvider.dispose();
 		if (experimentResultsItemProvider != null)
 			experimentResultsItemProvider.dispose();
+		if (literatureEvidenceItemProvider != null)
+			literatureEvidenceItemProvider.dispose();
+		if (modelInvalidClaimItemProvider != null)
+			modelInvalidClaimItemProvider.dispose();
 	}
 
 }

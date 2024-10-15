@@ -17,7 +17,9 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.MechanismExplainsEffect;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.StandardSimulationWarrant;
@@ -70,7 +72,7 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass literatureEvidenceEClass = null;
+	private EClass literatureEvidenceForDataAndEffectEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,6 +108,20 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	private EClass experimentResultsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass literatureEvidenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelInvalidClaimEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -257,6 +273,16 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
+	public EReference getArgumentElementRelation_RebuttalConditions() {
+		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSimulationMechanismWarrant() {
 		return simulationMechanismWarrantEClass;
 	}
@@ -307,8 +333,8 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getLiteratureEvidence() {
-		return literatureEvidenceEClass;
+	public EClass getLiteratureEvidenceForDataAndEffect() {
+		return literatureEvidenceForDataAndEffectEClass;
 	}
 
 	/**
@@ -317,8 +343,8 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLiteratureEvidence_Reference() {
-		return (EAttribute) literatureEvidenceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getLiteratureEvidenceForDataAndEffect_ObservedDataOverTime() {
+		return (EAttribute) literatureEvidenceForDataAndEffectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -327,18 +353,8 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLiteratureEvidence_ObservedDataOverTime() {
-		return (EAttribute) literatureEvidenceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getLiteratureEvidence_DescribedEffect() {
-		return (EAttribute) literatureEvidenceEClass.getEStructuralFeatures().get(2);
+	public EAttribute getLiteratureEvidenceForDataAndEffect_DescribedEffect() {
+		return (EAttribute) literatureEvidenceForDataAndEffectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -467,6 +483,46 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
+	public EClass getLiteratureEvidence() {
+		return literatureEvidenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLiteratureEvidence_Reference() {
+		return (EAttribute) literatureEvidenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getModelInvalidClaim() {
+		return modelInvalidClaimEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getModelInvalidClaim_Model() {
+		return (EAttribute) modelInvalidClaimEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ArgumentsFactory getArgumentsFactory() {
 		return (ArgumentsFactory) getEFactoryInstance();
 	}
@@ -501,6 +557,7 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__EVIDENCE);
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__WARRANT);
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__CLAIM);
+		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS);
 
 		simulationMechanismWarrantEClass = createEClass(SIMULATION_MECHANISM_WARRANT);
 		createEAttribute(simulationMechanismWarrantEClass, SIMULATION_MECHANISM_WARRANT__OUTPUT_DATA_OVER_TIME);
@@ -509,10 +566,11 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 
 		standardSimulationWarrantEClass = createEClass(STANDARD_SIMULATION_WARRANT);
 
-		literatureEvidenceEClass = createEClass(LITERATURE_EVIDENCE);
-		createEAttribute(literatureEvidenceEClass, LITERATURE_EVIDENCE__REFERENCE);
-		createEAttribute(literatureEvidenceEClass, LITERATURE_EVIDENCE__OBSERVED_DATA_OVER_TIME);
-		createEAttribute(literatureEvidenceEClass, LITERATURE_EVIDENCE__DESCRIBED_EFFECT);
+		literatureEvidenceForDataAndEffectEClass = createEClass(LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT);
+		createEAttribute(literatureEvidenceForDataAndEffectEClass,
+				LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT__OBSERVED_DATA_OVER_TIME);
+		createEAttribute(literatureEvidenceForDataAndEffectEClass,
+				LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT__DESCRIBED_EFFECT);
 
 		modelMatchesDataOverTimeEClass = createEClass(MODEL_MATCHES_DATA_OVER_TIME);
 		createEAttribute(modelMatchesDataOverTimeEClass, MODEL_MATCHES_DATA_OVER_TIME__MODEL);
@@ -530,6 +588,12 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		experimentResultsEClass = createEClass(EXPERIMENT_RESULTS);
 		createEAttribute(experimentResultsEClass, EXPERIMENT_RESULTS__EXPERIMENT_NAME);
 		createEAttribute(experimentResultsEClass, EXPERIMENT_RESULTS__RESULTS);
+
+		literatureEvidenceEClass = createEClass(LITERATURE_EVIDENCE);
+		createEAttribute(literatureEvidenceEClass, LITERATURE_EVIDENCE__REFERENCE);
+
+		modelInvalidClaimEClass = createEClass(MODEL_INVALID_CLAIM);
+		createEAttribute(modelInvalidClaimEClass, MODEL_INVALID_CLAIM__MODEL);
 	}
 
 	/**
@@ -563,12 +627,14 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		// Add supertypes to classes
 		simulationMechanismWarrantEClass.getESuperTypes().add(this.getArgumentElement());
 		standardSimulationWarrantEClass.getESuperTypes().add(this.getArgumentElement());
-		literatureEvidenceEClass.getESuperTypes().add(this.getArgumentElement());
+		literatureEvidenceForDataAndEffectEClass.getESuperTypes().add(this.getLiteratureEvidence());
 		modelMatchesDataOverTimeEClass.getESuperTypes().add(this.getArgumentElement());
 		mechanismExplainsEffectEClass.getESuperTypes().add(this.getArgumentElement());
 		supportEClass.getESuperTypes().add(this.getArgumentElementRelation());
 		attackEClass.getESuperTypes().add(this.getArgumentElementRelation());
 		experimentResultsEClass.getESuperTypes().add(this.getArgumentElement());
+		literatureEvidenceEClass.getESuperTypes().add(this.getArgumentElement());
+		modelInvalidClaimEClass.getESuperTypes().add(this.getArgumentElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(argumentElementEClass, ArgumentElement.class, "ArgumentElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -594,6 +660,9 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		initEReference(getArgumentElementRelation_Claim(), this.getArgumentElement(), null, "claim", null, 1, 1,
 				ArgumentElementRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArgumentElementRelation_RebuttalConditions(), this.getArgumentElement(), null,
+				"rebuttalConditions", null, 0, -1, ArgumentElementRelation.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(simulationMechanismWarrantEClass, SimulationMechanismWarrant.class, "SimulationMechanismWarrant",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -610,17 +679,14 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		initEClass(standardSimulationWarrantEClass, StandardSimulationWarrant.class, "StandardSimulationWarrant",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(literatureEvidenceEClass, LiteratureEvidence.class, "LiteratureEvidence", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLiteratureEvidence_Reference(), ecorePackage.getEString(), "reference", null, 0, 1,
-				LiteratureEvidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLiteratureEvidence_ObservedDataOverTime(), ecorePackage.getEString(), "observedDataOverTime",
-				null, 0, 1, LiteratureEvidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLiteratureEvidence_DescribedEffect(), ecorePackage.getEString(), "describedEffect", null, 0,
-				1, LiteratureEvidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(literatureEvidenceForDataAndEffectEClass, LiteratureEvidenceForDataAndEffect.class,
+				"LiteratureEvidenceForDataAndEffect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLiteratureEvidenceForDataAndEffect_ObservedDataOverTime(), ecorePackage.getEString(),
+				"observedDataOverTime", null, 0, 1, LiteratureEvidenceForDataAndEffect.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLiteratureEvidenceForDataAndEffect_DescribedEffect(), ecorePackage.getEString(),
+				"describedEffect", null, 0, 1, LiteratureEvidenceForDataAndEffect.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelMatchesDataOverTimeEClass, ModelMatchesDataOverTime.class, "ModelMatchesDataOverTime",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -654,6 +720,18 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExperimentResults_Results(), ecorePackage.getEString(), "results", null, 0, 1,
 				ExperimentResults.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(literatureEvidenceEClass, LiteratureEvidence.class, "LiteratureEvidence", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLiteratureEvidence_Reference(), ecorePackage.getEString(), "reference", null, 0, 1,
+				LiteratureEvidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelInvalidClaimEClass, ModelInvalidClaim.class, "ModelInvalidClaim", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModelInvalidClaim_Model(), ecorePackage.getEString(), "model", null, 0, 1,
+				ModelInvalidClaim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource

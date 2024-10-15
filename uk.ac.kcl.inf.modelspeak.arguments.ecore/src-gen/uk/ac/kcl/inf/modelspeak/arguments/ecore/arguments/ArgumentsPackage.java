@@ -168,13 +168,22 @@ public interface ArgumentsPackage extends EPackage {
 	int ARGUMENT_ELEMENT_RELATION__CLAIM = 2;
 
 	/**
+	 * The feature id for the '<em><b>Rebuttal Conditions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Argument Element Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_ELEMENT_RELATION_FEATURE_COUNT = 3;
+	int ARGUMENT_ELEMENT_RELATION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Argument Element Relation</em>' class.
@@ -276,7 +285,7 @@ public interface ArgumentsPackage extends EPackage {
 	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getLiteratureEvidence()
 	 * @generated
 	 */
-	int LITERATURE_EVIDENCE = 5;
+	int LITERATURE_EVIDENCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' attribute.
@@ -288,31 +297,13 @@ public interface ArgumentsPackage extends EPackage {
 	int LITERATURE_EVIDENCE__REFERENCE = ARGUMENT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Observed Data Over Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERATURE_EVIDENCE__OBSERVED_DATA_OVER_TIME = ARGUMENT_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Described Effect</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERATURE_EVIDENCE__DESCRIBED_EFFECT = ARGUMENT_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Literature Evidence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LITERATURE_EVIDENCE_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 3;
+	int LITERATURE_EVIDENCE_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Literature Evidence</em>' class.
@@ -322,6 +313,61 @@ public interface ArgumentsPackage extends EPackage {
 	 * @ordered
 	 */
 	int LITERATURE_EVIDENCE_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.LiteratureEvidenceForDataAndEffectImpl <em>Literature Evidence For Data And Effect</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.LiteratureEvidenceForDataAndEffectImpl
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getLiteratureEvidenceForDataAndEffect()
+	 * @generated
+	 */
+	int LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT__REFERENCE = LITERATURE_EVIDENCE__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Observed Data Over Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT__OBSERVED_DATA_OVER_TIME = LITERATURE_EVIDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Described Effect</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT__DESCRIBED_EFFECT = LITERATURE_EVIDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Literature Evidence For Data And Effect</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT_FEATURE_COUNT = LITERATURE_EVIDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Literature Evidence For Data And Effect</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT_OPERATION_COUNT = LITERATURE_EVIDENCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelMatchesDataOverTimeImpl <em>Model Matches Data Over Time</em>}' class.
@@ -462,6 +508,15 @@ public interface ArgumentsPackage extends EPackage {
 	int SUPPORT__CLAIM = ARGUMENT_ELEMENT_RELATION__CLAIM;
 
 	/**
+	 * The feature id for the '<em><b>Rebuttal Conditions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPORT__REBUTTAL_CONDITIONS = ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS;
+
+	/**
 	 * The number of structural features of the '<em>Support</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -515,6 +570,15 @@ public interface ArgumentsPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTACK__CLAIM = ARGUMENT_ELEMENT_RELATION__CLAIM;
+
+	/**
+	 * The feature id for the '<em><b>Rebuttal Conditions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK__REBUTTAL_CONDITIONS = ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS;
 
 	/**
 	 * The number of structural features of the '<em>Attack</em>' class.
@@ -579,6 +643,43 @@ public interface ArgumentsPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPERIMENT_RESULTS_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl <em>Model Invalid Claim</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelInvalidClaim()
+	 * @generated
+	 */
+	int MODEL_INVALID_CLAIM = 12;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_INVALID_CLAIM__MODEL = ARGUMENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Model Invalid Claim</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_INVALID_CLAIM_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Model Invalid Claim</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_INVALID_CLAIM_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement <em>Argument Element</em>}'.
@@ -666,6 +767,17 @@ public interface ArgumentsPackage extends EPackage {
 	EReference getArgumentElementRelation_Claim();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getRebuttalConditions <em>Rebuttal Conditions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Rebuttal Conditions</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getRebuttalConditions()
+	 * @see #getArgumentElementRelation()
+	 * @generated
+	 */
+	EReference getArgumentElementRelation_RebuttalConditions();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant <em>Simulation Mechanism Warrant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -719,47 +831,36 @@ public interface ArgumentsPackage extends EPackage {
 	EClass getStandardSimulationWarrant();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence <em>Literature Evidence</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect <em>Literature Evidence For Data And Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Literature Evidence</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence
+	 * @return the meta object for class '<em>Literature Evidence For Data And Effect</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect
 	 * @generated
 	 */
-	EClass getLiteratureEvidence();
+	EClass getLiteratureEvidenceForDataAndEffect();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence#getReference <em>Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reference</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence#getReference()
-	 * @see #getLiteratureEvidence()
-	 * @generated
-	 */
-	EAttribute getLiteratureEvidence_Reference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence#getObservedDataOverTime <em>Observed Data Over Time</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect#getObservedDataOverTime <em>Observed Data Over Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Observed Data Over Time</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence#getObservedDataOverTime()
-	 * @see #getLiteratureEvidence()
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect#getObservedDataOverTime()
+	 * @see #getLiteratureEvidenceForDataAndEffect()
 	 * @generated
 	 */
-	EAttribute getLiteratureEvidence_ObservedDataOverTime();
+	EAttribute getLiteratureEvidenceForDataAndEffect_ObservedDataOverTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence#getDescribedEffect <em>Described Effect</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect#getDescribedEffect <em>Described Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Described Effect</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence#getDescribedEffect()
-	 * @see #getLiteratureEvidence()
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect#getDescribedEffect()
+	 * @see #getLiteratureEvidenceForDataAndEffect()
 	 * @generated
 	 */
-	EAttribute getLiteratureEvidence_DescribedEffect();
+	EAttribute getLiteratureEvidenceForDataAndEffect_DescribedEffect();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime <em>Model Matches Data Over Time</em>}'.
@@ -889,6 +990,48 @@ public interface ArgumentsPackage extends EPackage {
 	EAttribute getExperimentResults_Results();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence <em>Literature Evidence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Literature Evidence</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence
+	 * @generated
+	 */
+	EClass getLiteratureEvidence();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence#getReference <em>Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reference</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence#getReference()
+	 * @see #getLiteratureEvidence()
+	 * @generated
+	 */
+	EAttribute getLiteratureEvidence_Reference();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim <em>Model Invalid Claim</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Model Invalid Claim</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim
+	 * @generated
+	 */
+	EClass getModelInvalidClaim();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim#getModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Model</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim#getModel()
+	 * @see #getModelInvalidClaim()
+	 * @generated
+	 */
+	EAttribute getModelInvalidClaim_Model();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -982,6 +1125,15 @@ public interface ArgumentsPackage extends EPackage {
 		EReference ARGUMENT_ELEMENT_RELATION__CLAIM = eINSTANCE.getArgumentElementRelation_Claim();
 
 		/**
+		 * The meta object literal for the '<em><b>Rebuttal Conditions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS = eINSTANCE
+				.getArgumentElementRelation_RebuttalConditions();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SimulationMechanismWarrantImpl <em>Simulation Mechanism Warrant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1029,22 +1181,14 @@ public interface ArgumentsPackage extends EPackage {
 		EClass STANDARD_SIMULATION_WARRANT = eINSTANCE.getStandardSimulationWarrant();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.LiteratureEvidenceImpl <em>Literature Evidence</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.LiteratureEvidenceForDataAndEffectImpl <em>Literature Evidence For Data And Effect</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.LiteratureEvidenceImpl
-		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getLiteratureEvidence()
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.LiteratureEvidenceForDataAndEffectImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getLiteratureEvidenceForDataAndEffect()
 		 * @generated
 		 */
-		EClass LITERATURE_EVIDENCE = eINSTANCE.getLiteratureEvidence();
-
-		/**
-		 * The meta object literal for the '<em><b>Reference</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LITERATURE_EVIDENCE__REFERENCE = eINSTANCE.getLiteratureEvidence_Reference();
+		EClass LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT = eINSTANCE.getLiteratureEvidenceForDataAndEffect();
 
 		/**
 		 * The meta object literal for the '<em><b>Observed Data Over Time</b></em>' attribute feature.
@@ -1052,8 +1196,8 @@ public interface ArgumentsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LITERATURE_EVIDENCE__OBSERVED_DATA_OVER_TIME = eINSTANCE
-				.getLiteratureEvidence_ObservedDataOverTime();
+		EAttribute LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT__OBSERVED_DATA_OVER_TIME = eINSTANCE
+				.getLiteratureEvidenceForDataAndEffect_ObservedDataOverTime();
 
 		/**
 		 * The meta object literal for the '<em><b>Described Effect</b></em>' attribute feature.
@@ -1061,7 +1205,8 @@ public interface ArgumentsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LITERATURE_EVIDENCE__DESCRIBED_EFFECT = eINSTANCE.getLiteratureEvidence_DescribedEffect();
+		EAttribute LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT__DESCRIBED_EFFECT = eINSTANCE
+				.getLiteratureEvidenceForDataAndEffect_DescribedEffect();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelMatchesDataOverTimeImpl <em>Model Matches Data Over Time</em>}' class.
@@ -1168,6 +1313,42 @@ public interface ArgumentsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EXPERIMENT_RESULTS__RESULTS = eINSTANCE.getExperimentResults_Results();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.LiteratureEvidenceImpl <em>Literature Evidence</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.LiteratureEvidenceImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getLiteratureEvidence()
+		 * @generated
+		 */
+		EClass LITERATURE_EVIDENCE = eINSTANCE.getLiteratureEvidence();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LITERATURE_EVIDENCE__REFERENCE = eINSTANCE.getLiteratureEvidence_Reference();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl <em>Model Invalid Claim</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelInvalidClaim()
+		 * @generated
+		 */
+		EClass MODEL_INVALID_CLAIM = eINSTANCE.getModelInvalidClaim();
+
+		/**
+		 * The meta object literal for the '<em><b>Model</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_INVALID_CLAIM__MODEL = eINSTANCE.getModelInvalidClaim_Model();
 
 	}
 

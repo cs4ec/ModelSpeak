@@ -37,6 +37,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
+import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory
 
 /**
  * Generate the theory store corresponding to the current agent dialogue state.
@@ -179,7 +180,8 @@ class TheoryStoreGenerator {
 	}
 	private dispatch def renderTheory(GeneralTheory gt) { gt.content }
 	private dispatch def renderTheory(LiteratureReference lr) { lr.ref }
-
+	private dispatch def renderTheory(MultiTheory mt) { mt.theories.map[renderTheory].join("&&") } 
+	
 	// -- rule execution --
 	private def execute(String ruleName, List<Pair<String, String>> parameters) {
 		ruleRunner.rule = rules.findFirst[name == ruleName]

@@ -92,8 +92,8 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseLiteratureEvidence(LiteratureEvidence object) {
-			return createLiteratureEvidenceAdapter();
+		public Adapter caseLiteratureEvidenceForDataAndEffect(LiteratureEvidenceForDataAndEffect object) {
+			return createLiteratureEvidenceForDataAndEffectAdapter();
 		}
 
 		@Override
@@ -119,6 +119,16 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseExperimentResults(ExperimentResults object) {
 			return createExperimentResultsAdapter();
+		}
+
+		@Override
+		public Adapter caseLiteratureEvidence(LiteratureEvidence object) {
+			return createLiteratureEvidenceAdapter();
+		}
+
+		@Override
+		public Adapter caseModelInvalidClaim(ModelInvalidClaim object) {
+			return createModelInvalidClaimAdapter();
 		}
 
 		@Override
@@ -211,16 +221,16 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence <em>Literature Evidence</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect <em>Literature Evidence For Data And Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect
 	 * @generated
 	 */
-	public Adapter createLiteratureEvidenceAdapter() {
+	public Adapter createLiteratureEvidenceForDataAndEffectAdapter() {
 		return null;
 	}
 
@@ -291,6 +301,34 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExperimentResultsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence <em>Literature Evidence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence
+	 * @generated
+	 */
+	public Adapter createLiteratureEvidenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim <em>Model Invalid Claim</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim
+	 * @generated
+	 */
+	public Adapter createModelInvalidClaimAdapter() {
 		return null;
 	}
 

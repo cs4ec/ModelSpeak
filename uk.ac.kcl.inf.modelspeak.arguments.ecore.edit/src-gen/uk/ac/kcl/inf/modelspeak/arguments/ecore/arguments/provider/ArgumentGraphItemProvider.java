@@ -162,6 +162,9 @@ public class ArgumentGraphItemProvider extends ItemProviderAdapter implements IE
 				ArgumentsFactory.eINSTANCE.createLiteratureEvidence()));
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
+				ArgumentsFactory.eINSTANCE.createLiteratureEvidenceForDataAndEffect()));
+
+		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
 				ArgumentsFactory.eINSTANCE.createModelMatchesDataOverTime()));
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
@@ -169,6 +172,9 @@ public class ArgumentGraphItemProvider extends ItemProviderAdapter implements IE
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
 				ArgumentsFactory.eINSTANCE.createExperimentResults()));
+
+		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
+				ArgumentsFactory.eINSTANCE.createModelInvalidClaim()));
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__RELATIONS,
 				ArgumentsFactory.eINSTANCE.createSupport()));
