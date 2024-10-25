@@ -20,7 +20,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/evidence"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/warrant"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/claim"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/rebuttalConditions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/assumptions"/>
     </genClasses>
     <genClasses ecoreClass="arguments.ecore#//SimulationMechanismWarrant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//SimulationMechanismWarrant/outputDataOverTime"/>
@@ -50,8 +50,11 @@
     <genClasses ecoreClass="arguments.ecore#//LiteratureEvidence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//LiteratureEvidence/reference"/>
     </genClasses>
-    <genClasses ecoreClass="arguments.ecore#//ModelInvalidClaim">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelInvalidClaim/model"/>
+    <genClasses ecoreClass="arguments.ecore#//ModelIsValidClaim">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelIsValidClaim/model"/>
+    </genClasses>
+    <genClasses ecoreClass="arguments.ecore#//ModelInputDataValid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelInputDataValid/dataDescription"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

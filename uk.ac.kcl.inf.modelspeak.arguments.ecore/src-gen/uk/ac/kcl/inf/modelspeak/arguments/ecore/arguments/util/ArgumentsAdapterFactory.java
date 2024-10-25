@@ -127,8 +127,13 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseModelInvalidClaim(ModelInvalidClaim object) {
-			return createModelInvalidClaimAdapter();
+		public Adapter caseModelIsValidClaim(ModelIsValidClaim object) {
+			return createModelIsValidClaimAdapter();
+		}
+
+		@Override
+		public Adapter caseModelInputDataValid(ModelInputDataValid object) {
+			return createModelInputDataValidAdapter();
 		}
 
 		@Override
@@ -319,16 +324,30 @@ public class ArgumentsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim <em>Model Invalid Claim</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelIsValidClaim <em>Model Is Valid Claim</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelIsValidClaim
 	 * @generated
 	 */
-	public Adapter createModelInvalidClaimAdapter() {
+	public Adapter createModelIsValidClaimAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid <em>Model Input Data Valid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid
+	 * @generated
+	 */
+	public Adapter createModelInputDataValidAdapter() {
 		return null;
 	}
 

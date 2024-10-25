@@ -37,8 +37,13 @@
     <genClasses ecoreClass="AgentLang.ecore#//GeneralTheory">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//GeneralTheory/content"/>
     </genClasses>
+    <genClasses ecoreClass="AgentLang.ecore#//LiteratureReferenceTheory"/>
     <genClasses ecoreClass="AgentLang.ecore#//LiteratureReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//LiteratureReference/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="AgentLang.ecore#//LiteratureReferenceForData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//LiteratureReferenceForData/data"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AgentLang.ecore#//LiteratureReferenceForData/ref"/>
     </genClasses>
     <genClasses ecoreClass="AgentLang.ecore#//ProposeRQ">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AgentLang.ecore#//ProposeRQ/rq"/>

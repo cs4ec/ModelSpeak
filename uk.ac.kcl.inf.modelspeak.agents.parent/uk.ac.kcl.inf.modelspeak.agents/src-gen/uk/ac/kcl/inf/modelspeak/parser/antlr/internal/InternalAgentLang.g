@@ -646,11 +646,11 @@ ruleTheory returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTheoryAccess().getLiteratureReferenceParserRuleCall_1());
+			newCompositeNode(grammarAccess.getTheoryAccess().getLiteratureReferenceTheoryParserRuleCall_1());
 		}
-		this_LiteratureReference_1=ruleLiteratureReference
+		this_LiteratureReferenceTheory_1=ruleLiteratureReferenceTheory
 		{
-			$current = $this_LiteratureReference_1.current;
+			$current = $this_LiteratureReferenceTheory_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -817,6 +817,42 @@ ruleGeneralTheory returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleLiteratureReferenceTheory
+entryRuleLiteratureReferenceTheory returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLiteratureReferenceTheoryRule()); }
+	iv_ruleLiteratureReferenceTheory=ruleLiteratureReferenceTheory
+	{ $current=$iv_ruleLiteratureReferenceTheory.current; }
+	EOF;
+
+// Rule LiteratureReferenceTheory
+ruleLiteratureReferenceTheory returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getLiteratureReferenceTheoryAccess().getLiteratureReferenceParserRuleCall_0());
+		}
+		this_LiteratureReference_0=ruleLiteratureReference
+		{
+			$current = $this_LiteratureReference_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getLiteratureReferenceTheoryAccess().getLiteratureReferenceForDataParserRuleCall_1());
+		}
+		this_LiteratureReferenceForData_1=ruleLiteratureReferenceForData
+		{
+			$current = $this_LiteratureReferenceForData_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleLiteratureReference
 entryRuleLiteratureReference returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getLiteratureReferenceRule()); }
@@ -866,6 +902,88 @@ ruleLiteratureReference returns [EObject current=null]
 						"ref",
 						lv_ref_1_0,
 						"uk.ac.kcl.inf.modelspeak.AgentLang.LITREF");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleLiteratureReferenceForData
+entryRuleLiteratureReferenceForData returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLiteratureReferenceForDataRule()); }
+	iv_ruleLiteratureReferenceForData=ruleLiteratureReferenceForData
+	{ $current=$iv_ruleLiteratureReferenceForData.current; }
+	EOF;
+
+// Rule LiteratureReferenceForData
+ruleLiteratureReferenceForData returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_name_0_0=RULE_ID
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getLiteratureReferenceForDataAccess().getNameIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLiteratureReferenceForDataRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_data_1_0=RULE_STRING
+				{
+					newLeafNode(lv_data_1_0, grammarAccess.getLiteratureReferenceForDataAccess().getDataSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLiteratureReferenceForDataRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"data",
+						lv_data_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_2='supported'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getLiteratureReferenceForDataAccess().getSupportedKeyword_2());
+		}
+		otherlv_3='by'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getLiteratureReferenceForDataAccess().getByKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLiteratureReferenceForDataAccess().getRefLiteratureReferenceParserRuleCall_4_0());
+				}
+				lv_ref_4_0=ruleLiteratureReference
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLiteratureReferenceForDataRule());
+					}
+					set(
+						$current,
+						"ref",
+						lv_ref_4_0,
+						"uk.ac.kcl.inf.modelspeak.AgentLang.LiteratureReference");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

@@ -27,7 +27,7 @@ Experiment:
 	name=ID '{' content=STRING '}'
 ;
 Theory:
-	GeneralTheory | LiteratureReference | MultiTheory
+	GeneralTheory | LiteratureReferenceTheory | MultiTheory
 ;
 
 MultiTheory:
@@ -39,8 +39,16 @@ GeneralTheory:
 	name=ID '{' content=STRING '}'
 ;
 
+LiteratureReferenceTheory:
+	LiteratureReference | LiteratureReferenceForData
+;
+
 LiteratureReference:
 	name=ID ref=LITREF
+;
+
+LiteratureReferenceForData:
+	name=ID data=STRING 'supported' 'by' ref=LiteratureReference
 ;
 
 // Not ideal (should be a datatype rule), but seems the only way to make this work...

@@ -20,7 +20,7 @@ package uk.ac.kcl.inf.modelspeak.agentLang;
  * @model
  * @generated
  */
-public interface LiteratureReference extends Theory
+public interface LiteratureReference extends LiteratureReferenceTheory
 {
   /**
    * Returns the value of the '<em><b>Ref</b></em>' attribute.

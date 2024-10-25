@@ -14,7 +14,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="warrant" lowerBound="1"
         eType="#//ArgumentElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="claim" lowerBound="1" eType="#//ArgumentElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rebuttalConditions" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumptions" upperBound="-1"
         eType="#//ArgumentElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimulationMechanismWarrant" eSuperTypes="#//ArgumentElement">
@@ -47,7 +47,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="LiteratureEvidence" eSuperTypes="#//ArgumentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelInvalidClaim" eSuperTypes="#//ArgumentElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelIsValidClaim" abstract="true" eSuperTypes="#//ArgumentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelInputDataValid" eSuperTypes="#//ModelIsValidClaim">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

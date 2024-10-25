@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getEvidence <em>Evidence</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getWarrant <em>Warrant</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getClaim <em>Claim</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getRebuttalConditions <em>Rebuttal Conditions</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getAssumptions <em>Assumptions</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage#getArgumentElementRelation()
@@ -92,15 +92,15 @@ public interface ArgumentElementRelation extends EObject {
 	void setClaim(ArgumentElement value);
 
 	/**
-	 * Returns the value of the '<em><b>Rebuttal Conditions</b></em>' reference list.
+	 * Returns the value of the '<em><b>Assumptions</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rebuttal Conditions</em>' reference list.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage#getArgumentElementRelation_RebuttalConditions()
+	 * @return the value of the '<em>Assumptions</em>' reference list.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage#getArgumentElementRelation_Assumptions()
 	 * @model
 	 * @generated
 	 */
-	EList<ArgumentElement> getRebuttalConditions();
+	EList<ArgumentElement> getAssumptions();
 
 } // ArgumentElementRelation

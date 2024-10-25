@@ -76,8 +76,8 @@ public class ArgumentsFactoryImpl extends EFactoryImpl implements ArgumentsFacto
 			return createExperimentResults();
 		case ArgumentsPackage.LITERATURE_EVIDENCE:
 			return createLiteratureEvidence();
-		case ArgumentsPackage.MODEL_INVALID_CLAIM:
-			return createModelInvalidClaim();
+		case ArgumentsPackage.MODEL_INPUT_DATA_VALID:
+			return createModelInputDataValid();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -199,9 +199,9 @@ public class ArgumentsFactoryImpl extends EFactoryImpl implements ArgumentsFacto
 	 * @generated
 	 */
 	@Override
-	public ModelInvalidClaim createModelInvalidClaim() {
-		ModelInvalidClaimImpl modelInvalidClaim = new ModelInvalidClaimImpl();
-		return modelInvalidClaim;
+	public ModelInputDataValid createModelInputDataValid() {
+		ModelInputDataValidImpl modelInputDataValid = new ModelInputDataValidImpl();
+		return modelInputDataValid;
 	}
 
 	/**

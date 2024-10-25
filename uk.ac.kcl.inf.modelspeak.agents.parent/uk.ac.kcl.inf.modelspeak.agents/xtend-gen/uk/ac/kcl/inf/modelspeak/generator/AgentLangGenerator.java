@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
  * Generates code from your model files on save.
@@ -17,7 +18,24 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class AgentLangGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    new TheoryStoreGenerator().doGenerate(resource, fsa, context);
-    new ArgumentGraphGenerator().doGenerate(resource, fsa, context);
+    try {
+      Throwable t = null;
+      try {
+        new TheoryStoreGenerator().doGenerate(resource, fsa, context);
+      } catch (final Throwable _t) {
+        if (_t instanceof Throwable) {
+          final Throwable tt = (Throwable)_t;
+          t = tt;
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+      new ArgumentGraphGenerator().doGenerate(resource, fsa, context);
+      if ((t != null)) {
+        throw t;
+      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

@@ -112,13 +112,13 @@ public interface ArgumentsFactory extends EFactory {
 	LiteratureEvidence createLiteratureEvidence();
 
 	/**
-	 * Returns a new object of class '<em>Model Invalid Claim</em>'.
+	 * Returns a new object of class '<em>Model Input Data Valid</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Invalid Claim</em>'.
+	 * @return a new object of class '<em>Model Input Data Valid</em>'.
 	 * @generated
 	 */
-	ModelInvalidClaim createModelInvalidClaim();
+	ModelInputDataValid createModelInputDataValid();
 
 	/**
 	 * Returns the package supported by this factory.

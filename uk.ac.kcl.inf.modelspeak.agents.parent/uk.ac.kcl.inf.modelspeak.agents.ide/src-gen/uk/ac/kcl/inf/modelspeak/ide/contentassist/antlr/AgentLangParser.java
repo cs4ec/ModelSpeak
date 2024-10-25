@@ -33,6 +33,7 @@ public class AgentLangParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, AgentLangGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getMoveAccess().getAlternatives(), "rule__Move__Alternatives");
 			builder.put(grammarAccess.getTheoryAccess().getAlternatives(), "rule__Theory__Alternatives");
+			builder.put(grammarAccess.getLiteratureReferenceTheoryAccess().getAlternatives(), "rule__LiteratureReferenceTheory__Alternatives");
 			builder.put(grammarAccess.getResearchQuestionAccess().getGroup(), "rule__ResearchQuestion__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGroup_1(), "rule__Model__Group_1__0");
@@ -43,6 +44,7 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMultiTheoryAccess().getGroup_3(), "rule__MultiTheory__Group_3__0");
 			builder.put(grammarAccess.getGeneralTheoryAccess().getGroup(), "rule__GeneralTheory__Group__0");
 			builder.put(grammarAccess.getLiteratureReferenceAccess().getGroup(), "rule__LiteratureReference__Group__0");
+			builder.put(grammarAccess.getLiteratureReferenceForDataAccess().getGroup(), "rule__LiteratureReferenceForData__Group__0");
 			builder.put(grammarAccess.getProposeRQAccess().getGroup(), "rule__ProposeRQ__Group__0");
 			builder.put(grammarAccess.getProposeRequirementAccess().getGroup(), "rule__ProposeRequirement__Group__0");
 			builder.put(grammarAccess.getAttackRequirementAccess().getGroup(), "rule__AttackRequirement__Group__0");
@@ -79,6 +81,9 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGeneralTheoryAccess().getContentAssignment_2(), "rule__GeneralTheory__ContentAssignment_2");
 			builder.put(grammarAccess.getLiteratureReferenceAccess().getNameAssignment_0(), "rule__LiteratureReference__NameAssignment_0");
 			builder.put(grammarAccess.getLiteratureReferenceAccess().getRefAssignment_1(), "rule__LiteratureReference__RefAssignment_1");
+			builder.put(grammarAccess.getLiteratureReferenceForDataAccess().getNameAssignment_0(), "rule__LiteratureReferenceForData__NameAssignment_0");
+			builder.put(grammarAccess.getLiteratureReferenceForDataAccess().getDataAssignment_1(), "rule__LiteratureReferenceForData__DataAssignment_1");
+			builder.put(grammarAccess.getLiteratureReferenceForDataAccess().getRefAssignment_4(), "rule__LiteratureReferenceForData__RefAssignment_4");
 			builder.put(grammarAccess.getProposeRQAccess().getRqAssignment_2(), "rule__ProposeRQ__RqAssignment_2");
 			builder.put(grammarAccess.getProposeRequirementAccess().getRequirementAssignment_2(), "rule__ProposeRequirement__RequirementAssignment_2");
 			builder.put(grammarAccess.getProposeRequirementAccess().getRqAssignment_4(), "rule__ProposeRequirement__RqAssignment_4");

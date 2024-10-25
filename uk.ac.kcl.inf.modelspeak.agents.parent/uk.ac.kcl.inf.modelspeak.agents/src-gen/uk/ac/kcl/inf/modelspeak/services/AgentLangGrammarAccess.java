@@ -354,22 +354,22 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.Theory");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cGeneralTheoryParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cLiteratureReferenceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cLiteratureReferenceTheoryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cMultiTheoryParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Theory:
-		//    GeneralTheory | LiteratureReference | MultiTheory
+		//    GeneralTheory | LiteratureReferenceTheory | MultiTheory
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//GeneralTheory | LiteratureReference | MultiTheory
+		//GeneralTheory | LiteratureReferenceTheory | MultiTheory
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//GeneralTheory
 		public RuleCall getGeneralTheoryParserRuleCall_0() { return cGeneralTheoryParserRuleCall_0; }
 		
-		//LiteratureReference
-		public RuleCall getLiteratureReferenceParserRuleCall_1() { return cLiteratureReferenceParserRuleCall_1; }
+		//LiteratureReferenceTheory
+		public RuleCall getLiteratureReferenceTheoryParserRuleCall_1() { return cLiteratureReferenceTheoryParserRuleCall_1; }
 		
 		//MultiTheory
 		public RuleCall getMultiTheoryParserRuleCall_2() { return cMultiTheoryParserRuleCall_2; }
@@ -465,6 +465,26 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
+	public class LiteratureReferenceTheoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.LiteratureReferenceTheory");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cLiteratureReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLiteratureReferenceForDataParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//LiteratureReferenceTheory:
+		//    LiteratureReference | LiteratureReferenceForData
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//LiteratureReference | LiteratureReferenceForData
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//LiteratureReference
+		public RuleCall getLiteratureReferenceParserRuleCall_0() { return cLiteratureReferenceParserRuleCall_0; }
+		
+		//LiteratureReferenceForData
+		public RuleCall getLiteratureReferenceForDataParserRuleCall_1() { return cLiteratureReferenceForDataParserRuleCall_1; }
+	}
 	public class LiteratureReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.LiteratureReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -492,6 +512,50 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//LITREF
 		public RuleCall getRefLITREFTerminalRuleCall_1_0() { return cRefLITREFTerminalRuleCall_1_0; }
+	}
+	public class LiteratureReferenceForDataElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.LiteratureReferenceForData");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cDataAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDataSTRINGTerminalRuleCall_1_0 = (RuleCall)cDataAssignment_1.eContents().get(0);
+		private final Keyword cSupportedKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cByKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRefAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRefLiteratureReferenceParserRuleCall_4_0 = (RuleCall)cRefAssignment_4.eContents().get(0);
+		
+		//LiteratureReferenceForData:
+		//    name=ID data=STRING 'supported' 'by' ref=LiteratureReference
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID data=STRING 'supported' 'by' ref=LiteratureReference
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//data=STRING
+		public Assignment getDataAssignment_1() { return cDataAssignment_1; }
+		
+		//STRING
+		public RuleCall getDataSTRINGTerminalRuleCall_1_0() { return cDataSTRINGTerminalRuleCall_1_0; }
+		
+		//'supported'
+		public Keyword getSupportedKeyword_2() { return cSupportedKeyword_2; }
+		
+		//'by'
+		public Keyword getByKeyword_3() { return cByKeyword_3; }
+		
+		//ref=LiteratureReference
+		public Assignment getRefAssignment_4() { return cRefAssignment_4; }
+		
+		//LiteratureReference
+		public RuleCall getRefLiteratureReferenceParserRuleCall_4_0() { return cRefLiteratureReferenceParserRuleCall_4_0; }
 	}
 	public class ProposeRQElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.ProposeRQ");
@@ -1350,7 +1414,9 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final TheoryElements pTheory;
 	private final MultiTheoryElements pMultiTheory;
 	private final GeneralTheoryElements pGeneralTheory;
+	private final LiteratureReferenceTheoryElements pLiteratureReferenceTheory;
 	private final LiteratureReferenceElements pLiteratureReference;
+	private final LiteratureReferenceForDataElements pLiteratureReferenceForData;
 	private final TerminalRule tLITREF;
 	private final ProposeRQElements pProposeRQ;
 	private final ProposeRequirementElements pProposeRequirement;
@@ -1389,7 +1455,9 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pTheory = new TheoryElements();
 		this.pMultiTheory = new MultiTheoryElements();
 		this.pGeneralTheory = new GeneralTheoryElements();
+		this.pLiteratureReferenceTheory = new LiteratureReferenceTheoryElements();
 		this.pLiteratureReference = new LiteratureReferenceElements();
+		this.pLiteratureReferenceForData = new LiteratureReferenceForDataElements();
 		this.tLITREF = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.LITREF");
 		this.pProposeRQ = new ProposeRQElements();
 		this.pProposeRequirement = new ProposeRequirementElements();
@@ -1507,7 +1575,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Theory:
-	//    GeneralTheory | LiteratureReference | MultiTheory
+	//    GeneralTheory | LiteratureReferenceTheory | MultiTheory
 	//;
 	public TheoryElements getTheoryAccess() {
 		return pTheory;
@@ -1540,6 +1608,17 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getGeneralTheoryAccess().getRule();
 	}
 	
+	//LiteratureReferenceTheory:
+	//    LiteratureReference | LiteratureReferenceForData
+	//;
+	public LiteratureReferenceTheoryElements getLiteratureReferenceTheoryAccess() {
+		return pLiteratureReferenceTheory;
+	}
+	
+	public ParserRule getLiteratureReferenceTheoryRule() {
+		return getLiteratureReferenceTheoryAccess().getRule();
+	}
+	
 	//LiteratureReference:
 	//    name=ID ref=LITREF
 	//;
@@ -1549,6 +1628,17 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	public ParserRule getLiteratureReferenceRule() {
 		return getLiteratureReferenceAccess().getRule();
+	}
+	
+	//LiteratureReferenceForData:
+	//    name=ID data=STRING 'supported' 'by' ref=LiteratureReference
+	//;
+	public LiteratureReferenceForDataElements getLiteratureReferenceForDataAccess() {
+		return pLiteratureReferenceForData;
+	}
+	
+	public ParserRule getLiteratureReferenceForDataRule() {
+		return getLiteratureReferenceForDataAccess().getRule();
 	}
 	
 	//// Not ideal (should be a datatype rule), but seems the only way to make this work...

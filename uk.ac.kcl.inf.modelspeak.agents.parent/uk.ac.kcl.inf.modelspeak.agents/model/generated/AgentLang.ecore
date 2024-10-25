@@ -35,8 +35,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="GeneralTheory" eSuperTypes="#//Theory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LiteratureReference" eSuperTypes="#//Theory">
+  <eClassifiers xsi:type="ecore:EClass" name="LiteratureReferenceTheory" eSuperTypes="#//Theory"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteratureReference" eSuperTypes="#//LiteratureReferenceTheory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteratureReferenceForData" eSuperTypes="#//LiteratureReferenceTheory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//LiteratureReference"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProposeRQ" eSuperTypes="#//Move">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rq" eType="#//ResearchQuestion"

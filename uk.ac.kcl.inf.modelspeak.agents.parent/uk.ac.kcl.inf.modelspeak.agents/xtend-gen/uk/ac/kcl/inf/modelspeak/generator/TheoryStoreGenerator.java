@@ -357,18 +357,18 @@ public class TheoryStoreGenerator {
   }
 
   @XbaseGenerated
-  private String renderTheory(final Theory gt) {
-    if (gt instanceof GeneralTheory) {
-      return _renderTheory((GeneralTheory)gt);
-    } else if (gt instanceof LiteratureReference) {
-      return _renderTheory((LiteratureReference)gt);
-    } else if (gt instanceof MultiTheory) {
-      return _renderTheory((MultiTheory)gt);
-    } else if (gt != null) {
-      return _renderTheory(gt);
+  private String renderTheory(final Theory lr) {
+    if (lr instanceof LiteratureReference) {
+      return _renderTheory((LiteratureReference)lr);
+    } else if (lr instanceof GeneralTheory) {
+      return _renderTheory((GeneralTheory)lr);
+    } else if (lr instanceof MultiTheory) {
+      return _renderTheory((MultiTheory)lr);
+    } else if (lr != null) {
+      return _renderTheory(lr);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(gt).toString());
+        Arrays.<Object>asList(lr).toString());
     }
   }
 }

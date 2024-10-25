@@ -105,6 +105,15 @@ public interface AgentLangFactory extends EFactory
   GeneralTheory createGeneralTheory();
 
   /**
+   * Returns a new object of class '<em>Literature Reference Theory</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literature Reference Theory</em>'.
+   * @generated
+   */
+  LiteratureReferenceTheory createLiteratureReferenceTheory();
+
+  /**
    * Returns a new object of class '<em>Literature Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -112,6 +121,15 @@ public interface AgentLangFactory extends EFactory
    * @generated
    */
   LiteratureReference createLiteratureReference();
+
+  /**
+   * Returns a new object of class '<em>Literature Reference For Data</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literature Reference For Data</em>'.
+   * @generated
+   */
+  LiteratureReferenceForData createLiteratureReferenceForData();
 
   /**
    * Returns a new object of class '<em>Propose RQ</em>'.

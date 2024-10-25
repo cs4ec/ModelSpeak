@@ -25,7 +25,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
  *
  * @generated
  */
-public class LiteratureReferenceImpl extends TheoryImpl implements LiteratureReference
+public class LiteratureReferenceImpl extends LiteratureReferenceTheoryImpl implements LiteratureReference
 {
   /**
    * The default value of the '{@link #getRef() <em>Ref</em>}' attribute.

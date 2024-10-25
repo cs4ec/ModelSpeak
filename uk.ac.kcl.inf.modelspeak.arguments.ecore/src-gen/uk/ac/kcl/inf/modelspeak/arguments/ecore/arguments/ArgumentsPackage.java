@@ -168,13 +168,13 @@ public interface ArgumentsPackage extends EPackage {
 	int ARGUMENT_ELEMENT_RELATION__CLAIM = 2;
 
 	/**
-	 * The feature id for the '<em><b>Rebuttal Conditions</b></em>' reference list.
+	 * The feature id for the '<em><b>Assumptions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS = 3;
+	int ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Argument Element Relation</em>' class.
@@ -508,13 +508,13 @@ public interface ArgumentsPackage extends EPackage {
 	int SUPPORT__CLAIM = ARGUMENT_ELEMENT_RELATION__CLAIM;
 
 	/**
-	 * The feature id for the '<em><b>Rebuttal Conditions</b></em>' reference list.
+	 * The feature id for the '<em><b>Assumptions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPPORT__REBUTTAL_CONDITIONS = ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS;
+	int SUPPORT__ASSUMPTIONS = ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Support</em>' class.
@@ -572,13 +572,13 @@ public interface ArgumentsPackage extends EPackage {
 	int ATTACK__CLAIM = ARGUMENT_ELEMENT_RELATION__CLAIM;
 
 	/**
-	 * The feature id for the '<em><b>Rebuttal Conditions</b></em>' reference list.
+	 * The feature id for the '<em><b>Assumptions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK__REBUTTAL_CONDITIONS = ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS;
+	int ATTACK__ASSUMPTIONS = ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Attack</em>' class.
@@ -645,14 +645,14 @@ public interface ArgumentsPackage extends EPackage {
 	int EXPERIMENT_RESULTS_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl <em>Model Invalid Claim</em>}' class.
+	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelIsValidClaimImpl <em>Model Is Valid Claim</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelInvalidClaim()
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelIsValidClaimImpl
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelIsValidClaim()
 	 * @generated
 	 */
-	int MODEL_INVALID_CLAIM = 12;
+	int MODEL_IS_VALID_CLAIM = 12;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' attribute.
@@ -661,25 +661,71 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_INVALID_CLAIM__MODEL = ARGUMENT_ELEMENT_FEATURE_COUNT + 0;
+	int MODEL_IS_VALID_CLAIM__MODEL = ARGUMENT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Model Invalid Claim</em>' class.
+	 * The number of structural features of the '<em>Model Is Valid Claim</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_INVALID_CLAIM_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 1;
+	int MODEL_IS_VALID_CLAIM_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Model Invalid Claim</em>' class.
+	 * The number of operations of the '<em>Model Is Valid Claim</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_INVALID_CLAIM_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
+	int MODEL_IS_VALID_CLAIM_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInputDataValidImpl <em>Model Input Data Valid</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInputDataValidImpl
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelInputDataValid()
+	 * @generated
+	 */
+	int MODEL_INPUT_DATA_VALID = 13;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_INPUT_DATA_VALID__MODEL = MODEL_IS_VALID_CLAIM__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Data Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_INPUT_DATA_VALID__DATA_DESCRIPTION = MODEL_IS_VALID_CLAIM_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Model Input Data Valid</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_INPUT_DATA_VALID_FEATURE_COUNT = MODEL_IS_VALID_CLAIM_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Model Input Data Valid</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_INPUT_DATA_VALID_OPERATION_COUNT = MODEL_IS_VALID_CLAIM_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement <em>Argument Element</em>}'.
@@ -767,15 +813,15 @@ public interface ArgumentsPackage extends EPackage {
 	EReference getArgumentElementRelation_Claim();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getRebuttalConditions <em>Rebuttal Conditions</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getAssumptions <em>Assumptions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Rebuttal Conditions</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getRebuttalConditions()
+	 * @return the meta object for the reference list '<em>Assumptions</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getAssumptions()
 	 * @see #getArgumentElementRelation()
 	 * @generated
 	 */
-	EReference getArgumentElementRelation_RebuttalConditions();
+	EReference getArgumentElementRelation_Assumptions();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant <em>Simulation Mechanism Warrant</em>}'.
@@ -1011,25 +1057,46 @@ public interface ArgumentsPackage extends EPackage {
 	EAttribute getLiteratureEvidence_Reference();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim <em>Model Invalid Claim</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelIsValidClaim <em>Model Is Valid Claim</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Invalid Claim</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim
+	 * @return the meta object for class '<em>Model Is Valid Claim</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelIsValidClaim
 	 * @generated
 	 */
-	EClass getModelInvalidClaim();
+	EClass getModelIsValidClaim();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim#getModel <em>Model</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelIsValidClaim#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Model</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim#getModel()
-	 * @see #getModelInvalidClaim()
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelIsValidClaim#getModel()
+	 * @see #getModelIsValidClaim()
 	 * @generated
 	 */
-	EAttribute getModelInvalidClaim_Model();
+	EAttribute getModelIsValidClaim_Model();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid <em>Model Input Data Valid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Model Input Data Valid</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid
+	 * @generated
+	 */
+	EClass getModelInputDataValid();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid#getDataDescription <em>Data Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Data Description</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid#getDataDescription()
+	 * @see #getModelInputDataValid()
+	 * @generated
+	 */
+	EAttribute getModelInputDataValid_DataDescription();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1125,13 +1192,12 @@ public interface ArgumentsPackage extends EPackage {
 		EReference ARGUMENT_ELEMENT_RELATION__CLAIM = eINSTANCE.getArgumentElementRelation_Claim();
 
 		/**
-		 * The meta object literal for the '<em><b>Rebuttal Conditions</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Assumptions</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS = eINSTANCE
-				.getArgumentElementRelation_RebuttalConditions();
+		EReference ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS = eINSTANCE.getArgumentElementRelation_Assumptions();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SimulationMechanismWarrantImpl <em>Simulation Mechanism Warrant</em>}' class.
@@ -1333,14 +1399,14 @@ public interface ArgumentsPackage extends EPackage {
 		EAttribute LITERATURE_EVIDENCE__REFERENCE = eINSTANCE.getLiteratureEvidence_Reference();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl <em>Model Invalid Claim</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelIsValidClaimImpl <em>Model Is Valid Claim</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl
-		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelInvalidClaim()
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelIsValidClaimImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelIsValidClaim()
 		 * @generated
 		 */
-		EClass MODEL_INVALID_CLAIM = eINSTANCE.getModelInvalidClaim();
+		EClass MODEL_IS_VALID_CLAIM = eINSTANCE.getModelIsValidClaim();
 
 		/**
 		 * The meta object literal for the '<em><b>Model</b></em>' attribute feature.
@@ -1348,7 +1414,25 @@ public interface ArgumentsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MODEL_INVALID_CLAIM__MODEL = eINSTANCE.getModelInvalidClaim_Model();
+		EAttribute MODEL_IS_VALID_CLAIM__MODEL = eINSTANCE.getModelIsValidClaim_Model();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInputDataValidImpl <em>Model Input Data Valid</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInputDataValidImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelInputDataValid()
+		 * @generated
+		 */
+		EClass MODEL_INPUT_DATA_VALID = eINSTANCE.getModelInputDataValid();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_INPUT_DATA_VALID__DATA_DESCRIPTION = eINSTANCE.getModelInputDataValid_DataDescription();
 
 	}
 

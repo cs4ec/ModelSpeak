@@ -303,26 +303,26 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelInvalidClaimItemProvider modelInvalidClaimItemProvider;
+	protected ModelInputDataValidItemProvider modelInputDataValidItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim}.
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createModelInvalidClaimAdapter() {
-		if (modelInvalidClaimItemProvider == null) {
-			modelInvalidClaimItemProvider = new ModelInvalidClaimItemProvider(this);
+	public Adapter createModelInputDataValidAdapter() {
+		if (modelInputDataValidItemProvider == null) {
+			modelInputDataValidItemProvider = new ModelInputDataValidItemProvider(this);
 		}
 
-		return modelInvalidClaimItemProvider;
+		return modelInputDataValidItemProvider;
 	}
 
 	/**
@@ -450,8 +450,8 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 			experimentResultsItemProvider.dispose();
 		if (literatureEvidenceItemProvider != null)
 			literatureEvidenceItemProvider.dispose();
-		if (modelInvalidClaimItemProvider != null)
-			modelInvalidClaimItemProvider.dispose();
+		if (modelInputDataValidItemProvider != null)
+			modelInputDataValidItemProvider.dispose();
 	}
 
 }

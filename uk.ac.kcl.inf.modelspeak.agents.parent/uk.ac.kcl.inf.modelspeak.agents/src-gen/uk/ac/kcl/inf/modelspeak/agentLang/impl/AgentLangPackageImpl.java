@@ -20,6 +20,8 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Experiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
 import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
@@ -117,7 +119,21 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass literatureReferenceTheoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass literatureReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass literatureReferenceForDataEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -566,6 +582,17 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
+  public EClass getLiteratureReferenceTheory()
+  {
+    return literatureReferenceTheoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getLiteratureReference()
   {
     return literatureReferenceEClass;
@@ -580,6 +607,39 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
   public EAttribute getLiteratureReference_Ref()
   {
     return (EAttribute)literatureReferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLiteratureReferenceForData()
+  {
+    return literatureReferenceForDataEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLiteratureReferenceForData_Data()
+  {
+    return (EAttribute)literatureReferenceForDataEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLiteratureReferenceForData_Ref()
+  {
+    return (EReference)literatureReferenceForDataEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1217,8 +1277,14 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     generalTheoryEClass = createEClass(GENERAL_THEORY);
     createEAttribute(generalTheoryEClass, GENERAL_THEORY__CONTENT);
 
+    literatureReferenceTheoryEClass = createEClass(LITERATURE_REFERENCE_THEORY);
+
     literatureReferenceEClass = createEClass(LITERATURE_REFERENCE);
     createEAttribute(literatureReferenceEClass, LITERATURE_REFERENCE__REF);
+
+    literatureReferenceForDataEClass = createEClass(LITERATURE_REFERENCE_FOR_DATA);
+    createEAttribute(literatureReferenceForDataEClass, LITERATURE_REFERENCE_FOR_DATA__DATA);
+    createEReference(literatureReferenceForDataEClass, LITERATURE_REFERENCE_FOR_DATA__REF);
 
     proposeRQEClass = createEClass(PROPOSE_RQ);
     createEReference(proposeRQEClass, PROPOSE_RQ__RQ);
@@ -1322,7 +1388,9 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     // Add supertypes to classes
     multiTheoryEClass.getESuperTypes().add(this.getTheory());
     generalTheoryEClass.getESuperTypes().add(this.getTheory());
-    literatureReferenceEClass.getESuperTypes().add(this.getTheory());
+    literatureReferenceTheoryEClass.getESuperTypes().add(this.getTheory());
+    literatureReferenceEClass.getESuperTypes().add(this.getLiteratureReferenceTheory());
+    literatureReferenceForDataEClass.getESuperTypes().add(this.getLiteratureReferenceTheory());
     proposeRQEClass.getESuperTypes().add(this.getMove());
     proposeRequirementEClass.getESuperTypes().add(this.getMove());
     attackRequirementEClass.getESuperTypes().add(this.getMove());
@@ -1375,8 +1443,14 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     initEClass(generalTheoryEClass, GeneralTheory.class, "GeneralTheory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralTheory_Content(), ecorePackage.getEString(), "content", null, 0, 1, GeneralTheory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(literatureReferenceTheoryEClass, LiteratureReferenceTheory.class, "LiteratureReferenceTheory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(literatureReferenceEClass, LiteratureReference.class, "LiteratureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLiteratureReference_Ref(), ecorePackage.getEString(), "ref", null, 0, 1, LiteratureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(literatureReferenceForDataEClass, LiteratureReferenceForData.class, "LiteratureReferenceForData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLiteratureReferenceForData_Data(), ecorePackage.getEString(), "data", null, 0, 1, LiteratureReferenceForData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLiteratureReferenceForData_Ref(), this.getLiteratureReference(), null, "ref", null, 0, 1, LiteratureReferenceForData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(proposeRQEClass, ProposeRQ.class, "ProposeRQ", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProposeRQ_Rq(), this.getResearchQuestion(), null, "rq", null, 0, 1, ProposeRQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

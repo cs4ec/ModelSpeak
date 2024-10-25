@@ -38,6 +38,8 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Theory
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
 import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData
 
 /**
  * Generate the theory store corresponding to the current agent dialogue state.
@@ -190,5 +192,5 @@ class TheoryStoreGenerator {
 		]
 
 		ruleRunner.execute(null)
-	}
+	}	
 }

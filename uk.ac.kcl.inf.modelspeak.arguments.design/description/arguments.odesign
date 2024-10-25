@@ -62,8 +62,8 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
             </style>
           </conditionnalStyles>
-          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::ModelInvalidClaim)">
-            <style xsi:type="style:BundledImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'Model ' + self.oclAsType(arguments::ModelInvalidClaim).model + ' is invalid.'" labelPosition="node" resizeKind="NSEW">
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::ModelIsValidClaim)">
+            <style xsi:type="style:BundledImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'Model ' + self.oclAsType(arguments::ModelIsValidClaim).model + if self.oclIsTypeOf(arguments::ModelInputDataValid) then ' uses valid input data ' + self.oclAsType(arguments::ModelInputDataValid).dataDescription else ' is valid' endif + '.'" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
@@ -125,10 +125,10 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="SupportRebuttalLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetFinderExpression="feature:rebuttalConditions">
+        <edgeMappings name="SupportAssumptionLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetFinderExpression="feature:assumptions">
           <style lineStyle="dash" endsCentering="Target">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="unless">
+            <centerLabelStyleDescription showIcon="false" labelExpression="assuming">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
             </centerLabelStyleDescription>
           </style>

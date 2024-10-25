@@ -23,6 +23,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Experiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced;
@@ -80,6 +81,9 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case AgentLangPackage.LITERATURE_REFERENCE:
 				sequence_LiteratureReference(context, (LiteratureReference) semanticObject); 
+				return; 
+			case AgentLangPackage.LITERATURE_REFERENCE_FOR_DATA:
+				sequence_LiteratureReferenceForData(context, (LiteratureReferenceForData) semanticObject); 
 				return; 
 			case AgentLangPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -303,7 +307,36 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Theory returns LiteratureReferenceForData
+	 *     LiteratureReferenceTheory returns LiteratureReferenceForData
+	 *     LiteratureReferenceForData returns LiteratureReferenceForData
+	 *
+	 * Constraint:
+	 *     (name=ID data=STRING ref=LiteratureReference)
+	 * </pre>
+	 */
+	protected void sequence_LiteratureReferenceForData(ISerializationContext context, LiteratureReferenceForData semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.THEORY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.THEORY__NAME));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.LITERATURE_REFERENCE_FOR_DATA__DATA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.LITERATURE_REFERENCE_FOR_DATA__DATA));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.LITERATURE_REFERENCE_FOR_DATA__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.LITERATURE_REFERENCE_FOR_DATA__REF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLiteratureReferenceForDataAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLiteratureReferenceForDataAccess().getDataSTRINGTerminalRuleCall_1_0(), semanticObject.getData());
+		feeder.accept(grammarAccess.getLiteratureReferenceForDataAccess().getRefLiteratureReferenceParserRuleCall_4_0(), semanticObject.getRef());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Theory returns LiteratureReference
+	 *     LiteratureReferenceTheory returns LiteratureReference
 	 *     LiteratureReference returns LiteratureReference
 	 *
 	 * Constraint:

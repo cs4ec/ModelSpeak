@@ -121,9 +121,19 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
         return createGeneralTheoryAdapter();
       }
       @Override
+      public Adapter caseLiteratureReferenceTheory(LiteratureReferenceTheory object)
+      {
+        return createLiteratureReferenceTheoryAdapter();
+      }
+      @Override
       public Adapter caseLiteratureReference(LiteratureReference object)
       {
         return createLiteratureReferenceAdapter();
+      }
+      @Override
+      public Adapter caseLiteratureReferenceForData(LiteratureReferenceForData object)
+      {
+        return createLiteratureReferenceForDataAdapter();
       }
       @Override
       public Adapter caseProposeRQ(ProposeRQ object)
@@ -373,6 +383,21 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceTheory <em>Literature Reference Theory</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceTheory
+   * @generated
+   */
+  public Adapter createLiteratureReferenceTheoryAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference <em>Literature Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -383,6 +408,21 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLiteratureReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData <em>Literature Reference For Data</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData
+   * @generated
+   */
+  public Adapter createLiteratureReferenceForDataAdapter()
   {
     return null;
   }

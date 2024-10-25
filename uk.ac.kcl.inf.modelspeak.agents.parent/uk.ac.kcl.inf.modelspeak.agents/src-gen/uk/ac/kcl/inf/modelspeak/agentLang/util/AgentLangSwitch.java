@@ -138,11 +138,29 @@ public class AgentLangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AgentLangPackage.LITERATURE_REFERENCE_THEORY:
+      {
+        LiteratureReferenceTheory literatureReferenceTheory = (LiteratureReferenceTheory)theEObject;
+        T result = caseLiteratureReferenceTheory(literatureReferenceTheory);
+        if (result == null) result = caseTheory(literatureReferenceTheory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AgentLangPackage.LITERATURE_REFERENCE:
       {
         LiteratureReference literatureReference = (LiteratureReference)theEObject;
         T result = caseLiteratureReference(literatureReference);
+        if (result == null) result = caseLiteratureReferenceTheory(literatureReference);
         if (result == null) result = caseTheory(literatureReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AgentLangPackage.LITERATURE_REFERENCE_FOR_DATA:
+      {
+        LiteratureReferenceForData literatureReferenceForData = (LiteratureReferenceForData)theEObject;
+        T result = caseLiteratureReferenceForData(literatureReferenceForData);
+        if (result == null) result = caseLiteratureReferenceTheory(literatureReferenceForData);
+        if (result == null) result = caseTheory(literatureReferenceForData);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -439,6 +457,22 @@ public class AgentLangSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Literature Reference Theory</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Literature Reference Theory</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiteratureReferenceTheory(LiteratureReferenceTheory object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Literature Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -450,6 +484,22 @@ public class AgentLangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLiteratureReference(LiteratureReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Literature Reference For Data</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Literature Reference For Data</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiteratureReferenceForData(LiteratureReferenceForData object)
   {
     return null;
   }

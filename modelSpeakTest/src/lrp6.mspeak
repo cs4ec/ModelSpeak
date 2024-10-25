@@ -10,7 +10,7 @@ proposeModel(m1{"Basic internalization model of WNT/LRP6"}
 	           r1)
 
 // TODO: How does the argument we generate for this translate into standard argument graphs?
-supportModel(m1, set{{ref4[Lauffenburger and Linderman (1996)], 
+supportModel(m1, set{{dt1 "some input data" supported by ref4[Lauffenburger and Linderman (1996)], 
 	                  ref5[Bafico et al. (2001)], 
 	                  ref1[Yamamoto et al. (2006)], 
 	                  ref6[Bourhis et al. (2010)], 

@@ -52,7 +52,7 @@ public class ArgumentElementRelationItemProvider extends ItemProviderAdapter imp
 			addEvidencePropertyDescriptor(object);
 			addWarrantPropertyDescriptor(object);
 			addClaimPropertyDescriptor(object);
-			addRebuttalConditionsPropertyDescriptor(object);
+			addAssumptionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -103,19 +103,18 @@ public class ArgumentElementRelationItemProvider extends ItemProviderAdapter imp
 	}
 
 	/**
-	 * This adds a property descriptor for the Rebuttal Conditions feature.
+	 * This adds a property descriptor for the Assumptions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRebuttalConditionsPropertyDescriptor(Object object) {
+	protected void addAssumptionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ArgumentElementRelation_rebuttalConditions_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ArgumentElementRelation_rebuttalConditions_feature", "_UI_ArgumentElementRelation_type"),
-				ArgumentsPackage.Literals.ARGUMENT_ELEMENT_RELATION__REBUTTAL_CONDITIONS, true, false, true, null, null,
-				null));
+				getString("_UI_ArgumentElementRelation_assumptions_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ArgumentElementRelation_assumptions_feature",
+						"_UI_ArgumentElementRelation_type"),
+				ArgumentsPackage.Literals.ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS, true, false, true, null, null, null));
 	}
 
 	/**

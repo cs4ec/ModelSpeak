@@ -36,6 +36,8 @@ import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
 import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
@@ -185,12 +187,17 @@ public class ArgumentGraphGenerator {
 
   private Boolean _updateArgumentGraph(final SupportModel move) {
     final Consumer<Theory> _function = (Theory t) -> {
-      if ((t instanceof LiteratureReference)) {
-        String _name = move.getModel().getName();
-        Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
-        String _ref = ((LiteratureReference)t).getRef();
-        Pair<String, String> _mappedTo_1 = Pair.<String, String>of("literatureRef", _ref);
-        this.execute("supportModel", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1)));
+      if ((t instanceof LiteratureReferenceTheory)) {
+        if ((t instanceof LiteratureReferenceForData)) {
+          String _name = move.getModel().getName();
+          Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+          String _ref = ((LiteratureReferenceForData)t).getRef().getRef();
+          Pair<String, String> _mappedTo_1 = Pair.<String, String>of("literatureRef", _ref);
+          String _data = ((LiteratureReferenceForData)t).getData();
+          Pair<String, String> _mappedTo_2 = Pair.<String, String>of("dataDescription", _data);
+          this.execute("supportModel", 
+            Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2)));
+        }
       } else {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("Cannot currently process support model moves with anything else than a literature reference.");

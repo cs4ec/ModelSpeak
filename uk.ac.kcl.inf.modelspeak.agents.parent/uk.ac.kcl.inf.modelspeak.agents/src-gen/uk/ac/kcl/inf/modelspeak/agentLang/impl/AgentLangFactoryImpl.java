@@ -74,7 +74,9 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
       case AgentLangPackage.THEORY: return createTheory();
       case AgentLangPackage.MULTI_THEORY: return createMultiTheory();
       case AgentLangPackage.GENERAL_THEORY: return createGeneralTheory();
+      case AgentLangPackage.LITERATURE_REFERENCE_THEORY: return createLiteratureReferenceTheory();
       case AgentLangPackage.LITERATURE_REFERENCE: return createLiteratureReference();
+      case AgentLangPackage.LITERATURE_REFERENCE_FOR_DATA: return createLiteratureReferenceForData();
       case AgentLangPackage.PROPOSE_RQ: return createProposeRQ();
       case AgentLangPackage.PROPOSE_REQUIREMENT: return createProposeRequirement();
       case AgentLangPackage.ATTACK_REQUIREMENT: return createAttackRequirement();
@@ -212,10 +214,34 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
    * @generated
    */
   @Override
+  public LiteratureReferenceTheory createLiteratureReferenceTheory()
+  {
+    LiteratureReferenceTheoryImpl literatureReferenceTheory = new LiteratureReferenceTheoryImpl();
+    return literatureReferenceTheory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public LiteratureReference createLiteratureReference()
   {
     LiteratureReferenceImpl literatureReference = new LiteratureReferenceImpl();
     return literatureReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LiteratureReferenceForData createLiteratureReferenceForData()
+  {
+    LiteratureReferenceForDataImpl literatureReferenceForData = new LiteratureReferenceForDataImpl();
+    return literatureReferenceForData;
   }
 
   /**

@@ -170,11 +170,22 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ArgumentsPackage.MODEL_INVALID_CLAIM: {
-			ModelInvalidClaim modelInvalidClaim = (ModelInvalidClaim) theEObject;
-			T result = caseModelInvalidClaim(modelInvalidClaim);
+		case ArgumentsPackage.MODEL_IS_VALID_CLAIM: {
+			ModelIsValidClaim modelIsValidClaim = (ModelIsValidClaim) theEObject;
+			T result = caseModelIsValidClaim(modelIsValidClaim);
 			if (result == null)
-				result = caseArgumentElement(modelInvalidClaim);
+				result = caseArgumentElement(modelIsValidClaim);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArgumentsPackage.MODEL_INPUT_DATA_VALID: {
+			ModelInputDataValid modelInputDataValid = (ModelInputDataValid) theEObject;
+			T result = caseModelInputDataValid(modelInputDataValid);
+			if (result == null)
+				result = caseModelIsValidClaim(modelInputDataValid);
+			if (result == null)
+				result = caseArgumentElement(modelInputDataValid);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -365,17 +376,32 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Invalid Claim</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model Is Valid Claim</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Invalid Claim</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model Is Valid Claim</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelInvalidClaim(ModelInvalidClaim object) {
+	public T caseModelIsValidClaim(ModelIsValidClaim object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Input Data Valid</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Input Data Valid</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelInputDataValid(ModelInputDataValid object) {
 		return null;
 	}
 

@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelIsValidClaim;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model Invalid Claim</b></em>'.
+ * An implementation of the model object '<em><b>Model Is Valid Claim</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelInvalidClaimImpl#getModel <em>Model</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelIsValidClaimImpl#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelInvalidClaim {
+public abstract class ModelIsValidClaimImpl extends ArgumentElementImpl implements ModelIsValidClaim {
 	/**
 	 * The default value of the '{@link #getModel() <em>Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelInvalidClaimImpl() {
+	protected ModelIsValidClaimImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelI
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ArgumentsPackage.Literals.MODEL_INVALID_CLAIM;
+		return ArgumentsPackage.Literals.MODEL_IS_VALID_CLAIM;
 	}
 
 	/**
@@ -84,8 +84,8 @@ public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelI
 		String oldModel = model;
 		model = newModel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArgumentsPackage.MODEL_INVALID_CLAIM__MODEL, oldModel,
-					model));
+			eNotify(new ENotificationImpl(this, Notification.SET, ArgumentsPackage.MODEL_IS_VALID_CLAIM__MODEL,
+					oldModel, model));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ArgumentsPackage.MODEL_INVALID_CLAIM__MODEL:
+		case ArgumentsPackage.MODEL_IS_VALID_CLAIM__MODEL:
 			return getModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ArgumentsPackage.MODEL_INVALID_CLAIM__MODEL:
+		case ArgumentsPackage.MODEL_IS_VALID_CLAIM__MODEL:
 			setModel((String) newValue);
 			return;
 		}
@@ -125,7 +125,7 @@ public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ArgumentsPackage.MODEL_INVALID_CLAIM__MODEL:
+		case ArgumentsPackage.MODEL_IS_VALID_CLAIM__MODEL:
 			setModel(MODEL_EDEFAULT);
 			return;
 		}
@@ -140,7 +140,7 @@ public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ArgumentsPackage.MODEL_INVALID_CLAIM__MODEL:
+		case ArgumentsPackage.MODEL_IS_VALID_CLAIM__MODEL:
 			return MODEL_EDEFAULT == null ? model != null : !MODEL_EDEFAULT.equals(model);
 		}
 		return super.eIsSet(featureID);
@@ -163,4 +163,4 @@ public class ModelInvalidClaimImpl extends ArgumentElementImpl implements ModelI
 		return result.toString();
 	}
 
-} //ModelInvalidClaimImpl
+} //ModelIsValidClaimImpl

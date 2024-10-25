@@ -14,22 +14,22 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInvalidClaim} object.
+ * This is the item provider adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelInvalidClaimItemProvider extends ArgumentElementItemProvider {
+public class ModelInputDataValidItemProvider extends ModelIsValidClaimItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelInvalidClaimItemProvider(AdapterFactory adapterFactory) {
+	public ModelInputDataValidItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,36 +44,36 @@ public class ModelInvalidClaimItemProvider extends ArgumentElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addModelPropertyDescriptor(object);
+			addDataDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Model feature.
+	 * This adds a property descriptor for the Data Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addModelPropertyDescriptor(Object object) {
+	protected void addDataDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ModelInvalidClaim_model_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ModelInvalidClaim_model_feature",
-								"_UI_ModelInvalidClaim_type"),
-						ArgumentsPackage.Literals.MODEL_INVALID_CLAIM__MODEL, true, false, false,
+						getResourceLocator(), getString("_UI_ModelInputDataValid_dataDescription_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_ModelInputDataValid_dataDescription_feature", "_UI_ModelInputDataValid_type"),
+						ArgumentsPackage.Literals.MODEL_INPUT_DATA_VALID__DATA_DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns ModelInvalidClaim.gif.
+	 * This returns ModelInputDataValid.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ModelInvalidClaim"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ModelInputDataValid"));
 	}
 
 	/**
@@ -94,9 +94,9 @@ public class ModelInvalidClaimItemProvider extends ArgumentElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelInvalidClaim) object).getModel();
-		return label == null || label.length() == 0 ? getString("_UI_ModelInvalidClaim_type")
-				: getString("_UI_ModelInvalidClaim_type") + " " + label;
+		String label = ((ModelInputDataValid) object).getModel();
+		return label == null || label.length() == 0 ? getString("_UI_ModelInputDataValid_type")
+				: getString("_UI_ModelInputDataValid_type") + " " + label;
 	}
 
 	/**
@@ -110,8 +110,8 @@ public class ModelInvalidClaimItemProvider extends ArgumentElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ModelInvalidClaim.class)) {
-		case ArgumentsPackage.MODEL_INVALID_CLAIM__MODEL:
+		switch (notification.getFeatureID(ModelInputDataValid.class)) {
+		case ArgumentsPackage.MODEL_INPUT_DATA_VALID__DATA_DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

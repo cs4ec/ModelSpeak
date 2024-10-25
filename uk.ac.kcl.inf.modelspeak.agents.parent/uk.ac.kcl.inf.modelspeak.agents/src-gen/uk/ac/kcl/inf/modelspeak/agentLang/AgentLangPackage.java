@@ -373,14 +373,14 @@ public interface AgentLangPackage extends EPackage
   int GENERAL_THEORY_FEATURE_COUNT = THEORY_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceImpl <em>Literature Reference</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceTheoryImpl <em>Literature Reference Theory</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceImpl
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getLiteratureReference()
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceTheoryImpl
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getLiteratureReferenceTheory()
    * @generated
    */
-  int LITERATURE_REFERENCE = 9;
+  int LITERATURE_REFERENCE_THEORY = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -389,7 +389,35 @@ public interface AgentLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERATURE_REFERENCE__NAME = THEORY__NAME;
+  int LITERATURE_REFERENCE_THEORY__NAME = THEORY__NAME;
+
+  /**
+   * The number of structural features of the '<em>Literature Reference Theory</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERATURE_REFERENCE_THEORY_FEATURE_COUNT = THEORY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceImpl <em>Literature Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceImpl
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getLiteratureReference()
+   * @generated
+   */
+  int LITERATURE_REFERENCE = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERATURE_REFERENCE__NAME = LITERATURE_REFERENCE_THEORY__NAME;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' attribute.
@@ -398,7 +426,7 @@ public interface AgentLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERATURE_REFERENCE__REF = THEORY_FEATURE_COUNT + 0;
+  int LITERATURE_REFERENCE__REF = LITERATURE_REFERENCE_THEORY_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Literature Reference</em>' class.
@@ -407,7 +435,53 @@ public interface AgentLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERATURE_REFERENCE_FEATURE_COUNT = THEORY_FEATURE_COUNT + 1;
+  int LITERATURE_REFERENCE_FEATURE_COUNT = LITERATURE_REFERENCE_THEORY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceForDataImpl <em>Literature Reference For Data</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceForDataImpl
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getLiteratureReferenceForData()
+   * @generated
+   */
+  int LITERATURE_REFERENCE_FOR_DATA = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERATURE_REFERENCE_FOR_DATA__NAME = LITERATURE_REFERENCE_THEORY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Data</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERATURE_REFERENCE_FOR_DATA__DATA = LITERATURE_REFERENCE_THEORY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERATURE_REFERENCE_FOR_DATA__REF = LITERATURE_REFERENCE_THEORY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Literature Reference For Data</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERATURE_REFERENCE_FOR_DATA_FEATURE_COUNT = LITERATURE_REFERENCE_THEORY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeRQImpl <em>Propose RQ</em>}' class.
@@ -417,7 +491,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeRQ()
    * @generated
    */
-  int PROPOSE_RQ = 10;
+  int PROPOSE_RQ = 12;
 
   /**
    * The feature id for the '<em><b>Rq</b></em>' containment reference.
@@ -445,7 +519,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeRequirement()
    * @generated
    */
-  int PROPOSE_REQUIREMENT = 11;
+  int PROPOSE_REQUIREMENT = 13;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' containment reference.
@@ -482,7 +556,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getAttackRequirement()
    * @generated
    */
-  int ATTACK_REQUIREMENT = 12;
+  int ATTACK_REQUIREMENT = 14;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
@@ -519,7 +593,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRedefineRequirement()
    * @generated
    */
-  int REDEFINE_REQUIREMENT = 13;
+  int REDEFINE_REQUIREMENT = 15;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
@@ -556,7 +630,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRetractRequirement()
    * @generated
    */
-  int RETRACT_REQUIREMENT = 14;
+  int RETRACT_REQUIREMENT = 16;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
@@ -584,7 +658,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getSupportRequirement()
    * @generated
    */
-  int SUPPORT_REQUIREMENT = 15;
+  int SUPPORT_REQUIREMENT = 17;
 
   /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
@@ -621,7 +695,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeModel()
    * @generated
    */
-  int PROPOSE_MODEL = 16;
+  int PROPOSE_MODEL = 18;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' containment reference.
@@ -658,7 +732,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getSupportModel()
    * @generated
    */
-  int SUPPORT_MODEL = 17;
+  int SUPPORT_MODEL = 19;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -695,7 +769,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getReplaceModel()
    * @generated
    */
-  int REPLACE_MODEL = 18;
+  int REPLACE_MODEL = 20;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -732,7 +806,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getCounterModel()
    * @generated
    */
-  int COUNTER_MODEL = 19;
+  int COUNTER_MODEL = 21;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -778,7 +852,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getAttackModel()
    * @generated
    */
-  int ATTACK_MODEL = 20;
+  int ATTACK_MODEL = 22;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -815,7 +889,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getReviseRequirement()
    * @generated
    */
-  int REVISE_REQUIREMENT = 21;
+  int REVISE_REQUIREMENT = 23;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -870,7 +944,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeExperiment()
    * @generated
    */
-  int PROPOSE_EXPERIMENT = 22;
+  int PROPOSE_EXPERIMENT = 24;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -916,7 +990,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getSupportExperiment()
    * @generated
    */
-  int SUPPORT_EXPERIMENT = 23;
+  int SUPPORT_EXPERIMENT = 25;
 
   /**
    * The feature id for the '<em><b>Experiment</b></em>' reference.
@@ -953,7 +1027,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getAttackExperiment()
    * @generated
    */
-  int ATTACK_EXPERIMENT = 24;
+  int ATTACK_EXPERIMENT = 26;
 
   /**
    * The feature id for the '<em><b>Experiment</b></em>' reference.
@@ -990,7 +1064,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRetractExperiment()
    * @generated
    */
-  int RETRACT_EXPERIMENT = 25;
+  int RETRACT_EXPERIMENT = 27;
 
   /**
    * The feature id for the '<em><b>Experiment</b></em>' reference.
@@ -1018,7 +1092,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getStudyDone()
    * @generated
    */
-  int STUDY_DONE = 26;
+  int STUDY_DONE = 28;
 
   /**
    * The number of structural features of the '<em>Study Done</em>' class.
@@ -1037,7 +1111,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getNotConvinced()
    * @generated
    */
-  int NOT_CONVINCED = 27;
+  int NOT_CONVINCED = 29;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -1303,6 +1377,16 @@ public interface AgentLangPackage extends EPackage
   EAttribute getGeneralTheory_Content();
 
   /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceTheory <em>Literature Reference Theory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Literature Reference Theory</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceTheory
+   * @generated
+   */
+  EClass getLiteratureReferenceTheory();
+
+  /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference <em>Literature Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1322,6 +1406,38 @@ public interface AgentLangPackage extends EPackage
    * @generated
    */
   EAttribute getLiteratureReference_Ref();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData <em>Literature Reference For Data</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Literature Reference For Data</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData
+   * @generated
+   */
+  EClass getLiteratureReferenceForData();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData#getData <em>Data</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Data</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData#getData()
+   * @see #getLiteratureReferenceForData()
+   * @generated
+   */
+  EAttribute getLiteratureReferenceForData_Data();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData#getRef <em>Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ref</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData#getRef()
+   * @see #getLiteratureReferenceForData()
+   * @generated
+   */
+  EReference getLiteratureReferenceForData_Ref();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ <em>Propose RQ</em>}'.
@@ -2103,6 +2219,16 @@ public interface AgentLangPackage extends EPackage
     EAttribute GENERAL_THEORY__CONTENT = eINSTANCE.getGeneralTheory_Content();
 
     /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceTheoryImpl <em>Literature Reference Theory</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceTheoryImpl
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getLiteratureReferenceTheory()
+     * @generated
+     */
+    EClass LITERATURE_REFERENCE_THEORY = eINSTANCE.getLiteratureReferenceTheory();
+
+    /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceImpl <em>Literature Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2119,6 +2245,32 @@ public interface AgentLangPackage extends EPackage
      * @generated
      */
     EAttribute LITERATURE_REFERENCE__REF = eINSTANCE.getLiteratureReference_Ref();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceForDataImpl <em>Literature Reference For Data</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.LiteratureReferenceForDataImpl
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getLiteratureReferenceForData()
+     * @generated
+     */
+    EClass LITERATURE_REFERENCE_FOR_DATA = eINSTANCE.getLiteratureReferenceForData();
+
+    /**
+     * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LITERATURE_REFERENCE_FOR_DATA__DATA = eINSTANCE.getLiteratureReferenceForData_Data();
+
+    /**
+     * The meta object literal for the '<em><b>Ref</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERATURE_REFERENCE_FOR_DATA__REF = eINSTANCE.getLiteratureReferenceForData_Ref();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeRQImpl <em>Propose RQ</em>}' class.

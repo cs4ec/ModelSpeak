@@ -20,6 +20,8 @@ import org.eclipse.xtext.resource.SaveOptions
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel
 import uk.ac.kcl.inf.modelspeak.agentLang.Game
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceTheory
 import uk.ac.kcl.inf.modelspeak.agentLang.Model
 import uk.ac.kcl.inf.modelspeak.agentLang.Move
 import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory
@@ -141,8 +143,12 @@ class ArgumentGraphGenerator {
 
 	private dispatch def updateArgumentGraph(SupportModel move) {
 		move.theory.dispatchTheory([ t |
-			if (t instanceof LiteratureReference) {
-				'supportModel'.execute(#['modelName' -> move.model.name, 'literatureRef' -> t.ref])
+			if (t instanceof LiteratureReferenceTheory) {
+				if (t instanceof LiteratureReferenceForData) {
+					'supportModel'.execute(
+						#['modelName' -> move.model.name, 'literatureRef' -> t.ref.ref, 'dataDescription' -> t.data])
+				}
+				// TODO: Other uses of literature references for supporting models...
 			} else {
 				throw new IllegalArgumentException('''Cannot currently process support model moves with anything else than a literature reference.''')
 			}
