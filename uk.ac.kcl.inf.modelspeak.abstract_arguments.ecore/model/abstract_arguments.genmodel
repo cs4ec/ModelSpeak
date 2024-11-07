@@ -7,6 +7,7 @@
     modelPluginID="uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore" modelName="Abstract_arguments"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="22.0" copyrightFields="false"
+    usedGenPackages="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.genmodel#//arguments"
     operationReflection="true" importOrganizing="true">
   <foreignModel>abstract_arguments.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
@@ -30,53 +31,6 @@
     </genClasses>
     <genClasses ecoreClass="abstract_arguments.ecore#//DerivedAbstractArgument">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstract_arguments.ecore#//DerivedAbstractArgument/argumentelement"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Arguments" ecorePackage="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#/">
-    <genClasses image="false" ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentElement"/>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentGraph">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentGraph/argumentElements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentGraph/relations"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentElementRelation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentElementRelation/evidence"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentElementRelation/warrant"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentElementRelation/claim"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentElementRelation/assumptions"/>
-    </genClasses>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//SimulationMechanismWarrant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//SimulationMechanismWarrant/outputDataOverTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//SimulationMechanismWarrant/explainedEffect"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//SimulationMechanismWarrant/generatingRequirement"/>
-    </genClasses>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//StandardSimulationWarrant"/>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//LiteratureEvidenceForDataAndEffect">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//LiteratureEvidenceForDataAndEffect/observedDataOverTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//LiteratureEvidenceForDataAndEffect/describedEffect"/>
-    </genClasses>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ModelMatchesDataOverTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ModelMatchesDataOverTime/model"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ModelMatchesDataOverTime/dataOverTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ModelMatchesDataOverTime/mechanism"/>
-    </genClasses>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//MechanismExplainsEffect">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//MechanismExplainsEffect/mechanism"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//MechanismExplainsEffect/explainedEffect"/>
-    </genClasses>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//Support"/>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//Attack"/>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ExperimentResults">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ExperimentResults/experimentName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ExperimentResults/results"/>
-    </genClasses>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//LiteratureEvidence">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//LiteratureEvidence/reference"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ModelIsValidClaim">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ModelIsValidClaim/model"/>
-    </genClasses>
-    <genClasses ecoreClass="../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ModelInputDataValid">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ModelInputDataValid/dataDescription"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -16,12 +16,22 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
  */
 @SuppressWarnings("all")
 public class AgentLangGenerator extends AbstractGenerator {
+  private final TheoryStoreGenerator theoryStoreGenerator = new TheoryStoreGenerator();
+
+  private final ArgumentGraphGenerator argGraphGenerator = new ArgumentGraphGenerator();
+
+  @Override
+  public void beforeGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.theoryStoreGenerator.beforeGenerate(resource, fsa, context);
+    this.argGraphGenerator.beforeGenerate(resource, fsa, context);
+  }
+
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     try {
       Throwable t = null;
       try {
-        new TheoryStoreGenerator().doGenerate(resource, fsa, context);
+        this.theoryStoreGenerator.doGenerate(resource, fsa, context);
       } catch (final Throwable _t) {
         if (_t instanceof Throwable) {
           final Throwable tt = (Throwable)_t;
@@ -30,7 +40,7 @@ public class AgentLangGenerator extends AbstractGenerator {
           throw Exceptions.sneakyThrow(_t);
         }
       }
-      new ArgumentGraphGenerator().doGenerate(resource, fsa, context);
+      this.argGraphGenerator.doGenerate(resource, fsa, context);
       if ((t != null)) {
         throw t;
       }

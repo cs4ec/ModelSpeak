@@ -1,17 +1,18 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.edit
 Bundle-SymbolicName: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.edit;singleton:=true
 Automatic-Module-Name: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.provider.Abstract_argumentsEditPlugin$Implementation
-Bundle-Vendor: %providerName
+Bundle-Vendor: My Company
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-22
-Export-Package: arguments.provider,
- uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.provider
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.provider
 Require-Bundle: org.eclipse.core.runtime,
  uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ uk.ac.kcl.inf.modelspeak.arguments.ecore;visibility:=reexport,
+ uk.ac.kcl.inf.modelspeak.arguments.ecore.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -4,6 +4,7 @@
     <semanticResources>abstract_arguments.ecore</semanticResources>
     <semanticResources>abstract_arguments.genmodel</semanticResources>
     <semanticResources>platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore</semanticResources>
+    <semanticResources>platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_gI_7AJzoEe-vK9CaR31fVA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_gJfqQJzoEe-vK9CaR31fVA" name="abstract_arguments" repPath="#_gJd1EJzoEe-vK9CaR31fVA" changeId="1730975066272">

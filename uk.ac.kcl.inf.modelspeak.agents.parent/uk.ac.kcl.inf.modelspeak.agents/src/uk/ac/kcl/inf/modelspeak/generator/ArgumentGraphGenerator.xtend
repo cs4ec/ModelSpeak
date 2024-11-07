@@ -33,8 +33,8 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Requirement
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.generate.Argument2PlatoGenerator
 
 /**
  * Generate the argument graph corresponding to the current agent dialogue state.
@@ -48,6 +48,22 @@ class ArgumentGraphGenerator {
 
 	val extension ArgumentsFactory factory = ArgumentsFactory.eINSTANCE
 
+	var ArgumentGraph argumentGraph
+	var Resource argGraphResource
+	
+	val frameworkGenerator = new ArgumentFrameworkGenerator
+
+	def void beforeGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		argumentGraph = createArgumentGraph
+		val outputUri = fsa.getURI(resource.argumentGraphFileName)
+		val resourceSet = resource.resourceSet
+		argGraphResource = resourceSet.createResource(outputUri)
+		argGraphResource.contents += argumentGraph
+		
+		frameworkGenerator.beforeGenerate(resource, fsa, context)
+	}
+	
+
 	def void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val rulesResource = resource.resourceSet.getResource(
 			URI.createPlatformPluginURI(
@@ -60,19 +76,14 @@ class ArgumentGraphGenerator {
 	}
 
 	def generateArgumentGraph(Game game, Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		val argumentGraph = createArgumentGraph
-		val outputUri = fsa.getURI(resource.argumentGraphFileName)
-		val resourceSet = resource.resourceSet
-		val newResource = resourceSet.createResource(outputUri)
-		newResource.contents += argumentGraph
-
 		modelGraph = new EGraphImpl(argumentGraph)
 		ruleRunner.EGraph = modelGraph
 
 		game.moves.forEach[updateArgumentGraph]
 
-		newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
-		new Argument2PlatoGenerator().doGenerate(newResource, fsa, context)
+		argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
+		frameworkGenerator.doGenerate(argGraphResource, fsa, context)
+//		new Argument2PlatoGenerator().doGenerate(newResource, fsa, context)
 	}
 
 	private def getArgumentGraphFileName(Resource resource) {

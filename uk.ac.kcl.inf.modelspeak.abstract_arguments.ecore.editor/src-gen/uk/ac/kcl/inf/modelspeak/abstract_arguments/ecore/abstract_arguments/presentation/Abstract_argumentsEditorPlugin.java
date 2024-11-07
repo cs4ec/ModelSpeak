@@ -7,6 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.provider.ArgumentsEditPlugin;
 
 /**
  * This is the central singleton for the Abstract_arguments editor plugin.
@@ -38,7 +39,7 @@ public final class Abstract_argumentsEditorPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public Abstract_argumentsEditorPlugin() {
-		super(new ResourceLocator[] {});
+		super(new ResourceLocator[] { ArgumentsEditPlugin.INSTANCE, });
 	}
 
 	/**

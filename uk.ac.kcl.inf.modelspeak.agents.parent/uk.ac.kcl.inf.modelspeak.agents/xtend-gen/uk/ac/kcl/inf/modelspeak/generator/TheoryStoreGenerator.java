@@ -74,6 +74,19 @@ public class TheoryStoreGenerator {
   @Extension
   private final TheoryStoreLangFactory factory = TheoryStoreLangFactory.eINSTANCE;
 
+  private TheoryStore theoryStore;
+
+  private Resource storeResource;
+
+  public void beforeGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.theoryStore = this.factory.createTheoryStore();
+    final URI outputUri = fsa.getURI(this.theoryStoreFileName(resource));
+    final ResourceSet resourceSet = resource.getResourceSet();
+    this.storeResource = resourceSet.createResource(outputUri);
+    EList<EObject> _contents = this.storeResource.getContents();
+    _contents.add(this.theoryStore);
+  }
+
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     final Resource rulesResource = resource.getResourceSet().getResource(
       URI.createPlatformPluginURI(
@@ -89,20 +102,14 @@ public class TheoryStoreGenerator {
 
   public void generateTheoryStore(final Game game, final Resource resource, final IFileSystemAccess2 fsa) {
     try {
-      final TheoryStore theoryStore = this.factory.createTheoryStore();
-      final URI outputUri = fsa.getURI(this.theoryStoreFileName(resource));
-      final ResourceSet resourceSet = resource.getResourceSet();
-      final Resource newResource = resourceSet.createResource(outputUri);
-      EList<EObject> _contents = newResource.getContents();
-      _contents.add(theoryStore);
-      EGraphImpl _eGraphImpl = new EGraphImpl(theoryStore);
+      EGraphImpl _eGraphImpl = new EGraphImpl(this.theoryStore);
       this.modelGraph = _eGraphImpl;
       this.ruleRunner.setEGraph(this.modelGraph);
       final Consumer<Move> _function = (Move it) -> {
         this.updateTheoryStore(it);
       };
       game.getMoves().forEach(_function);
-      newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
+      this.storeResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

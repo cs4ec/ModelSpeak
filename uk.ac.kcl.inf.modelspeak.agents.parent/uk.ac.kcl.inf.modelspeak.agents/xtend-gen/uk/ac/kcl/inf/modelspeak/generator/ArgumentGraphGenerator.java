@@ -51,7 +51,6 @@ import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory;
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.generate.Argument2PlatoGenerator;
 
 /**
  * Generate the argument graph corresponding to the current agent dialogue state.
@@ -69,6 +68,22 @@ public class ArgumentGraphGenerator {
   @Extension
   private final ArgumentsFactory factory = ArgumentsFactory.eINSTANCE;
 
+  private ArgumentGraph argumentGraph;
+
+  private Resource argGraphResource;
+
+  private final ArgumentFrameworkGenerator frameworkGenerator = new ArgumentFrameworkGenerator();
+
+  public void beforeGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.argumentGraph = this.factory.createArgumentGraph();
+    final URI outputUri = fsa.getURI(this.getArgumentGraphFileName(resource));
+    final ResourceSet resourceSet = resource.getResourceSet();
+    this.argGraphResource = resourceSet.createResource(outputUri);
+    EList<EObject> _contents = this.argGraphResource.getContents();
+    _contents.add(this.argumentGraph);
+    this.frameworkGenerator.beforeGenerate(resource, fsa, context);
+  }
+
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     final Resource rulesResource = resource.getResourceSet().getResource(
       URI.createPlatformPluginURI(
@@ -84,21 +99,15 @@ public class ArgumentGraphGenerator {
 
   public void generateArgumentGraph(final Game game, final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     try {
-      final ArgumentGraph argumentGraph = this.factory.createArgumentGraph();
-      final URI outputUri = fsa.getURI(this.getArgumentGraphFileName(resource));
-      final ResourceSet resourceSet = resource.getResourceSet();
-      final Resource newResource = resourceSet.createResource(outputUri);
-      EList<EObject> _contents = newResource.getContents();
-      _contents.add(argumentGraph);
-      EGraphImpl _eGraphImpl = new EGraphImpl(argumentGraph);
+      EGraphImpl _eGraphImpl = new EGraphImpl(this.argumentGraph);
       this.modelGraph = _eGraphImpl;
       this.ruleRunner.setEGraph(this.modelGraph);
       final Consumer<Move> _function = (Move it) -> {
         this.updateArgumentGraph(it);
       };
       game.getMoves().forEach(_function);
-      newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
-      new Argument2PlatoGenerator().doGenerate(newResource, fsa, context);
+      this.argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
+      this.frameworkGenerator.doGenerate(this.argGraphResource, fsa, context);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

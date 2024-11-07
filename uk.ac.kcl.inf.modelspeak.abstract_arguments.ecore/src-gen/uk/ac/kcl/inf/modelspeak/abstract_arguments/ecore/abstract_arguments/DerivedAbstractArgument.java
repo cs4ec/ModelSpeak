@@ -2,8 +2,6 @@
  */
 package uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments;
 
-import arguments.ArgumentElement;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Derived Abstract Argument</b></em>'.
@@ -26,12 +24,12 @@ public interface DerivedAbstractArgument extends AbstractArgument {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Argumentelement</em>' reference.
-	 * @see #setArgumentelement(ArgumentElement)
+	 * @see #setArgumentelement(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement)
 	 * @see uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsPackage#getDerivedAbstractArgument_Argumentelement()
 	 * @model required="true"
 	 * @generated
 	 */
-	ArgumentElement getArgumentelement();
+	uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement getArgumentelement();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument#getArgumentelement <em>Argumentelement</em>}' reference.
@@ -41,6 +39,6 @@ public interface DerivedAbstractArgument extends AbstractArgument {
 	 * @see #getArgumentelement()
 	 * @generated
 	 */
-	void setArgumentelement(ArgumentElement value);
+	void setArgumentelement(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement value);
 
 } // DerivedAbstractArgument

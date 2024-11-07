@@ -34,32 +34,4 @@
       </editor>
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated abstract_arguments -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="arguments.presentation.ArgumentsModelWizardID"
-            name="%_UI_ArgumentsModelWizard_label"
-            class="arguments.presentation.ArgumentsModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ArgumentsModelFile.gif">
-         <description>%_UI_ArgumentsModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated abstract_arguments -->
-      <editor
-            id="arguments.presentation.ArgumentsEditorID"
-            name="%_UI_ArgumentsEditor_label"
-            icon="icons/full/obj16/ArgumentsModelFile.gif"
-            extensions="arguments"
-            class="arguments.presentation.ArgumentsEditor"
-            contributorClass="arguments.presentation.ArgumentsActionBarContributor">
-      </editor>
-   </extension>
-
 </plugin>

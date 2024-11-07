@@ -2,8 +2,6 @@
  */
 package uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments;
 
-import arguments.ArgumentGraph;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -56,12 +54,12 @@ public interface AbstractArgumentFramework extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Argumentgraph</em>' reference.
-	 * @see #setArgumentgraph(ArgumentGraph)
+	 * @see #setArgumentgraph(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph)
 	 * @see uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsPackage#getAbstractArgumentFramework_Argumentgraph()
 	 * @model required="true"
 	 * @generated
 	 */
-	ArgumentGraph getArgumentgraph();
+	uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph getArgumentgraph();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.AbstractArgumentFramework#getArgumentgraph <em>Argumentgraph</em>}' reference.
@@ -71,6 +69,6 @@ public interface AbstractArgumentFramework extends EObject {
 	 * @see #getArgumentgraph()
 	 * @generated
 	 */
-	void setArgumentgraph(ArgumentGraph value);
+	void setArgumentgraph(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph value);
 
 } // AbstractArgumentFramework

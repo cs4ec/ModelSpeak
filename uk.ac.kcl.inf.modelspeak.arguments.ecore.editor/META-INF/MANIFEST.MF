@@ -1,14 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: uk.ac.kcl.inf.modelspeak.arguments.ecore.editor
 Bundle-SymbolicName: uk.ac.kcl.inf.modelspeak.arguments.ecore.editor;singleton:=true
 Automatic-Module-Name: uk.ac.kcl.inf.modelspeak.arguments.ecore.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.presentation.ArgumentsEditorPlugin$Implementation
-Bundle-Vendor: %providerName
+Bundle-Vendor: My Company
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-22
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

@@ -5,6 +5,7 @@ package uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.pro
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.provider.ArgumentsEditPlugin;
 
 /**
  * This is the central singleton for the Abstract_arguments edit plugin.
@@ -36,7 +37,7 @@ public final class Abstract_argumentsEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public Abstract_argumentsEditPlugin() {
-		super(new ResourceLocator[] {});
+		super(new ResourceLocator[] { ArgumentsEditPlugin.INSTANCE, });
 	}
 
 	/**

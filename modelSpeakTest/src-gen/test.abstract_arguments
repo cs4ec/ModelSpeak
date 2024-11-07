@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<abstract_arguments:AbstractArgumentFramework xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:abstract_arguments="http://www.example.org/abstract_arguments" xmlns:arguments="http://www.example.org/arguments">
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument">
+    <argumentelement xsi:type="arguments:SimulationMechanismWarrant" href="test.arguments#//@argumentElements.0"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="1">
+    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="test.arguments#//@argumentElements.1"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="2">
+    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="test.arguments#//@argumentElements.2"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="3">
+    <argumentelement xsi:type="arguments:MechanismExplainsEffect" href="test.arguments#//@argumentElements.3"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="4">
+    <argumentelement xsi:type="arguments:ModelMatchesDataOverTime" href="test.arguments#//@argumentElements.4"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="5">
+    <argumentelement xsi:type="arguments:ExperimentResults" href="test.arguments#//@argumentElements.5"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="6"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="7"/>
+  <attacks source="//@arguments.2" target="//@arguments.6"/>
+  <attacks source="//@arguments.6" target="//@arguments.0" id="1"/>
+  <attacks source="//@arguments.4" target="//@arguments.7" id="2"/>
+  <attacks source="//@arguments.7" target="//@arguments.3" id="3"/>
+  <attacks source="//@arguments.5" target="//@arguments.3" id="4"/>
+  <attacks source="//@arguments.5" target="//@arguments.4" id="5"/>
+  <argumentgraph href="test.arguments#/"/>
+</abstract_arguments:AbstractArgumentFramework>

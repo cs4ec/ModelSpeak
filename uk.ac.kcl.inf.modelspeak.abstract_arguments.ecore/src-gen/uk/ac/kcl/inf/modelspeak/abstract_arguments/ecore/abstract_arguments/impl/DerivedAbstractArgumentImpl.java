@@ -2,8 +2,6 @@
  */
 package uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.impl;
 
-import arguments.ArgumentElement;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -36,7 +34,7 @@ public class DerivedAbstractArgumentImpl extends AbstractArgumentImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected ArgumentElement argumentelement;
+	protected uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement argumentelement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,10 +61,11 @@ public class DerivedAbstractArgumentImpl extends AbstractArgumentImpl implements
 	 * @generated
 	 */
 	@Override
-	public ArgumentElement getArgumentelement() {
+	public uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement getArgumentelement() {
 		if (argumentelement != null && argumentelement.eIsProxy()) {
 			InternalEObject oldArgumentelement = (InternalEObject) argumentelement;
-			argumentelement = (ArgumentElement) eResolveProxy(oldArgumentelement);
+			argumentelement = (uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement) eResolveProxy(
+					oldArgumentelement);
 			if (argumentelement != oldArgumentelement) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
@@ -82,7 +81,7 @@ public class DerivedAbstractArgumentImpl extends AbstractArgumentImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArgumentElement basicGetArgumentelement() {
+	public uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement basicGetArgumentelement() {
 		return argumentelement;
 	}
 
@@ -92,8 +91,9 @@ public class DerivedAbstractArgumentImpl extends AbstractArgumentImpl implements
 	 * @generated
 	 */
 	@Override
-	public void setArgumentelement(ArgumentElement newArgumentelement) {
-		ArgumentElement oldArgumentelement = argumentelement;
+	public void setArgumentelement(
+			uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement newArgumentelement) {
+		uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement oldArgumentelement = argumentelement;
 		argumentelement = newArgumentelement;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
@@ -126,7 +126,7 @@ public class DerivedAbstractArgumentImpl extends AbstractArgumentImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case Abstract_argumentsPackage.DERIVED_ABSTRACT_ARGUMENT__ARGUMENTELEMENT:
-			setArgumentelement((ArgumentElement) newValue);
+			setArgumentelement((uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,7 +141,7 @@ public class DerivedAbstractArgumentImpl extends AbstractArgumentImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case Abstract_argumentsPackage.DERIVED_ABSTRACT_ARGUMENT__ARGUMENTELEMENT:
-			setArgumentelement((ArgumentElement) null);
+			setArgumentelement((uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement) null);
 			return;
 		}
 		super.eUnset(featureID);

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ASCII"?>
+<abstract_arguments:AbstractArgumentFramework xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:abstract_arguments="http://www.example.org/abstract_arguments" xmlns:arguments="http://www.example.org/arguments">
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument">
+    <argumentelement xsi:type="arguments:SimulationMechanismWarrant" href="lrp6.arguments#//@argumentElements.0"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="1">
+    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6.arguments#//@argumentElements.1"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="2">
+    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6.arguments#//@argumentElements.2"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="3">
+    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6.arguments#//@argumentElements.3"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="4">
+    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6.arguments#//@argumentElements.4"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="5">
+    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6.arguments#//@argumentElements.5"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="6">
+    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6.arguments#//@argumentElements.6"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="7">
+    <argumentelement xsi:type="arguments:MechanismExplainsEffect" href="lrp6.arguments#//@argumentElements.7"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="8">
+    <argumentelement xsi:type="arguments:ModelMatchesDataOverTime" href="lrp6.arguments#//@argumentElements.8"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="9">
+    <argumentelement xsi:type="arguments:LiteratureEvidence" href="lrp6.arguments#//@argumentElements.9"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="10">
+    <argumentelement xsi:type="arguments:ModelInputDataValid" href="lrp6.arguments#//@argumentElements.10"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="11">
+    <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6.arguments#//@argumentElements.11"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="12">
+    <argumentelement xsi:type="arguments:MechanismExplainsEffect" href="lrp6.arguments#//@argumentElements.12"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="13">
+    <argumentelement xsi:type="arguments:ModelMatchesDataOverTime" href="lrp6.arguments#//@argumentElements.13"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="14">
+    <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6.arguments#//@argumentElements.14"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="15">
+    <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6.arguments#//@argumentElements.15"/>
+  </arguments>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="16"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="17"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="18"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="19"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="20"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="21"/>
+  <attacks source="//@arguments.2" target="//@arguments.16"/>
+  <attacks source="//@arguments.16" target="//@arguments.0" id="1"/>
+  <attacks source="//@arguments.4" target="//@arguments.17" id="2"/>
+  <attacks source="//@arguments.17" target="//@arguments.0" id="3"/>
+  <attacks source="//@arguments.6" target="//@arguments.18" id="4"/>
+  <attacks source="//@arguments.18" target="//@arguments.0" id="5"/>
+  <attacks source="//@arguments.8" target="//@arguments.19" id="6"/>
+  <attacks source="//@arguments.19" target="//@arguments.7" id="7"/>
+  <attacks source="//@arguments.9" target="//@arguments.20" id="8"/>
+  <attacks source="//@arguments.20" target="//@arguments.10" id="9"/>
+  <attacks source="//@arguments.11" target="//@arguments.7" id="10"/>
+  <attacks source="//@arguments.11" target="//@arguments.8" id="11"/>
+  <attacks source="//@arguments.13" target="//@arguments.21" id="12"/>
+  <attacks source="//@arguments.21" target="//@arguments.12" id="13"/>
+  <attacks source="//@arguments.14" target="//@arguments.12" id="14"/>
+  <attacks source="//@arguments.14" target="//@arguments.13" id="15"/>
+  <attacks source="//@arguments.15" target="//@arguments.12" id="16"/>
+  <attacks source="//@arguments.15" target="//@arguments.13" id="17"/>
+  <argumentgraph href="lrp6.arguments#/"/>
+</abstract_arguments:AbstractArgumentFramework>

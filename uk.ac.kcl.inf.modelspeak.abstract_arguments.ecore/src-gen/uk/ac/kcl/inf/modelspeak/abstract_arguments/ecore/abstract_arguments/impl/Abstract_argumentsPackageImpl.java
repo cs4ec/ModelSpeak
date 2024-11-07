@@ -2,10 +2,6 @@
  */
 package uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.impl;
 
-import arguments.ArgumentsPackage;
-
-import arguments.impl.ArgumentsPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -114,19 +110,14 @@ public class Abstract_argumentsPackageImpl extends EPackageImpl implements Abstr
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ArgumentsPackage.eNS_URI);
-		ArgumentsPackageImpl theArgumentsPackage = (ArgumentsPackageImpl) (registeredPackage instanceof ArgumentsPackageImpl
-				? registeredPackage
-				: ArgumentsPackage.eINSTANCE);
+		// Initialize simple dependencies
+		uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theAbstract_argumentsPackage.createPackageContents();
-		theArgumentsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAbstract_argumentsPackage.initializePackageContents();
-		theArgumentsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAbstract_argumentsPackage.freeze();
@@ -351,8 +342,8 @@ public class Abstract_argumentsPackageImpl extends EPackageImpl implements Abstr
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ArgumentsPackage theArgumentsPackage = (ArgumentsPackage) EPackage.Registry.INSTANCE
-				.getEPackage(ArgumentsPackage.eNS_URI);
+		uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage theArgumentsPackage = (uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage.eNS_URI);
 
 		// Create type parameters
 
