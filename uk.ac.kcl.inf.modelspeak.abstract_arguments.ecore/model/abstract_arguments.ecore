@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="abstract_arguments" nsURI="http://www.example.org/abstract_arguments"
+    nsPrefix="abstract_arguments">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractArgumentFramework">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="#//AbstractArgument" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attacks" upperBound="-1"
+        eType="#//AbstractArgumentAttack" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentgraph" lowerBound="1"
+        eType="ecore:EClass ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentGraph"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractArgument" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractArgumentAttack">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//AbstractArgument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//AbstractArgument"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VirtualAbstractArgument" eSuperTypes="#//AbstractArgument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DerivedAbstractArgument" eSuperTypes="#//AbstractArgument">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentelement" lowerBound="1"
+        eType="ecore:EClass ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentElement"/>
+  </eClassifiers>
+</ecore:EPackage>

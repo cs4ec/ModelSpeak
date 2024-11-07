@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated abstract_arguments -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.presentation.Abstract_argumentsModelWizardID"
+            name="%_UI_Abstract_argumentsModelWizard_label"
+            class="uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.presentation.Abstract_argumentsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Abstract_argumentsModelFile.gif">
+         <description>%_UI_Abstract_argumentsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated abstract_arguments -->
+      <editor
+            id="uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.presentation.Abstract_argumentsEditorID"
+            name="%_UI_Abstract_argumentsEditor_label"
+            icon="icons/full/obj16/Abstract_argumentsModelFile.gif"
+            extensions="abstract_arguments"
+            class="uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.presentation.Abstract_argumentsEditor"
+            contributorClass="uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.presentation.Abstract_argumentsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated abstract_arguments -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="arguments.presentation.ArgumentsModelWizardID"
+            name="%_UI_ArgumentsModelWizard_label"
+            class="arguments.presentation.ArgumentsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArgumentsModelFile.gif">
+         <description>%_UI_ArgumentsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated abstract_arguments -->
+      <editor
+            id="arguments.presentation.ArgumentsEditorID"
+            name="%_UI_ArgumentsEditor_label"
+            icon="icons/full/obj16/ArgumentsModelFile.gif"
+            extensions="arguments"
+            class="arguments.presentation.ArgumentsEditor"
+            contributorClass="arguments.presentation.ArgumentsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

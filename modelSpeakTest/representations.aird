@@ -12,7 +12,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
         <target xmi:type="arguments:ArgumentGraph" href="src-gen/test.arguments#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_RUrI8Yr-Ee-kB_JIbqFhQA" name="SimStudyArgumentDiagram for LRP6 Study" repPath="#_RUqh4Ir-Ee-kB_JIbqFhQA" changeId="1729859298480">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_RUrI8Yr-Ee-kB_JIbqFhQA" name="SimStudyArgumentDiagram for LRP6 Study" repPath="#_RUqh4Ir-Ee-kB_JIbqFhQA" changeId="1730882884365">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
         <target xmi:type="arguments:ArgumentGraph" href="src-gen/lrp6.arguments#/"/>
       </ownedRepresentationDescriptors>
@@ -761,7 +761,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mTpy95LCEe-cqJZX863_vA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_mTlhg5LCEe-cqJZX863_vA" fontName="Segoe UI" fontHeight="10"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mTlhhJLCEe-cqJZX863_vA" x="131" y="-40" width="30" height="30"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mTlhhJLCEe-cqJZX863_vA" x="98" y="-40" width="56" height="36"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_mTmIkpLCEe-cqJZX863_vA" type="2001" element="_mTKDu5LCEe-cqJZX863_vA">
           <children xmi:type="notation:Node" xmi:id="_mTmIlZLCEe-cqJZX863_vA" type="5002">
@@ -1052,15 +1052,15 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT0LE5LCEe-cqJZX863_vA" y="1"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_mT0LFJLCEe-cqJZX863_vA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT0LFZLCEe-cqJZX863_vA" x="-4" y="-1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT0LFZLCEe-cqJZX863_vA" x="-4"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_mT0LFpLCEe-cqJZX863_vA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT0LF5LCEe-cqJZX863_vA" x="-2"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT0LF5LCEe-cqJZX863_vA" x="-2" y="1"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_mT0LD5LCEe-cqJZX863_vA"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_mT0LEJLCEe-cqJZX863_vA" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mT0LEZLCEe-cqJZX863_vA" points="[-1, 15, 0, -68]$[-1, 35, 0, -48]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mT0LGJLCEe-cqJZX863_vA" id="(0.5,0.5)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mT0LEZLCEe-cqJZX863_vA" points="[1, 22, -5, -62]$[2, 36, -4, -48]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mT0LGJLCEe-cqJZX863_vA" id="(0.7340425531914894,0.4120879120879121)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mT0LGZLCEe-cqJZX863_vA" id="(0.5,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_mT0LGpLCEe-cqJZX863_vA" type="4001" element="_mTO8NZLCEe-cqJZX863_vA" source="_mTmIkpLCEe-cqJZX863_vA" target="_ibxoRYsIEe-h37qRxenC_g">
@@ -1145,18 +1145,18 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_mT1ZMpLCEe-cqJZX863_vA" type="4001" element="_mTQxYJLCEe-cqJZX863_vA" source="_mTlhgpLCEe-cqJZX863_vA" target="_ibxBMIsIEe-h37qRxenC_g">
           <children xmi:type="notation:Node" xmi:id="_mT1ZNpLCEe-cqJZX863_vA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT1ZN5LCEe-cqJZX863_vA" x="-3" y="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT1ZN5LCEe-cqJZX863_vA" y="11"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_mT1ZOJLCEe-cqJZX863_vA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT1ZOZLCEe-cqJZX863_vA" x="-2" y="-7"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT1ZOZLCEe-cqJZX863_vA" y="-6"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_mT1ZOpLCEe-cqJZX863_vA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT1ZO5LCEe-cqJZX863_vA" x="-19" y="-2"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mT1ZO5LCEe-cqJZX863_vA" x="-19" y="-3"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_mT1ZM5LCEe-cqJZX863_vA"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_mT1ZNJLCEe-cqJZX863_vA" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mT1ZNZLCEe-cqJZX863_vA" points="[15, 9, 35, 103]$[-6, -6, 14, 88]$[-12, -42, 8, 52]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mT1ZPJLCEe-cqJZX863_vA" id="(0.5,0.5)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mT1ZNZLCEe-cqJZX863_vA" points="[-2, -14, 11, 79]$[-6, -41, 7, 52]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mT1ZPJLCEe-cqJZX863_vA" id="(0.7340425531914894,0.4120879120879121)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mT1ZPZLCEe-cqJZX863_vA" id="(0.5,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_mT1ZPpLCEe-cqJZX863_vA" type="4001" element="_mTRYcJLCEe-cqJZX863_vA" source="_mTmIkpLCEe-cqJZX863_vA" target="_mTjFQJLCEe-cqJZX863_vA">

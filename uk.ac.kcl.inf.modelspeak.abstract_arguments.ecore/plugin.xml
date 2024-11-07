@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated abstract_arguments -->
+      <package
+            uri="http://www.example.org/abstract_arguments"
+            class="uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsPackage"
+            genModel="model/abstract_arguments.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated abstract_arguments -->
+      <package
+            uri="http://www.example.org/arguments"
+            class="arguments.ArgumentsPackage"
+            genModel="model/abstract_arguments.genmodel"/>
+   </extension>
+
+</plugin>
