@@ -102,13 +102,16 @@ public class ArgumentFrameworkGenerator {
   }
 
   private void _transformRelation(final Support s, final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace) {
-    final VirtualAbstractArgument intermediary = this.createVirtualArgument(framework);
-    final AbstractArgumentAttack attack1 = this.createAttack(framework);
-    final AbstractArgumentAttack attack2 = this.createAttack(framework);
-    attack1.setSource(trace.get(s.getEvidence()));
-    attack1.setTarget(intermediary);
-    attack2.setSource(intermediary);
-    attack2.setTarget(trace.get(s.getClaim()));
+    if (((s.getWarrant() == null) && s.getAssumptions().isEmpty())) {
+      final VirtualAbstractArgument intermediary = this.createVirtualArgument(framework);
+      final AbstractArgumentAttack attack1 = this.createAttack(framework);
+      final AbstractArgumentAttack attack2 = this.createAttack(framework);
+      attack1.setSource(trace.get(s.getEvidence()));
+      attack1.setTarget(intermediary);
+      attack2.setSource(intermediary);
+      attack2.setTarget(trace.get(s.getClaim()));
+    } else {
+    }
   }
 
   private DerivedAbstractArgument createDerivedArgumentFor(final AbstractArgumentFramework framework, final ArgumentElement ae) {

@@ -8,15 +8,27 @@
     <semanticResources>src-gen/test.theoryStore</semanticResources>
     <semanticResources>src-gen/lrp6.abstract_arguments</semanticResources>
     <semanticResources>src-gen/test.abstract_arguments</semanticResources>
+    <semanticResources>src/lrp6_basic.mspeak</semanticResources>
+    <semanticResources>src-gen/lrp6_basic.abstract_arguments</semanticResources>
+    <semanticResources>src-gen/lrp6_basic.arguments</semanticResources>
+    <semanticResources>src-gen/lrp6_basic.theoryStore</semanticResources>
+    <semanticResources>src/lrp6_basic2.mspeak</semanticResources>
+    <semanticResources>src-gen/lrp6_basic2.abstract_arguments</semanticResources>
+    <semanticResources>src-gen/lrp6_basic2.arguments</semanticResources>
+    <semanticResources>src-gen/lrp6_basic2.theoryStore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_koaBwFP7Ee-tsJI_txHePA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_kogIYFP7Ee-tsJI_txHePA" name="SimStudyArgumentDiagram" repPath="#_koe6QFP7Ee-tsJI_txHePA" changeId="1726055660702">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
         <target xmi:type="arguments:ArgumentGraph" href="src-gen/test.arguments#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_RUrI8Yr-Ee-kB_JIbqFhQA" name="SimStudyArgumentDiagram for LRP6 Study" repPath="#_RUqh4Ir-Ee-kB_JIbqFhQA" changeId="1730882884365">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_RUrI8Yr-Ee-kB_JIbqFhQA" name="SimStudyArgumentDiagram for LRP6 Study" repPath="#_RUqh4Ir-Ee-kB_JIbqFhQA" changeId="1736343133510">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
         <target xmi:type="arguments:ArgumentGraph" href="src-gen/lrp6.arguments#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tNfW8M26Ee-fI5n3Z_Ds9Q" name="LRP6 Basic Argument Graph" repPath="#_tNdhwM26Ee-fI5n3Z_Ds9Q" changeId="1736347590605">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
+        <target xmi:type="arguments:ArgumentGraph" href="src-gen/lrp6_basic.arguments#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_VkpqIJz2Ee-enNqXzMqCLw">
@@ -1271,15 +1283,15 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUvaYor-Ee-kB_JIbqFhQA" name="Valid models replicating the quantitative measurements of the cell surface receptor LRP6 over time include a mechanism explaining LRP6 receptor internalisation." outgoingEdges="_GKv8QIsAEe-lfJA8Q2rlWg _mTL47JLCEe-cqJZX863_vA" incomingEdges="_GKxKYIsAEe-lfJA8Q2rlWg _GKxKZYsAEe-lfJA8Q2rlWg _GKxKaosAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6.arguments#//@argumentElements.0"/>
       <semanticElements xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6.arguments#//@argumentElements.0"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_RUvaY4r-Ee-kB_JIbqFhQA" labelSize="10" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Square" uid="_RUvaY4r-Ee-kB_JIbqFhQA" showIcon="false" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUvaZYr-Ee-kB_JIbqFhQA" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism explains data" outgoingEdges="_GKwjUosAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUvaZYr-Ee-kB_JIbqFhQA" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" outgoingEdges="_GKwjUosAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.1"/>
       <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.1"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_RUvaZor-Ee-kB_JIbqFhQA" labelSize="10" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
+      <ownedStyle xmi:type="diagram:Square" uid="_RUvaZor-Ee-kB_JIbqFhQA" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1287,15 +1299,15 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUvaaIr-Ee-kB_JIbqFhQA" name="[Yamamoto et al. (2006)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_GKxxcIsAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6.arguments#//@argumentElements.2"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6.arguments#//@argumentElements.2"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_RUwBcIr-Ee-kB_JIbqFhQA" labelSize="10" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_RUwBcIr-Ee-kB_JIbqFhQA" showIcon="false" labelPosition="node">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUwBcor-Ee-kB_JIbqFhQA" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism explains data" outgoingEdges="_GKwjV4sAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUwBcor-Ee-kB_JIbqFhQA" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" outgoingEdges="_GKwjV4sAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.3"/>
       <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.3"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_RUwBc4r-Ee-kB_JIbqFhQA" labelSize="10" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
+      <ownedStyle xmi:type="diagram:Square" uid="_RUwBc4r-Ee-kB_JIbqFhQA" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1303,15 +1315,15 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUwBdYr-Ee-kB_JIbqFhQA" name="[Khan et al. (2007)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_GKxxdYsAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6.arguments#//@argumentElements.4"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6.arguments#//@argumentElements.4"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_RUwBdor-Ee-kB_JIbqFhQA" labelSize="10" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_RUwBdor-Ee-kB_JIbqFhQA" showIcon="false" labelPosition="node">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUwBeIr-Ee-kB_JIbqFhQA" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism explains data" outgoingEdges="_GKwjXIsAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUwBeIr-Ee-kB_JIbqFhQA" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" outgoingEdges="_GKwjXIsAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.5"/>
       <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.5"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_RUwogIr-Ee-kB_JIbqFhQA" labelSize="10" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
+      <ownedStyle xmi:type="diagram:Square" uid="_RUwogIr-Ee-kB_JIbqFhQA" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1319,7 +1331,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUwogor-Ee-kB_JIbqFhQA" name="[Liu et al. (2014)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_GKxxeosAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6.arguments#//@argumentElements.6"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6.arguments#//@argumentElements.6"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_RUwog4r-Ee-kB_JIbqFhQA" labelSize="10" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_RUwog4r-Ee-kB_JIbqFhQA" showIcon="false" labelPosition="node">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1327,7 +1339,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUxPkIr-Ee-kB_JIbqFhQA" name="Basic internalization mechanism of WNT/LRP6 explains effect LRP6 receptor internalisation." incomingEdges="_GKxKb4sAEe-lfJA8Q2rlWg _mTO8OpLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6.arguments#//@argumentElements.7"/>
       <semanticElements xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6.arguments#//@argumentElements.7"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_KfeKtosJEe-h37qRxenC_g" labelSize="10" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" labelPosition="node" color="253,206,137">
+      <ownedStyle xmi:type="diagram:Square" uid="_KfeKtosJEe-h37qRxenC_g" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" labelPosition="node" color="253,206,137">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.5/@style"/>
       </ownedStyle>
@@ -1336,7 +1348,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_RUxPk4r-Ee-kB_JIbqFhQA" name="m1 matches data the quantitative measurements of the cell surface receptor LRP6 over time." incomingEdges="_GKxxf4sAEe-lfJA8Q2rlWg _mTO8MJLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6.arguments#//@argumentElements.8"/>
       <semanticElements xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6.arguments#//@argumentElements.8"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_KfexwosJEe-h37qRxenC_g" labelSize="10" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_KfexwosJEe-h37qRxenC_g" showIcon="false" labelPosition="node">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.4/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1360,7 +1372,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ibZ00YsIEe-h37qRxenC_g" name="Experiment s1 produced data Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m.." incomingEdges="_mTQxYJLCEe-cqJZX863_vA _mTRYdZLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:ExperimentResults" href="src-gen/lrp6.arguments#//@argumentElements.11"/>
       <semanticElements xmi:type="arguments:ExperimentResults" href="src-gen/lrp6.arguments#//@argumentElements.11"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_mTIOhJLCEe-cqJZX863_vA" labelSize="10" showIcon="false" labelPosition="node" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_mTIOhJLCEe-cqJZX863_vA" showIcon="false" labelPosition="node" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.6/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1368,7 +1380,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ibab4YsIEe-h37qRxenC_g" name="compartmentalised internalization mechanism of WNT/LRP6 explains effect LRP6 receptor internalisation." incomingEdges="_mTMgBZLCEe-cqJZX863_vA _mTO8P5LCEe-cqJZX863_vA _mTO8SZLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6.arguments#//@argumentElements.12"/>
       <semanticElements xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6.arguments#//@argumentElements.12"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_mTI1kpLCEe-cqJZX863_vA" labelSize="10" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" labelPosition="node" color="253,206,137">
+      <ownedStyle xmi:type="diagram:Square" uid="_mTI1kpLCEe-cqJZX863_vA" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" labelPosition="node" color="253,206,137">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.5/@style"/>
       </ownedStyle>
@@ -1377,7 +1389,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_ibab5IsIEe-h37qRxenC_g" name="m2 matches data the quantitative measurements of the cell surface receptor LRP6 over time." incomingEdges="_mTNHFZLCEe-cqJZX863_vA _mTO8NZLCEe-cqJZX863_vA _mTO8RJLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6.arguments#//@argumentElements.13"/>
       <semanticElements xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6.arguments#//@argumentElements.13"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_mTI1lZLCEe-cqJZX863_vA" labelSize="10" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_mTI1lZLCEe-cqJZX863_vA" showIcon="false" labelPosition="node">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.4/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1385,7 +1397,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_mTI1l5LCEe-cqJZX863_vA" name="Experiment s2 produced data Simulation experiment (parameter scan) with either one or both internalization pathways active. In the case where only CIE is active, the predicted fraction of internalized LRP6 is lower than the experimentally derived values. In contrast, CME provides internalization dynamics that are too fast compared with in vitro measurements.." incomingEdges="_mTR_hJLCEe-cqJZX863_vA _mTR_iZLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:ExperimentResults" href="src-gen/lrp6.arguments#//@argumentElements.14"/>
       <semanticElements xmi:type="arguments:ExperimentResults" href="src-gen/lrp6.arguments#//@argumentElements.14"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_mTI1mJLCEe-cqJZX863_vA" labelSize="10" showIcon="false" labelPosition="node" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_mTI1mJLCEe-cqJZX863_vA" showIcon="false" labelPosition="node" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.6/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1393,7 +1405,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_mTJcoZLCEe-cqJZX863_vA" name="Experiment s3 produced data Another parameter scan applied CIE-based parameter values for the internalization rate of WNT/LRP6 complexes in both membrane domains (i.e. inside as well as outside of lipid rafts; using model configurations with CIE either fit the early or the late internalization dynamics of LRP6, but none allows the exact reproduction of in vitro measurements.." incomingEdges="_mTRYcJLCEe-cqJZX863_vA _mTR_jpLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:ExperimentResults" href="src-gen/lrp6.arguments#//@argumentElements.15"/>
       <semanticElements xmi:type="arguments:ExperimentResults" href="src-gen/lrp6.arguments#//@argumentElements.15"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_mTJcopLCEe-cqJZX863_vA" labelSize="10" showIcon="false" labelPosition="node" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_mTJcopLCEe-cqJZX863_vA" showIcon="false" labelPosition="node" color="194,239,255">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.6/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -1401,7 +1413,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_GKsR4IsAEe-lfJA8Q2rlWg" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_GKxKYIsAEe-lfJA8Q2rlWg _GKxxcIsAEe-lfJA8Q2rlWg" incomingEdges="_GKwjUosAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.0"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.0"/>
-      <ownedStyle xmi:type="diagram:Lozenge" uid="_GKs48IsAEe-lfJA8Q2rlWg" labelSize="10" showIcon="false" labelPosition="node" color="138,226,52">
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_GKs48IsAEe-lfJA8Q2rlWg" showIcon="false" labelPosition="node" color="138,226,52">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
@@ -1409,7 +1421,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_GKtgAYsAEe-lfJA8Q2rlWg" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_GKxKZYsAEe-lfJA8Q2rlWg _GKxxdYsAEe-lfJA8Q2rlWg" incomingEdges="_GKwjV4sAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.1"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.1"/>
-      <ownedStyle xmi:type="diagram:Lozenge" uid="_GKtgAosAEe-lfJA8Q2rlWg" labelSize="10" showIcon="false" labelPosition="node" color="138,226,52">
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_GKtgAosAEe-lfJA8Q2rlWg" showIcon="false" labelPosition="node" color="138,226,52">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
@@ -1417,7 +1429,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_GKuHEYsAEe-lfJA8Q2rlWg" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_GKxKaosAEe-lfJA8Q2rlWg _GKxxeosAEe-lfJA8Q2rlWg" incomingEdges="_GKwjXIsAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.2"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.2"/>
-      <ownedStyle xmi:type="diagram:Lozenge" uid="_GKuHEosAEe-lfJA8Q2rlWg" labelSize="10" showIcon="false" labelPosition="node" color="138,226,52">
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_GKuHEosAEe-lfJA8Q2rlWg" showIcon="false" labelPosition="node" color="138,226,52">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
@@ -1425,7 +1437,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_GKuHFIsAEe-lfJA8Q2rlWg" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_GKxKb4sAEe-lfJA8Q2rlWg _GKxxf4sAEe-lfJA8Q2rlWg _Vqo80JLDEe-cqJZX863_vA" incomingEdges="_GKv8QIsAEe-lfJA8Q2rlWg" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.3"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.3"/>
-      <ownedStyle xmi:type="diagram:Lozenge" uid="_GKuHFYsAEe-lfJA8Q2rlWg" labelSize="10" showIcon="false" labelPosition="node" color="138,226,52">
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_GKuHFYsAEe-lfJA8Q2rlWg" showIcon="false" labelPosition="node" color="138,226,52">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
@@ -1433,7 +1445,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_mS0siJLCEe-cqJZX863_vA" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_mTMgAJLCEe-cqJZX863_vA _mTNHEJLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.4"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.4"/>
-      <ownedStyle xmi:type="diagram:Lozenge" uid="_mS16oJLCEe-cqJZX863_vA" labelSize="10" showIcon="false" labelPosition="node" color="138,226,52">
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_mS16oJLCEe-cqJZX863_vA" showIcon="false" labelPosition="node" color="138,226,52">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
@@ -1441,7 +1453,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_mS3IwZLCEe-cqJZX863_vA" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_mTMgBZLCEe-cqJZX863_vA _mTNHFZLCEe-cqJZX863_vA" incomingEdges="_mTL47JLCEe-cqJZX863_vA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.7"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.7"/>
-      <ownedStyle xmi:type="diagram:Lozenge" uid="_mS3v0JLCEe-cqJZX863_vA" labelSize="10" showIcon="false" labelPosition="node" color="138,226,52">
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_mS3v0JLCEe-cqJZX863_vA" showIcon="false" labelPosition="node" color="138,226,52">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
@@ -1450,7 +1462,7 @@
       <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6.arguments#//@argumentElements.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKv8QYsAEe-lfJA8Q2rlWg" lineStyle="dash" centered="Target" strokeColor="138,226,52">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKv8QosAEe-lfJA8Q2rlWg" showIcon="false" labelColor="136,136,136"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKv8QosAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="136,136,136"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
     </ownedDiagramElements>
@@ -1458,7 +1470,7 @@
       <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKwjU4sAEe-lfJA8Q2rlWg" lineStyle="dash" centered="Target" strokeColor="138,226,52">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKwjVIsAEe-lfJA8Q2rlWg" showIcon="false" labelColor="136,136,136"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKwjVIsAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="136,136,136"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
     </ownedDiagramElements>
@@ -1466,7 +1478,7 @@
       <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.3"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKwjWIsAEe-lfJA8Q2rlWg" lineStyle="dash" centered="Target" strokeColor="138,226,52">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKwjWYsAEe-lfJA8Q2rlWg" showIcon="false" labelColor="136,136,136"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKwjWYsAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="136,136,136"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
     </ownedDiagramElements>
@@ -1474,7 +1486,7 @@
       <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6.arguments#//@argumentElements.5"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKwjXYsAEe-lfJA8Q2rlWg" lineStyle="dash" centered="Target" strokeColor="138,226,52">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKwjXosAEe-lfJA8Q2rlWg" showIcon="false" labelColor="136,136,136"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKwjXosAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="136,136,136"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
     </ownedDiagramElements>
@@ -1482,7 +1494,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKxKYYsAEe-lfJA8Q2rlWg" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxKYosAEe-lfJA8Q2rlWg" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxKYosAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
     </ownedDiagramElements>
@@ -1490,7 +1502,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKxKZosAEe-lfJA8Q2rlWg" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxKZ4sAEe-lfJA8Q2rlWg" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxKZ4sAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
     </ownedDiagramElements>
@@ -1498,7 +1510,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.2"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKxKa4sAEe-lfJA8Q2rlWg" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxKbIsAEe-lfJA8Q2rlWg" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxKbIsAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
     </ownedDiagramElements>
@@ -1506,7 +1518,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.3"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKxKcIsAEe-lfJA8Q2rlWg" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxKcYsAEe-lfJA8Q2rlWg" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxKcYsAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
     </ownedDiagramElements>
@@ -1514,7 +1526,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKxxcYsAEe-lfJA8Q2rlWg" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxxcosAEe-lfJA8Q2rlWg" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxxcosAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1522,7 +1534,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKxxdosAEe-lfJA8Q2rlWg" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxxd4sAEe-lfJA8Q2rlWg" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxxd4sAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1530,7 +1542,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.2"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKxxe4sAEe-lfJA8Q2rlWg" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxxfIsAEe-lfJA8Q2rlWg" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxxfIsAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1538,7 +1550,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.3"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GKxxgIsAEe-lfJA8Q2rlWg" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxxgYsAEe-lfJA8Q2rlWg" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_GKxxgYsAEe-lfJA8Q2rlWg" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1594,7 +1606,7 @@
       <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6.arguments#//@argumentElements.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTL47ZLCEe-cqJZX863_vA" lineStyle="dash" centered="Target" strokeColor="138,226,52">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTL47pLCEe-cqJZX863_vA" showIcon="false" labelColor="136,136,136"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTL47pLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="136,136,136"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
     </ownedDiagramElements>
@@ -1602,7 +1614,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.4"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTMgAZLCEe-cqJZX863_vA" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTMgApLCEe-cqJZX863_vA" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTMgApLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
     </ownedDiagramElements>
@@ -1610,7 +1622,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.7"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTMgBpLCEe-cqJZX863_vA" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTMgB5LCEe-cqJZX863_vA" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTMgB5LCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
     </ownedDiagramElements>
@@ -1618,7 +1630,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.4"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTNHEZLCEe-cqJZX863_vA" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTNHEpLCEe-cqJZX863_vA" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTNHEpLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1626,7 +1638,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.7"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTNuEJLCEe-cqJZX863_vA" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTNuEZLCEe-cqJZX863_vA" showIcon="false" labelColor="77,137,20"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTNuEZLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="77,137,20"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1634,7 +1646,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.6"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTO8MZLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8MpLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8MpLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
     </ownedDiagramElements>
@@ -1642,7 +1654,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.11"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTO8NpLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8N5LCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8N5LCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
     </ownedDiagramElements>
@@ -1650,7 +1662,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.5"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTO8O5LCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8PJLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8PJLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
     </ownedDiagramElements>
@@ -1658,7 +1670,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.8"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTO8QJLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8QZLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8QZLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
     </ownedDiagramElements>
@@ -1666,7 +1678,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.9"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTO8RZLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8RpLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8RpLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
     </ownedDiagramElements>
@@ -1674,7 +1686,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.10"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTO8SpLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8S5LCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTO8S5LCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
     </ownedDiagramElements>
@@ -1682,7 +1694,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.6"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTQxYZLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTQxYpLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTQxYpLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1690,7 +1702,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.11"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTRYcZLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTRYcpLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTRYcpLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1698,7 +1710,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.5"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTR_gJLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTR_gZLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTR_gZLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1706,7 +1718,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.8"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTR_hZLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTR_hpLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTR_hpLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1714,7 +1726,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.9"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTR_ipLCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTR_i5LCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTR_i5LCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1722,7 +1734,7 @@
       <target xmi:type="arguments:Attack" href="src-gen/lrp6.arguments#//@relations.10"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mTR_j5LCEe-cqJZX863_vA" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTR_kJLCEe-cqJZX863_vA" showIcon="false" labelColor="156,12,12"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mTR_kJLCEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="156,12,12"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']"/>
     </ownedDiagramElements>
@@ -1730,7 +1742,7 @@
       <target xmi:type="arguments:Support" href="src-gen/lrp6.arguments#//@relations.3"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Vqo80ZLDEe-cqJZX863_vA" lineStyle="dash" centered="Target" strokeColor="173,127,168">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportAssumptionLink']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Vqo80pLDEe-cqJZX863_vA" showIcon="false" labelColor="173,127,168"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Vqo80pLDEe-cqJZX863_vA" labelSize="7" showIcon="false" labelColor="173,127,168"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportAssumptionLink']"/>
     </ownedDiagramElements>
@@ -2620,5 +2632,708 @@
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_V28UAJz2Ee-enNqXzMqCLw"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/uk.ac.kcl.inf.modelspeak.abstract_arguments.design/description/abstract_arguments.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='AbstractArgumentFrameworkDiagram']/@defaultLayer"/>
     <target xmi:type="abstract_arguments:AbstractArgumentFramework" href="src-gen/lrp6.abstract_arguments#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_tNdhwM26Ee-fI5n3Z_Ds9Q">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_tNvOkM26Ee-fI5n3Z_Ds9Q" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_tNvOkc26Ee-fI5n3Z_Ds9Q" type="Sirius" element="_tNdhwM26Ee-fI5n3Z_Ds9Q" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_tOHpEM26Ee-fI5n3Z_Ds9Q" type="2001" element="_tNwcsM26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOKsYM26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOKsYc26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOSoMs26Ee-fI5n3Z_Ds9Q" type="3017" element="_tNxDwM26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOSoM826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOSoNM26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOHpEc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOHpEs26Ee-fI5n3Z_Ds9Q" x="556" y="196" width="115" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOL6gM26Ee-fI5n3Z_Ds9Q" type="2001" element="_tNyR4M26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOMhkM26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOMhkc26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOTPQM26Ee-fI5n3Z_Ds9Q" type="3017" element="_tNyR4c26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOTPQc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOTPQs26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOL6gc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOL6gs26Ee-fI5n3Z_Ds9Q" x="556" y="196" width="115" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOMhks26Ee-fI5n3Z_Ds9Q" type="2001" element="_tNyR4826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOMhlc26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOMhls26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOTPQ826Ee-fI5n3Z_Ds9Q" type="3017" element="_tNyR5M26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOTPRM26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOTPRc26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOMhk826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOMhlM26Ee-fI5n3Z_Ds9Q" x="556" y="196" width="115" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOMhl826Ee-fI5n3Z_Ds9Q" type="2001" element="_tNy48M26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOMhms26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOMhm826Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOTPRs26Ee-fI5n3Z_Ds9Q" type="3017" element="_tNy48c26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOTPR826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOTPSM26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOMhmM26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOMhmc26Ee-fI5n3Z_Ds9Q" x="310" y="85" width="121" height="56"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tONIp826Ee-fI5n3Z_Ds9Q" type="2001" element="_tNzgAM26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tONIqs26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tONIq826Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOT2UM26Ee-fI5n3Z_Ds9Q" type="3003" element="_tNzgAc26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOT2Uc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOT2Us26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tONIqM26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tONIqc26Ee-fI5n3Z_Ds9Q" x="285" y="185" width="171" height="86"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tONIrM26Ee-fI5n3Z_Ds9Q" type="2001" element="_tNzgA826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tONvsM26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tONvsc26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOT2U826Ee-fI5n3Z_Ds9Q" type="3003" element="_tN0HEM26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOT2VM26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOT2Vc26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tONIrc26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tONIrs26Ee-fI5n3Z_Ds9Q" x="745" y="185" width="156" height="85"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tONvss26Ee-fI5n3Z_Ds9Q" type="2001" element="_tN0HEs26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tONvtc26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tONvts26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOT2Vs26Ee-fI5n3Z_Ds9Q" type="3016" element="_tN0HE826Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOT2V826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOT2WM26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tONvs826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tONvtM26Ee-fI5n3Z_Ds9Q" x="200" y="315" width="221" height="66"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tONvt826Ee-fI5n3Z_Ds9Q" type="2001" element="_tN0HFc26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tONvus26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tONvu826Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOT2Wc26Ee-fI5n3Z_Ds9Q" type="3003" element="_tN0HFs26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOT2Ws26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOT2W826Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tONvuM26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tONvuc26Ee-fI5n3Z_Ds9Q" x="745" y="185" width="156" height="85"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOOWwM26Ee-fI5n3Z_Ds9Q" type="2001" element="_tN0uIM26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOOWw826Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOOWxM26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOT2XM26Ee-fI5n3Z_Ds9Q" type="3016" element="_tN0uIc26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOT2Xc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOT2Xs26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOOWwc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOOWws26Ee-fI5n3Z_Ds9Q" x="443" y="315" width="221" height="66"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOOWxc26Ee-fI5n3Z_Ds9Q" type="2001" element="_tN0uI826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOOWyM26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOOWyc26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOUdYM26Ee-fI5n3Z_Ds9Q" type="3003" element="_tN0uJM26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOUdYc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOUdYs26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOOWxs26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOOWx826Ee-fI5n3Z_Ds9Q" x="745" y="185" width="156" height="85"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOOWys26Ee-fI5n3Z_Ds9Q" type="2001" element="_tN0uJs26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOO90M26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOO90c26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOUdY826Ee-fI5n3Z_Ds9Q" type="3016" element="_tN0uJ826Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOUdZM26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOUdZc26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOOWy826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOOWzM26Ee-fI5n3Z_Ds9Q" x="685" y="315" width="221" height="66"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOO90s26Ee-fI5n3Z_Ds9Q" type="2001" element="_tN1VMc26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOO91c26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOO91s26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOUdZs26Ee-fI5n3Z_Ds9Q" type="3003" element="_tN1VMs26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOUdZ826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOUdaM26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOO90826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOO91M26Ee-fI5n3Z_Ds9Q" x="295" y="7" width="177" height="46"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOO91826Ee-fI5n3Z_Ds9Q" type="2001" element="_tN18QM26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOPk4M26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOPk4c26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOUdac26Ee-fI5n3Z_Ds9Q" type="3016" element="_tN18Qc26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOUdas26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOUda826Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOO92M26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOO92c26Ee-fI5n3Z_Ds9Q" x="135" y="57" width="131" height="111"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tOPk4s26Ee-fI5n3Z_Ds9Q" type="2001" element="_tN18Q826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOPk5c26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tOPk5s26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfYuYM26Ee-fI5n3Z_Ds9Q" type="3016" element="_ydB9-826Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yfYuYc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfYuYs26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tOPk4826Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOPk5M26Ee-fI5n3Z_Ds9Q" x="75" y="-125" width="251" height="106"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_tORaEM26Ee-fI5n3Z_Ds9Q" type="2001" element="_tN4_kc26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tORaE826Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tORaFM26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOVrgM26Ee-fI5n3Z_Ds9Q" type="3017" element="_tN4_ks26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_tOVrgc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOVrgs26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tORaEc26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tORaEs26Ee-fI5n3Z_Ds9Q" x="165" y="14" width="71" height="32"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_yfW5MM26Ee-fI5n3Z_Ds9Q" type="2001" element="_ydClAM26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_yfYHUM26Ee-fI5n3Z_Ds9Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_yfYHUc26Ee-fI5n3Z_Ds9Q" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfYuY826Ee-fI5n3Z_Ds9Q" type="3017" element="_ydClAc26Ee-fI5n3Z_Ds9Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yfYuZM26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfYuZc26Ee-fI5n3Z_Ds9Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_yfXgQM26Ee-fI5n3Z_Ds9Q" fontName="Segoe UI" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfXgQc26Ee-fI5n3Z_Ds9Q" x="380" y="-90" width="76" height="36"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_tNvOks26Ee-fI5n3Z_Ds9Q"/>
+        <edges xmi:type="notation:Edge" xmi:id="_tOW5oM26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN60wM26Ee-fI5n3Z_Ds9Q" source="_tONIp826Ee-fI5n3Z_Ds9Q" target="_tOMhl826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOXgsM26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOXgsc26Ee-fI5n3Z_Ds9Q" x="8" y="23"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOXgss26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOXgs826Ee-fI5n3Z_Ds9Q" x="22" y="3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOYHwM26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOYHwc26Ee-fI5n3Z_Ds9Q" x="-6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOW5oc26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOW5os26Ee-fI5n3Z_Ds9Q" fontColor="8947848" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOW5o826Ee-fI5n3Z_Ds9Q" points="[0, -7, -1, 72]$[0, -51, -1, 28]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tObyIM26Ee-fI5n3Z_Ds9Q" id="(0.49122807017543857,0.08139534883720931)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tObyIc26Ee-fI5n3Z_Ds9Q" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOcZMs26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN8C4c26Ee-fI5n3Z_Ds9Q" source="_tONIrM26Ee-fI5n3Z_Ds9Q" target="_tOHpEM26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOcZNs26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZN826Ee-fI5n3Z_Ds9Q" x="8" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOcZOM26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZOc26Ee-fI5n3Z_Ds9Q" x="7" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOcZOs26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZO826Ee-fI5n3Z_Ds9Q" x="10" y="11"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOcZM826Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOcZNM26Ee-fI5n3Z_Ds9Q" fontColor="8947848" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOcZNc26Ee-fI5n3Z_Ds9Q" points="[-7, 0, 132, -2]$[-81, 1, 58, -1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOcZPM26Ee-fI5n3Z_Ds9Q" id="(0.04487179487179487,0.4823529411764706)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOcZPc26Ee-fI5n3Z_Ds9Q" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOcZPs26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN8C5s26Ee-fI5n3Z_Ds9Q" source="_tONvt826Ee-fI5n3Z_Ds9Q" target="_tOL6gM26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOcZQs26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZQ826Ee-fI5n3Z_Ds9Q" x="8" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOcZRM26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZRc26Ee-fI5n3Z_Ds9Q" x="-2" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOcZRs26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZR826Ee-fI5n3Z_Ds9Q" x="6" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOcZP826Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOcZQM26Ee-fI5n3Z_Ds9Q" fontColor="8947848" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOcZQc26Ee-fI5n3Z_Ds9Q" points="[-6, 0, 132, 0]$[-80, 0, 58, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOcZSM26Ee-fI5n3Z_Ds9Q" id="(0.038461538461538464,0.5058823529411764)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOcZSc26Ee-fI5n3Z_Ds9Q" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOcZSs26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN8C6826Ee-fI5n3Z_Ds9Q" source="_tOOWxc26Ee-fI5n3Z_Ds9Q" target="_tOMhks26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOdAQM26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdAQc26Ee-fI5n3Z_Ds9Q" x="8" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdAQs26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdAQ826Ee-fI5n3Z_Ds9Q" x="7" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdARM26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdARc26Ee-fI5n3Z_Ds9Q" x="11" y="2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOcZS826Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOcZTM26Ee-fI5n3Z_Ds9Q" fontColor="8947848" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOcZTc26Ee-fI5n3Z_Ds9Q" points="[-4, 0, 132, -1]$[-78, 0, 58, -1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdARs26Ee-fI5n3Z_Ds9Q" id="(0.02564102564102564,0.49411764705882355)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdAR826Ee-fI5n3Z_Ds9Q" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOdASM26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN8p8s26Ee-fI5n3Z_Ds9Q" source="_tOHpEM26Ee-fI5n3Z_Ds9Q" target="_tONIp826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOdATM26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdATc26Ee-fI5n3Z_Ds9Q" x="-9" y="11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdATs26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdAT826Ee-fI5n3Z_Ds9Q" x="9" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdAUM26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdAUc26Ee-fI5n3Z_Ds9Q" x="9" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOdASc26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOdASs26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOdAS826Ee-fI5n3Z_Ds9Q" points="[-9, -1, 109, 7]$[-109, -7, 9, 1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdAUs26Ee-fI5n3Z_Ds9Q" id="(0.0782608695652174,0.53125)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdAU826Ee-fI5n3Z_Ds9Q" id="(0.9473684210526315,0.43023255813953487)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOdAVM26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN8p9826Ee-fI5n3Z_Ds9Q" source="_tOL6gM26Ee-fI5n3Z_Ds9Q" target="_tONIp826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOdAWM26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdAWc26Ee-fI5n3Z_Ds9Q" x="-9" y="13"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdAWs26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdAW826Ee-fI5n3Z_Ds9Q" x="4" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdAXM26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdAXc26Ee-fI5n3Z_Ds9Q" x="1" y="1"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOdAVc26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOdAVs26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOdAV826Ee-fI5n3Z_Ds9Q" points="[-11, -6, 106, -1]$[-111, -6, 6, -1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdnUM26Ee-fI5n3Z_Ds9Q" id="(0.09565217391304348,0.515625)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdnUc26Ee-fI5n3Z_Ds9Q" id="(0.9649122807017544,0.45348837209302323)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOdnUs26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN9RAM26Ee-fI5n3Z_Ds9Q" source="_tOMhks26Ee-fI5n3Z_Ds9Q" target="_tONIp826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOdnVs26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdnV826Ee-fI5n3Z_Ds9Q" x="-9" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdnWM26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdnWc26Ee-fI5n3Z_Ds9Q" x="14" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdnWs26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdnW826Ee-fI5n3Z_Ds9Q" x="2" y="-3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOdnU826Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOdnVM26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOdnVc26Ee-fI5n3Z_Ds9Q" points="[-25, -1, 106, 0]$[-125, -1, 6, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdnXM26Ee-fI5n3Z_Ds9Q" id="(0.21739130434782608,0.46875)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdnXc26Ee-fI5n3Z_Ds9Q" id="(0.9649122807017544,0.46511627906976744)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOdnXs26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN9RBc26Ee-fI5n3Z_Ds9Q" source="_tOMhl826Ee-fI5n3Z_Ds9Q" target="_tOO90s26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOdnYs26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdnY826Ee-fI5n3Z_Ds9Q" x="6" y="16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdnZM26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdnZc26Ee-fI5n3Z_Ds9Q" x="-4" y="-4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOdnZs26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOdnZ826Ee-fI5n3Z_Ds9Q" x="-5" y="-3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOdnX826Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOdnYM26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOdnYc26Ee-fI5n3Z_Ds9Q" points="[-2, -1, 0, 37]$[-2, -33, 0, 5]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdnaM26Ee-fI5n3Z_Ds9Q" id="(0.5454545454545454,0.017857142857142856)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOdnac26Ee-fI5n3Z_Ds9Q" id="(0.4463276836158192,0.8913043478260869)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOeObs26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN94FM26Ee-fI5n3Z_Ds9Q" source="_tOHpEM26Ee-fI5n3Z_Ds9Q" target="_tONvss26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOeOcs26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOeOc826Ee-fI5n3Z_Ds9Q" x="-24" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOeOdM26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOeOdc26Ee-fI5n3Z_Ds9Q" x="19" y="8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOeOds26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOeOd826Ee-fI5n3Z_Ds9Q" x="16" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOeOb826Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOeOcM26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOeOcc26Ee-fI5n3Z_Ds9Q" points="[-44, 20, 204, -95]$[-225, 104, 23, -11]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOeOeM26Ee-fI5n3Z_Ds9Q" id="(0.3826086956521739,0.234375)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOeOec26Ee-fI5n3Z_Ds9Q" id="(0.6877828054298643,0.16666666666666666)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOeOes26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN94Gc26Ee-fI5n3Z_Ds9Q" source="_tOL6gM26Ee-fI5n3Z_Ds9Q" target="_tOOWwM26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOe1cM26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOe1cc26Ee-fI5n3Z_Ds9Q" x="2" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOe1cs26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOe1c826Ee-fI5n3Z_Ds9Q" x="-8" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOe1dM26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOe1dc26Ee-fI5n3Z_Ds9Q" x="-5" y="8"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOeOe826Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOeOfM26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOeOfc26Ee-fI5n3Z_Ds9Q" points="[-53, 59, 52, -58]$[-103, 114, 2, -3]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOe1ds26Ee-fI5n3Z_Ds9Q" id="(0.8695652173913043,0.078125)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOe1d826Ee-fI5n3Z_Ds9Q" id="(0.48868778280542985,0.045454545454545456)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOe1eM26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN-fIs26Ee-fI5n3Z_Ds9Q" source="_tOMhks26Ee-fI5n3Z_Ds9Q" target="_tOOWys26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOe1fM26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOe1fc26Ee-fI5n3Z_Ds9Q" x="-9" y="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOe1fs26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOe1f826Ee-fI5n3Z_Ds9Q" x="8" y="6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOe1gM26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOe1gc26Ee-fI5n3Z_Ds9Q" x="-8" y="1"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOe1ec26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOe1es26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOe1e826Ee-fI5n3Z_Ds9Q" points="[106, 35, -394, -134]$[196, 124, -304, -45]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOe1gs26Ee-fI5n3Z_Ds9Q" id="(0.0782608695652174,-0.078125)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOe1g826Ee-fI5n3Z_Ds9Q" id="(1.7194570135746607,0.6818181818181818)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_tOe1hM26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN-fJ826Ee-fI5n3Z_Ds9Q" source="_tOMhl826Ee-fI5n3Z_Ds9Q" target="_tOO91826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_tOe1iM26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOe1ic26Ee-fI5n3Z_Ds9Q" y="15"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOe1is26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOe1i826Ee-fI5n3Z_Ds9Q" x="-1" y="-4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_tOe1jM26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOfcgM26Ee-fI5n3Z_Ds9Q" x="-1" y="2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOe1hc26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_tOe1hs26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOe1h826Ee-fI5n3Z_Ds9Q" points="[-2, -1, 54, 4]$[-46, -5, 10, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOfcgc26Ee-fI5n3Z_Ds9Q" id="(0.01652892561983471,0.5357142857142857)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOfcgs26Ee-fI5n3Z_Ds9Q" id="(0.9236641221374046,0.4774774774774775)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_yfcYwM26Ee-fI5n3Z_Ds9Q" type="4001" element="_ydDzKM26Ee-fI5n3Z_Ds9Q" source="_yfW5MM26Ee-fI5n3Z_Ds9Q" target="_tOO90s26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_yfcYxM26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfcYxc26Ee-fI5n3Z_Ds9Q" x="14" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfcYxs26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfcYx826Ee-fI5n3Z_Ds9Q" x="-1" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfcYyM26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfcYyc26Ee-fI5n3Z_Ds9Q" x="3" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_yfcYwc26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_yfcYws26Ee-fI5n3Z_Ds9Q" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yfcYw826Ee-fI5n3Z_Ds9Q" points="[-1, 6, 8, -71]$[-1, 67, 8, -10]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yfcYys26Ee-fI5n3Z_Ds9Q" id="(0.5657894736842105,0.8333333333333334)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_irIKcM3FEe-fI5n3Z_Ds9Q" id="(0.672316384180791,0.21739130434782608)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_yfc_0M26Ee-fI5n3Z_Ds9Q" type="4001" element="_ydDzLc26Ee-fI5n3Z_Ds9Q" source="_tORaEM26Ee-fI5n3Z_Ds9Q" target="_tOO91826Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_yfc_1M26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_1c26Ee-fI5n3Z_Ds9Q" y="30"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfc_1s26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_1826Ee-fI5n3Z_Ds9Q" x="1" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfc_2M26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_2c26Ee-fI5n3Z_Ds9Q" x="1" y="6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_yfc_0c26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_yfc_0s26Ee-fI5n3Z_Ds9Q" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yfc_0826Ee-fI5n3Z_Ds9Q" points="[1, 3, -6, -16]$[5, 14, -2, -5]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yfc_2s26Ee-fI5n3Z_Ds9Q" id="(0.4647887323943662,0.90625)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yfc_2826Ee-fI5n3Z_Ds9Q" id="(0.5343511450381679,0.04504504504504504)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_yfc_3M26Ee-fI5n3Z_Ds9Q" type="4001" element="_ydEaMM26Ee-fI5n3Z_Ds9Q" source="_yfW5MM26Ee-fI5n3Z_Ds9Q" target="_tOPk4s26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_yfc_4M26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_4c26Ee-fI5n3Z_Ds9Q" x="6" y="13"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfc_4s26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_4826Ee-fI5n3Z_Ds9Q" x="-1" y="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfc_5M26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_5c26Ee-fI5n3Z_Ds9Q" x="-47" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_yfc_3c26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_yfc_3s26Ee-fI5n3Z_Ds9Q" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yfc_3826Ee-fI5n3Z_Ds9Q" points="[-61, 4, 57, 0]$[-115, 4, 3, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yfc_5s26Ee-fI5n3Z_Ds9Q" id="(0.8026315789473685,0.4166666666666667)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yfc_5826Ee-fI5n3Z_Ds9Q" id="(0.9880478087649402,0.5094339622641509)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_yfc_6M26Ee-fI5n3Z_Ds9Q" type="4001" element="_ydEaNc26Ee-fI5n3Z_Ds9Q" source="_tORaEM26Ee-fI5n3Z_Ds9Q" target="_tOPk4s26Ee-fI5n3Z_Ds9Q">
+          <children xmi:type="notation:Node" xmi:id="_yfc_7M26Ee-fI5n3Z_Ds9Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_7c26Ee-fI5n3Z_Ds9Q" x="7" y="-22"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfc_7s26Ee-fI5n3Z_Ds9Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_7826Ee-fI5n3Z_Ds9Q" x="12" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yfc_8M26Ee-fI5n3Z_Ds9Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yfc_8c26Ee-fI5n3Z_Ds9Q" x="-9" y="4"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_yfc_6c26Ee-fI5n3Z_Ds9Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_yfc_6s26Ee-fI5n3Z_Ds9Q" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yfc_6826Ee-fI5n3Z_Ds9Q" points="[3, -4, 0, 24]$[3, -22, 0, 6]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yfc_8s26Ee-fI5n3Z_Ds9Q" id="(0.5070422535211268,0.125)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yfc_8826Ee-fI5n3Z_Ds9Q" id="(0.5139442231075697,0.9433962264150944)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_tODXqs26Ee-fI5n3Z_Ds9Q" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_tODXq826Ee-fI5n3Z_Ds9Q"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNwcsM26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_tN8p8s26Ee-fI5n3Z_Ds9Q _tN94FM26Ee-fI5n3Z_Ds9Q" incomingEdges="_tN8C4c26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.0"/>
+      <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.0"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_tNxDwM26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="138,226,52">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNyR4M26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_tN8p9826Ee-fI5n3Z_Ds9Q _tN94Gc26Ee-fI5n3Z_Ds9Q" incomingEdges="_tN8C5s26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.1"/>
+      <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.1"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_tNyR4c26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="138,226,52">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNyR4826Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_tN9RAM26Ee-fI5n3Z_Ds9Q _tN-fIs26Ee-fI5n3Z_Ds9Q" incomingEdges="_tN8C6826Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.2"/>
+      <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.2"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_tNyR5M26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="138,226,52">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNy48M26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_tN9RBc26Ee-fI5n3Z_Ds9Q _tN-fJ826Ee-fI5n3Z_Ds9Q" incomingEdges="_tN60wM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.3"/>
+      <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.3"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_tNy48c26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="138,226,52">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNzgAM26Ee-fI5n3Z_Ds9Q" name="Valid models replicating the quantitative measurements of the cell surface receptor LRP6 over time include a mechanism explaining LRP6 receptor internalisation." outgoingEdges="_tN60wM26Ee-fI5n3Z_Ds9Q" incomingEdges="_tN8p8s26Ee-fI5n3Z_Ds9Q _tN8p9826Ee-fI5n3Z_Ds9Q _tN9RAM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
+      <semanticElements xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_tNzgAc26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.1/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNzgA826Ee-fI5n3Z_Ds9Q" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" outgoingEdges="_tN8C4c26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.1"/>
+      <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.1"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_tN0HEM26Ee-fI5n3Z_Ds9Q" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.0/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0HEs26Ee-fI5n3Z_Ds9Q" name="[Yamamoto et al. (2006)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_tN94FM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.2"/>
+      <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.2"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_tN0HE826Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0HFc26Ee-fI5n3Z_Ds9Q" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" outgoingEdges="_tN8C5s26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
+      <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_tN0HFs26Ee-fI5n3Z_Ds9Q" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.0/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uIM26Ee-fI5n3Z_Ds9Q" name="[Khan et al. (2007)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_tN94Gc26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.4"/>
+      <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.4"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_tN0uIc26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uI826Ee-fI5n3Z_Ds9Q" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" outgoingEdges="_tN8C6826Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
+      <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_tN0uJM26Ee-fI5n3Z_Ds9Q" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.0/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uJs26Ee-fI5n3Z_Ds9Q" name="[Liu et al. (2014)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_tN-fIs26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.6"/>
+      <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.6"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_tN0uJ826Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN1VMc26Ee-fI5n3Z_Ds9Q" name="Basic internalization mechanism of WNT/LRP6 explains effect LRP6 receptor internalisation." incomingEdges="_tN9RBc26Ee-fI5n3Z_Ds9Q _ydDzKM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.7"/>
+      <semanticElements xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.7"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_tN1VMs26Ee-fI5n3Z_Ds9Q" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" labelPosition="node" color="253,206,137">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.5/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN18QM26Ee-fI5n3Z_Ds9Q" name="m1 matches data the quantitative measurements of the cell surface receptor LRP6 over time." incomingEdges="_tN-fJ826Ee-fI5n3Z_Ds9Q _ydDzLc26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6_basic.arguments#//@argumentElements.8"/>
+      <semanticElements xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6_basic.arguments#//@argumentElements.8"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_tN18Qc26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.4/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN18Q826Ee-fI5n3Z_Ds9Q" name="Experiment s1 produced data Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m.." incomingEdges="_ydEaMM26Ee-fI5n3Z_Ds9Q _ydEaNc26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:ExperimentResults" href="src-gen/lrp6_basic.arguments#//@argumentElements.9"/>
+      <semanticElements xmi:type="arguments:ExperimentResults" href="src-gen/lrp6_basic.arguments#//@argumentElements.9"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_ydB9-826Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="194,239,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.6/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ydClAM26Ee-fI5n3Z_Ds9Q" name="Attack" outgoingEdges="_ydDzKM26Ee-fI5n3Z_Ds9Q _ydEaMM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:Attack" href="src-gen/lrp6_basic.arguments#//@relations.4"/>
+      <semanticElements xmi:type="arguments:Attack" href="src-gen/lrp6_basic.arguments#//@relations.4"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_ydClAc26Ee-fI5n3Z_Ds9Q" labelSize="10" showIcon="false" borderColor="239,41,41" labelPosition="node" color="246,139,139">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN4_kc26Ee-fI5n3Z_Ds9Q" name="Attack" outgoingEdges="_ydDzLc26Ee-fI5n3Z_Ds9Q _ydEaNc26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="arguments:Attack" href="src-gen/lrp6_basic.arguments#//@relations.5"/>
+      <semanticElements xmi:type="arguments:Attack" href="src-gen/lrp6_basic.arguments#//@relations.5"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_tN4_ks26Ee-fI5n3Z_Ds9Q" labelSize="10" showIcon="false" borderColor="239,41,41" labelPosition="node" color="246,139,139">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN60wM26Ee-fI5n3Z_Ds9Q" name="warrant" sourceNode="_tNzgAM26Ee-fI5n3Z_Ds9Q" targetNode="_tNy48M26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN7b0M26Ee-fI5n3Z_Ds9Q" lineStyle="dash" centered="Target" strokeColor="138,226,52">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN7b0c26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="136,136,136"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN8C4c26Ee-fI5n3Z_Ds9Q" name="warrant" sourceNode="_tNzgA826Ee-fI5n3Z_Ds9Q" targetNode="_tNwcsM26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN8C4s26Ee-fI5n3Z_Ds9Q" lineStyle="dash" centered="Target" strokeColor="138,226,52">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN8C4826Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="136,136,136"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN8C5s26Ee-fI5n3Z_Ds9Q" name="warrant" sourceNode="_tN0HFc26Ee-fI5n3Z_Ds9Q" targetNode="_tNyR4M26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN8C5826Ee-fI5n3Z_Ds9Q" lineStyle="dash" centered="Target" strokeColor="138,226,52">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN8C6M26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="136,136,136"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN8C6826Ee-fI5n3Z_Ds9Q" name="warrant" sourceNode="_tN0uI826Ee-fI5n3Z_Ds9Q" targetNode="_tNyR4826Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN8C7M26Ee-fI5n3Z_Ds9Q" lineStyle="dash" centered="Target" strokeColor="138,226,52">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN8C7c26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="136,136,136"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN8p8s26Ee-fI5n3Z_Ds9Q" name="claim" sourceNode="_tNwcsM26Ee-fI5n3Z_Ds9Q" targetNode="_tNzgAM26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN8p8826Ee-fI5n3Z_Ds9Q" strokeColor="204,242,166">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN8p9M26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="77,137,20"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN8p9826Ee-fI5n3Z_Ds9Q" name="claim" sourceNode="_tNyR4M26Ee-fI5n3Z_Ds9Q" targetNode="_tNzgAM26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN8p-M26Ee-fI5n3Z_Ds9Q" strokeColor="204,242,166">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN8p-c26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="77,137,20"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN9RAM26Ee-fI5n3Z_Ds9Q" name="claim" sourceNode="_tNyR4826Ee-fI5n3Z_Ds9Q" targetNode="_tNzgAM26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN9RAc26Ee-fI5n3Z_Ds9Q" strokeColor="204,242,166">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN9RAs26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="77,137,20"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN9RBc26Ee-fI5n3Z_Ds9Q" name="claim" sourceNode="_tNy48M26Ee-fI5n3Z_Ds9Q" targetNode="_tN1VMc26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN9RBs26Ee-fI5n3Z_Ds9Q" strokeColor="204,242,166">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN9RB826Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="77,137,20"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN94FM26Ee-fI5n3Z_Ds9Q" name="evidence" sourceNode="_tNwcsM26Ee-fI5n3Z_Ds9Q" targetNode="_tN0HEs26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN94Fc26Ee-fI5n3Z_Ds9Q" strokeColor="204,242,166">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN94Fs26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="77,137,20"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN94Gc26Ee-fI5n3Z_Ds9Q" name="evidence" sourceNode="_tNyR4M26Ee-fI5n3Z_Ds9Q" targetNode="_tN0uIM26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN94Gs26Ee-fI5n3Z_Ds9Q" strokeColor="204,242,166">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN94G826Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="77,137,20"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN-fIs26Ee-fI5n3Z_Ds9Q" name="evidence" sourceNode="_tNyR4826Ee-fI5n3Z_Ds9Q" targetNode="_tN0uJs26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN-fI826Ee-fI5n3Z_Ds9Q" strokeColor="204,242,166">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN-fJM26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="77,137,20"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_tN-fJ826Ee-fI5n3Z_Ds9Q" name="evidence" sourceNode="_tNy48M26Ee-fI5n3Z_Ds9Q" targetNode="_tN18QM26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_tN-fKM26Ee-fI5n3Z_Ds9Q" strokeColor="204,242,166">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_tN-fKc26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="77,137,20"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ydDzKM26Ee-fI5n3Z_Ds9Q" name="claim" sourceNode="_ydClAM26Ee-fI5n3Z_Ds9Q" targetNode="_tN1VMc26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Attack" href="src-gen/lrp6_basic.arguments#//@relations.4"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ydDzKc26Ee-fI5n3Z_Ds9Q" strokeColor="246,139,139">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ydDzKs26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="156,12,12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ydDzLc26Ee-fI5n3Z_Ds9Q" name="claim" sourceNode="_tN4_kc26Ee-fI5n3Z_Ds9Q" targetNode="_tN18QM26Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Attack" href="src-gen/lrp6_basic.arguments#//@relations.5"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ydDzLs26Ee-fI5n3Z_Ds9Q" strokeColor="246,139,139">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ydDzL826Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="156,12,12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ydEaMM26Ee-fI5n3Z_Ds9Q" name="evidence" sourceNode="_ydClAM26Ee-fI5n3Z_Ds9Q" targetNode="_tN18Q826Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Attack" href="src-gen/lrp6_basic.arguments#//@relations.4"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ydEaMc26Ee-fI5n3Z_Ds9Q" strokeColor="246,139,139">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ydEaMs26Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="156,12,12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ydEaNc26Ee-fI5n3Z_Ds9Q" name="evidence" sourceNode="_tN4_kc26Ee-fI5n3Z_Ds9Q" targetNode="_tN18Q826Ee-fI5n3Z_Ds9Q">
+      <target xmi:type="arguments:Attack" href="src-gen/lrp6_basic.arguments#//@relations.5"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ydEaNs26Ee-fI5n3Z_Ds9Q" strokeColor="246,139,139">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ydEaN826Ee-fI5n3Z_Ds9Q" labelSize="7" showIcon="false" labelColor="156,12,12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_tNev4M26Ee-fI5n3Z_Ds9Q"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer"/>
+    <target xmi:type="arguments:ArgumentGraph" href="src-gen/lrp6_basic.arguments#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

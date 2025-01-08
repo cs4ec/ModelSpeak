@@ -31,7 +31,7 @@ class ArgumentFrameworkGenerator {
 		frameworkResource = resourceSet.createResource(outputUri)
 		frameworkResource.contents += argumentFramework
 	}
-	
+
 	def void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		// Run transformation
 		val argGraph = resource.contents.head as ArgumentGraph
@@ -66,23 +66,27 @@ class ArgumentFrameworkGenerator {
 		attack.source = trace.get(a.evidence)
 		attack.target = trace.get(a.claim)
 
-		// TODO: How to manage warrants and assumptions?
+	// TODO: How to manage warrants and assumptions?
 	}
 
 	private dispatch def void transformRelation(Support s, AbstractArgumentFramework framework,
 		Map<ArgumentElement, AbstractArgument> trace) {
-		// A support is an attack of an intermediary argument that attacks the claim
-		val intermediary = framework.createVirtualArgument
-		val attack1 = framework.createAttack
-		val attack2 = framework.createAttack
+		if ((s.warrant === null) && (s.assumptions.empty)) {
+			/*
+			 * If there's no warrant and no assumptions, then a support is an attack of an intermediary argument that attacks the claim.
+			 */
+			val intermediary = framework.createVirtualArgument
+			val attack1 = framework.createAttack
+			val attack2 = framework.createAttack
 
-		attack1.source = trace.get(s.evidence)
-		attack1.target = intermediary
+			attack1.source = trace.get(s.evidence)
+			attack1.target = intermediary
 
-		attack2.source = intermediary
-		attack2.target = trace.get(s.claim)
-
-		// TODO: How to manage warrants and assumptions?		
+			attack2.source = intermediary
+			attack2.target = trace.get(s.claim)
+		} else {
+			// TODO: How to manage warrants and assumptions?	
+		}
 	}
 
 	private def createDerivedArgumentFor(AbstractArgumentFramework framework, ArgumentElement ae) {

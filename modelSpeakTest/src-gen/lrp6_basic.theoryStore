@@ -1,0 +1,6 @@
+Requirement r1 { "Develop a simulation model that matches the quantitative measurements of the cell surface receptor LRP6 over time" }
+Theory ref1 { "[Yamamoto et al. (2006)]" } -> r1
+Theory ref2 { "[Khan et al. (2007)]" } -> r1
+Theory ref3 { "[Liu et al. (2014)]" } -> r1
+Model m1 { "Basic internalization model of WNT/LRP6" } -> r1
+Experiment s1 { "Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m." } -> m1 -> r1
