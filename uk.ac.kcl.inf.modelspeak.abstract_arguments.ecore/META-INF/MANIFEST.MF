@@ -7,11 +7,17 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-22
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments,
  uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.impl,
- uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.util
+ uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.util,
+ uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.generate
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  uk.ac.kcl.inf.modelspeak.arguments.ecore;visibility:=reexport,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ org.eclipse.xtext;bundle-version="2.36.0"
 Bundle-ActivationPolicy: lazy

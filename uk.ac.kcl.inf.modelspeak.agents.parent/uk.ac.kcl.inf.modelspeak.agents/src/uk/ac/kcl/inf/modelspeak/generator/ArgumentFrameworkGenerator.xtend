@@ -9,18 +9,19 @@ import org.eclipse.xtext.resource.SaveOptions
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.AbstractArgument
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.AbstractArgumentFramework
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsFactory
+import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.generate.Argument2PlatoGenerator
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.MechanismExplainsEffect
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.StandardSimulationWarrant
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.MechanismExplainsEffect
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support
 
 /**
  * Take an argument graph and translate it into an abstract argument graph.
@@ -48,6 +49,8 @@ class ArgumentFrameworkGenerator {
 		argGraph.relations.forEach[transformRelation(argumentFramework, elementTrace)]
 
 		frameworkResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
+		
+		new Argument2PlatoGenerator().doGenerate(frameworkResource, fsa, context)
 	}
 
 	private def getAbstractArgumentFrameworkFileName(Resource resource) {

@@ -83,7 +83,6 @@ class ArgumentGraphGenerator {
 
 		argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
 		frameworkGenerator.doGenerate(argGraphResource, fsa, context)
-//		new Argument2PlatoGenerator().doGenerate(newResource, fsa, context)
 	}
 
 	private def getArgumentGraphFileName(Resource resource) {

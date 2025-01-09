@@ -24,6 +24,7 @@ import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abst
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsFactory;
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument;
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.VirtualAbstractArgument;
+import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.generate.Argument2PlatoGenerator;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
@@ -72,6 +73,7 @@ public class ArgumentFrameworkGenerator {
       };
       argGraph.getRelations().forEach(_function_1);
       this.frameworkResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
+      new Argument2PlatoGenerator().doGenerate(this.frameworkResource, fsa, context);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
