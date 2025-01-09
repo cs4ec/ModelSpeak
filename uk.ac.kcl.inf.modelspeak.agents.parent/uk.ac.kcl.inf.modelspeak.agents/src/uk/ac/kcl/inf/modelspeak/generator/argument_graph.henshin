@@ -243,75 +243,33 @@
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </parameters>
     <lhs xmi:id="_ET94wFP1Ee-CrMFN_rE2hA" name="Lhs">
-      <nodes xmi:id="_LwVjsFP1Ee-CrMFN_rE2hA" outgoing="_e-qZwFP1Ee-CrMFN_rE2hA _fNRdgFP1Ee-CrMFN_rE2hA _fhlgoFP1Ee-CrMFN_rE2hA">
+      <nodes xmi:id="_LwVjsFP1Ee-CrMFN_rE2hA" outgoing="_fhlgoFP1Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//ArgumentGraph"/>
       </nodes>
-      <nodes xmi:id="_WEZNcFP1Ee-CrMFN_rE2hA" incoming="_efIlIFP1Ee-CrMFN_rE2hA _e-qZwFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//SimulationMechanismWarrant"/>
-        <attributes xmi:id="_kRtAsFP1Ee-CrMFN_rE2hA" value="reqName">
-          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/generatingRequirement"/>
-        </attributes>
-      </nodes>
-      <nodes xmi:id="_XsMRsFP1Ee-CrMFN_rE2hA" incoming="_d4SnkFP1Ee-CrMFN_rE2hA _fhlgoFP1Ee-CrMFN_rE2hA">
+      <nodes xmi:id="_XsMRsFP1Ee-CrMFN_rE2hA" incoming="_fhlgoFP1Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//ModelMatchesDataOverTime"/>
         <attributes xmi:id="_mpDSkFP1Ee-CrMFN_rE2hA" value="modelName">
           <type href="http://www.example.org/arguments#//ModelMatchesDataOverTime/model"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_YdcIcFP1Ee-CrMFN_rE2hA" incoming="_dNTw4FP1Ee-CrMFN_rE2hA _fNRdgFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//MechanismExplainsEffect"/>
-      </nodes>
-      <nodes xmi:id="_ZIgesFP1Ee-CrMFN_rE2hA" outgoing="_dNTw4FP1Ee-CrMFN_rE2hA _d4SnkFP1Ee-CrMFN_rE2hA _efIlIFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//Support"/>
-      </nodes>
-      <edges xmi:id="_dNTw4FP1Ee-CrMFN_rE2hA" source="_ZIgesFP1Ee-CrMFN_rE2hA" target="_YdcIcFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentElementRelation/claim"/>
-      </edges>
-      <edges xmi:id="_d4SnkFP1Ee-CrMFN_rE2hA" source="_ZIgesFP1Ee-CrMFN_rE2hA" target="_XsMRsFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentElementRelation/evidence"/>
-      </edges>
-      <edges xmi:id="_efIlIFP1Ee-CrMFN_rE2hA" source="_ZIgesFP1Ee-CrMFN_rE2hA" target="_WEZNcFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentElementRelation/warrant"/>
-      </edges>
-      <edges xmi:id="_e-qZwFP1Ee-CrMFN_rE2hA" source="_LwVjsFP1Ee-CrMFN_rE2hA" target="_WEZNcFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
-      </edges>
-      <edges xmi:id="_fNRdgFP1Ee-CrMFN_rE2hA" source="_LwVjsFP1Ee-CrMFN_rE2hA" target="_YdcIcFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
-      </edges>
       <edges xmi:id="_fhlgoFP1Ee-CrMFN_rE2hA" source="_LwVjsFP1Ee-CrMFN_rE2hA" target="_XsMRsFP1Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
       </edges>
     </lhs>
     <rhs xmi:id="_ET-f0FP1Ee-CrMFN_rE2hA" name="Rhs">
-      <nodes xmi:id="_LwWKwFP1Ee-CrMFN_rE2hA" outgoing="_e-qZwVP1Ee-CrMFN_rE2hA _fNSEkFP1Ee-CrMFN_rE2hA _fhlgoVP1Ee-CrMFN_rE2hA _eRZVAFP-Ee-R2_XrUWTZuw _el8osFP-Ee-R2_XrUWTZuw _e9PHUFP-Ee-R2_XrUWTZuw">
+      <nodes xmi:id="_LwWKwFP1Ee-CrMFN_rE2hA" outgoing="_fhlgoVP1Ee-CrMFN_rE2hA _el8osFP-Ee-R2_XrUWTZuw _e9PHUFP-Ee-R2_XrUWTZuw">
         <type href="http://www.example.org/arguments#//ArgumentGraph"/>
-      </nodes>
-      <nodes xmi:id="_NXV9wFP1Ee-CrMFN_rE2hA" incoming="_eRZVAFP-Ee-R2_XrUWTZuw" outgoing="_t-mHUFP2Ee-CrMFN_rE2hA _uqbSkFP2Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//Attack"/>
       </nodes>
       <nodes xmi:id="_Nl7zYFP1Ee-CrMFN_rE2hA" incoming="_e9PHUFP-Ee-R2_XrUWTZuw" outgoing="_vk7L8FP2Ee-CrMFN_rE2hA _v8ae4FP2Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//Attack"/>
       </nodes>
-      <nodes xmi:id="_XDLJ4FP1Ee-CrMFN_rE2hA" incoming="_efIlIVP1Ee-CrMFN_rE2hA _e-qZwVP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//SimulationMechanismWarrant"/>
-        <attributes xmi:id="_kRtnwFP1Ee-CrMFN_rE2hA" value="reqName">
-          <type href="http://www.example.org/arguments#//SimulationMechanismWarrant/generatingRequirement"/>
-        </attributes>
-      </nodes>
-      <nodes xmi:id="_XsMRsVP1Ee-CrMFN_rE2hA" incoming="_d4SnkVP1Ee-CrMFN_rE2hA _fhlgoVP1Ee-CrMFN_rE2hA _v8ae4FP2Ee-CrMFN_rE2hA">
+      <nodes xmi:id="_XsMRsVP1Ee-CrMFN_rE2hA" incoming="_fhlgoVP1Ee-CrMFN_rE2hA _v8ae4FP2Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//ModelMatchesDataOverTime"/>
         <attributes xmi:id="_mpDSkVP1Ee-CrMFN_rE2hA" value="modelName">
           <type href="http://www.example.org/arguments#//ModelMatchesDataOverTime/model"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_YdcvgFP1Ee-CrMFN_rE2hA" incoming="_dNTw4VP1Ee-CrMFN_rE2hA _fNSEkFP1Ee-CrMFN_rE2hA _uqbSkFP2Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//MechanismExplainsEffect"/>
-      </nodes>
-      <nodes xmi:id="_ZIgesVP1Ee-CrMFN_rE2hA" outgoing="_dNTw4VP1Ee-CrMFN_rE2hA _d4SnkVP1Ee-CrMFN_rE2hA _efIlIVP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//Support"/>
-      </nodes>
-      <nodes xmi:id="_Fg1fEFP2Ee-CrMFN_rE2hA" incoming="_t-mHUFP2Ee-CrMFN_rE2hA _vk7L8FP2Ee-CrMFN_rE2hA _el8osFP-Ee-R2_XrUWTZuw">
+      <nodes xmi:id="_Fg1fEFP2Ee-CrMFN_rE2hA" incoming="_vk7L8FP2Ee-CrMFN_rE2hA _el8osFP-Ee-R2_XrUWTZuw">
         <type href="http://www.example.org/arguments#//ExperimentResults"/>
         <attributes xmi:id="_GpSU4FP2Ee-CrMFN_rE2hA" value="experimentName">
           <type href="http://www.example.org/arguments#//ExperimentResults/experimentName"/>
@@ -320,38 +278,14 @@
           <type href="http://www.example.org/arguments#//ExperimentResults/results"/>
         </attributes>
       </nodes>
-      <edges xmi:id="_dNTw4VP1Ee-CrMFN_rE2hA" source="_ZIgesVP1Ee-CrMFN_rE2hA" target="_YdcvgFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentElementRelation/claim"/>
-      </edges>
-      <edges xmi:id="_d4SnkVP1Ee-CrMFN_rE2hA" source="_ZIgesVP1Ee-CrMFN_rE2hA" target="_XsMRsVP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentElementRelation/evidence"/>
-      </edges>
-      <edges xmi:id="_efIlIVP1Ee-CrMFN_rE2hA" source="_ZIgesVP1Ee-CrMFN_rE2hA" target="_XDLJ4FP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentElementRelation/warrant"/>
-      </edges>
-      <edges xmi:id="_e-qZwVP1Ee-CrMFN_rE2hA" source="_LwWKwFP1Ee-CrMFN_rE2hA" target="_XDLJ4FP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
-      </edges>
-      <edges xmi:id="_fNSEkFP1Ee-CrMFN_rE2hA" source="_LwWKwFP1Ee-CrMFN_rE2hA" target="_YdcvgFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
-      </edges>
       <edges xmi:id="_fhlgoVP1Ee-CrMFN_rE2hA" source="_LwWKwFP1Ee-CrMFN_rE2hA" target="_XsMRsVP1Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
-      </edges>
-      <edges xmi:id="_t-mHUFP2Ee-CrMFN_rE2hA" source="_NXV9wFP1Ee-CrMFN_rE2hA" target="_Fg1fEFP2Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentElementRelation/evidence"/>
-      </edges>
-      <edges xmi:id="_uqbSkFP2Ee-CrMFN_rE2hA" source="_NXV9wFP1Ee-CrMFN_rE2hA" target="_YdcvgFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentElementRelation/claim"/>
       </edges>
       <edges xmi:id="_vk7L8FP2Ee-CrMFN_rE2hA" source="_Nl7zYFP1Ee-CrMFN_rE2hA" target="_Fg1fEFP2Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//ArgumentElementRelation/evidence"/>
       </edges>
       <edges xmi:id="_v8ae4FP2Ee-CrMFN_rE2hA" source="_Nl7zYFP1Ee-CrMFN_rE2hA" target="_XsMRsVP1Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//ArgumentElementRelation/claim"/>
-      </edges>
-      <edges xmi:id="_eRZVAFP-Ee-R2_XrUWTZuw" source="_LwWKwFP1Ee-CrMFN_rE2hA" target="_NXV9wFP1Ee-CrMFN_rE2hA">
-        <type href="http://www.example.org/arguments#//ArgumentGraph/relations"/>
       </edges>
       <edges xmi:id="_el8osFP-Ee-R2_XrUWTZuw" source="_LwWKwFP1Ee-CrMFN_rE2hA" target="_Fg1fEFP2Ee-CrMFN_rE2hA">
         <type href="http://www.example.org/arguments#//ArgumentGraph/argumentElements"/>
@@ -361,10 +295,7 @@
       </edges>
     </rhs>
     <mappings xmi:id="_LwWKwVP1Ee-CrMFN_rE2hA" origin="_LwVjsFP1Ee-CrMFN_rE2hA" image="_LwWKwFP1Ee-CrMFN_rE2hA"/>
-    <mappings xmi:id="_XDLJ4VP1Ee-CrMFN_rE2hA" origin="_WEZNcFP1Ee-CrMFN_rE2hA" image="_XDLJ4FP1Ee-CrMFN_rE2hA"/>
     <mappings xmi:id="_XsMRslP1Ee-CrMFN_rE2hA" origin="_XsMRsFP1Ee-CrMFN_rE2hA" image="_XsMRsVP1Ee-CrMFN_rE2hA"/>
-    <mappings xmi:id="_YdcvgVP1Ee-CrMFN_rE2hA" origin="_YdcIcFP1Ee-CrMFN_rE2hA" image="_YdcvgFP1Ee-CrMFN_rE2hA"/>
-    <mappings xmi:id="_ZIgeslP1Ee-CrMFN_rE2hA" origin="_ZIgesFP1Ee-CrMFN_rE2hA" image="_ZIgesVP1Ee-CrMFN_rE2hA"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_oUFcQIsEEe-hF-tSBLrubA" name="supportModel">
     <parameters xmi:id="_roDHYIsEEe-hF-tSBLrubA" name="modelName" kind="IN">

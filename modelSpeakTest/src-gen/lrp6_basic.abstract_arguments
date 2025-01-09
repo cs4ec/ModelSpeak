@@ -54,7 +54,6 @@
   <attacks source="//@arguments.16" target="//@arguments.7" id="13"/>
   <attacks source="//@arguments.0" target="//@arguments.17" id="14"/>
   <attacks source="//@arguments.17" target="//@arguments.7" id="15"/>
-  <attacks source="//@arguments.9" target="//@arguments.7" id="16"/>
-  <attacks source="//@arguments.9" target="//@arguments.8" id="17"/>
+  <attacks source="//@arguments.9" target="//@arguments.8" id="16"/>
   <argumentgraph href="lrp6_basic.arguments#/"/>
 </abstract_arguments:AbstractArgumentFramework>

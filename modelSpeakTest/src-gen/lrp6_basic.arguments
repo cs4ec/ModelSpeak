@@ -14,6 +14,5 @@
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.3" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.6" warrant="//@argumentElements.5" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.8" warrant="//@argumentElements.0" claim="//@argumentElements.7"/>
-  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.9" claim="//@argumentElements.7"/>
   <relations xsi:type="arguments:Attack" evidence="//@argumentElements.9" claim="//@argumentElements.8"/>
 </arguments:ArgumentGraph>
