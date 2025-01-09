@@ -9,6 +9,6 @@ proposeModel(m1{"Basic internalization model of WNT/LRP6"}
 	           <incorporates mechanism "Basic internalization mechanism of WNT/LRP6">, 
 	           r1)
 
-counterModel(m1, 
+counterModel(m1,
 	         s1{"Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m."}, 
 	         r1)

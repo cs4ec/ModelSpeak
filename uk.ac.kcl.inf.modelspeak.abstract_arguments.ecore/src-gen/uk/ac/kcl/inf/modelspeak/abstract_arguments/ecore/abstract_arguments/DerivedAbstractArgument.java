@@ -2,6 +2,8 @@
  */
 package uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments;
 
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Derived Abstract Argument</b></em>'.
@@ -12,6 +14,7 @@ package uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument#getArgumentelement <em>Argumentelement</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument#getLabel <em>Label</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsPackage#getDerivedAbstractArgument()
@@ -24,12 +27,12 @@ public interface DerivedAbstractArgument extends AbstractArgument {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Argumentelement</em>' reference.
-	 * @see #setArgumentelement(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement)
+	 * @see #setArgumentelement(ArgumentElement)
 	 * @see uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsPackage#getDerivedAbstractArgument_Argumentelement()
 	 * @model required="true"
 	 * @generated
 	 */
-	uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement getArgumentelement();
+	ArgumentElement getArgumentelement();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument#getArgumentelement <em>Argumentelement</em>}' reference.
@@ -39,6 +42,28 @@ public interface DerivedAbstractArgument extends AbstractArgument {
 	 * @see #getArgumentelement()
 	 * @generated
 	 */
-	void setArgumentelement(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement value);
+	void setArgumentelement(ArgumentElement value);
+
+	/**
+	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Label</em>' attribute.
+	 * @see #setLabel(String)
+	 * @see uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsPackage#getDerivedAbstractArgument_Label()
+	 * @model
+	 * @generated
+	 */
+	String getLabel();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument#getLabel <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label</em>' attribute.
+	 * @see #getLabel()
+	 * @generated
+	 */
+	void setLabel(String value);
 
 } // DerivedAbstractArgument

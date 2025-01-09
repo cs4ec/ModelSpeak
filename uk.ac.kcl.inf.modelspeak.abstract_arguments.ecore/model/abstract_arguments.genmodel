@@ -26,11 +26,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstract_arguments.ecore#//AbstractArgumentAttack/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract_arguments.ecore#//AbstractArgumentAttack/id"/>
     </genClasses>
-    <genClasses ecoreClass="abstract_arguments.ecore#//VirtualAbstractArgument">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract_arguments.ecore#//VirtualAbstractArgument/label"/>
-    </genClasses>
+    <genClasses ecoreClass="abstract_arguments.ecore#//VirtualAbstractArgument"/>
     <genClasses ecoreClass="abstract_arguments.ecore#//DerivedAbstractArgument">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference abstract_arguments.ecore#//DerivedAbstractArgument/argumentelement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute abstract_arguments.ecore#//DerivedAbstractArgument/label"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

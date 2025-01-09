@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore
+Bundle-Name: %pluginName
 Bundle-SymbolicName: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore;singleton:=true
 Automatic-Module-Name: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: My Company
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-22
 Export-Package: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments,
  uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.impl,
  uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.util

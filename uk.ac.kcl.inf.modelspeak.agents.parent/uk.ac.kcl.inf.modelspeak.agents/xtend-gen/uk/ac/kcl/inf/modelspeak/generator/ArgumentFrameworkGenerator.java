@@ -28,6 +28,13 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.MechanismExplainsEffect;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.StandardSimulationWarrant;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support;
 
 /**
@@ -118,6 +125,7 @@ public class ArgumentFrameworkGenerator {
     final DerivedAbstractArgument abstractArg = this.factory.createDerivedAbstractArgument();
     abstractArg.setArgumentelement(ae);
     abstractArg.setId(this.createArgID());
+    abstractArg.setLabel(this.getLabel(ae));
     EList<AbstractArgument> _arguments = framework.getArguments();
     _arguments.add(abstractArg);
     return abstractArg;
@@ -137,6 +145,78 @@ public class ArgumentFrameworkGenerator {
     _attacks.add(attack);
     attack.setId(this.createAttackID());
     return attack;
+  }
+
+  private String _getLabel(final ArgumentElement ae) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = ae.eClass().getName();
+    _builder.append(_name);
+    _builder.append(":");
+    int _hashCode = ae.hashCode();
+    _builder.append(_hashCode);
+    return _builder.toString();
+  }
+
+  private String _getLabel(final StandardSimulationWarrant ssw) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Standard Simulation Warrant");
+    return _builder.toString();
+  }
+
+  private String _getLabel(final SimulationMechanismWarrant smw) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Sim Mechanism Warrant: \"");
+    String _explainedEffect = smw.getExplainedEffect();
+    _builder.append(_explainedEffect);
+    _builder.append("\"");
+    return _builder.toString();
+  }
+
+  private String _getLabel(final LiteratureEvidence le) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("[");
+    String _reference = le.getReference();
+    _builder.append(_reference);
+    _builder.append("]");
+    return _builder.toString();
+  }
+
+  private String _getLabel(final ModelMatchesDataOverTime mmdot) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Model <");
+    String _model = mmdot.getModel();
+    _builder.append(_model);
+    _builder.append(">(");
+    String _mechanism = mmdot.getMechanism();
+    _builder.append(_mechanism);
+    _builder.append(")");
+    return _builder.toString();
+  }
+
+  private String _getLabel(final MechanismExplainsEffect mee) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Effect explained (");
+    String _mechanism = mee.getMechanism();
+    _builder.append(_mechanism);
+    _builder.append(")");
+    return _builder.toString();
+  }
+
+  private String _getLabel(final ExperimentResults er) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Experiment ");
+    String _experimentName = er.getExperimentName();
+    _builder.append(_experimentName);
+    return _builder.toString();
+  }
+
+  private String _getLabel(final ModelInputDataValid midv) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Valid model input data (");
+    String _model = midv.getModel();
+    _builder.append(_model);
+    _builder.append(")");
+    return _builder.toString();
   }
 
   private long argID = 0;
@@ -165,6 +245,30 @@ public class ArgumentFrameworkGenerator {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(a, framework, trace).toString());
+    }
+  }
+
+  @XbaseGenerated
+  private String getLabel(final ArgumentElement midv) {
+    if (midv instanceof ModelInputDataValid) {
+      return _getLabel((ModelInputDataValid)midv);
+    } else if (midv instanceof ExperimentResults) {
+      return _getLabel((ExperimentResults)midv);
+    } else if (midv instanceof LiteratureEvidence) {
+      return _getLabel((LiteratureEvidence)midv);
+    } else if (midv instanceof MechanismExplainsEffect) {
+      return _getLabel((MechanismExplainsEffect)midv);
+    } else if (midv instanceof ModelMatchesDataOverTime) {
+      return _getLabel((ModelMatchesDataOverTime)midv);
+    } else if (midv instanceof SimulationMechanismWarrant) {
+      return _getLabel((SimulationMechanismWarrant)midv);
+    } else if (midv instanceof StandardSimulationWarrant) {
+      return _getLabel((StandardSimulationWarrant)midv);
+    } else if (midv != null) {
+      return _getLabel(midv);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(midv).toString());
     }
   }
 }

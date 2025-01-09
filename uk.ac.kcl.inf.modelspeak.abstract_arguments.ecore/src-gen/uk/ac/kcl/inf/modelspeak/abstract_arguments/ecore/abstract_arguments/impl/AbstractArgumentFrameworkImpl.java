@@ -22,6 +22,7 @@ import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abst
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.AbstractArgumentAttack;
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.AbstractArgumentFramework;
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsPackage;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +68,7 @@ public class AbstractArgumentFrameworkImpl extends MinimalEObjectImpl.Container 
 	 * @generated
 	 * @ordered
 	 */
-	protected uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph argumentgraph;
+	protected ArgumentGraph argumentgraph;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,11 +123,10 @@ public class AbstractArgumentFrameworkImpl extends MinimalEObjectImpl.Container 
 	 * @generated
 	 */
 	@Override
-	public uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph getArgumentgraph() {
+	public ArgumentGraph getArgumentgraph() {
 		if (argumentgraph != null && argumentgraph.eIsProxy()) {
 			InternalEObject oldArgumentgraph = (InternalEObject) argumentgraph;
-			argumentgraph = (uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph) eResolveProxy(
-					oldArgumentgraph);
+			argumentgraph = (ArgumentGraph) eResolveProxy(oldArgumentgraph);
 			if (argumentgraph != oldArgumentgraph) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
@@ -142,7 +142,7 @@ public class AbstractArgumentFrameworkImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph basicGetArgumentgraph() {
+	public ArgumentGraph basicGetArgumentgraph() {
 		return argumentgraph;
 	}
 
@@ -152,8 +152,8 @@ public class AbstractArgumentFrameworkImpl extends MinimalEObjectImpl.Container 
 	 * @generated
 	 */
 	@Override
-	public void setArgumentgraph(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph newArgumentgraph) {
-		uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph oldArgumentgraph = argumentgraph;
+	public void setArgumentgraph(ArgumentGraph newArgumentgraph) {
+		ArgumentGraph oldArgumentgraph = argumentgraph;
 		argumentgraph = newArgumentgraph;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
@@ -215,7 +215,7 @@ public class AbstractArgumentFrameworkImpl extends MinimalEObjectImpl.Container 
 			getAttacks().addAll((Collection<? extends AbstractArgumentAttack>) newValue);
 			return;
 		case Abstract_argumentsPackage.ABSTRACT_ARGUMENT_FRAMEWORK__ARGUMENTGRAPH:
-			setArgumentgraph((uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph) newValue);
+			setArgumentgraph((ArgumentGraph) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -236,7 +236,7 @@ public class AbstractArgumentFrameworkImpl extends MinimalEObjectImpl.Container 
 			getAttacks().clear();
 			return;
 		case Abstract_argumentsPackage.ABSTRACT_ARGUMENT_FRAMEWORK__ARGUMENTGRAPH:
-			setArgumentgraph((uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph) null);
+			setArgumentgraph((ArgumentGraph) null);
 			return;
 		}
 		super.eUnset(featureID);

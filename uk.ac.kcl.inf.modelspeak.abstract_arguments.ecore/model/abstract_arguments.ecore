@@ -20,11 +20,10 @@
         eType="#//AbstractArgument"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VirtualAbstractArgument" eSuperTypes="#//AbstractArgument">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VirtualAbstractArgument" eSuperTypes="#//AbstractArgument"/>
   <eClassifiers xsi:type="ecore:EClass" name="DerivedAbstractArgument" eSuperTypes="#//AbstractArgument">
     <eStructuralFeatures xsi:type="ecore:EReference" name="argumentelement" lowerBound="1"
         eType="ecore:EClass ../../uk.ac.kcl.inf.modelspeak.arguments.ecore/model/arguments.ecore#//ArgumentElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

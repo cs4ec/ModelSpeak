@@ -16,6 +16,7 @@ import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abst
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.Abstract_argumentsPackage;
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument;
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.VirtualAbstractArgument;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,7 +112,7 @@ public class Abstract_argumentsPackageImpl extends EPackageImpl implements Abstr
 		isInited = true;
 
 		// Initialize simple dependencies
-		uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage.eINSTANCE.eClass();
+		ArgumentsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theAbstract_argumentsPackage.createPackageContents();
@@ -243,16 +244,6 @@ public class Abstract_argumentsPackageImpl extends EPackageImpl implements Abstr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVirtualAbstractArgument_Label() {
-		return (EAttribute) virtualAbstractArgumentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getDerivedAbstractArgument() {
 		return derivedAbstractArgumentEClass;
 	}
@@ -265,6 +256,16 @@ public class Abstract_argumentsPackageImpl extends EPackageImpl implements Abstr
 	@Override
 	public EReference getDerivedAbstractArgument_Argumentelement() {
 		return (EReference) derivedAbstractArgumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDerivedAbstractArgument_Label() {
+		return (EAttribute) derivedAbstractArgumentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -311,10 +312,10 @@ public class Abstract_argumentsPackageImpl extends EPackageImpl implements Abstr
 		createEAttribute(abstractArgumentAttackEClass, ABSTRACT_ARGUMENT_ATTACK__ID);
 
 		virtualAbstractArgumentEClass = createEClass(VIRTUAL_ABSTRACT_ARGUMENT);
-		createEAttribute(virtualAbstractArgumentEClass, VIRTUAL_ABSTRACT_ARGUMENT__LABEL);
 
 		derivedAbstractArgumentEClass = createEClass(DERIVED_ABSTRACT_ARGUMENT);
 		createEReference(derivedAbstractArgumentEClass, DERIVED_ABSTRACT_ARGUMENT__ARGUMENTELEMENT);
+		createEAttribute(derivedAbstractArgumentEClass, DERIVED_ABSTRACT_ARGUMENT__LABEL);
 	}
 
 	/**
@@ -342,8 +343,8 @@ public class Abstract_argumentsPackageImpl extends EPackageImpl implements Abstr
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage theArgumentsPackage = (uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage) EPackage.Registry.INSTANCE
-				.getEPackage(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage.eNS_URI);
+		ArgumentsPackage theArgumentsPackage = (ArgumentsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(ArgumentsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -385,15 +386,15 @@ public class Abstract_argumentsPackageImpl extends EPackageImpl implements Abstr
 
 		initEClass(virtualAbstractArgumentEClass, VirtualAbstractArgument.class, "VirtualAbstractArgument",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVirtualAbstractArgument_Label(), ecorePackage.getEString(), "label", null, 0, 1,
-				VirtualAbstractArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(derivedAbstractArgumentEClass, DerivedAbstractArgument.class, "DerivedAbstractArgument",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDerivedAbstractArgument_Argumentelement(), theArgumentsPackage.getArgumentElement(), null,
 				"argumentelement", null, 1, 1, DerivedAbstractArgument.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDerivedAbstractArgument_Label(), ecorePackage.getEString(), "label", null, 0, 1,
+				DerivedAbstractArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

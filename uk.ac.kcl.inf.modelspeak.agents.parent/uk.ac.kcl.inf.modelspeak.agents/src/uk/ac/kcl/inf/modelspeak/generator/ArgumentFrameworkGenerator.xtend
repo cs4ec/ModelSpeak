@@ -14,6 +14,13 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelatio
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Attack
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.Support
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.StandardSimulationWarrant
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.MechanismExplainsEffect
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid
 
 /**
  * Take an argument graph and translate it into an abstract argument graph.
@@ -93,6 +100,7 @@ class ArgumentFrameworkGenerator {
 		val abstractArg = createDerivedAbstractArgument
 		abstractArg.argumentelement = ae
 		abstractArg.id = createArgID
+		abstractArg.label = ae.label
 		framework.arguments += abstractArg
 
 		return abstractArg
@@ -113,6 +121,16 @@ class ArgumentFrameworkGenerator {
 
 		return attack
 	}
+	
+	// Label derivation
+	private dispatch def String getLabel(ArgumentElement ae) '''«ae.eClass.name»:«ae.hashCode»'''
+	private dispatch def String getLabel(StandardSimulationWarrant ssw) '''Standard Simulation Warrant'''
+	private dispatch def String getLabel(SimulationMechanismWarrant smw) '''Sim Mechanism Warrant: "«smw.explainedEffect»"'''
+	private dispatch def String getLabel(LiteratureEvidence le) '''[«le.reference»]'''
+	private dispatch def String getLabel(ModelMatchesDataOverTime mmdot) '''Model <«mmdot.model»>(«mmdot.mechanism»)'''
+	private dispatch def String getLabel(MechanismExplainsEffect mee) '''Effect explained («mee.mechanism»)'''
+	private dispatch def String getLabel(ExperimentResults er) '''Experiment «er.experimentName»'''	
+	private dispatch def String getLabel(ModelInputDataValid midv) '''Valid model input data («midv.model»)'''
 
 	// ID management
 	var long argID = 0

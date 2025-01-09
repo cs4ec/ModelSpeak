@@ -1,8 +1,0 @@
-Requirement r1 { "Develop a simulation model that matches the quantitative measurements of the cell surface receptor LRP6 over time" }
-Theory ref1 { "[Yamamoto et al. (2006)]" } -> r1
-Theory ref2 { "[Khan et al. (2007)]" } -> r1
-Theory ref3 { "[Liu et al. (2014)]" } -> r1
-Model m2 { "Compartment-based model of LRP6 endocytosis with microdomains" } -> r1
-Theory set { "[Howard et al. (2001)]&&[Di Guglielmo et al. (2003)]" } -> m2
-Experiment s2 { "Simulation experiment (parameter scan) with either one or both internalization pathways active. In the case where only CIE is active, the predicted fraction of internalized LRP6 is lower than the experimentally derived values. In contrast, CME provides internalization dynamics that are too fast compared with in vitro measurements." } -> m2 -> r1
-Experiment s3 { "Another parameter scan applied CIE-based parameter values for the internalization rate of WNT/LRP6 complexes in both membrane domains (i.e. inside as well as outside of lipid rafts; using model configurations with CIE either fit the early or the late internalization dynamics of LRP6, but none allows the exact reproduction of in vitro measurements." } -> m2 -> r1

@@ -224,22 +224,13 @@ public interface Abstract_argumentsPackage extends EPackage {
 	int VIRTUAL_ABSTRACT_ARGUMENT__ID = ABSTRACT_ARGUMENT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIRTUAL_ABSTRACT_ARGUMENT__LABEL = ABSTRACT_ARGUMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Virtual Abstract Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIRTUAL_ABSTRACT_ARGUMENT_FEATURE_COUNT = ABSTRACT_ARGUMENT_FEATURE_COUNT + 1;
+	int VIRTUAL_ABSTRACT_ARGUMENT_FEATURE_COUNT = ABSTRACT_ARGUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Virtual Abstract Argument</em>' class.
@@ -279,13 +270,22 @@ public interface Abstract_argumentsPackage extends EPackage {
 	int DERIVED_ABSTRACT_ARGUMENT__ARGUMENTELEMENT = ABSTRACT_ARGUMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVED_ABSTRACT_ARGUMENT__LABEL = ABSTRACT_ARGUMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Derived Abstract Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVED_ABSTRACT_ARGUMENT_FEATURE_COUNT = ABSTRACT_ARGUMENT_FEATURE_COUNT + 1;
+	int DERIVED_ABSTRACT_ARGUMENT_FEATURE_COUNT = ABSTRACT_ARGUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Derived Abstract Argument</em>' class.
@@ -414,17 +414,6 @@ public interface Abstract_argumentsPackage extends EPackage {
 	EClass getVirtualAbstractArgument();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.VirtualAbstractArgument#getLabel <em>Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Label</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.VirtualAbstractArgument#getLabel()
-	 * @see #getVirtualAbstractArgument()
-	 * @generated
-	 */
-	EAttribute getVirtualAbstractArgument_Label();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument <em>Derived Abstract Argument</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -444,6 +433,17 @@ public interface Abstract_argumentsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDerivedAbstractArgument_Argumentelement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.DerivedAbstractArgument#getLabel()
+	 * @see #getDerivedAbstractArgument()
+	 * @generated
+	 */
+	EAttribute getDerivedAbstractArgument_Label();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -565,14 +565,6 @@ public interface Abstract_argumentsPackage extends EPackage {
 		EClass VIRTUAL_ABSTRACT_ARGUMENT = eINSTANCE.getVirtualAbstractArgument();
 
 		/**
-		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIRTUAL_ABSTRACT_ARGUMENT__LABEL = eINSTANCE.getVirtualAbstractArgument_Label();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.impl.DerivedAbstractArgumentImpl <em>Derived Abstract Argument</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -589,6 +581,14 @@ public interface Abstract_argumentsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DERIVED_ABSTRACT_ARGUMENT__ARGUMENTELEMENT = eINSTANCE.getDerivedAbstractArgument_Argumentelement();
+
+		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DERIVED_ABSTRACT_ARGUMENT__LABEL = eINSTANCE.getDerivedAbstractArgument_Label();
 
 	}
 

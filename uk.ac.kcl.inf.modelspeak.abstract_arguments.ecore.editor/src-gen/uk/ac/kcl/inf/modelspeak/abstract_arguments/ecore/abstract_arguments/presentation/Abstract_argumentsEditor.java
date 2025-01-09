@@ -155,6 +155,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.abstract_arguments.provider.Abstract_argumentsItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.provider.ArgumentsItemProviderAdapterFactory;
 
 /**
  * This is an example of a Abstract_arguments model editor.
@@ -686,8 +687,7 @@ public class Abstract_argumentsEditor extends MultiPageEditorPart
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Abstract_argumentsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.provider.ArgumentsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ArgumentsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
