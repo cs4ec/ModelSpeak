@@ -78,22 +78,39 @@ class ArgumentFrameworkGenerator {
 
 	private dispatch def void transformRelation(Support s, AbstractArgumentFramework framework,
 		Map<ArgumentElement, AbstractArgument> trace) {
-		if ((s.warrant === null) && (s.assumptions.empty)) {
+		/*
+		 * The evidence must be acceptable for the claim to be acceptable
+		 * 
+		 * This can be expressed as an attack by the evidence on an intermediary argument that attacks the claim.
+		 */
+		framework.createAttackSequenceBetween(trace, s.evidence, s.claim)
+		
+		if (s.warrant !== null) {
 			/*
-			 * If there's no warrant and no assumptions, then a support is an attack of an intermediary argument that attacks the claim.
+			 * If there is a warrant, then it must also be acceptable for the claim to be acceptable
+			 * 
+			 * This can be expressed as an attack by the support on an intermediary argument that attacks the claim. 
+			 * Making this a separate chain of attacks ensures that both warrant and evidence must be acceptable for the claim to be acceptable. 
 			 */
+			framework.createAttackSequenceBetween(trace, s.warrant, s.claim)
+		}
+		
+		// TODO: Add support for assumptions.	
+	}
+
+	/**
+	 * Create a sequence of attacks and a virtual argument to represent a support relationship using only attack relations.
+	 */
+	private def createAttackSequenceBetween(AbstractArgumentFramework framework, Map<ArgumentElement, AbstractArgument> trace, ArgumentElement ae1, ArgumentElement ae2) {
 			val intermediary = framework.createVirtualArgument
 			val attack1 = framework.createAttack
 			val attack2 = framework.createAttack
 
-			attack1.source = trace.get(s.evidence)
+			attack1.source = trace.get(ae1)
 			attack1.target = intermediary
 
 			attack2.source = intermediary
-			attack2.target = trace.get(s.claim)
-		} else {
-			// TODO: How to manage warrants and assumptions?	
-		}
+			attack2.target = trace.get(ae2)		
 	}
 
 	private def createDerivedArgumentFor(AbstractArgumentFramework framework, ArgumentElement ae) {

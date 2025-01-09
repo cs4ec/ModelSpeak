@@ -30,7 +30,31 @@
   <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="9" label="Experiment s1">
     <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6_basic.arguments#//@argumentElements.9"/>
   </arguments>
-  <attacks source="//@arguments.9" target="//@arguments.7"/>
-  <attacks source="//@arguments.9" target="//@arguments.8" id="1"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="10"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="11"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="12"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="13"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="14"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="15"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="16"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="17"/>
+  <attacks source="//@arguments.2" target="//@arguments.10"/>
+  <attacks source="//@arguments.10" target="//@arguments.0" id="1"/>
+  <attacks source="//@arguments.1" target="//@arguments.11" id="2"/>
+  <attacks source="//@arguments.11" target="//@arguments.0" id="3"/>
+  <attacks source="//@arguments.4" target="//@arguments.12" id="4"/>
+  <attacks source="//@arguments.12" target="//@arguments.0" id="5"/>
+  <attacks source="//@arguments.3" target="//@arguments.13" id="6"/>
+  <attacks source="//@arguments.13" target="//@arguments.0" id="7"/>
+  <attacks source="//@arguments.6" target="//@arguments.14" id="8"/>
+  <attacks source="//@arguments.14" target="//@arguments.0" id="9"/>
+  <attacks source="//@arguments.5" target="//@arguments.15" id="10"/>
+  <attacks source="//@arguments.15" target="//@arguments.0" id="11"/>
+  <attacks source="//@arguments.8" target="//@arguments.16" id="12"/>
+  <attacks source="//@arguments.16" target="//@arguments.7" id="13"/>
+  <attacks source="//@arguments.0" target="//@arguments.17" id="14"/>
+  <attacks source="//@arguments.17" target="//@arguments.7" id="15"/>
+  <attacks source="//@arguments.9" target="//@arguments.7" id="16"/>
+  <attacks source="//@arguments.9" target="//@arguments.8" id="17"/>
   <argumentgraph href="lrp6_basic.arguments#/"/>
 </abstract_arguments:AbstractArgumentFramework>

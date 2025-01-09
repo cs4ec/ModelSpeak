@@ -109,16 +109,25 @@ public class ArgumentFrameworkGenerator {
   }
 
   private void _transformRelation(final Support s, final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace) {
-    if (((s.getWarrant() == null) && s.getAssumptions().isEmpty())) {
-      final VirtualAbstractArgument intermediary = this.createVirtualArgument(framework);
-      final AbstractArgumentAttack attack1 = this.createAttack(framework);
-      final AbstractArgumentAttack attack2 = this.createAttack(framework);
-      attack1.setSource(trace.get(s.getEvidence()));
-      attack1.setTarget(intermediary);
-      attack2.setSource(intermediary);
-      attack2.setTarget(trace.get(s.getClaim()));
-    } else {
+    this.createAttackSequenceBetween(framework, trace, s.getEvidence(), s.getClaim());
+    ArgumentElement _warrant = s.getWarrant();
+    boolean _tripleNotEquals = (_warrant != null);
+    if (_tripleNotEquals) {
+      this.createAttackSequenceBetween(framework, trace, s.getWarrant(), s.getClaim());
     }
+  }
+
+  /**
+   * Create a sequence of attacks and a virtual argument to represent a support relationship using only attack relations.
+   */
+  private void createAttackSequenceBetween(final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace, final ArgumentElement ae1, final ArgumentElement ae2) {
+    final VirtualAbstractArgument intermediary = this.createVirtualArgument(framework);
+    final AbstractArgumentAttack attack1 = this.createAttack(framework);
+    final AbstractArgumentAttack attack2 = this.createAttack(framework);
+    attack1.setSource(trace.get(ae1));
+    attack1.setTarget(intermediary);
+    attack2.setSource(intermediary);
+    attack2.setTarget(trace.get(ae2));
   }
 
   private DerivedAbstractArgument createDerivedArgumentFor(final AbstractArgumentFramework framework, final ArgumentElement ae) {
