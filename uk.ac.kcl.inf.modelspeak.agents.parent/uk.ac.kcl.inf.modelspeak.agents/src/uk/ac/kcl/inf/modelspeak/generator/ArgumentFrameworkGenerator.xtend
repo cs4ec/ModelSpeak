@@ -73,7 +73,7 @@ class ArgumentFrameworkGenerator {
 		attack.source = trace.get(a.evidence)
 		attack.target = trace.get(a.claim)
 
-	// TODO: How to manage warrants and assumptions?
+	// TODO: How to manage warrants and assumptions? --> will need to create a virtual argument that attacks the claim and that is supported by the warrant
 	}
 
 	private dispatch def void transformRelation(Support s, AbstractArgumentFramework framework,
@@ -84,7 +84,7 @@ class ArgumentFrameworkGenerator {
 		 * This can be expressed as an attack by the evidence on an intermediary argument that attacks the claim.
 		 */
 		framework.createAttackSequenceBetween(trace, s.evidence, s.claim)
-		
+
 		if (s.warrant !== null) {
 			/*
 			 * If there is a warrant, then it must also be acceptable for the claim to be acceptable
@@ -94,23 +94,24 @@ class ArgumentFrameworkGenerator {
 			 */
 			framework.createAttackSequenceBetween(trace, s.warrant, s.claim)
 		}
-		
-		// TODO: Add support for assumptions.	
+
+	// TODO: Add support for assumptions.	
 	}
 
 	/**
 	 * Create a sequence of attacks and a virtual argument to represent a support relationship using only attack relations.
 	 */
-	private def createAttackSequenceBetween(AbstractArgumentFramework framework, Map<ArgumentElement, AbstractArgument> trace, ArgumentElement ae1, ArgumentElement ae2) {
-			val intermediary = framework.createVirtualArgument
-			val attack1 = framework.createAttack
-			val attack2 = framework.createAttack
+	private def createAttackSequenceBetween(AbstractArgumentFramework framework,
+		Map<ArgumentElement, AbstractArgument> trace, ArgumentElement ae1, ArgumentElement ae2) {
+		val intermediary = framework.createVirtualArgument
+		val attack1 = framework.createAttack
+		val attack2 = framework.createAttack
 
-			attack1.source = trace.get(ae1)
-			attack1.target = intermediary
+		attack1.source = trace.get(ae1)
+		attack1.target = intermediary
 
-			attack2.source = intermediary
-			attack2.target = trace.get(ae2)		
+		attack2.source = intermediary
+		attack2.target = trace.get(ae2)
 	}
 
 	private def createDerivedArgumentFor(AbstractArgumentFramework framework, ArgumentElement ae) {
@@ -138,15 +139,23 @@ class ArgumentFrameworkGenerator {
 
 		return attack
 	}
-	
+
 	// Label derivation
 	private dispatch def String getLabel(ArgumentElement ae) '''«ae.eClass.name»:«ae.hashCode»'''
+
 	private dispatch def String getLabel(StandardSimulationWarrant ssw) '''Standard Simulation Warrant'''
-	private dispatch def String getLabel(SimulationMechanismWarrant smw) '''Sim Mechanism Warrant: "«smw.explainedEffect»"'''
+
+	private dispatch def String getLabel(
+		SimulationMechanismWarrant smw) '''Sim Mechanism Warrant: "«smw.explainedEffect»"'''
+
 	private dispatch def String getLabel(LiteratureEvidence le) '''[«le.reference»]'''
+
 	private dispatch def String getLabel(ModelMatchesDataOverTime mmdot) '''Model <«mmdot.model»>(«mmdot.mechanism»)'''
+
 	private dispatch def String getLabel(MechanismExplainsEffect mee) '''Effect explained («mee.mechanism»)'''
-	private dispatch def String getLabel(ExperimentResults er) '''Experiment «er.experimentName»'''	
+
+	private dispatch def String getLabel(ExperimentResults er) '''Experiment «er.experimentName»'''
+
 	private dispatch def String getLabel(ModelInputDataValid midv) '''Valid model input data («midv.model»)'''
 
 	// ID management
