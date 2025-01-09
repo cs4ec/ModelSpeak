@@ -15,26 +15,26 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
 class AgentLangGenerator extends AbstractGenerator {
 	
-	val theoryStoreGenerator = new TheoryStoreGenerator
+//	val theoryStoreGenerator = new TheoryStoreGenerator
 	val argGraphGenerator = new ArgumentGraphGenerator
 	
 	override void beforeGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		theoryStoreGenerator.beforeGenerate (resource, fsa, context)
+//		theoryStoreGenerator.beforeGenerate (resource, fsa, context)
 		argGraphGenerator.beforeGenerate (resource, fsa, context)
 	}
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		var Throwable t
-		
-		try {
-			theoryStoreGenerator.doGenerate(resource, fsa, context)
-		} 
-		catch (Throwable tt) {
-			t = tt
-		}
+//		var Throwable t
+//		
+//		try {
+//			theoryStoreGenerator.doGenerate(resource, fsa, context)
+//		} 
+//		catch (Throwable tt) {
+//			t = tt
+//		}
 		
 		argGraphGenerator.doGenerate(resource, fsa, context)
 		
-		if (t !== null) throw t
+//		if (t !== null) throw t
 	}
 }

@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
  * Generates code from your model files on save.
@@ -16,36 +15,15 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
  */
 @SuppressWarnings("all")
 public class AgentLangGenerator extends AbstractGenerator {
-  private final TheoryStoreGenerator theoryStoreGenerator = new TheoryStoreGenerator();
-
   private final ArgumentGraphGenerator argGraphGenerator = new ArgumentGraphGenerator();
 
   @Override
   public void beforeGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    this.theoryStoreGenerator.beforeGenerate(resource, fsa, context);
     this.argGraphGenerator.beforeGenerate(resource, fsa, context);
   }
 
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    try {
-      Throwable t = null;
-      try {
-        this.theoryStoreGenerator.doGenerate(resource, fsa, context);
-      } catch (final Throwable _t) {
-        if (_t instanceof Throwable) {
-          final Throwable tt = (Throwable)_t;
-          t = tt;
-        } else {
-          throw Exceptions.sneakyThrow(_t);
-        }
-      }
-      this.argGraphGenerator.doGenerate(resource, fsa, context);
-      if ((t != null)) {
-        throw t;
-      }
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    this.argGraphGenerator.doGenerate(resource, fsa, context);
   }
 }
