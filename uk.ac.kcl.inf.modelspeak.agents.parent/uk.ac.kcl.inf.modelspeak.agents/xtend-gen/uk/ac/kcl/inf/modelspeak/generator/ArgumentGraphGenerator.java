@@ -19,8 +19,10 @@ import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.InterpreterFactory;
 import org.eclipse.emf.henshin.interpreter.RuleApplication;
+import org.eclipse.emf.henshin.interpreter.UnitApplication;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.model.Rule;
+import org.eclipse.emf.henshin.model.Unit;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -61,9 +63,13 @@ public class ArgumentGraphGenerator {
 
   private final RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(this.engine);
 
+  private final UnitApplication unitRunner = InterpreterFactory.INSTANCE.createUnitApplication(this.engine);
+
   private EGraph modelGraph;
 
   private List<Rule> rules;
+
+  private List<Unit> nonRules;
 
   @Extension
   private final ArgumentsFactory factory = ArgumentsFactory.eINSTANCE;
@@ -91,6 +97,8 @@ public class ArgumentGraphGenerator {
       true);
     EObject _head = IterableExtensions.<EObject>head(rulesResource.getContents());
     this.rules = ((org.eclipse.emf.henshin.model.Module) _head).getAllRules();
+    EObject _head_1 = IterableExtensions.<EObject>head(rulesResource.getContents());
+    this.nonRules = IterableExtensions.<Unit>toList(IterableExtensions.<Unit>reject(((org.eclipse.emf.henshin.model.Module) _head_1).getUnits(), Rule.class));
     final Consumer<Game> _function = (Game it) -> {
       this.generateArgumentGraph(it, resource, fsa, context);
     };
@@ -102,6 +110,7 @@ public class ArgumentGraphGenerator {
       EGraphImpl _eGraphImpl = new EGraphImpl(this.argumentGraph);
       this.modelGraph = _eGraphImpl;
       this.ruleRunner.setEGraph(this.modelGraph);
+      this.unitRunner.setEGraph(this.modelGraph);
       final Consumer<Move> _function = (Move it) -> {
         this.updateArgumentGraph(it);
       };
@@ -256,11 +265,48 @@ public class ArgumentGraphGenerator {
         return Boolean.valueOf(Objects.equals(_name, ruleName));
       };
       this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
-      final Consumer<Pair<String, String>> _function_1 = (Pair<String, String> it) -> {
-        this.ruleRunner.setParameterValue(it.getKey(), it.getValue());
-      };
-      parameters.forEach(_function_1);
-      _xblockexpression = this.ruleRunner.execute(null);
+      boolean _xifexpression = false;
+      Rule _rule = this.ruleRunner.getRule();
+      boolean _tripleNotEquals = (_rule != null);
+      if (_tripleNotEquals) {
+        boolean _xblockexpression_1 = false;
+        {
+          final Consumer<Pair<String, String>> _function_1 = (Pair<String, String> it) -> {
+            this.ruleRunner.setParameterValue(it.getKey(), it.getValue());
+          };
+          parameters.forEach(_function_1);
+          _xblockexpression_1 = this.ruleRunner.execute(null);
+        }
+        _xifexpression = _xblockexpression_1;
+      } else {
+        boolean _xblockexpression_2 = false;
+        {
+          final Function1<Unit, Boolean> _function_1 = (Unit it) -> {
+            String _name = it.getName();
+            return Boolean.valueOf(Objects.equals(_name, ruleName));
+          };
+          this.unitRunner.setUnit(IterableExtensions.<Unit>findFirst(this.nonRules, _function_1));
+          boolean _xifexpression_1 = false;
+          Unit _unit = this.unitRunner.getUnit();
+          boolean _tripleNotEquals_1 = (_unit != null);
+          if (_tripleNotEquals_1) {
+            boolean _xblockexpression_3 = false;
+            {
+              final Consumer<Pair<String, String>> _function_2 = (Pair<String, String> it) -> {
+                this.unitRunner.setParameterValue(it.getKey(), it.getValue());
+              };
+              parameters.forEach(_function_2);
+              _xblockexpression_3 = this.unitRunner.execute(null);
+            }
+            _xifexpression_1 = _xblockexpression_3;
+          } else {
+            throw new UnsupportedOperationException((("Rule or unit " + ruleName) + " not found."));
+          }
+          _xblockexpression_2 = _xifexpression_1;
+        }
+        _xifexpression = _xblockexpression_2;
+      }
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }

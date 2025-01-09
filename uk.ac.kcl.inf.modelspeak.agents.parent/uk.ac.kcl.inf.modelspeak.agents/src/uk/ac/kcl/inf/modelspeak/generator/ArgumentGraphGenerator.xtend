@@ -11,9 +11,11 @@ import org.eclipse.emf.henshin.interpreter.EGraph
 import org.eclipse.emf.henshin.interpreter.Engine
 import org.eclipse.emf.henshin.interpreter.InterpreterFactory
 import org.eclipse.emf.henshin.interpreter.RuleApplication
+import org.eclipse.emf.henshin.interpreter.UnitApplication
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl
 import org.eclipse.emf.henshin.model.Module
 import org.eclipse.emf.henshin.model.Rule
+import org.eclipse.emf.henshin.model.Unit
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.resource.SaveOptions
@@ -42,15 +44,17 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory
 class ArgumentGraphGenerator {
 	val Engine engine = InterpreterFactory.INSTANCE.createEngine
 	val RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(engine)
+	val UnitApplication unitRunner = InterpreterFactory.INSTANCE.createUnitApplication(engine)
 	var EGraph modelGraph
 
 	var List<Rule> rules
+	var List<Unit> nonRules
 
 	val extension ArgumentsFactory factory = ArgumentsFactory.eINSTANCE
 
 	var ArgumentGraph argumentGraph
 	var Resource argGraphResource
-	
+
 	val frameworkGenerator = new ArgumentFrameworkGenerator
 
 	def void beforeGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
@@ -59,10 +63,9 @@ class ArgumentGraphGenerator {
 		val resourceSet = resource.resourceSet
 		argGraphResource = resourceSet.createResource(outputUri)
 		argGraphResource.contents += argumentGraph
-		
+
 		frameworkGenerator.beforeGenerate(resource, fsa, context)
 	}
-	
 
 	def void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val rulesResource = resource.resourceSet.getResource(
@@ -71,6 +74,7 @@ class ArgumentGraphGenerator {
 			true
 		)
 		rules = (rulesResource.contents.head as Module).allRules
+		nonRules = (rulesResource.contents.head as Module).units.reject(Rule).toList
 
 		resource.contents.filter(Game).forEach[generateArgumentGraph(resource, fsa, context)]
 	}
@@ -78,6 +82,7 @@ class ArgumentGraphGenerator {
 	def generateArgumentGraph(Game game, Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		modelGraph = new EGraphImpl(argumentGraph)
 		ruleRunner.EGraph = modelGraph
+		unitRunner.EGraph = modelGraph
 
 		game.moves.forEach[updateArgumentGraph]
 
@@ -158,7 +163,7 @@ class ArgumentGraphGenerator {
 					'supportModel'.execute(
 						#['modelName' -> move.model.name, 'literatureRef' -> t.ref.ref, 'dataDescription' -> t.data])
 				}
-				// TODO: Other uses of literature references for supporting models...
+			// TODO: Other uses of literature references for supporting models...
 			} else {
 				throw new IllegalArgumentException('''Cannot currently process support model moves with anything else than a literature reference.''')
 			}
@@ -214,11 +219,24 @@ class ArgumentGraphGenerator {
 	// -- rule execution --
 	private def execute(String ruleName, List<Pair<String, String>> parameters) {
 		ruleRunner.rule = rules.findFirst[name == ruleName]
-		parameters.forEach [
-			ruleRunner.setParameterValue(key, value)
-		]
+		if (ruleRunner.rule !== null) {
+			parameters.forEach [
+				ruleRunner.setParameterValue(key, value)
+			]
 
-		ruleRunner.execute(null)
+			ruleRunner.execute(null)
+		} else {
+			unitRunner.unit = nonRules.findFirst[name == ruleName]
+			if (unitRunner.unit !== null) {
+				parameters.forEach [
+					unitRunner.setParameterValue(key, value)
+				]
+
+				unitRunner.execute(null)
+			} else {
+				throw new UnsupportedOperationException("Rule or unit " + ruleName + " not found.")
+			}
+		}
 	}
 
 	/**

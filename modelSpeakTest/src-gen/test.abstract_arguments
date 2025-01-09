@@ -1,235 +1,35 @@
 <?xml version="1.0" encoding="ASCII"?>
 <abstract_arguments:AbstractArgumentFramework xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:abstract_arguments="http://www.example.org/abstract_arguments" xmlns:arguments="http://www.example.org/arguments">
   <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" label="Sim Mechanism Warrant: &quot;LRP6 receptor internalisation&quot;">
-    <argumentelement xsi:type="arguments:SimulationMechanismWarrant" href="lrp6_basic.arguments#//@argumentElements.0"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="1" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6_basic.arguments#//@argumentElements.1"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="2" label="[[Yamamoto et al. (2006)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6_basic.arguments#//@argumentElements.2"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="3" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6_basic.arguments#//@argumentElements.3"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="4" label="[[Khan et al. (2007)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6_basic.arguments#//@argumentElements.4"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="5" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6_basic.arguments#//@argumentElements.5"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="6" label="[[Liu et al. (2014)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6_basic.arguments#//@argumentElements.6"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="7" label="Effect explained (Basic internalization mechanism of WNT/LRP6)">
-    <argumentelement xsi:type="arguments:MechanismExplainsEffect" href="lrp6_basic.arguments#//@argumentElements.7"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="8" label="Model &lt;m1>(Basic internalization mechanism of WNT/LRP6)">
-    <argumentelement xsi:type="arguments:ModelMatchesDataOverTime" href="lrp6_basic.arguments#//@argumentElements.8"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="9" label="Experiment s1">
-    <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6_basic.arguments#//@argumentElements.9"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="10"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="11"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="12"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="13"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="14"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="15"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="16"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="17"/>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="18" label="Sim Mechanism Warrant: &quot;LRP6 receptor internalisation&quot;">
-    <argumentelement xsi:type="arguments:SimulationMechanismWarrant" href="lrp6_basic2.arguments#//@argumentElements.0"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="19" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6_basic2.arguments#//@argumentElements.1"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="20" label="[[Yamamoto et al. (2006)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6_basic2.arguments#//@argumentElements.2"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="21" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6_basic2.arguments#//@argumentElements.3"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="22" label="[[Khan et al. (2007)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6_basic2.arguments#//@argumentElements.4"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="23" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6_basic2.arguments#//@argumentElements.5"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="24" label="[[Liu et al. (2014)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6_basic2.arguments#//@argumentElements.6"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="25" label="Effect explained (Basic internalization mechanism of WNT/LRP6)">
-    <argumentelement xsi:type="arguments:MechanismExplainsEffect" href="lrp6_basic2.arguments#//@argumentElements.7"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="26" label="Model &lt;m1>(Basic internalization mechanism of WNT/LRP6)">
-    <argumentelement xsi:type="arguments:ModelMatchesDataOverTime" href="lrp6_basic2.arguments#//@argumentElements.8"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="27" label="Experiment s1">
-    <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6_basic2.arguments#//@argumentElements.9"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="28"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="29"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="30"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="31"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="32"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="33"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="34"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="35"/>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="36" label="Sim Mechanism Warrant: &quot;LRP6 receptor internalisation&quot;">
-    <argumentelement xsi:type="arguments:SimulationMechanismWarrant" href="lrp6.arguments#//@argumentElements.0"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="37" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6.arguments#//@argumentElements.1"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="38" label="[[Yamamoto et al. (2006)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6.arguments#//@argumentElements.2"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="39" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6.arguments#//@argumentElements.3"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="40" label="[[Khan et al. (2007)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6.arguments#//@argumentElements.4"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="41" label="Standard Simulation Warrant">
-    <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="lrp6.arguments#//@argumentElements.5"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="42" label="[[Liu et al. (2014)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="lrp6.arguments#//@argumentElements.6"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="43" label="Effect explained (Basic internalization mechanism of WNT/LRP6)">
-    <argumentelement xsi:type="arguments:MechanismExplainsEffect" href="lrp6.arguments#//@argumentElements.7"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="44" label="Model &lt;m1>(Basic internalization mechanism of WNT/LRP6)">
-    <argumentelement xsi:type="arguments:ModelMatchesDataOverTime" href="lrp6.arguments#//@argumentElements.8"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="45" label="[[Lauffenburger and Linderman (1996)]]">
-    <argumentelement xsi:type="arguments:LiteratureEvidence" href="lrp6.arguments#//@argumentElements.9"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="46" label="Valid model input data (m1)">
-    <argumentelement xsi:type="arguments:ModelInputDataValid" href="lrp6.arguments#//@argumentElements.10"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="47" label="Experiment s1">
-    <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6.arguments#//@argumentElements.11"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="48" label="Effect explained (compartmentalised internalization mechanism of WNT/LRP6)">
-    <argumentelement xsi:type="arguments:MechanismExplainsEffect" href="lrp6.arguments#//@argumentElements.12"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="49" label="Model &lt;m2>(compartmentalised internalization mechanism of WNT/LRP6)">
-    <argumentelement xsi:type="arguments:ModelMatchesDataOverTime" href="lrp6.arguments#//@argumentElements.13"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="50" label="Experiment s2">
-    <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6.arguments#//@argumentElements.14"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="51" label="Experiment s3">
-    <argumentelement xsi:type="arguments:ExperimentResults" href="lrp6.arguments#//@argumentElements.15"/>
-  </arguments>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="52"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="53"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="54"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="55"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="56"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="57"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="58"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="59"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="60"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="61"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="62"/>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="63" label="Sim Mechanism Warrant: &quot;LRP6 receptor internalisation&quot;">
     <argumentelement xsi:type="arguments:SimulationMechanismWarrant" href="test.arguments#//@argumentElements.0"/>
   </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="64" label="Standard Simulation Warrant">
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="1" label="Standard Simulation Warrant">
     <argumentelement xsi:type="arguments:StandardSimulationWarrant" href="test.arguments#//@argumentElements.1"/>
   </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="65" label="[[Yamamoto et al. (2006)]]">
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="2" label="[[Yamamoto et al. (2006)]]">
     <argumentelement xsi:type="arguments:LiteratureEvidenceForDataAndEffect" href="test.arguments#//@argumentElements.2"/>
   </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="66" label="Effect explained (Simple internalisation mechanism)">
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="3" label="Effect explained (Simple internalisation mechanism)">
     <argumentelement xsi:type="arguments:MechanismExplainsEffect" href="test.arguments#//@argumentElements.3"/>
   </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="67" label="Model &lt;m1>(Simple internalisation mechanism)">
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="4" label="Model &lt;m1>(Simple internalisation mechanism)">
     <argumentelement xsi:type="arguments:ModelMatchesDataOverTime" href="test.arguments#//@argumentElements.4"/>
   </arguments>
-  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="68" label="Experiment e1">
+  <arguments xsi:type="abstract_arguments:DerivedAbstractArgument" id="5" label="Experiment e1">
     <argumentelement xsi:type="arguments:ExperimentResults" href="test.arguments#//@argumentElements.5"/>
   </arguments>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="69"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="70"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="71"/>
-  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="72"/>
-  <attacks source="//@arguments.2" target="//@arguments.10"/>
-  <attacks source="//@arguments.10" target="//@arguments.0" id="1"/>
-  <attacks source="//@arguments.1" target="//@arguments.11" id="2"/>
-  <attacks source="//@arguments.11" target="//@arguments.0" id="3"/>
-  <attacks source="//@arguments.4" target="//@arguments.12" id="4"/>
-  <attacks source="//@arguments.12" target="//@arguments.0" id="5"/>
-  <attacks source="//@arguments.3" target="//@arguments.13" id="6"/>
-  <attacks source="//@arguments.13" target="//@arguments.0" id="7"/>
-  <attacks source="//@arguments.6" target="//@arguments.14" id="8"/>
-  <attacks source="//@arguments.14" target="//@arguments.0" id="9"/>
-  <attacks source="//@arguments.5" target="//@arguments.15" id="10"/>
-  <attacks source="//@arguments.15" target="//@arguments.0" id="11"/>
-  <attacks source="//@arguments.8" target="//@arguments.16" id="12"/>
-  <attacks source="//@arguments.16" target="//@arguments.7" id="13"/>
-  <attacks source="//@arguments.0" target="//@arguments.17" id="14"/>
-  <attacks source="//@arguments.17" target="//@arguments.7" id="15"/>
-  <attacks source="//@arguments.9" target="//@arguments.7" id="16"/>
-  <attacks source="//@arguments.9" target="//@arguments.8" id="17"/>
-  <attacks source="//@arguments.20" target="//@arguments.28" id="18"/>
-  <attacks source="//@arguments.28" target="//@arguments.18" id="19"/>
-  <attacks source="//@arguments.19" target="//@arguments.29" id="20"/>
-  <attacks source="//@arguments.29" target="//@arguments.18" id="21"/>
-  <attacks source="//@arguments.22" target="//@arguments.30" id="22"/>
-  <attacks source="//@arguments.30" target="//@arguments.18" id="23"/>
-  <attacks source="//@arguments.21" target="//@arguments.31" id="24"/>
-  <attacks source="//@arguments.31" target="//@arguments.18" id="25"/>
-  <attacks source="//@arguments.24" target="//@arguments.32" id="26"/>
-  <attacks source="//@arguments.32" target="//@arguments.18" id="27"/>
-  <attacks source="//@arguments.23" target="//@arguments.33" id="28"/>
-  <attacks source="//@arguments.33" target="//@arguments.18" id="29"/>
-  <attacks source="//@arguments.26" target="//@arguments.34" id="30"/>
-  <attacks source="//@arguments.34" target="//@arguments.25" id="31"/>
-  <attacks source="//@arguments.18" target="//@arguments.35" id="32"/>
-  <attacks source="//@arguments.35" target="//@arguments.25" id="33"/>
-  <attacks source="//@arguments.27" target="//@arguments.25" id="34"/>
-  <attacks source="//@arguments.27" target="//@arguments.26" id="35"/>
-  <attacks source="//@arguments.38" target="//@arguments.52" id="36"/>
-  <attacks source="//@arguments.52" target="//@arguments.36" id="37"/>
-  <attacks source="//@arguments.37" target="//@arguments.53" id="38"/>
-  <attacks source="//@arguments.53" target="//@arguments.36" id="39"/>
-  <attacks source="//@arguments.40" target="//@arguments.54" id="40"/>
-  <attacks source="//@arguments.54" target="//@arguments.36" id="41"/>
-  <attacks source="//@arguments.39" target="//@arguments.55" id="42"/>
-  <attacks source="//@arguments.55" target="//@arguments.36" id="43"/>
-  <attacks source="//@arguments.42" target="//@arguments.56" id="44"/>
-  <attacks source="//@arguments.56" target="//@arguments.36" id="45"/>
-  <attacks source="//@arguments.41" target="//@arguments.57" id="46"/>
-  <attacks source="//@arguments.57" target="//@arguments.36" id="47"/>
-  <attacks source="//@arguments.44" target="//@arguments.58" id="48"/>
-  <attacks source="//@arguments.58" target="//@arguments.43" id="49"/>
-  <attacks source="//@arguments.36" target="//@arguments.59" id="50"/>
-  <attacks source="//@arguments.59" target="//@arguments.43" id="51"/>
-  <attacks source="//@arguments.45" target="//@arguments.60" id="52"/>
-  <attacks source="//@arguments.60" target="//@arguments.46" id="53"/>
-  <attacks source="//@arguments.47" target="//@arguments.43" id="54"/>
-  <attacks source="//@arguments.47" target="//@arguments.44" id="55"/>
-  <attacks source="//@arguments.49" target="//@arguments.61" id="56"/>
-  <attacks source="//@arguments.61" target="//@arguments.48" id="57"/>
-  <attacks source="//@arguments.36" target="//@arguments.62" id="58"/>
-  <attacks source="//@arguments.62" target="//@arguments.48" id="59"/>
-  <attacks source="//@arguments.50" target="//@arguments.48" id="60"/>
-  <attacks source="//@arguments.50" target="//@arguments.49" id="61"/>
-  <attacks source="//@arguments.51" target="//@arguments.48" id="62"/>
-  <attacks source="//@arguments.51" target="//@arguments.49" id="63"/>
-  <attacks source="//@arguments.65" target="//@arguments.69" id="64"/>
-  <attacks source="//@arguments.69" target="//@arguments.63" id="65"/>
-  <attacks source="//@arguments.64" target="//@arguments.70" id="66"/>
-  <attacks source="//@arguments.70" target="//@arguments.63" id="67"/>
-  <attacks source="//@arguments.67" target="//@arguments.71" id="68"/>
-  <attacks source="//@arguments.71" target="//@arguments.66" id="69"/>
-  <attacks source="//@arguments.63" target="//@arguments.72" id="70"/>
-  <attacks source="//@arguments.72" target="//@arguments.66" id="71"/>
-  <attacks source="//@arguments.68" target="//@arguments.66" id="72"/>
-  <attacks source="//@arguments.68" target="//@arguments.67" id="73"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="6"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="7"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="8"/>
+  <arguments xsi:type="abstract_arguments:VirtualAbstractArgument" id="9"/>
+  <attacks source="//@arguments.2" target="//@arguments.6"/>
+  <attacks source="//@arguments.6" target="//@arguments.0" id="1"/>
+  <attacks source="//@arguments.1" target="//@arguments.7" id="2"/>
+  <attacks source="//@arguments.7" target="//@arguments.0" id="3"/>
+  <attacks source="//@arguments.4" target="//@arguments.8" id="4"/>
+  <attacks source="//@arguments.8" target="//@arguments.3" id="5"/>
+  <attacks source="//@arguments.0" target="//@arguments.9" id="6"/>
+  <attacks source="//@arguments.9" target="//@arguments.3" id="7"/>
+  <attacks source="//@arguments.5" target="//@arguments.4" id="8"/>
   <argumentgraph href="test.arguments#/"/>
 </abstract_arguments:AbstractArgumentFramework>

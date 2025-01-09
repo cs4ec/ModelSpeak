@@ -8,6 +8,5 @@
   <argumentElements xsi:type="arguments:ExperimentResults" experimentName="e1" results="Some data not matching time data of LRP receptor internalisation"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.2" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.0" claim="//@argumentElements.3"/>
-  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.5" claim="//@argumentElements.3"/>
   <relations xsi:type="arguments:Attack" evidence="//@argumentElements.5" claim="//@argumentElements.4"/>
 </arguments:ArgumentGraph>
