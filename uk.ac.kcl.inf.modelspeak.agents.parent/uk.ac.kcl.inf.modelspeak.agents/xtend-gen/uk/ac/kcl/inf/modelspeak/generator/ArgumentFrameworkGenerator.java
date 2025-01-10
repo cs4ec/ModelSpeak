@@ -114,31 +114,31 @@ public class ArgumentFrameworkGenerator {
       final AbstractArgumentAttack virtAttack = this.createAttack(framework);
       virtAttack.setSource(virtual);
       virtAttack.setTarget(trace.get(a.getClaim()));
-      this.createAttackSequenceBetween(framework, trace, a.getEvidence(), virtual);
+      this.createVirtualSupportBetween(framework, trace, a.getEvidence(), virtual);
       ArgumentElement _warrant = a.getWarrant();
       boolean _tripleNotEquals = (_warrant != null);
       if (_tripleNotEquals) {
-        this.createAttackSequenceBetween(framework, trace, a.getWarrant(), virtual);
+        this.createVirtualSupportBetween(framework, trace, a.getWarrant(), virtual);
       }
       final Consumer<ArgumentElement> _function = (ArgumentElement ass) -> {
-        this.createAttackSequenceBetween(framework, trace, ass, virtual);
+        this.createVirtualSupportBetween(framework, trace, ass, virtual);
       };
       a.getAssumptions().forEach(_function);
     }
   }
 
   private void _transformRelation(final Support s, final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace) {
-    this.createAttackSequenceBetween(framework, trace, s.getEvidence(), s.getClaim());
+    this.createVirtualSupportBetween(framework, trace, s.getEvidence(), s.getClaim());
     ArgumentElement _warrant = s.getWarrant();
     boolean _tripleNotEquals = (_warrant != null);
     if (_tripleNotEquals) {
-      this.createAttackSequenceBetween(framework, trace, s.getWarrant(), s.getClaim());
+      this.createVirtualSupportBetween(framework, trace, s.getWarrant(), s.getClaim());
     }
     boolean _isEmpty = s.getAssumptions().isEmpty();
     boolean _not = (!_isEmpty);
     if (_not) {
       final Consumer<ArgumentElement> _function = (ArgumentElement a) -> {
-        this.createAttackSequenceBetween(framework, trace, a, s.getClaim());
+        this.createVirtualSupportBetween(framework, trace, a, s.getClaim());
       };
       s.getAssumptions().forEach(_function);
     }
@@ -147,11 +147,11 @@ public class ArgumentFrameworkGenerator {
   /**
    * Create a sequence of attacks and a virtual argument to represent a support relationship using only attack relations.
    */
-  private void createAttackSequenceBetween(final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace, final ArgumentElement ae1, final ArgumentElement ae2) {
-    this.createAttackSequenceBetween(framework, trace, ae1, trace.get(ae2));
+  private void createVirtualSupportBetween(final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace, final ArgumentElement ae1, final ArgumentElement ae2) {
+    this.createVirtualSupportBetween(framework, trace, ae1, trace.get(ae2));
   }
 
-  private void createAttackSequenceBetween(final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace, final ArgumentElement ae1, final AbstractArgument aa) {
+  private void createVirtualSupportBetween(final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace, final ArgumentElement ae1, final AbstractArgument aa) {
     final VirtualAbstractArgument intermediary = this.createVirtualArgument(framework);
     final AbstractArgumentAttack attack1 = this.createAttack(framework);
     final AbstractArgumentAttack attack2 = this.createAttack(framework);

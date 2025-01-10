@@ -83,47 +83,43 @@ class ArgumentFrameworkGenerator {
 			val virtAttack = framework.createAttack
 			virtAttack.source = virtual
 			virtAttack.target = trace.get(a.claim)
-			
-			framework.createAttackSequenceBetween(trace, a.evidence, virtual)
-			
+
+			framework.createVirtualSupportBetween(trace, a.evidence, virtual)
+
 			if (a.warrant !== null) {
-				framework.createAttackSequenceBetween(trace, a.warrant, virtual)			
+				framework.createVirtualSupportBetween(trace, a.warrant, virtual)
 			}
-			
-			a.assumptions.forEach[ass |
-				framework.createAttackSequenceBetween(trace, ass, virtual)
+
+			a.assumptions.forEach [ ass |
+				framework.createVirtualSupportBetween(trace, ass, virtual)
 			]
 		}
 	}
 
 	private dispatch def void transformRelation(Support s, AbstractArgumentFramework framework,
 		Map<ArgumentElement, AbstractArgument> trace) {
-		/*
-		 * The evidence must be acceptable for the claim to be acceptable
-		 * 
-		 * This can be expressed as an attack by the evidence on an intermediary argument that attacks the claim.
-		 */
-		framework.createAttackSequenceBetween(trace, s.evidence, s.claim)
+		// The evidence must be acceptable for the claim to be acceptable
+		framework.createVirtualSupportBetween(trace, s.evidence, s.claim)
 
 		if (s.warrant !== null) {
 			/*
 			 * If there is a warrant, then it must also be acceptable for the claim to be acceptable
 			 * 
-			 * This can be expressed as an attack by the support on an intermediary argument that attacks the claim. 
-			 * Making this a separate chain of attacks ensures that both warrant and evidence must be acceptable for the claim to be acceptable. 
+			 * Making this a separate chain of attacks ensures that both warrant and evidence must be acceptable 
+			 * for the claim to be acceptable. 
 			 */
-			framework.createAttackSequenceBetween(trace, s.warrant, s.claim)
+			framework.createVirtualSupportBetween(trace, s.warrant, s.claim)
 		}
 
 		if (!s.assumptions.empty) {
 			/*
 			 * If there are assumptions, then they must also be acceptable for the claim to be acceptable
-			 * 
-			 * This can be expressed as an attack by each assumption on an intermediary argument that attacks the claim. 
-			 * Making this a separate chain of attacks ensures that all assumptions and both warrant and evidence must be acceptable for the claim to be acceptable. 
+			 *  
+			 * Making this a separate chain of attacks ensures that all assumptions and both warrant and evidence 
+			 * must be acceptable for the claim to be acceptable. 
 			 */
 			s.assumptions.forEach [ a |
-				framework.createAttackSequenceBetween(trace, a, s.claim)
+				framework.createVirtualSupportBetween(trace, a, s.claim)
 			]
 		}
 	}
@@ -131,12 +127,12 @@ class ArgumentFrameworkGenerator {
 	/**
 	 * Create a sequence of attacks and a virtual argument to represent a support relationship using only attack relations.
 	 */
-	private def createAttackSequenceBetween(AbstractArgumentFramework framework,
+	private def createVirtualSupportBetween(AbstractArgumentFramework framework,
 		Map<ArgumentElement, AbstractArgument> trace, ArgumentElement ae1, ArgumentElement ae2) {
-		framework.createAttackSequenceBetween(trace, ae1, trace.get(ae2))
+		framework.createVirtualSupportBetween(trace, ae1, trace.get(ae2))
 	}
 
-	private def createAttackSequenceBetween(AbstractArgumentFramework framework,
+	private def createVirtualSupportBetween(AbstractArgumentFramework framework,
 		Map<ArgumentElement, AbstractArgument> trace, ArgumentElement ae1, AbstractArgument aa) {
 		val intermediary = framework.createVirtualArgument
 		val attack1 = framework.createAttack
