@@ -98,7 +98,17 @@ class ArgumentFrameworkGenerator {
 			framework.createAttackSequenceBetween(trace, s.warrant, s.claim)
 		}
 
-	// TODO: Add support for assumptions.	
+		if (!s.assumptions.empty) {
+			/*
+			 * If there are assumptions, then they must also be acceptable for the claim to be acceptable
+			 * 
+			 * This can be expressed as an attack by each assumption on an intermediary argument that attacks the claim. 
+			 * Making this a separate chain of attacks ensures that all assumptions and both warrant and evidence must be acceptable for the claim to be acceptable. 
+			 */
+			s.assumptions.forEach[a |
+				framework.createAttackSequenceBetween(trace, a, s.claim)	
+			]
+		}
 	}
 
 	/**

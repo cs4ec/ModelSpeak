@@ -117,6 +117,14 @@ public class ArgumentFrameworkGenerator {
     if (_tripleNotEquals) {
       this.createAttackSequenceBetween(framework, trace, s.getWarrant(), s.getClaim());
     }
+    boolean _isEmpty = s.getAssumptions().isEmpty();
+    boolean _not = (!_isEmpty);
+    if (_not) {
+      final Consumer<ArgumentElement> _function = (ArgumentElement a) -> {
+        this.createAttackSequenceBetween(framework, trace, a, s.getClaim());
+      };
+      s.getAssumptions().forEach(_function);
+    }
   }
 
   /**
