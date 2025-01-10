@@ -49,7 +49,7 @@ class ArgumentFrameworkGenerator {
 		argGraph.relations.forEach[transformRelation(argumentFramework, elementTrace)]
 
 		frameworkResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
-		
+
 		new Argument2PlatoGenerator().doGenerate(frameworkResource, fsa, context)
 	}
 
@@ -71,12 +71,29 @@ class ArgumentFrameworkGenerator {
 
 	private dispatch def void transformRelation(Attack a, AbstractArgumentFramework framework,
 		Map<ArgumentElement, AbstractArgument> trace) {
-		val attack = framework.createAttack
+		if ((a.warrant === null) && (a.assumptions.empty)) {
+			// We can get away with a simple and straightforward translation
+			val attack = framework.createAttack
 
-		attack.source = trace.get(a.evidence)
-		attack.target = trace.get(a.claim)
-
-	// TODO: How to manage warrants and assumptions? --> will need to create a virtual argument that attacks the claim and that is supported by the warrant
+			attack.source = trace.get(a.evidence)
+			attack.target = trace.get(a.claim)
+		} else {
+			// If there is more than just evidence, then we need to create an intermediary virtual argument that attacks the claim and is itself supported (via a sequence of attacks) by the different components
+			val virtual = framework.createVirtualArgument
+			val virtAttack = framework.createAttack
+			virtAttack.source = virtual
+			virtAttack.target = trace.get(a.claim)
+			
+			framework.createAttackSequenceBetween(trace, a.evidence, virtual)
+			
+			if (a.warrant !== null) {
+				framework.createAttackSequenceBetween(trace, a.warrant, virtual)			
+			}
+			
+			a.assumptions.forEach[ass |
+				framework.createAttackSequenceBetween(trace, ass, virtual)
+			]
+		}
 	}
 
 	private dispatch def void transformRelation(Support s, AbstractArgumentFramework framework,
@@ -105,8 +122,8 @@ class ArgumentFrameworkGenerator {
 			 * This can be expressed as an attack by each assumption on an intermediary argument that attacks the claim. 
 			 * Making this a separate chain of attacks ensures that all assumptions and both warrant and evidence must be acceptable for the claim to be acceptable. 
 			 */
-			s.assumptions.forEach[a |
-				framework.createAttackSequenceBetween(trace, a, s.claim)	
+			s.assumptions.forEach [ a |
+				framework.createAttackSequenceBetween(trace, a, s.claim)
 			]
 		}
 	}
@@ -116,6 +133,11 @@ class ArgumentFrameworkGenerator {
 	 */
 	private def createAttackSequenceBetween(AbstractArgumentFramework framework,
 		Map<ArgumentElement, AbstractArgument> trace, ArgumentElement ae1, ArgumentElement ae2) {
+		framework.createAttackSequenceBetween(trace, ae1, trace.get(ae2))
+	}
+
+	private def createAttackSequenceBetween(AbstractArgumentFramework framework,
+		Map<ArgumentElement, AbstractArgument> trace, ArgumentElement ae1, AbstractArgument aa) {
 		val intermediary = framework.createVirtualArgument
 		val attack1 = framework.createAttack
 		val attack2 = framework.createAttack
@@ -124,7 +146,7 @@ class ArgumentFrameworkGenerator {
 		attack1.target = intermediary
 
 		attack2.source = intermediary
-		attack2.target = trace.get(ae2)
+		attack2.target = aa
 	}
 
 	private def createDerivedArgumentFor(AbstractArgumentFramework framework, ArgumentElement ae) {

@@ -105,9 +105,26 @@ public class ArgumentFrameworkGenerator {
   }
 
   private void _transformRelation(final Attack a, final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace) {
-    final AbstractArgumentAttack attack = this.createAttack(framework);
-    attack.setSource(trace.get(a.getEvidence()));
-    attack.setTarget(trace.get(a.getClaim()));
+    if (((a.getWarrant() == null) && a.getAssumptions().isEmpty())) {
+      final AbstractArgumentAttack attack = this.createAttack(framework);
+      attack.setSource(trace.get(a.getEvidence()));
+      attack.setTarget(trace.get(a.getClaim()));
+    } else {
+      final VirtualAbstractArgument virtual = this.createVirtualArgument(framework);
+      final AbstractArgumentAttack virtAttack = this.createAttack(framework);
+      virtAttack.setSource(virtual);
+      virtAttack.setTarget(trace.get(a.getClaim()));
+      this.createAttackSequenceBetween(framework, trace, a.getEvidence(), virtual);
+      ArgumentElement _warrant = a.getWarrant();
+      boolean _tripleNotEquals = (_warrant != null);
+      if (_tripleNotEquals) {
+        this.createAttackSequenceBetween(framework, trace, a.getWarrant(), virtual);
+      }
+      final Consumer<ArgumentElement> _function = (ArgumentElement ass) -> {
+        this.createAttackSequenceBetween(framework, trace, ass, virtual);
+      };
+      a.getAssumptions().forEach(_function);
+    }
   }
 
   private void _transformRelation(final Support s, final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace) {
@@ -131,13 +148,17 @@ public class ArgumentFrameworkGenerator {
    * Create a sequence of attacks and a virtual argument to represent a support relationship using only attack relations.
    */
   private void createAttackSequenceBetween(final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace, final ArgumentElement ae1, final ArgumentElement ae2) {
+    this.createAttackSequenceBetween(framework, trace, ae1, trace.get(ae2));
+  }
+
+  private void createAttackSequenceBetween(final AbstractArgumentFramework framework, final Map<ArgumentElement, AbstractArgument> trace, final ArgumentElement ae1, final AbstractArgument aa) {
     final VirtualAbstractArgument intermediary = this.createVirtualArgument(framework);
     final AbstractArgumentAttack attack1 = this.createAttack(framework);
     final AbstractArgumentAttack attack2 = this.createAttack(framework);
     attack1.setSource(trace.get(ae1));
     attack1.setTarget(intermediary);
     attack2.setSource(intermediary);
-    attack2.setTarget(trace.get(ae2));
+    attack2.setTarget(aa);
   }
 
   private DerivedAbstractArgument createDerivedArgumentFor(final AbstractArgumentFramework framework, final ArgumentElement ae) {
