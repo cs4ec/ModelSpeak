@@ -12,6 +12,13 @@
           </style>
         </nodeMappings>
         <nodeMappings name="ArgumentElementNode" semanticCandidatesExpression="feature:argumentElements" domainClass="arguments::ArgumentElement">
+          <borderedNodeMappings name="IDBorderNode" semanticCandidatesExpression="aql:containerView.target" domainClass="arguments::ArgumentElement">
+            <style xsi:type="style:LozengeNodeDescription" labelSize="10" showIcon="false" labelExpression="feature:id" sizeComputationExpression="2" labelPosition="node">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            </style>
+          </borderedNodeMappings>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::StandardSimulationWarrant)">
             <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>

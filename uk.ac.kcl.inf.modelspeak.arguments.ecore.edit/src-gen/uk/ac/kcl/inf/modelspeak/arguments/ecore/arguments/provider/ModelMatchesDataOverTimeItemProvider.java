@@ -128,9 +128,8 @@ public class ModelMatchesDataOverTimeItemProvider extends ArgumentElementItemPro
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelMatchesDataOverTime) object).getModel();
-		return label == null || label.length() == 0 ? getString("_UI_ModelMatchesDataOverTime_type")
-				: getString("_UI_ModelMatchesDataOverTime_type") + " " + label;
+		ModelMatchesDataOverTime modelMatchesDataOverTime = (ModelMatchesDataOverTime) object;
+		return getString("_UI_ModelMatchesDataOverTime_type") + " " + modelMatchesDataOverTime.getId();
 	}
 
 	/**

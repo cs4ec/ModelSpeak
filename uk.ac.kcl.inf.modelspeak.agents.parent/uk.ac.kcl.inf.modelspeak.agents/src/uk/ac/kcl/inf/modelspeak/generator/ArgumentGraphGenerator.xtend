@@ -86,8 +86,9 @@ class ArgumentGraphGenerator {
 
 		game.moves.forEach[updateArgumentGraph]
 
-		argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
 		frameworkGenerator.doGenerate(argGraphResource, fsa, context)
+
+		argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
 	}
 
 	private def getArgumentGraphFileName(Resource resource) {

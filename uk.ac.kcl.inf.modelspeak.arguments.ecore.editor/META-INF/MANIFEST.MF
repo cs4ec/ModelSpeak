@@ -4,9 +4,8 @@ Bundle-Name: uk.ac.kcl.inf.modelspeak.arguments.ecore.editor
 Bundle-SymbolicName: uk.ac.kcl.inf.modelspeak.arguments.ecore.editor;singleton:=true
 Automatic-Module-Name: uk.ac.kcl.inf.modelspeak.arguments.ecore.editor
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
 Bundle-Activator: uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.presentation.ArgumentsEditorPlugin$Implementation
-Bundle-Vendor: My Company
+Bundle-Vendor: MyCompany
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.presentation

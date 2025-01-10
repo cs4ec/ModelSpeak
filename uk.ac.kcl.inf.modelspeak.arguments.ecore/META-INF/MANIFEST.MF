@@ -5,7 +5,7 @@ Bundle-SymbolicName: uk.ac.kcl.inf.modelspeak.arguments.ecore;singleton:=true
 Automatic-Module-Name: uk.ac.kcl.inf.modelspeak.arguments.ecore
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: My Company
+Bundle-Vendor: MyCompany
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments,

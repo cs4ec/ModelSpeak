@@ -115,8 +115,8 @@ public class ArgumentGraphGenerator {
         this.updateArgumentGraph(it);
       };
       game.getMoves().forEach(_function);
-      this.argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
       this.frameworkGenerator.doGenerate(this.argGraphResource, fsa, context);
+      this.argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

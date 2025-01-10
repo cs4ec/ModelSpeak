@@ -94,9 +94,8 @@ public class LiteratureEvidenceItemProvider extends ArgumentElementItemProvider 
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LiteratureEvidence) object).getReference();
-		return label == null || label.length() == 0 ? getString("_UI_LiteratureEvidence_type")
-				: getString("_UI_LiteratureEvidence_type") + " " + label;
+		LiteratureEvidence literatureEvidence = (LiteratureEvidence) object;
+		return getString("_UI_LiteratureEvidence_type") + " " + literatureEvidence.getId();
 	}
 
 	/**

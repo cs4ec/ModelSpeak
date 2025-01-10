@@ -211,6 +211,16 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getArgumentElement_Id() {
+		return (EAttribute) argumentElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getArgumentGraph() {
 		return argumentGraphEClass;
 	}
@@ -576,6 +586,7 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 
 		// Create classes and their features
 		argumentElementEClass = createEClass(ARGUMENT_ELEMENT);
+		createEAttribute(argumentElementEClass, ARGUMENT_ELEMENT__ID);
 
 		argumentGraphEClass = createEClass(ARGUMENT_GRAPH);
 		createEReference(argumentGraphEClass, ARGUMENT_GRAPH__ARGUMENT_ELEMENTS);
@@ -671,6 +682,8 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		// Initialize classes, features, and operations; add parameters
 		initEClass(argumentElementEClass, ArgumentElement.class, "ArgumentElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArgumentElement_Id(), ecorePackage.getELong(), "id", null, 0, 1, ArgumentElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(argumentGraphEClass, ArgumentGraph.class, "ArgumentGraph", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

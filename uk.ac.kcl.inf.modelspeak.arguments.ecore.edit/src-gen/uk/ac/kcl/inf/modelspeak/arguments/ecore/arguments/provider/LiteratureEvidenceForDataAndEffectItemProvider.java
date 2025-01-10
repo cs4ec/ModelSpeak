@@ -113,9 +113,9 @@ public class LiteratureEvidenceForDataAndEffectItemProvider extends LiteratureEv
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LiteratureEvidenceForDataAndEffect) object).getReference();
-		return label == null || label.length() == 0 ? getString("_UI_LiteratureEvidenceForDataAndEffect_type")
-				: getString("_UI_LiteratureEvidenceForDataAndEffect_type") + " " + label;
+		LiteratureEvidenceForDataAndEffect literatureEvidenceForDataAndEffect = (LiteratureEvidenceForDataAndEffect) object;
+		return getString("_UI_LiteratureEvidenceForDataAndEffect_type") + " "
+				+ literatureEvidenceForDataAndEffect.getId();
 	}
 
 	/**

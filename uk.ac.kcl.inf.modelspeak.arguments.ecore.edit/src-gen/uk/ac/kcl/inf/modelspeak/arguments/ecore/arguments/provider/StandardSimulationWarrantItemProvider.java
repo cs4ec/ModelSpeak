@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.StandardSimulationWarrant;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.StandardSimulationWarrant} object.
@@ -71,7 +72,8 @@ public class StandardSimulationWarrantItemProvider extends ArgumentElementItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_StandardSimulationWarrant_type");
+		StandardSimulationWarrant standardSimulationWarrant = (StandardSimulationWarrant) object;
+		return getString("_UI_StandardSimulationWarrant_type") + " " + standardSimulationWarrant.getId();
 	}
 
 	/**

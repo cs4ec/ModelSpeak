@@ -94,9 +94,8 @@ public class ModelIsValidClaimItemProvider extends ArgumentElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelIsValidClaim) object).getModel();
-		return label == null || label.length() == 0 ? getString("_UI_ModelIsValidClaim_type")
-				: getString("_UI_ModelIsValidClaim_type") + " " + label;
+		ModelIsValidClaim modelIsValidClaim = (ModelIsValidClaim) object;
+		return getString("_UI_ModelIsValidClaim_type") + " " + modelIsValidClaim.getId();
 	}
 
 	/**

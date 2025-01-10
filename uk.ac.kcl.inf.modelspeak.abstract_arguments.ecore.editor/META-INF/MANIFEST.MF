@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.editor
 Bundle-SymbolicName: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.editor;singleton:=true
 Automatic-Module-Name: uk.ac.kcl.inf.modelspeak.abstract_arguments.ecore.editor
 Bundle-Version: 1.0.0.qualifier

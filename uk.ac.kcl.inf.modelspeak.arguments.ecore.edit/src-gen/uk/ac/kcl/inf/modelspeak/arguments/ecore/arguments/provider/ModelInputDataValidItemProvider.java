@@ -94,9 +94,8 @@ public class ModelInputDataValidItemProvider extends ModelIsValidClaimItemProvid
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelInputDataValid) object).getModel();
-		return label == null || label.length() == 0 ? getString("_UI_ModelInputDataValid_type")
-				: getString("_UI_ModelInputDataValid_type") + " " + label;
+		ModelInputDataValid modelInputDataValid = (ModelInputDataValid) object;
+		return getString("_UI_ModelInputDataValid_type") + " " + modelInputDataValid.getId();
 	}
 
 	/**

@@ -152,6 +152,9 @@ class ArgumentFrameworkGenerator {
 		abstractArg.label = ae.label
 		framework.arguments += abstractArg
 
+		// Also transfer the ID to the argument graph for easy mapping
+		ae.id = abstractArg.id
+
 		return abstractArg
 	}
 

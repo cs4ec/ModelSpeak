@@ -11,7 +11,9 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Arguments" basePackage="uk.ac.kcl.inf.modelspeak.arguments.ecore"
       disposableProviderFactory="true" ecorePackage="arguments.ecore#/">
-    <genClasses ecoreClass="arguments.ecore#//ArgumentElement"/>
+    <genClasses ecoreClass="arguments.ecore#//ArgumentElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ArgumentElement/id"/>
+    </genClasses>
     <genClasses ecoreClass="arguments.ecore#//ArgumentGraph">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentGraph/argumentElements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentGraph/relations"/>

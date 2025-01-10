@@ -67,13 +67,22 @@ public interface ArgumentsPackage extends EPackage {
 	int ARGUMENT_ELEMENT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_ELEMENT__ID = 0;
+
+	/**
 	 * The number of structural features of the '<em>Argument Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_ELEMENT_FEATURE_COUNT = 0;
+	int ARGUMENT_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Argument Element</em>' class.
@@ -205,6 +214,15 @@ public interface ArgumentsPackage extends EPackage {
 	int SIMULATION_MECHANISM_WARRANT = 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMULATION_MECHANISM_WARRANT__ID = ARGUMENT_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Output Data Over Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,6 +278,15 @@ public interface ArgumentsPackage extends EPackage {
 	int STANDARD_SIMULATION_WARRANT = 4;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STANDARD_SIMULATION_WARRANT__ID = ARGUMENT_ELEMENT__ID;
+
+	/**
 	 * The number of structural features of the '<em>Standard Simulation Warrant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -286,6 +313,15 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 */
 	int LITERATURE_EVIDENCE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERATURE_EVIDENCE__ID = ARGUMENT_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' attribute.
@@ -323,6 +359,15 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 */
 	int LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT__ID = LITERATURE_EVIDENCE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' attribute.
@@ -380,6 +425,15 @@ public interface ArgumentsPackage extends EPackage {
 	int MODEL_MATCHES_DATA_OVER_TIME = 6;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_MATCHES_DATA_OVER_TIME__ID = ARGUMENT_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Model</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -433,6 +487,15 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 */
 	int MECHANISM_EXPLAINS_EFFECT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MECHANISM_EXPLAINS_EFFECT__ID = ARGUMENT_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Mechanism</b></em>' attribute.
@@ -609,6 +672,15 @@ public interface ArgumentsPackage extends EPackage {
 	int EXPERIMENT_RESULTS = 10;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENT_RESULTS__ID = ARGUMENT_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Experiment Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -655,6 +727,15 @@ public interface ArgumentsPackage extends EPackage {
 	int MODEL_IS_VALID_CLAIM = 12;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_IS_VALID_CLAIM__ID = ARGUMENT_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Model</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -690,6 +771,15 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 */
 	int MODEL_INPUT_DATA_VALID = 13;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_INPUT_DATA_VALID__ID = MODEL_IS_VALID_CLAIM__ID;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' attribute.
@@ -736,6 +826,17 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getArgumentElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement#getId()
+	 * @see #getArgumentElement()
+	 * @generated
+	 */
+	EAttribute getArgumentElement_Id();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph <em>Argument Graph</em>}'.
@@ -1130,6 +1231,14 @@ public interface ArgumentsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ARGUMENT_ELEMENT = eINSTANCE.getArgumentElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARGUMENT_ELEMENT__ID = eINSTANCE.getArgumentElement_Id();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentGraphImpl <em>Argument Graph</em>}' class.

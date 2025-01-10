@@ -168,6 +168,7 @@ public class ArgumentFrameworkGenerator {
     abstractArg.setLabel(this.getLabel(ae));
     EList<AbstractArgument> _arguments = framework.getArguments();
     _arguments.add(abstractArg);
+    ae.setId(abstractArg.getId());
     return abstractArg;
   }
 
