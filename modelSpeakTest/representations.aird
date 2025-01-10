@@ -23,7 +23,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
         <target xmi:type="arguments:ArgumentGraph" href="src-gen/lrp6.arguments#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tNfW8M26Ee-fI5n3Z_Ds9Q" name="LRP6 Basic Argument Graph" repPath="#_tNdhwM26Ee-fI5n3Z_Ds9Q" changeId="1736447850077">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tNfW8M26Ee-fI5n3Z_Ds9Q" name="LRP6 Basic Argument Graph" repPath="#_tNdhwM26Ee-fI5n3Z_Ds9Q" changeId="1736508775080">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
         <target xmi:type="arguments:ArgumentGraph" href="src-gen/lrp6_basic.arguments#/"/>
       </ownedRepresentationDescriptors>
@@ -2701,7 +2701,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOT2Vc26Ee-fI5n3Z_Ds9Q"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_tONIrc26Ee-fI5n3Z_Ds9Q" fontColor="1345869" fontName="Segoe UI" fontHeight="10"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tONIrs26Ee-fI5n3Z_Ds9Q" x="65" y="450" width="156" height="71"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tONIrs26Ee-fI5n3Z_Ds9Q" x="545" y="380" width="156" height="71"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_tONvss26Ee-fI5n3Z_Ds9Q" type="2001" element="_tN0HEs26Ee-fI5n3Z_Ds9Q">
           <children xmi:type="notation:Node" xmi:id="_tONvtc26Ee-fI5n3Z_Ds9Q" type="5002">
@@ -2799,17 +2799,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_tOcZMs26Ee-fI5n3Z_Ds9Q" type="4001" element="_tN8C4c26Ee-fI5n3Z_Ds9Q" source="_tONIrM26Ee-fI5n3Z_Ds9Q" target="_tOHpEM26Ee-fI5n3Z_Ds9Q">
           <children xmi:type="notation:Node" xmi:id="_tOcZNs26Ee-fI5n3Z_Ds9Q" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZN826Ee-fI5n3Z_Ds9Q" x="27" y="23"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZN826Ee-fI5n3Z_Ds9Q" x="139" y="74"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_tOcZOM26Ee-fI5n3Z_Ds9Q" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZOc26Ee-fI5n3Z_Ds9Q" x="6" y="-2"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZOc26Ee-fI5n3Z_Ds9Q" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_tOcZOs26Ee-fI5n3Z_Ds9Q" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZO826Ee-fI5n3Z_Ds9Q" x="-9" y="-3"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tOcZO826Ee-fI5n3Z_Ds9Q" x="-10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_tOcZM826Ee-fI5n3Z_Ds9Q"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_tOcZNM26Ee-fI5n3Z_Ds9Q" fontColor="8947848" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOcZNc26Ee-fI5n3Z_Ds9Q" points="[4, -8, 1, 119]$[2, -95, -1, 32]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tOcZNc26Ee-fI5n3Z_Ds9Q" points="[-66, 55, 411, 112]$[-81, 67, 396, 124]$[-477, 67, 0, 124]$[-477, -25, 0, 32]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOcZPM26Ee-fI5n3Z_Ds9Q" id="(0.4230769230769231,0.11267605633802817)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tOcZPc26Ee-fI5n3Z_Ds9Q" id="(0.5,0.5)"/>
         </edges>
@@ -2879,33 +2879,33 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_Lw7DMM6vEe-lNsjjAEDi8w" type="4001" element="_LuYFgM6vEe-lNsjjAEDi8w" source="_tONIrM26Ee-fI5n3Z_Ds9Q" target="_tOL6gM26Ee-fI5n3Z_Ds9Q">
           <children xmi:type="notation:Node" xmi:id="_Lw_UoM6vEe-lNsjjAEDi8w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lw_Uoc6vEe-lNsjjAEDi8w" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lw_Uoc6vEe-lNsjjAEDi8w" y="21"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Lw_7sM6vEe-lNsjjAEDi8w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lw_7sc6vEe-lNsjjAEDi8w" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lw_7sc6vEe-lNsjjAEDi8w" x="-9" y="-4"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_LxBJ0M6vEe-lNsjjAEDi8w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LxBJ0c6vEe-lNsjjAEDi8w" x="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LxBJ0c6vEe-lNsjjAEDi8w" x="-5"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_Lw7DMc6vEe-lNsjjAEDi8w"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_Lw7DMs6vEe-lNsjjAEDi8w" fontColor="8947848" fontName="Segoe UI" fontHeight="7"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Lw7DM86vEe-lNsjjAEDi8w" points="[78, -7, -280, 154]$[358, -7, 0, 154]$[358, -129, 0, 32]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Lw7DM86vEe-lNsjjAEDi8w" points="[-61, -42, 61, 49]$[-68, -47, 54, 44]$[-83, -59, 39, 32]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LxFbQM6vEe-lNsjjAEDi8w" id="(0.5,0.5985915492957746)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LxFbQc6vEe-lNsjjAEDi8w" id="(0.5,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_LxFbQs6vEe-lNsjjAEDi8w" type="4001" element="_LuYFhc6vEe-lNsjjAEDi8w" source="_tONIrM26Ee-fI5n3Z_Ds9Q" target="_tOMhks26Ee-fI5n3Z_Ds9Q">
           <children xmi:type="notation:Node" xmi:id="_LxGCUM6vEe-lNsjjAEDi8w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LxGCUc6vEe-lNsjjAEDi8w" x="36" y="19"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LxGCUc6vEe-lNsjjAEDi8w" x="73" y="9"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_LxGCUs6vEe-lNsjjAEDi8w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LxGCU86vEe-lNsjjAEDi8w" x="-9" y="4"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LxGCU86vEe-lNsjjAEDi8w" x="-3" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_LxGCVM6vEe-lNsjjAEDi8w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LxGCVc6vEe-lNsjjAEDi8w" x="-9" y="4"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LxGCVc6vEe-lNsjjAEDi8w" x="-3" y="-10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_LxFbQ86vEe-lNsjjAEDi8w"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_LxFbRM6vEe-lNsjjAEDi8w" fontColor="8947848" fontName="Segoe UI" fontHeight="7"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LxFbRc6vEe-lNsjjAEDi8w" points="[19, -42, -130, 119]$[72, -161, -77, 0]$[92, -161, -57, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LxFbRc6vEe-lNsjjAEDi8w" points="[-78, -21, 253, 70]$[-273, -75, 58, 16]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LxGpYM6vEe-lNsjjAEDi8w" id="(0.5,0.5985915492957746)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LxGpYc6vEe-lNsjjAEDi8w" id="(0.5,0.5)"/>
         </edges>
@@ -3010,7 +3010,7 @@
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_tODXqs26Ee-fI5n3Z_Ds9Q" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_tODXq826Ee-fI5n3Z_Ds9Q"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNwcsM26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_tN8p8s26Ee-fI5n3Z_Ds9Q _tN94FM26Ee-fI5n3Z_Ds9Q" incomingEdges="_tN8C4c26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNwcsM26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, presumably claim" outgoingEdges="_tN8p8s26Ee-fI5n3Z_Ds9Q _tN94FM26Ee-fI5n3Z_Ds9Q" incomingEdges="_tN8C4c26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.0"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.0"/>
       <ownedStyle xmi:type="diagram:Lozenge" uid="_tNxDwM26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="138,226,52">
@@ -3018,7 +3018,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNyR4M26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_tN8p9826Ee-fI5n3Z_Ds9Q _LubI1M6vEe-lNsjjAEDi8w" incomingEdges="_LuYFgM6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNyR4M26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, presumably claim" outgoingEdges="_tN8p9826Ee-fI5n3Z_Ds9Q _LubI1M6vEe-lNsjjAEDi8w" incomingEdges="_LuYFgM6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.1"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.1"/>
       <ownedStyle xmi:type="diagram:Lozenge" uid="_tNyR4c26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="138,226,52">
@@ -3026,7 +3026,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNyR4826Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_tN9RAM26Ee-fI5n3Z_Ds9Q _LubI2c6vEe-lNsjjAEDi8w" incomingEdges="_LuYFhc6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNyR4826Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, presumably claim" outgoingEdges="_tN9RAM26Ee-fI5n3Z_Ds9Q _LubI2c6vEe-lNsjjAEDi8w" incomingEdges="_LuYFhc6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.2"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.2"/>
       <ownedStyle xmi:type="diagram:Lozenge" uid="_tNyR5M26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="138,226,52">
@@ -3034,7 +3034,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNy48M26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, so presumably claim" outgoingEdges="_LuahwM6vEe-lNsjjAEDi8w _LucW8s6vEe-lNsjjAEDi8w" incomingEdges="_tN60wM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNy48M26Ee-fI5n3Z_Ds9Q" name="Based on evidence, given warrant, presumably claim" outgoingEdges="_LuahwM6vEe-lNsjjAEDi8w _LucW8s6vEe-lNsjjAEDi8w" incomingEdges="_tN60wM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.3"/>
       <semanticElements xmi:type="arguments:Support" href="src-gen/lrp6_basic.arguments#//@relations.3"/>
       <ownedStyle xmi:type="diagram:Lozenge" uid="_tNy48c26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node" color="138,226,52">
@@ -3045,7 +3045,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNzgAM26Ee-fI5n3Z_Ds9Q" name="Valid models replicating the quantitative measurements of the cell surface receptor LRP6 over time include a mechanism explaining LRP6 receptor internalisation." outgoingEdges="_tN60wM26Ee-fI5n3Z_Ds9Q" incomingEdges="_tN8p8s26Ee-fI5n3Z_Ds9Q _tN8p9826Ee-fI5n3Z_Ds9Q _tN9RAM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
       <semanticElements xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_tNzgAc26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Square" uid="_tNzgAc26Ee-fI5n3Z_Ds9Q" showIcon="false" borderColor="136,136,136" labelPosition="node" color="209,209,209">
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -3061,7 +3061,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0HEs26Ee-fI5n3Z_Ds9Q" name="[Yamamoto et al. (2006)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_tN94FM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.2"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.2"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_tN0HE826Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_tN0HE826Ee-fI5n3Z_Ds9Q" showIcon="false" borderColor="136,136,136" labelPosition="node" color="209,209,209">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -3069,7 +3069,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0HFc26Ee-fI5n3Z_Ds9Q" name="[Khan et al. (2007)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_LubI1M6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_LuR-486vEe-lNsjjAEDi8w" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_LuR-486vEe-lNsjjAEDi8w" showIcon="false" borderColor="136,136,136" labelPosition="node" color="209,209,209">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -3077,7 +3077,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uIM26Ee-fI5n3Z_Ds9Q" name="[Liu et al. (2014)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_LubI2c6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.4"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.4"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_tN0uIc26Ee-fI5n3Z_Ds9Q" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_tN0uIc26Ee-fI5n3Z_Ds9Q" showIcon="false" borderColor="136,136,136" labelPosition="node" color="209,209,209">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
@@ -3085,16 +3085,16 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uI826Ee-fI5n3Z_Ds9Q" name="Basic internalization mechanism of WNT/LRP6 explains effect LRP6 receptor internalisation." incomingEdges="_LuahwM6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
       <semanticElements xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_LuVCMc6vEe-lNsjjAEDi8w" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" labelPosition="node" color="253,206,137">
+      <ownedStyle xmi:type="diagram:Square" uid="_LuVCMc6vEe-lNsjjAEDi8w" showIcon="false" borderSize="2" borderSizeComputationExpression="2" borderColor="246,139,139" labelPosition="node" color="253,206,137">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.5/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uJs26Ee-fI5n3Z_Ds9Q" name="m1 matches data the quantitative measurements of the cell surface receptor LRP6 over time." incomingEdges="_LucW8s6vEe-lNsjjAEDi8w _LudlEM6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uJs26Ee-fI5n3Z_Ds9Q" name="m1 matches data &quot;the quantitative measurements of the cell surface receptor LRP6 over time&quot;." incomingEdges="_LucW8s6vEe-lNsjjAEDi8w _LudlEM6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6_basic.arguments#//@argumentElements.6"/>
       <semanticElements xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6_basic.arguments#//@argumentElements.6"/>
-      <ownedStyle xmi:type="diagram:Ellipse" uid="_LuVCNM6vEe-lNsjjAEDi8w" showIcon="false" labelPosition="node">
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_LuVCNM6vEe-lNsjjAEDi8w" showIcon="false" borderColor="136,136,136" labelPosition="node" color="209,209,209">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.4/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
