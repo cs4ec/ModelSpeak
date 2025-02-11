@@ -7,9 +7,9 @@ proposeRequirement(
                             surface receptor LRP6 over time">,
 	rq1)
 
-supportRequirement(r1, ref1[Yamamoto et al. (2006)])
-supportRequirement(r1, ref2[Khan et al. (2007)])
-supportRequirement(r1, ref3[Liu et al. (2014)])
+supportRequirement(r1, ref3[Yamamoto et al. (2006)])
+supportRequirement(r1, ref6[Khan et al. (2007)])
+supportRequirement(r1, ref7[Liu et al. (2014)])
 
 proposeModel(
 	m1{"Basic internalization model of WNT/LRP6"}
@@ -24,4 +24,3 @@ counterModel(
         results show significant deviations of the mean+/-s.e.m."}, 
 	r1)
 
-	

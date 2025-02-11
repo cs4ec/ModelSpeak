@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <arguments:ArgumentGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arguments="http://www.example.org/arguments">
-  <argumentElements xsi:type="arguments:SimulationMechanismWarrant" id="16" outputDataOverTime="time data of LRP receptor internalisation" explainedEffect="LRP6 receptor internalisation" generatingRequirement="r1"/>
-  <argumentElements xsi:type="arguments:StandardSimulationWarrant" id="17"/>
-  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="18" reference="[Yamamoto et al. (2006)]" observedDataOverTime="time data of LRP receptor internalisation" describedEffect="LRP6 receptor internalisation"/>
-  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="19" mechanism="Simple internalisation mechanism" explainedEffect="LRP6 receptor internalisation"/>
-  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="20" model="m1" dataOverTime="time data of LRP receptor internalisation" mechanism="Simple internalisation mechanism"/>
-  <argumentElements xsi:type="arguments:ExperimentResults" id="21" experimentName="e1" results="Some data not matching time data of LRP receptor internalisation"/>
+  <argumentElements xsi:type="arguments:SimulationMechanismWarrant" outputDataOverTime="time data of LRP receptor internalisation" explainedEffect="LRP6 receptor internalisation" generatingRequirement="r1"/>
+  <argumentElements xsi:type="arguments:StandardSimulationWarrant" id="1"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="2" reference="[Yamamoto et al. (2006)]" observedDataOverTime="time data of LRP receptor internalisation" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="3" mechanism="Simple internalisation mechanism" explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="4" model="m1" dataOverTime="time data of LRP receptor internalisation" mechanism="Simple internalisation mechanism"/>
+  <argumentElements xsi:type="arguments:ExperimentResults" id="5" experimentName="e1" results="Some data not matching time data of LRP receptor internalisation"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.2" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.0" claim="//@argumentElements.3"/>
   <relations xsi:type="arguments:Attack" evidence="//@argumentElements.5" claim="//@argumentElements.4"/>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ASCII"?>
 <arguments:ArgumentGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arguments="http://www.example.org/arguments">
-  <argumentElements xsi:type="arguments:SimulationMechanismWarrant" outputDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" explainedEffect="LRP6 receptor internalisation" generatingRequirement="r1"/>
-  <argumentElements xsi:type="arguments:StandardSimulationWarrant" id="1"/>
-  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="2" reference="[Yamamoto et al. (2006)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
-  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="3" reference="[Khan et al. (2007)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
-  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="4" reference="[Liu et al. (2014)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
-  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="5" mechanism="Basic internalization mechanism of WNT/LRP6" explainedEffect="LRP6 receptor internalisation"/>
-  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="6" model="m1" dataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" mechanism="Basic internalization mechanism of WNT/LRP6"/>
-  <argumentElements xsi:type="arguments:ExperimentResults" id="7" experimentName="s1" results="Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m."/>
+  <argumentElements xsi:type="arguments:SimulationMechanismWarrant" id="10" outputDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" explainedEffect="LRP6 receptor internalisation" generatingRequirement="r1"/>
+  <argumentElements xsi:type="arguments:StandardSimulationWarrant" id="11"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="12" reference="[Yamamoto et al. (2006)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="13" reference="[Khan et al. (2007)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="14" reference="[Liu et al. (2014)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="15" mechanism="Basic internalization mechanism of WNT/LRP6" explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="16" model="m1" dataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" mechanism="Basic internalization mechanism of WNT/LRP6"/>
+  <argumentElements xsi:type="arguments:ExperimentResults" id="17" experimentName="s1" results="Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m."/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.2" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.3" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
