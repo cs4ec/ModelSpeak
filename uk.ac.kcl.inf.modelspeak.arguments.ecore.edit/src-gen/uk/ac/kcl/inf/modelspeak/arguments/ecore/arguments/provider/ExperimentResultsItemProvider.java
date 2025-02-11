@@ -111,9 +111,8 @@ public class ExperimentResultsItemProvider extends ArgumentElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExperimentResults) object).getExperimentName();
-		return label == null || label.length() == 0 ? getString("_UI_ExperimentResults_type")
-				: getString("_UI_ExperimentResults_type") + " " + label;
+		ExperimentResults experimentResults = (ExperimentResults) object;
+		return getString("_UI_ExperimentResults_type") + " " + experimentResults.getId();
 	}
 
 	/**

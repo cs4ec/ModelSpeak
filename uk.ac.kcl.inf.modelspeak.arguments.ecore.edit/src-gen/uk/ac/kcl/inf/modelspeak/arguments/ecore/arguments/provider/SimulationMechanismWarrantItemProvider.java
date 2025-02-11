@@ -131,9 +131,8 @@ public class SimulationMechanismWarrantItemProvider extends ArgumentElementItemP
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SimulationMechanismWarrant) object).getOutputDataOverTime();
-		return label == null || label.length() == 0 ? getString("_UI_SimulationMechanismWarrant_type")
-				: getString("_UI_SimulationMechanismWarrant_type") + " " + label;
+		SimulationMechanismWarrant simulationMechanismWarrant = (SimulationMechanismWarrant) object;
+		return getString("_UI_SimulationMechanismWarrant_type") + " " + simulationMechanismWarrant.getId();
 	}
 
 	/**

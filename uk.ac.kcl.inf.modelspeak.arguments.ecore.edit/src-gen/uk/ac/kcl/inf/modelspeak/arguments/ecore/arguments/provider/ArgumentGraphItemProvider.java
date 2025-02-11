@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -162,6 +161,9 @@ public class ArgumentGraphItemProvider extends ItemProviderAdapter implements IE
 				ArgumentsFactory.eINSTANCE.createLiteratureEvidence()));
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
+				ArgumentsFactory.eINSTANCE.createLiteratureEvidenceForDataAndEffect()));
+
+		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
 				ArgumentsFactory.eINSTANCE.createModelMatchesDataOverTime()));
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
@@ -169,6 +171,9 @@ public class ArgumentGraphItemProvider extends ItemProviderAdapter implements IE
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
 				ArgumentsFactory.eINSTANCE.createExperimentResults()));
+
+		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
+				ArgumentsFactory.eINSTANCE.createModelInputDataValid()));
 
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__RELATIONS,
 				ArgumentsFactory.eINSTANCE.createSupport()));

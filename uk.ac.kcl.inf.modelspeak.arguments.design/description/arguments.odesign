@@ -4,44 +4,58 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SimStudyArgumentDiagram" initialisation="true" domainClass="arguments::ArgumentGraph" enablePopupBars="true">
       <metamodel href="http://www.example.org/arguments#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="SupportNode" domainClass="Support">
-          <style xsi:type="style:LozengeNodeDescription" labelSize="12" showIcon="false" labelExpression="aql:'Support'" labelPosition="node" resizeKind="NSEW">
+        <nodeMappings name="SupportNode" semanticCandidatesExpression="feature:relations" domainClass="arguments::Support">
+          <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="aql:'Based on evidence, given warrant, presumably claim'" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ArgumentElementNode" domainClass="ArgumentElement">
+        <nodeMappings name="ArgumentElementNode" semanticCandidatesExpression="feature:argumentElements" domainClass="arguments::ArgumentElement">
+          <borderedNodeMappings name="IDBorderNode" semanticCandidatesExpression="aql:containerView.target" domainClass="arguments::ArgumentElement">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="10" showIcon="false" labelExpression="feature:id" sizeComputationExpression="0" labelPosition="node" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </borderedNodeMappings>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::StandardSimulationWarrant)">
-            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism explains data" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::SimulationMechanismWarrant)">
-            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="aql:'Models replicating ' + self.oclAsType(arguments::SimulationMechanismWarrant).outputDataOverTime + ' include a mechanism explaining ' + self.oclAsType(arguments::SimulationMechanismWarrant).explainedEffect + '.'" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Valid models replicating ' + self.oclAsType(arguments::SimulationMechanismWarrant).outputDataOverTime + ' include a mechanism explaining ' + self.oclAsType(arguments::SimulationMechanismWarrant).explainedEffect + '.'" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::LiteratureEvidenceForDataAndEffect)">
+            <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelExpression="aql:self.oclAsType(arguments::LiteratureEvidence).reference + ' provides observations ' + self.oclAsType(arguments::LiteratureEvidenceForDataAndEffect).observedDataOverTime + ' for effect ' + self.oclAsType(arguments::LiteratureEvidenceForDataAndEffect).describedEffect '.'" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::LiteratureEvidence)">
-            <style xsi:type="style:EllipseNodeDescription" labelSize="10" showIcon="false" labelExpression="aql:self.oclAsType(arguments::LiteratureEvidence).reference + ' provides observations ' + self.oclAsType(arguments::LiteratureEvidence).observedDataOverTime + ' for effect ' + self.oclAsType(arguments::LiteratureEvidence).describedEffect '.'" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:EllipseNodeDescription" labelSize="10" showIcon="false" labelExpression="aql:self.oclAsType(arguments::LiteratureEvidence).reference" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::ModelMatchesDataOverTime)">
-            <style xsi:type="style:EllipseNodeDescription" labelSize="10" showIcon="false" labelExpression="aql:self.oclAsType(arguments::ModelMatchesDataOverTime).model + ' matches data ' + self.oclAsType(arguments::ModelMatchesDataOverTime).dataOverTime + '.'" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelExpression="aql:self.oclAsType(arguments::ModelMatchesDataOverTime).model + ' matches data &quot;' + self.oclAsType(arguments::ModelMatchesDataOverTime).dataOverTime + '&quot;.'" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::MechanismExplainsEffect)">
-            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.oclAsType(arguments::MechanismExplainsEffect).mechanism + ' explains effect ' + self.oclAsType(arguments::MechanismExplainsEffect).explainedEffect + '.'" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" showIcon="false" labelExpression="aql:self.oclAsType(arguments::MechanismExplainsEffect).mechanism + ' explains effect ' + self.oclAsType(arguments::MechanismExplainsEffect).explainedEffect + '.'" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -49,14 +63,21 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::ExperimentResults)">
-            <style xsi:type="style:EllipseNodeDescription" labelSize="10" showIcon="false" labelExpression="aql:'Experiment ' + self.oclAsType(arguments::ExperimentResults).experimentName + ' produced data ' + self.oclAsType(arguments::ExperimentResults).results + '.'" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelExpression="aql:'Experiment ' + self.oclAsType(arguments::ExperimentResults).experimentName + ' produced data ' + self.oclAsType(arguments::ExperimentResults).results + '.'" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
             </style>
           </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::ModelIsValidClaim)">
+            <style xsi:type="style:BundledImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'Model ' + self.oclAsType(arguments::ModelIsValidClaim).model + if self.oclIsTypeOf(arguments::ModelInputDataValid) then ' uses valid input data ' + self.oclAsType(arguments::ModelInputDataValid).dataDescription else ' is valid' endif + '.'" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="AttackNode" domainClass="arguments::Attack">
+        <nodeMappings name="AttackNode" semanticCandidatesExpression="feature:relations" domainClass="arguments::Attack">
           <style xsi:type="style:LozengeNodeDescription" labelSize="10" showIcon="false" labelExpression="Attack" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -66,7 +87,7 @@
         <edgeMappings name="SupportWarrantLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']" targetFinderExpression="aql:self.eContainer().relations->select(r | r.warrant=self)">
           <style lineStyle="dash" endsCentering="Target">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="warrant">
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="warrant">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </centerLabelStyleDescription>
           </style>
@@ -74,7 +95,7 @@
         <edgeMappings name="SupportClaimLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetFinderExpression="feature:claim">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="claim">
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="claim">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
             </centerLabelStyleDescription>
           </style>
@@ -82,7 +103,7 @@
         <edgeMappings name="SupportEvidenceLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetFinderExpression="feature:evidence">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="evidence">
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="evidence">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
             </centerLabelStyleDescription>
           </style>
@@ -90,7 +111,7 @@
         <edgeMappings name="AttackWarrantLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']" targetFinderExpression="aql:self.eContainer().relations->select(r | r.warrant=self)">
           <style lineStyle="dash" endsCentering="Target">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="warrant">
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="warrant">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </centerLabelStyleDescription>
           </style>
@@ -98,7 +119,7 @@
         <edgeMappings name="AttackClaimLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetFinderExpression="feature:claim">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="claim">
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="claim">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
             </centerLabelStyleDescription>
           </style>
@@ -106,8 +127,16 @@
         <edgeMappings name="AttackEvidenceLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetFinderExpression="feature:evidence">
           <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="evidence">
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="evidence">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SupportAssumptionLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetFinderExpression="feature:assumptions">
+          <style lineStyle="dash" endsCentering="Target">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="assuming">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>

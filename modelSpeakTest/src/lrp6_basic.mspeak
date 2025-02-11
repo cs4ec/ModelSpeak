@@ -1,0 +1,15 @@
+proposeResearchQuestion(rq1{What mechanism best explains "LRP6 receptor internalisation"})
+proposeRequirement(r1{"Develop a simulation model that matches the quantitative measurements of the cell surface receptor LRP6 over time"}
+	                 <Models must replicate "the quantitative measurements of the cell surface receptor LRP6 over time">,
+	               rq1)
+supportRequirement(r1, ref3[Yamamoto et al. (2006)])
+supportRequirement(r1, ref6[Khan et al. (2007)])
+supportRequirement(r1, ref7[Liu et al. (2014)])
+proposeModel(m1{"Basic internalization model of WNT/LRP6"}
+	           <incorporates mechanism "Basic internalization mechanism of WNT/LRP6">, 
+	           r1)
+
+counterModel(m1,
+	         s1{"Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m."}, 
+	         r1)
+

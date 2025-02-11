@@ -15,9 +15,15 @@ import org.eclipse.xtext.generator.IGeneratorContext;
  */
 @SuppressWarnings("all")
 public class AgentLangGenerator extends AbstractGenerator {
+  private final ArgumentGraphGenerator argGraphGenerator = new ArgumentGraphGenerator();
+
+  @Override
+  public void beforeGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.argGraphGenerator.beforeGenerate(resource, fsa, context);
+  }
+
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    new TheoryStoreGenerator().doGenerate(resource, fsa, context);
-    new ArgumentGraphGenerator().doGenerate(resource, fsa, context);
+    this.argGraphGenerator.doGenerate(resource, fsa, context);
   }
 }

@@ -22,7 +22,9 @@ import uk.ac.kcl.inf.modelspeak.agentLang.AttackRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel
 import uk.ac.kcl.inf.modelspeak.agentLang.Game
 import uk.ac.kcl.inf.modelspeak.agentLang.GeneralTheory
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
 import uk.ac.kcl.inf.modelspeak.agentLang.Move
+import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory
 import uk.ac.kcl.inf.modelspeak.agentLang.NotConvinced
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel
@@ -35,8 +37,8 @@ import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory
+import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStore
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStoreLangFactory
-import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference
 
 /**
  * Generate the theory store corresponding to the current agent dialogue state.
@@ -52,6 +54,17 @@ class TheoryStoreGenerator {
 
 	val extension TheoryStoreLangFactory factory = TheoryStoreLangFactory.eINSTANCE
 
+	var TheoryStore theoryStore
+	var Resource storeResource
+
+	def void beforeGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		theoryStore = createTheoryStore
+		val outputUri = fsa.getURI(resource.theoryStoreFileName)
+		val resourceSet = resource.resourceSet
+		storeResource = resourceSet.createResource(outputUri)
+		storeResource.contents += theoryStore
+	}
+
 	def void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val rulesResource = resource.resourceSet.getResource(
 			URI.createPlatformPluginURI(
@@ -64,18 +77,12 @@ class TheoryStoreGenerator {
 	}
 
 	def generateTheoryStore(Game game, Resource resource, IFileSystemAccess2 fsa) {
-		val theoryStore = createTheoryStore
-		val outputUri = fsa.getURI(resource.theoryStoreFileName)
-		val resourceSet = resource.resourceSet
-		val newResource = resourceSet.createResource(outputUri)
-		newResource.contents += theoryStore
-
 		modelGraph = new EGraphImpl(theoryStore)
 		ruleRunner.EGraph = modelGraph
 
 		game.moves.forEach[updateTheoryStore]
 
-		newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
+		storeResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
 	}
 	
 	private def theoryStoreFileName(Resource resource) {
@@ -179,7 +186,8 @@ class TheoryStoreGenerator {
 	}
 	private dispatch def renderTheory(GeneralTheory gt) { gt.content }
 	private dispatch def renderTheory(LiteratureReference lr) { lr.ref }
-
+	private dispatch def renderTheory(MultiTheory mt) { mt.theories.map[renderTheory].join("&&") } 
+	
 	// -- rule execution --
 	private def execute(String ruleName, List<Pair<String, String>> parameters) {
 		ruleRunner.rule = rules.findFirst[name == ruleName]
@@ -188,5 +196,5 @@ class TheoryStoreGenerator {
 		]
 
 		ruleRunner.execute(null)
-	}
+	}	
 }

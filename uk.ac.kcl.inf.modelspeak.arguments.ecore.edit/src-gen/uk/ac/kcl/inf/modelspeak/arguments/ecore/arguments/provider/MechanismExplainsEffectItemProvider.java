@@ -111,9 +111,8 @@ public class MechanismExplainsEffectItemProvider extends ArgumentElementItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MechanismExplainsEffect) object).getMechanism();
-		return label == null || label.length() == 0 ? getString("_UI_MechanismExplainsEffect_type")
-				: getString("_UI_MechanismExplainsEffect_type") + " " + label;
+		MechanismExplainsEffect mechanismExplainsEffect = (MechanismExplainsEffect) object;
+		return getString("_UI_MechanismExplainsEffect_type") + " " + mechanismExplainsEffect.getId();
 	}
 
 	/**

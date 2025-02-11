@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<arguments:ArgumentGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arguments="http://www.example.org/arguments">
+  <argumentElements xsi:type="arguments:SimulationMechanismWarrant" id="42" outputDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" explainedEffect="LRP6 receptor internalisation" generatingRequirement="r1"/>
+  <argumentElements xsi:type="arguments:StandardSimulationWarrant" id="43"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="44" reference="[Yamamoto et al. (2006)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="45" reference="[Khan et al. (2007)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="46" reference="[Liu et al. (2014)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="47" mechanism="Basic internalization mechanism of WNT/LRP6" explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="48" model="m1" dataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" mechanism="Basic internalization mechanism of WNT/LRP6"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidence" id="49" reference="[Lauffenburger and Linderman (1996)]"/>
+  <argumentElements xsi:type="arguments:ModelInputDataValid" id="50" model="m1" dataDescription="some input data"/>
+  <argumentElements xsi:type="arguments:ExperimentResults" id="51" experimentName="s1" results="Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m."/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="52" mechanism="compartmentalised internalization mechanism of WNT/LRP6" explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="53" model="m2" dataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" mechanism="compartmentalised internalization mechanism of WNT/LRP6"/>
+  <argumentElements xsi:type="arguments:ExperimentResults" id="54" experimentName="s2" results="Simulation experiment (parameter scan) with either one or both internalization pathways active. In the case where only CIE is active, the predicted fraction of internalized LRP6 is lower than the experimentally derived values. In contrast, CME provides internalization dynamics that are too fast compared with in vitro measurements."/>
+  <argumentElements xsi:type="arguments:ExperimentResults" id="55" experimentName="s3" results="Another parameter scan applied CIE-based parameter values for the internalization rate of WNT/LRP6 complexes in both membrane domains (i.e. inside as well as outside of lipid rafts; using model configurations with CIE either fit the early or the late internalization dynamics of LRP6, but none allows the exact reproduction of in vitro measurements."/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.2" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.3" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.6" warrant="//@argumentElements.0" claim="//@argumentElements.5" assumptions="//@argumentElements.8"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.7" claim="//@argumentElements.8"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.9" claim="//@argumentElements.6"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.11" warrant="//@argumentElements.0" claim="//@argumentElements.10"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.12" claim="//@argumentElements.11"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.13" claim="//@argumentElements.11"/>
+</arguments:ArgumentGraph>

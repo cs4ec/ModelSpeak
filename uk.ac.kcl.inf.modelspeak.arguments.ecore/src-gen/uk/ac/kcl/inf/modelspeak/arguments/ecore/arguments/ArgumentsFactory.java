@@ -49,13 +49,13 @@ public interface ArgumentsFactory extends EFactory {
 	StandardSimulationWarrant createStandardSimulationWarrant();
 
 	/**
-	 * Returns a new object of class '<em>Literature Evidence</em>'.
+	 * Returns a new object of class '<em>Literature Evidence For Data And Effect</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Literature Evidence</em>'.
+	 * @return a new object of class '<em>Literature Evidence For Data And Effect</em>'.
 	 * @generated
 	 */
-	LiteratureEvidence createLiteratureEvidence();
+	LiteratureEvidenceForDataAndEffect createLiteratureEvidenceForDataAndEffect();
 
 	/**
 	 * Returns a new object of class '<em>Model Matches Data Over Time</em>'.
@@ -101,6 +101,24 @@ public interface ArgumentsFactory extends EFactory {
 	 * @generated
 	 */
 	ExperimentResults createExperimentResults();
+
+	/**
+	 * Returns a new object of class '<em>Literature Evidence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Literature Evidence</em>'.
+	 * @generated
+	 */
+	LiteratureEvidence createLiteratureEvidence();
+
+	/**
+	 * Returns a new object of class '<em>Model Input Data Valid</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Input Data Valid</em>'.
+	 * @generated
+	 */
+	ModelInputDataValid createModelInputDataValid();
 
 	/**
 	 * Returns the package supported by this factory.

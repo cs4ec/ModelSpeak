@@ -13,6 +13,7 @@ import org.eclipse.xtext.formatting2.IHiddenRegionFormatter;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import uk.ac.kcl.inf.modelspeak.services.TheoryStoreLangGrammarAccess;
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.Element;
 import uk.ac.kcl.inf.modelspeak.theoryStoreLang.TheoryStore;
@@ -36,6 +37,7 @@ public class TheoryStoreLangFormatter extends AbstractFormatter2 {
     }
   }
 
+  @XbaseGenerated
   public void format(final Object theoryStore, final IFormattableDocument document) {
     if (theoryStore instanceof XtextResource) {
       _format((XtextResource)theoryStore, document);

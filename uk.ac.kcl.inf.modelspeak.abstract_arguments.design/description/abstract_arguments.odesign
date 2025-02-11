@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="abstract_arguments" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyViewpoint" modelFileExtension="abstract_arguments">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AbstractArgumentFrameworkDiagram" domainClass="AbstractArgumentFramework" enablePopupBars="true">
+      <metamodel href="http://www.example.org/abstract_arguments#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="AbstractArgument" semanticCandidatesExpression="feature:arguments" domainClass="AbstractArgument">
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(abstract_arguments::DerivedAbstractArgument)">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="02" labelSize="10" showIcon="false" labelExpression="feature:id" tooltipExpression="feature:label" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(abstract_arguments::VirtualAbstractArgument)">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="feature:id" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="AttackEdge" semanticCandidatesExpression="feature:attacks" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='AbstractArgumentFrameworkDiagram']/@defaultLayer/@nodeMappings[name='AbstractArgument']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='AbstractArgumentFrameworkDiagram']/@defaultLayer/@nodeMappings[name='AbstractArgument']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="abstract_arguments::AbstractArgumentAttack" useDomainElement="true">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="uk.ac.kcl.inf.modelspeak.abstract_arguments.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

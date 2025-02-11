@@ -105,11 +105,13 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ArgumentsPackage.LITERATURE_EVIDENCE: {
-			LiteratureEvidence literatureEvidence = (LiteratureEvidence) theEObject;
-			T result = caseLiteratureEvidence(literatureEvidence);
+		case ArgumentsPackage.LITERATURE_EVIDENCE_FOR_DATA_AND_EFFECT: {
+			LiteratureEvidenceForDataAndEffect literatureEvidenceForDataAndEffect = (LiteratureEvidenceForDataAndEffect) theEObject;
+			T result = caseLiteratureEvidenceForDataAndEffect(literatureEvidenceForDataAndEffect);
 			if (result == null)
-				result = caseArgumentElement(literatureEvidence);
+				result = caseLiteratureEvidence(literatureEvidenceForDataAndEffect);
+			if (result == null)
+				result = caseArgumentElement(literatureEvidenceForDataAndEffect);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -155,6 +157,35 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 			T result = caseExperimentResults(experimentResults);
 			if (result == null)
 				result = caseArgumentElement(experimentResults);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArgumentsPackage.LITERATURE_EVIDENCE: {
+			LiteratureEvidence literatureEvidence = (LiteratureEvidence) theEObject;
+			T result = caseLiteratureEvidence(literatureEvidence);
+			if (result == null)
+				result = caseArgumentElement(literatureEvidence);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArgumentsPackage.MODEL_IS_VALID_CLAIM: {
+			ModelIsValidClaim modelIsValidClaim = (ModelIsValidClaim) theEObject;
+			T result = caseModelIsValidClaim(modelIsValidClaim);
+			if (result == null)
+				result = caseArgumentElement(modelIsValidClaim);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArgumentsPackage.MODEL_INPUT_DATA_VALID: {
+			ModelInputDataValid modelInputDataValid = (ModelInputDataValid) theEObject;
+			T result = caseModelInputDataValid(modelInputDataValid);
+			if (result == null)
+				result = caseModelIsValidClaim(modelInputDataValid);
+			if (result == null)
+				result = caseArgumentElement(modelInputDataValid);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -240,17 +271,17 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Literature Evidence</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Literature Evidence For Data And Effect</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Literature Evidence</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Literature Evidence For Data And Effect</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLiteratureEvidence(LiteratureEvidence object) {
+	public T caseLiteratureEvidenceForDataAndEffect(LiteratureEvidenceForDataAndEffect object) {
 		return null;
 	}
 
@@ -326,6 +357,51 @@ public class ArgumentsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExperimentResults(ExperimentResults object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Literature Evidence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Literature Evidence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLiteratureEvidence(LiteratureEvidence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Is Valid Claim</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Is Valid Claim</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelIsValidClaim(ModelIsValidClaim object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Input Data Valid</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Input Data Valid</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelInputDataValid(ModelInputDataValid object) {
 		return null;
 	}
 

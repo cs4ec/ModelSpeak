@@ -4,6 +4,7 @@
 package uk.ac.kcl.inf.modelspeak.generator;
 
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -18,8 +19,10 @@ import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.InterpreterFactory;
 import org.eclipse.emf.henshin.interpreter.RuleApplication;
+import org.eclipse.emf.henshin.interpreter.UnitApplication;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.model.Rule;
+import org.eclipse.emf.henshin.model.Unit;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -29,19 +32,27 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
+import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import uk.ac.kcl.inf.modelspeak.agentLang.CounterModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.Game;
 import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReference;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceForData;
+import uk.ac.kcl.inf.modelspeak.agentLang.LiteratureReferenceTheory;
+import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.Move;
+import uk.ac.kcl.inf.modelspeak.agentLang.MultiTheory;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRQ;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeRequirement;
+import uk.ac.kcl.inf.modelspeak.agentLang.ReplaceModel;
+import uk.ac.kcl.inf.modelspeak.agentLang.Requirement;
+import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory;
-import uk.ac.kcl.inf.modelspeak.arguments.ecore.generate.Argument2PlatoGenerator;
 
 /**
  * Generate the argument graph corresponding to the current agent dialogue state.
@@ -52,12 +63,32 @@ public class ArgumentGraphGenerator {
 
   private final RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(this.engine);
 
+  private final UnitApplication unitRunner = InterpreterFactory.INSTANCE.createUnitApplication(this.engine);
+
   private EGraph modelGraph;
 
   private List<Rule> rules;
 
+  private List<Unit> nonRules;
+
   @Extension
   private final ArgumentsFactory factory = ArgumentsFactory.eINSTANCE;
+
+  private ArgumentGraph argumentGraph;
+
+  private Resource argGraphResource;
+
+  private final ArgumentFrameworkGenerator frameworkGenerator = new ArgumentFrameworkGenerator();
+
+  public void beforeGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.argumentGraph = this.factory.createArgumentGraph();
+    final URI outputUri = fsa.getURI(this.getArgumentGraphFileName(resource));
+    final ResourceSet resourceSet = resource.getResourceSet();
+    this.argGraphResource = resourceSet.createResource(outputUri);
+    EList<EObject> _contents = this.argGraphResource.getContents();
+    _contents.add(this.argumentGraph);
+    this.frameworkGenerator.beforeGenerate(resource, fsa, context);
+  }
 
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     final Resource rulesResource = resource.getResourceSet().getResource(
@@ -66,6 +97,8 @@ public class ArgumentGraphGenerator {
       true);
     EObject _head = IterableExtensions.<EObject>head(rulesResource.getContents());
     this.rules = ((org.eclipse.emf.henshin.model.Module) _head).getAllRules();
+    EObject _head_1 = IterableExtensions.<EObject>head(rulesResource.getContents());
+    this.nonRules = IterableExtensions.<Unit>toList(IterableExtensions.<Unit>reject(((org.eclipse.emf.henshin.model.Module) _head_1).getUnits(), Rule.class));
     final Consumer<Game> _function = (Game it) -> {
       this.generateArgumentGraph(it, resource, fsa, context);
     };
@@ -74,21 +107,16 @@ public class ArgumentGraphGenerator {
 
   public void generateArgumentGraph(final Game game, final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     try {
-      final ArgumentGraph argumentGraph = this.factory.createArgumentGraph();
-      final URI outputUri = fsa.getURI(this.getArgumentGraphFileName(resource));
-      final ResourceSet resourceSet = resource.getResourceSet();
-      final Resource newResource = resourceSet.createResource(outputUri);
-      EList<EObject> _contents = newResource.getContents();
-      _contents.add(argumentGraph);
-      EGraphImpl _eGraphImpl = new EGraphImpl(argumentGraph);
+      EGraphImpl _eGraphImpl = new EGraphImpl(this.argumentGraph);
       this.modelGraph = _eGraphImpl;
       this.ruleRunner.setEGraph(this.modelGraph);
+      this.unitRunner.setEGraph(this.modelGraph);
       final Consumer<Move> _function = (Move it) -> {
         this.updateArgumentGraph(it);
       };
       game.getMoves().forEach(_function);
-      newResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
-      new Argument2PlatoGenerator().doGenerate(newResource, fsa, context);
+      this.frameworkGenerator.doGenerate(this.argGraphResource, fsa, context);
+      this.argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -132,22 +160,36 @@ public class ArgumentGraphGenerator {
   }
 
   private Boolean _updateArgumentGraph(final SupportRequirement move) {
-    boolean _xifexpression = false;
+    boolean _switchResult = false;
     Theory _theory = move.getTheory();
-    if ((_theory instanceof LiteratureReference)) {
-      String _name = move.getRequirement().getName();
-      Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", _name);
+    boolean _matched = false;
+    if (_theory instanceof LiteratureReference) {
+      _matched=true;
       Theory _theory_1 = move.getTheory();
-      String _ref = ((LiteratureReference) _theory_1).getRef();
-      Pair<String, String> _mappedTo_1 = Pair.<String, String>of("litRef", _ref);
-      _xifexpression = this.execute("supportRequirement", 
-        Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1)));
-    } else {
+      _switchResult = this.supportRequirementWithLitRef(move.getRequirement().getName(), ((LiteratureReference) _theory_1).getRef());
+    }
+    if (!_matched) {
+      if (_theory instanceof MultiTheory) {
+        _matched=true;
+        Theory _theory_1 = move.getTheory();
+        final Consumer<Theory> _function = (Theory it) -> {
+          this.supportRequirementWithLitRef(move.getRequirement().getName(), ((LiteratureReference) it).getRef());
+        };
+        ((MultiTheory) _theory_1).getTheories().forEach(_function);
+      }
+    }
+    if (!_matched) {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Cannot currently process support requirement moves with anything else than a literature reference.");
       throw new IllegalArgumentException(_builder.toString());
     }
-    return Boolean.valueOf(_xifexpression);
+    return Boolean.valueOf(_switchResult);
+  }
+
+  private boolean supportRequirementWithLitRef(final String reqName, final String ref) {
+    Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", reqName);
+    Pair<String, String> _mappedTo_1 = Pair.<String, String>of("litRef", ref);
+    return this.execute("supportRequirement", Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1)));
   }
 
   private Boolean _updateArgumentGraph(final ProposeModel move) {
@@ -159,6 +201,47 @@ public class ArgumentGraphGenerator {
     Pair<String, String> _mappedTo_2 = Pair.<String, String>of("mechanism", _mechanism);
     return Boolean.valueOf(this.execute("proposeModel", 
       Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2))));
+  }
+
+  private Boolean _updateArgumentGraph(final SupportModel move) {
+    final Consumer<Theory> _function = (Theory t) -> {
+      if ((t instanceof LiteratureReferenceTheory)) {
+        if ((t instanceof LiteratureReferenceForData)) {
+          String _name = move.getModel().getName();
+          Pair<String, String> _mappedTo = Pair.<String, String>of("modelName", _name);
+          String _ref = ((LiteratureReferenceForData)t).getRef().getRef();
+          Pair<String, String> _mappedTo_1 = Pair.<String, String>of("literatureRef", _ref);
+          String _data = ((LiteratureReferenceForData)t).getData();
+          Pair<String, String> _mappedTo_2 = Pair.<String, String>of("dataDescription", _data);
+          this.execute("supportModel", 
+            Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2)));
+        }
+      } else {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Cannot currently process support model moves with anything else than a literature reference.");
+        throw new IllegalArgumentException(_builder.toString());
+      }
+    };
+    this.dispatchTheory(move.getTheory(), _function);
+    return null;
+  }
+
+  private Boolean _updateArgumentGraph(final ReplaceModel move) {
+    boolean _xblockexpression = false;
+    {
+      final Requirement req = this.findRequirement(move.getModel());
+      String _name = req.getName();
+      Pair<String, String> _mappedTo = Pair.<String, String>of("reqName", _name);
+      String _name_1 = move.getModel().getName();
+      Pair<String, String> _mappedTo_1 = Pair.<String, String>of("oldModelName", _name_1);
+      String _mechanism = move.getNewModel().getMechanism();
+      Pair<String, String> _mappedTo_2 = Pair.<String, String>of("mechanism", _mechanism);
+      String _name_2 = move.getNewModel().getName();
+      Pair<String, String> _mappedTo_3 = Pair.<String, String>of("newModelName", _name_2);
+      _xblockexpression = this.execute("replaceModel", 
+        Collections.<Pair<String, String>>unmodifiableList(CollectionLiterals.<Pair<String, String>>newArrayList(_mappedTo, _mappedTo_1, _mappedTo_2, _mappedTo_3)));
+    }
+    return Boolean.valueOf(_xblockexpression);
   }
 
   private Boolean _updateArgumentGraph(final CounterModel move) {
@@ -182,15 +265,104 @@ public class ArgumentGraphGenerator {
         return Boolean.valueOf(Objects.equals(_name, ruleName));
       };
       this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
-      final Consumer<Pair<String, String>> _function_1 = (Pair<String, String> it) -> {
-        this.ruleRunner.setParameterValue(it.getKey(), it.getValue());
-      };
-      parameters.forEach(_function_1);
-      _xblockexpression = this.ruleRunner.execute(null);
+      boolean _xifexpression = false;
+      Rule _rule = this.ruleRunner.getRule();
+      boolean _tripleNotEquals = (_rule != null);
+      if (_tripleNotEquals) {
+        boolean _xblockexpression_1 = false;
+        {
+          final Consumer<Pair<String, String>> _function_1 = (Pair<String, String> it) -> {
+            this.ruleRunner.setParameterValue(it.getKey(), it.getValue());
+          };
+          parameters.forEach(_function_1);
+          _xblockexpression_1 = this.ruleRunner.execute(null);
+        }
+        _xifexpression = _xblockexpression_1;
+      } else {
+        boolean _xblockexpression_2 = false;
+        {
+          final Function1<Unit, Boolean> _function_1 = (Unit it) -> {
+            String _name = it.getName();
+            return Boolean.valueOf(Objects.equals(_name, ruleName));
+          };
+          this.unitRunner.setUnit(IterableExtensions.<Unit>findFirst(this.nonRules, _function_1));
+          boolean _xifexpression_1 = false;
+          Unit _unit = this.unitRunner.getUnit();
+          boolean _tripleNotEquals_1 = (_unit != null);
+          if (_tripleNotEquals_1) {
+            boolean _xblockexpression_3 = false;
+            {
+              final Consumer<Pair<String, String>> _function_2 = (Pair<String, String> it) -> {
+                this.unitRunner.setParameterValue(it.getKey(), it.getValue());
+              };
+              parameters.forEach(_function_2);
+              _xblockexpression_3 = this.unitRunner.execute(null);
+            }
+            _xifexpression_1 = _xblockexpression_3;
+          } else {
+            throw new UnsupportedOperationException((("Rule or unit " + ruleName) + " not found."));
+          }
+          _xblockexpression_2 = _xifexpression_1;
+        }
+        _xifexpression = _xblockexpression_2;
+      }
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
 
+  /**
+   * Find the requirement for the given model
+   */
+  private Requirement findRequirement(final Model m) {
+    Requirement _xblockexpression = null;
+    {
+      final Function1<ProposeModel, Boolean> _function = (ProposeModel it) -> {
+        Model _model = it.getModel();
+        return Boolean.valueOf((_model == m));
+      };
+      final ProposeModel modelProposal = IteratorExtensions.<ProposeModel>findFirst(Iterators.<ProposeModel>filter(m.eResource().getAllContents(), ProposeModel.class), _function);
+      Requirement _xifexpression = null;
+      if ((modelProposal != null)) {
+        _xifexpression = modelProposal.getRequirement();
+      } else {
+        Requirement _xblockexpression_1 = null;
+        {
+          final Function1<ReplaceModel, Boolean> _function_1 = (ReplaceModel it) -> {
+            Model _newModel = it.getNewModel();
+            return Boolean.valueOf((_newModel == m));
+          };
+          final ReplaceModel modelIntro = IteratorExtensions.<ReplaceModel>findFirst(Iterators.<ReplaceModel>filter(m.eResource().getAllContents(), ReplaceModel.class), _function_1);
+          Requirement _xifexpression_1 = null;
+          if ((modelIntro != null)) {
+            _xifexpression_1 = this.findRequirement(modelIntro.getModel());
+          } else {
+            _xifexpression_1 = null;
+          }
+          _xblockexpression_1 = _xifexpression_1;
+        }
+        _xifexpression = _xblockexpression_1;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+
+  /**
+   * Dispatch function across all theories
+   */
+  private void _dispatchTheory(final Theory t, @Extension final Consumer<Theory> tf) {
+    tf.accept(t);
+  }
+
+  private void _dispatchTheory(final MultiTheory mt, final Consumer<Theory> tf) {
+    final Consumer<Theory> _function = (Theory it) -> {
+      this.dispatchTheory(it, tf);
+    };
+    mt.getTheories().forEach(_function);
+  }
+
+  @XbaseGenerated
   private Boolean updateArgumentGraph(final Move move) {
     if (move instanceof CounterModel) {
       return _updateArgumentGraph((CounterModel)move);
@@ -200,6 +372,10 @@ public class ArgumentGraphGenerator {
       return _updateArgumentGraph((ProposeRQ)move);
     } else if (move instanceof ProposeRequirement) {
       return _updateArgumentGraph((ProposeRequirement)move);
+    } else if (move instanceof ReplaceModel) {
+      return _updateArgumentGraph((ReplaceModel)move);
+    } else if (move instanceof SupportModel) {
+      return _updateArgumentGraph((SupportModel)move);
     } else if (move instanceof SupportRequirement) {
       return _updateArgumentGraph((SupportRequirement)move);
     } else if (move != null) {
@@ -207,6 +383,20 @@ public class ArgumentGraphGenerator {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(move).toString());
+    }
+  }
+
+  @XbaseGenerated
+  private void dispatchTheory(final Theory mt, final Consumer<Theory> tf) {
+    if (mt instanceof MultiTheory) {
+      _dispatchTheory((MultiTheory)mt, tf);
+      return;
+    } else if (mt != null) {
+      _dispatchTheory(mt, tf);
+      return;
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(mt, tf).toString());
     }
   }
 }
