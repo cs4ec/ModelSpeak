@@ -41,4 +41,16 @@ The paper proposes a vision of documenting (and supporting the conduct of) simul
    ```bash
    plato -p EE-CO -fo tgf -f <path-to-tgf-file>
    ```
-   To help match the numerical IDs of arguments to the original argument graph, you can open the corresponding `.abstract_arguments` model. Again, go via the `.aird` file to open the corresponding diagram rather than the tree view of the model. In the diagram, you can hover over the numbers to see information about the original element in the argument graph. Equally, the argument graph diagram contains small rectangles that indicate the argument numbers corresponding to elements of the argument graph. 
+   This should produce the following output for `lrp6.tgf`:
+   ```
+   [
+      [7,14,4,3,2,1,0]
+   ]
+   ```
+   Removing the final move, the output should be:
+   ```
+   [
+      [6,4,3,2,1,0,5]
+   ]
+   ```
+   To help match the numerical IDs of arguments to the original argument graph, you can open the corresponding `.abstract_arguments` model. Again, go via the `.aird` file to open the corresponding diagram rather than the tree view of the model. In the diagram, you can hover over the numbers to see information about the original element in the argument graph. Equally, the argument graph diagram contains small rectangles that indicate the argument numbers corresponding to elements of the argument graph. It's then possible to see that the first result doesn't include the argument number `5`, which is the overall conclusion of the simulation study.
