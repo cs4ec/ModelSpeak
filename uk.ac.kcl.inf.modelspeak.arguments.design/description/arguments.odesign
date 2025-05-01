@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="arguments" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="arguments" version="12.0.0.2017041100">
   <ownedViewpoints name="SimStudyArgumentViewpoint" modelFileExtension="arguments">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SimStudyArgumentDiagram" initialisation="true" domainClass="arguments::ArgumentGraph" enablePopupBars="true">
       <metamodel href="http://www.example.org/arguments#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="AbstractArgumentLabelsFilter" label="Hide abstract-argument identifier border nodes">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@borderedNodeMappings[name='IDBorderNode']"/>
+      </filters>
       <defaultLayer name="Default">
         <nodeMappings name="SupportNode" semanticCandidatesExpression="feature:relations" domainClass="arguments::Support">
           <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="aql:'Based on evidence, given warrant, presumably claim'" labelPosition="node" resizeKind="NSEW">
