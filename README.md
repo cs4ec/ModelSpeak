@@ -36,12 +36,12 @@ The paper proposes a vision of documenting (and supporting the conduct of) simul
 1. In the running Eclipse, right-click in the project explorer view on the left-hand side and choose "Import projects">"From Git", go through the wizard and add the Git clone URL for this repository in the appropriate place. Import all projects except for the three `.design` projects and the `modelSpeakTest` project. Your Eclipse may not initially show a "project explorer", but may show a "model explorer". This will work equally well. Alternatively, you may be able to get things going by going to "Window">"Perspective">"Reset Perspective" in the main menu. 
 2. You should now be able to right-click on one of the projects and select "Run As">"Eclipse Application" to get a second Eclipse instance in which you can start playing with things. If you do see errors in the projects imported, you may have to find the `.xtext` files in the `.agents` and the `.theorystore` projects (you may need to look inside the hierarchical `.parent` projects), right-click on them and select "Run As">"Generate Xtext artefacts". You may still have some errors on the `.henshin` or the `.henshin_diagram` files, but these shouldn't stop you from running the project.
 3. In the new Eclipse instance, again right-click on the project explorer and import projects from git. This time import only the three `.design` projects and `modelSpeakTest`.
-4. Open file `src/lrp6.mspeak` in the "modelSpeakTest" project -- this is where the moves are defined. Every time you save this, files `src-gen/lrp6.arguments` and `src-gen/lrp6.abstract_arguments` are updated. If you open the `.aird` file, you should be able to navigate to a "view" called "SimStudyArgumentDiagram", which is the graphical rendering of the argument.
+4. Open file `src/lrp6_basic.mspeak` in the "modelSpeakTest" project -- this is where the moves are defined. Every time you save this, files `src-gen/lrp6_basic.arguments` and `src-gen/lrp6_basic.abstract_arguments` are updated. If you open the `.aird` file, you should be able to navigate to a "view" called "SimStudyArgumentDiagram", which is the graphical rendering of the argument.
 5. To identify the acceptable arguments within a argument diagram, you can use the corresponding `.tgf` file contained in the `src-gen/` folder of hte `modelSpeakTest` project and manually feed it into a suitable argument solver. We have used [`plato`](https://nms.kcl.ac.uk/odinaldo.rodrigues/solvers.html), but other solvers probably work as well. This is currently not fully integrated into the tooling and remains a manual step with command-line output. For `plato`, the command line would be
    ```bash
    plato -p EE-CO -fo tgf -f <path-to-tgf-file>
    ```
-   This should produce the following output for `lrp6.tgf`:
+   This should produce the following output for `lrp6_basic.tgf`:
    ```
    [
       [7,14,4,3,2,1,0]
