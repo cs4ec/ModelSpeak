@@ -43,8 +43,6 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory
  */
 class ArgumentGraphGenerator {
 	val Engine engine = InterpreterFactory.INSTANCE.createEngine
-	val RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(engine)
-	val UnitApplication unitRunner = InterpreterFactory.INSTANCE.createUnitApplication(engine)
 	var EGraph modelGraph
 
 	var List<Rule> rules
@@ -81,8 +79,6 @@ class ArgumentGraphGenerator {
 
 	def generateArgumentGraph(Game game, Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		modelGraph = new EGraphImpl(argumentGraph)
-		ruleRunner.EGraph = modelGraph
-		unitRunner.EGraph = modelGraph
 
 		game.moves.forEach[updateArgumentGraph]
 
@@ -219,16 +215,26 @@ class ArgumentGraphGenerator {
 //	}
 	// -- rule execution --
 	private def execute(String ruleName, List<Pair<String, String>> parameters) {
-		ruleRunner.rule = rules.findFirst[name == ruleName]
-		if (ruleRunner.rule !== null) {
+		val rule = rules.findFirst[name == ruleName]
+		if (rule !== null) {
+			val RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(engine)
+			ruleRunner.EGraph = modelGraph
+
+			ruleRunner.rule = rule
+
 			parameters.forEach [
 				ruleRunner.setParameterValue(key, value)
 			]
 
 			ruleRunner.execute(null)
 		} else {
-			unitRunner.unit = nonRules.findFirst[name == ruleName]
-			if (unitRunner.unit !== null) {
+			val unit = nonRules.findFirst[name == ruleName]
+			if (unit !== null) {
+				val UnitApplication unitRunner = InterpreterFactory.INSTANCE.createUnitApplication(engine)
+				unitRunner.EGraph = modelGraph
+
+				unitRunner.unit = unit
+
 				parameters.forEach [
 					unitRunner.setParameterValue(key, value)
 				]
