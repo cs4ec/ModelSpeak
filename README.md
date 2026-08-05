@@ -21,9 +21,13 @@ There are no special hardware requirements for running this software.
 
 The software requires Eclipse, Sirius, and Henshin. These can be installed as follows:
 
-1. Install Eclipse (latest should be OK), use "[Eclipse IDE for Java and DSL Developers](https://www.eclipse.org/downloads/packages/release/2024-06/r/eclipse-ide-java-and-dsl-developers)", best via Oomph Installer. 
-2. Install [Sirius via the Eclipse Marketplace](https://eclipse.dev/sirius/download.html)
-3. Install Henshin. Take the latest nightly build. You will need to install via the [update site](http://download.eclipse.org/modeling/emft/henshin/updates/nightly). To do so go to "Help">"Install new software...", then click on "Add" and enter the above URL in the URL field, using "Henshin nightly" for the name.
+1. Install Eclipse (latest should be OK), use "Eclipse Modeling Tools", best via [Oomph Installer](https://www.eclipse.org/downloads/) rather than downloading the package manually.
+2. Install Xtext and Xtend from the Eclipse market place.
+3. Install [Sirius via the Eclipse Marketplace](https://eclipse.dev/sirius/download.html)
+4. Install [Papyrus](https://eclipse.dev/papyrus/download.html) best via the [update site for the nightly build](https://download.eclipse.org/modeling/mdt/papyrus/papyrus-desktop/updates/nightly/master). See below for instructions on how to install something from an update site.
+5. Install Henshin. Take the latest nightly build. You will need to install via the [update site](http://download.eclipse.org/modeling/emft/henshin/updates/nightly).
+
+To install via update site go to "Help">"Install new software...", then click on "Add" and enter the URL for the update site given above in the URL field, using a suitable label of your choice (e.g., "Henshin nightly") for the name.
 
 For analysing argument graphs, it will be useful to install an argument solver. We have used [plato](https://nms.kcl.ac.uk/odinaldo.rodrigues/solvers.html), but other solvers probably work as well.
 
