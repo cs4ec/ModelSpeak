@@ -61,10 +61,6 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory;
 public class ArgumentGraphGenerator {
   private final Engine engine = InterpreterFactory.INSTANCE.createEngine();
 
-  private final RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(this.engine);
-
-  private final UnitApplication unitRunner = InterpreterFactory.INSTANCE.createUnitApplication(this.engine);
-
   private EGraph modelGraph;
 
   private List<Rule> rules;
@@ -109,8 +105,6 @@ public class ArgumentGraphGenerator {
     try {
       EGraphImpl _eGraphImpl = new EGraphImpl(this.argumentGraph);
       this.modelGraph = _eGraphImpl;
-      this.ruleRunner.setEGraph(this.modelGraph);
-      this.unitRunner.setEGraph(this.modelGraph);
       final Consumer<Move> _function = (Move it) -> {
         this.updateArgumentGraph(it);
       };
@@ -264,18 +258,19 @@ public class ArgumentGraphGenerator {
         String _name = it.getName();
         return Boolean.valueOf(Objects.equals(_name, ruleName));
       };
-      this.ruleRunner.setRule(IterableExtensions.<Rule>findFirst(this.rules, _function));
+      final Rule rule = IterableExtensions.<Rule>findFirst(this.rules, _function);
       boolean _xifexpression = false;
-      Rule _rule = this.ruleRunner.getRule();
-      boolean _tripleNotEquals = (_rule != null);
-      if (_tripleNotEquals) {
+      if ((rule != null)) {
         boolean _xblockexpression_1 = false;
         {
+          final RuleApplication ruleRunner = InterpreterFactory.INSTANCE.createRuleApplication(this.engine);
+          ruleRunner.setEGraph(this.modelGraph);
+          ruleRunner.setRule(rule);
           final Consumer<Pair<String, String>> _function_1 = (Pair<String, String> it) -> {
-            this.ruleRunner.setParameterValue(it.getKey(), it.getValue());
+            ruleRunner.setParameterValue(it.getKey(), it.getValue());
           };
           parameters.forEach(_function_1);
-          _xblockexpression_1 = this.ruleRunner.execute(null);
+          _xblockexpression_1 = ruleRunner.execute(null);
         }
         _xifexpression = _xblockexpression_1;
       } else {
@@ -285,18 +280,19 @@ public class ArgumentGraphGenerator {
             String _name = it.getName();
             return Boolean.valueOf(Objects.equals(_name, ruleName));
           };
-          this.unitRunner.setUnit(IterableExtensions.<Unit>findFirst(this.nonRules, _function_1));
+          final Unit unit = IterableExtensions.<Unit>findFirst(this.nonRules, _function_1);
           boolean _xifexpression_1 = false;
-          Unit _unit = this.unitRunner.getUnit();
-          boolean _tripleNotEquals_1 = (_unit != null);
-          if (_tripleNotEquals_1) {
+          if ((unit != null)) {
             boolean _xblockexpression_3 = false;
             {
+              final UnitApplication unitRunner = InterpreterFactory.INSTANCE.createUnitApplication(this.engine);
+              unitRunner.setEGraph(this.modelGraph);
+              unitRunner.setUnit(unit);
               final Consumer<Pair<String, String>> _function_2 = (Pair<String, String> it) -> {
-                this.unitRunner.setParameterValue(it.getKey(), it.getValue());
+                unitRunner.setParameterValue(it.getKey(), it.getValue());
               };
               parameters.forEach(_function_2);
-              _xblockexpression_3 = this.unitRunner.execute(null);
+              _xblockexpression_3 = unitRunner.execute(null);
             }
             _xifexpression_1 = _xblockexpression_3;
           } else {
