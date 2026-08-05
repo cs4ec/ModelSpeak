@@ -19,7 +19,7 @@ There are no special hardware requirements for running this software.
 
 ## Dependencies
 
-The software requires Eclipse, Sirius, and Henshin. These can be installed as follows:
+The software requires Eclipse, Xtext/Xtend, Sirius, and Henshin (which, itself, requires Papyrus). These can be installed as follows:
 
 1. Install Eclipse (latest should be OK), use "Eclipse Modeling Tools", best via [Oomph Installer](https://www.eclipse.org/downloads/) rather than downloading the package manually.
 2. Install Xtext and Xtend from the Eclipse market place.
