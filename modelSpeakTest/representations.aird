@@ -16,13 +16,12 @@
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_kogIYFP7Ee-tsJI_txHePA" name="SimStudyArgumentDiagram" repPath="#_koe6QFP7Ee-tsJI_txHePA" changeId="1726055660702">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
-        <target xmi:type="arguments:ArgumentGraph" href="src-gen/test.arguments#/"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_RUrI8Yr-Ee-kB_JIbqFhQA" name="SimStudyArgumentDiagram for LRP6 Study" repPath="#_RUqh4Ir-Ee-kB_JIbqFhQA" changeId="1736343133510">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
         <target xmi:type="arguments:ArgumentGraph" href="src-gen/lrp6.arguments#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tNfW8M26Ee-fI5n3Z_Ds9Q" name="LRP6 Basic Argument Graph" repPath="#_tNdhwM26Ee-fI5n3Z_Ds9Q" changeId="1746112091145">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tNfW8M26Ee-fI5n3Z_Ds9Q" name="LRP6 Basic Argument Graph" repPath="#_tNdhwM26Ee-fI5n3Z_Ds9Q" changeId="1786034918907">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
         <target xmi:type="arguments:ArgumentGraph" href="src-gen/lrp6_basic.arguments#/"/>
       </ownedRepresentationDescriptors>
@@ -323,48 +322,36 @@
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_kqFcxVP7Ee-tsJI_txHePA"/>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_kooEMFP7Ee-tsJI_txHePA" name="Support" outgoingEdges="_kqEOoFP7Ee-tsJI_txHePA _kqE1slP7Ee-tsJI_txHePA" incomingEdges="_kqDnkFP7Ee-tsJI_txHePA" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="arguments:Support" href="src-gen/test.arguments#//@relations.0"/>
-      <semanticElements xmi:type="arguments:Support" href="src-gen/test.arguments#//@relations.0"/>
       <ownedStyle xmi:type="diagram:Lozenge" uid="_kos8sFP7Ee-tsJI_txHePA" labelSize="12" showIcon="false" labelPosition="node" color="138,226,52">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_6nM-4lP8Ee-VU-BNGBdVNw" name="Support" outgoingEdges="_6nTsklP8Ee-VU-BNGBdVNw _6nUTpFP8Ee-VU-BNGBdVNw" incomingEdges="_6nSedFP8Ee-VU-BNGBdVNw" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="arguments:Support" href="src-gen/test.arguments#//@relations.1"/>
-      <semanticElements xmi:type="arguments:Support" href="src-gen/test.arguments#//@relations.1"/>
       <ownedStyle xmi:type="diagram:Lozenge" uid="_6nONAFP8Ee-VU-BNGBdVNw" labelSize="12" showIcon="false" labelPosition="node" color="138,226,52">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_kownEFP7Ee-tsJI_txHePA" name="Models replicating time data of LRP receptor internalisation include a mechanism explaining LRP6 receptor internalisation." outgoingEdges="_6nSedFP8Ee-VU-BNGBdVNw" incomingEdges="_kqEOoFP7Ee-tsJI_txHePA" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/test.arguments#//@argumentElements.0"/>
-      <semanticElements xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/test.arguments#//@argumentElements.0"/>
       <ownedStyle xmi:type="diagram:Square" uid="_ljQgcFP7Ee-tsJI_txHePA" labelSize="10" showIcon="false" labelPosition="node">
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_kpDiAFP7Ee-tsJI_txHePA" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism explains data" outgoingEdges="_kqDnkFP7Ee-tsJI_txHePA" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/test.arguments#//@argumentElements.1"/>
-      <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/test.arguments#//@argumentElements.1"/>
       <ownedStyle xmi:type="diagram:Square" uid="_LMicplQBEe-2rZW6DwczCg" labelSize="10" showIcon="false" labelColor="77,137,20" borderColor="77,137,20" labelPosition="node" color="204,242,166">
         <description xmi:type="style:SquareDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_kpSykFP7Ee-tsJI_txHePA" name="[Yamamoto et al. (2006)] provides observations time data of LRP receptor internalisation for effect LRP6 receptor internalisation" incomingEdges="_kqE1slP7Ee-tsJI_txHePA" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/test.arguments#//@argumentElements.2"/>
-      <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/test.arguments#//@argumentElements.2"/>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_ljRukFP7Ee-tsJI_txHePA" labelSize="10" showIcon="false" labelPosition="node">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_6nQpRFP8Ee-VU-BNGBdVNw" name="Simple internalisation mechanism explains effect LRP6 receptor internalisation." incomingEdges="_6nTsklP8Ee-VU-BNGBdVNw _ooz_MFWHEe-UgtgbHpQ40Q" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="arguments:MechanismExplainsEffect" href="src-gen/test.arguments#//@argumentElements.3"/>
-      <semanticElements xmi:type="arguments:MechanismExplainsEffect" href="src-gen/test.arguments#//@argumentElements.3"/>
       <ownedStyle xmi:type="diagram:Square" uid="_6nRQUFP8Ee-VU-BNGBdVNw" labelSize="10" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" labelPosition="node" color="253,206,137">
         <labelFormat>bold</labelFormat>
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.4/@style"/>
@@ -372,8 +359,6 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_6nRQUlP8Ee-VU-BNGBdVNw" name="m1 matches data time data of LRP receptor internalisation." incomingEdges="_6nUTpFP8Ee-VU-BNGBdVNw _oo0mRFWHEe-UgtgbHpQ40Q" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/test.arguments#//@argumentElements.4"/>
-      <semanticElements xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/test.arguments#//@argumentElements.4"/>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_6nR3YFP8Ee-VU-BNGBdVNw" labelSize="10" showIcon="false" labelPosition="node">
         <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']/@conditionnalStyles.3/@style"/>
       </ownedStyle>
@@ -388,7 +373,6 @@
       <semanticElements xmi:type="arguments:ModelInvalidClaim" href="src-gen/test.arguments#//@argumentElements.5"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kqDnkFP7Ee-tsJI_txHePA" name="warrant" sourceNode="_kpDiAFP7Ee-tsJI_txHePA" targetNode="_kooEMFP7Ee-tsJI_txHePA">
-      <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/test.arguments#//@argumentElements.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_kqDnkVP7Ee-tsJI_txHePA" lineStyle="dash" centered="Target" strokeColor="138,226,52">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_kqDnklP7Ee-tsJI_txHePA" showIcon="false" labelColor="136,136,136"/>
@@ -396,7 +380,6 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kqEOoFP7Ee-tsJI_txHePA" name="claim" sourceNode="_kooEMFP7Ee-tsJI_txHePA" targetNode="_kownEFP7Ee-tsJI_txHePA">
-      <target xmi:type="arguments:Support" href="src-gen/test.arguments#//@relations.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_kqEOoVP7Ee-tsJI_txHePA" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_kqEOolP7Ee-tsJI_txHePA" showIcon="false" labelColor="77,137,20"/>
@@ -404,7 +387,6 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kqE1slP7Ee-tsJI_txHePA" name="evidence" sourceNode="_kooEMFP7Ee-tsJI_txHePA" targetNode="_kpSykFP7Ee-tsJI_txHePA">
-      <target xmi:type="arguments:Support" href="src-gen/test.arguments#//@relations.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_kqE1s1P7Ee-tsJI_txHePA" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_kqE1tFP7Ee-tsJI_txHePA" showIcon="false" labelColor="77,137,20"/>
@@ -412,7 +394,6 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_6nSedFP8Ee-VU-BNGBdVNw" name="warrant" sourceNode="_kownEFP7Ee-tsJI_txHePA" targetNode="_6nM-4lP8Ee-VU-BNGBdVNw">
-      <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/test.arguments#//@argumentElements.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_6nTFgFP8Ee-VU-BNGBdVNw" lineStyle="dash" centered="Target" strokeColor="138,226,52">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_6nTFgVP8Ee-VU-BNGBdVNw" showIcon="false" labelColor="136,136,136"/>
@@ -420,7 +401,6 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportWarrantLink']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_6nTsklP8Ee-VU-BNGBdVNw" name="claim" sourceNode="_6nM-4lP8Ee-VU-BNGBdVNw" targetNode="_6nQpRFP8Ee-VU-BNGBdVNw">
-      <target xmi:type="arguments:Support" href="src-gen/test.arguments#//@relations.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_6nTsk1P8Ee-VU-BNGBdVNw" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_6nTslFP8Ee-VU-BNGBdVNw" showIcon="false" labelColor="77,137,20"/>
@@ -428,7 +408,6 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportClaimLink']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_6nUTpFP8Ee-VU-BNGBdVNw" name="evidence" sourceNode="_6nM-4lP8Ee-VU-BNGBdVNw" targetNode="_6nRQUlP8Ee-VU-BNGBdVNw">
-      <target xmi:type="arguments:Support" href="src-gen/test.arguments#//@relations.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_6nUTpVP8Ee-VU-BNGBdVNw" strokeColor="204,242,166">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_6nUTplP8Ee-VU-BNGBdVNw" showIcon="false" labelColor="77,137,20"/>
@@ -436,8 +415,6 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='SupportEvidenceLink']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_oowU0VWHEe-UgtgbHpQ40Q" name="Attack" outgoingEdges="_ooz_MFWHEe-UgtgbHpQ40Q _oo1NVFWHEe-UgtgbHpQ40Q" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="arguments:Attack" href="src-gen/test.arguments#//@relations.2"/>
-      <semanticElements xmi:type="arguments:Attack" href="src-gen/test.arguments#//@relations.2"/>
       <ownedStyle xmi:type="diagram:Lozenge" uid="_oowU0lWHEe-UgtgbHpQ40Q" labelSize="10" showIcon="false" borderColor="239,41,41" labelPosition="node" color="246,139,139">
         <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']/@style"/>
       </ownedStyle>
@@ -452,7 +429,6 @@
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='AttackNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ooz_MFWHEe-UgtgbHpQ40Q" name="claim" sourceNode="_oowU0VWHEe-UgtgbHpQ40Q" targetNode="_6nQpRFP8Ee-VU-BNGBdVNw">
-      <target xmi:type="arguments:Attack" href="src-gen/test.arguments#//@relations.2"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_oo0mQFWHEe-UgtgbHpQ40Q" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_oo0mQVWHEe-UgtgbHpQ40Q" showIcon="false" labelColor="156,12,12"/>
@@ -468,7 +444,6 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackClaimLink']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_oo1NVFWHEe-UgtgbHpQ40Q" name="evidence" sourceNode="_oowU0VWHEe-UgtgbHpQ40Q" targetNode="_ooufolWHEe-UgtgbHpQ40Q">
-      <target xmi:type="arguments:Attack" href="src-gen/test.arguments#//@relations.2"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_oo10YFWHEe-UgtgbHpQ40Q" strokeColor="246,139,139">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@edgeMappings[name='AttackEvidenceLink']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_oo10YVWHEe-UgtgbHpQ40Q" showIcon="false" labelColor="156,12,12"/>
@@ -486,7 +461,6 @@
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_kofhUFP7Ee-tsJI_txHePA"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer"/>
-    <target xmi:type="arguments:ArgumentGraph" href="src-gen/test.arguments#/"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram uid="_RUqh4Ir-Ee-kB_JIbqFhQA">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_RUrI84r-Ee-kB_JIbqFhQA" source="GMF_DIAGRAMS">
@@ -3136,7 +3110,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNzgAM26Ee-fI5n3Z_Ds9Q" name="Valid models replicating the quantitative measurements of the cell surface receptor LRP6 over time include a mechanism explaining LRP6 receptor internalisation." outgoingEdges="_tN60wM26Ee-fI5n3Z_Ds9Q" incomingEdges="_tN8p8s26Ee-fI5n3Z_Ds9Q _tN8p9826Ee-fI5n3Z_Ds9Q _tN9RAM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
       <semanticElements xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRkdXM9sEe-LvehQ3xVI4A" name="10" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRkdXM9sEe-LvehQ3xVI4A" name="26" width="2" height="2">
         <target xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
         <semanticElements xmi:type="arguments:SimulationMechanismWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.0"/>
         <ownedStyle xmi:type="diagram:Square" uid="_H44aUtT0Ee-3jYWji74_jA" labelSize="10" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="2" height="2">
@@ -3152,7 +3126,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tNzgA826Ee-fI5n3Z_Ds9Q" name="Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data" outgoingEdges="_tN8C4c26Ee-fI5n3Z_Ds9Q _LuYFgM6vEe-lNsjjAEDi8w _LuYFhc6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.1"/>
       <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.1"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRngpc9sEe-LvehQ3xVI4A" name="11" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRngpc9sEe-LvehQ3xVI4A" name="27" width="2" height="2">
         <target xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.1"/>
         <semanticElements xmi:type="arguments:StandardSimulationWarrant" href="src-gen/lrp6_basic.arguments#//@argumentElements.1"/>
         <ownedStyle xmi:type="diagram:Square" uid="_H46PgtT0Ee-3jYWji74_jA" labelSize="10" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="2" height="2">
@@ -3165,10 +3139,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0HEs26Ee-fI5n3Z_Ds9Q" name="[Yamamoto et al. (2006)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_tN94FM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0HEs26Ee-fI5n3Z_Ds9Q" name="[Yamamoto et al. (2006)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation." incomingEdges="_tN94FM26Ee-fI5n3Z_Ds9Q" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.2"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.2"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRp8689sEe-LvehQ3xVI4A" name="12" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRp8689sEe-LvehQ3xVI4A" name="28" width="2" height="2">
         <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.2"/>
         <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.2"/>
         <ownedStyle xmi:type="diagram:Square" uid="_H462kdT0Ee-3jYWji74_jA" labelSize="10" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="2" height="2">
@@ -3181,10 +3155,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0HFc26Ee-fI5n3Z_Ds9Q" name="[Khan et al. (2007)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_LubI1M6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0HFc26Ee-fI5n3Z_Ds9Q" name="[Khan et al. (2007)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation." incomingEdges="_LubI1M6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRsZK89sEe-LvehQ3xVI4A" name="13" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRsZK89sEe-LvehQ3xVI4A" name="29" width="2" height="2">
         <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
         <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.3"/>
         <ownedStyle xmi:type="diagram:Square" uid="_H462lNT0Ee-3jYWji74_jA" labelSize="10" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="2" height="2">
@@ -3197,10 +3171,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/uk.ac.kcl.inf.modelspeak.arguments.design/description/arguments.odesign#//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uIM26Ee-fI5n3Z_Ds9Q" name="[Liu et al. (2014)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation" incomingEdges="_LubI2c6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uIM26Ee-fI5n3Z_Ds9Q" name="[Liu et al. (2014)] provides observations the quantitative measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation." incomingEdges="_LubI2c6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.4"/>
       <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.4"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRvceM9sEe-LvehQ3xVI4A" name="14" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRvceM9sEe-LvehQ3xVI4A" name="30" width="2" height="2">
         <target xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.4"/>
         <semanticElements xmi:type="arguments:LiteratureEvidenceForDataAndEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.4"/>
         <ownedStyle xmi:type="diagram:Square" uid="_H462l9T0Ee-3jYWji74_jA" labelSize="10" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="2" height="2">
@@ -3216,7 +3190,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uI826Ee-fI5n3Z_Ds9Q" name="Basic internalization mechanism of WNT/LRP6 explains effect LRP6 receptor internalisation." incomingEdges="_LuahwM6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
       <semanticElements xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRx4v89sEe-LvehQ3xVI4A" name="15" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oRx4v89sEe-LvehQ3xVI4A" name="31" width="2" height="2">
         <target xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
         <semanticElements xmi:type="arguments:MechanismExplainsEffect" href="src-gen/lrp6_basic.arguments#//@argumentElements.5"/>
         <ownedStyle xmi:type="diagram:Square" uid="_H462mtT0Ee-3jYWji74_jA" labelSize="10" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="2" height="2">
@@ -3233,7 +3207,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN0uJs26Ee-fI5n3Z_Ds9Q" name="m1 matches data &quot;the quantitative measurements of the cell surface receptor LRP6 over time&quot;." incomingEdges="_LucW8s6vEe-lNsjjAEDi8w _LudlEM6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6_basic.arguments#//@argumentElements.6"/>
       <semanticElements xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6_basic.arguments#//@argumentElements.6"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oR0U889sEe-LvehQ3xVI4A" name="16" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oR0U889sEe-LvehQ3xVI4A" name="32" width="2" height="2">
         <target xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6_basic.arguments#//@argumentElements.6"/>
         <semanticElements xmi:type="arguments:ModelMatchesDataOverTime" href="src-gen/lrp6_basic.arguments#//@argumentElements.6"/>
         <ownedStyle xmi:type="diagram:Square" uid="_H47dodT0Ee-3jYWji74_jA" labelSize="10" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="2" height="2">
@@ -3249,7 +3223,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_tN1VMc26Ee-fI5n3Z_Ds9Q" name="Experiment s1 produced data Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m.." incomingEdges="_LueMIM6vEe-lNsjjAEDi8w" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="arguments:ExperimentResults" href="src-gen/lrp6_basic.arguments#//@argumentElements.7"/>
       <semanticElements xmi:type="arguments:ExperimentResults" href="src-gen/lrp6_basic.arguments#//@argumentElements.7"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oR3YUc9sEe-LvehQ3xVI4A" name="17" width="2" height="2">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_oR3YUc9sEe-LvehQ3xVI4A" name="33" width="2" height="2">
         <target xmi:type="arguments:ExperimentResults" href="src-gen/lrp6_basic.arguments#//@argumentElements.7"/>
         <semanticElements xmi:type="arguments:ExperimentResults" href="src-gen/lrp6_basic.arguments#//@argumentElements.7"/>
         <ownedStyle xmi:type="diagram:Square" uid="_H47dpNT0Ee-3jYWji74_jA" labelSize="10" showIcon="false" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="2" height="2">
