@@ -1,2 +1,8 @@
 *.xtendbin
 *.java._trace
+**/xtend-gen/**/*.java
+
+**/bin/**
+
+!.gitignore
+!.gitkeep
