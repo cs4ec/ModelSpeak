@@ -7,7 +7,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.presentation.ArgumentsEditorPlugin$Implementation
 Bundle-Vendor: MyCompany
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
