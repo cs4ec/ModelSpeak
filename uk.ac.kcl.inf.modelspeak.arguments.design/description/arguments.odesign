@@ -37,7 +37,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::LiteratureEvidenceForDataAndEffect)">
-            <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelExpression="aql:self.oclAsType(arguments::LiteratureEvidence).reference + ' provides observations ' + self.oclAsType(arguments::LiteratureEvidenceForDataAndEffect).observedDataOverTime + ' for effect ' + self.oclAsType(arguments::LiteratureEvidenceForDataAndEffect).describedEffect '.'" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelExpression="aql:self.oclAsType(arguments::LiteratureEvidence).reference + ' provides observations ' + self.oclAsType(arguments::LiteratureEvidenceForDataAndEffect).observedDataOverTime + ' for effect ' + self.oclAsType(arguments::LiteratureEvidenceForDataAndEffect).describedEffect + '.'" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
