@@ -5,7 +5,6 @@ package uk.ac.kcl.inf.modelspeak.generator
 
 import java.util.List
 import java.util.function.Consumer
-import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.henshin.interpreter.EGraph
@@ -86,106 +85,7 @@ class ArgumentGraphGenerator {
 		frameworkGenerator.doGenerate(argGraphResource, fsa, context)
 
 		argGraphResource.save(SaveOptions.newBuilder().format().getOptions().toOptionsMap())
-		fsa.generateFile(resource.jsonFileName('argument-graph'), argumentGraphJson)
-		fsa.generateFile(resource.jsonFileName('case-study'), caseStudyJson(game))
-		fsa.generateFile(resource.jsonFileName('move-catalogue'), moveCatalogueJson)
 	}
-
-	private def String jsonFileName(Resource resource, String artifactName) {
-		val origName = resource.URI.lastSegment
-		origName.substring(0, origName.lastIndexOf('.')) + '-' + artifactName + '.json'
-	}
-
-	private def String getArgumentGraphJson() '''
-{
-  "ArgumentElements": [
-    «argumentGraph.argumentElements.map[argumentElementJson].join(',\n')»
-  ],
-  "ArgumentElementRelations": [
-    «argumentGraph.relations.map[relationJson].join(',\n')»
-  ]
-}
-'''
-
-	private def String argumentElementJson(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement element) '''
-    {
-      "type": "«element.eClass.name»",
-      "content": «jsonString(elementContent(element))»,
-      "id": "element_«argumentGraph.argumentElements.indexOf(element)»"
-    }'''
-
-	private def String relationJson(uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation relation) '''
-    {
-      "type": "«relation.eClass.name.toLowerCase»",
-      "claim": "element_«argumentGraph.argumentElements.indexOf(relation.claim)»",
-      "evidence": "element_«argumentGraph.argumentElements.indexOf(relation.evidence)»"«IF relation.warrant !== null»,
-      "warrant": "element_«argumentGraph.argumentElements.indexOf(relation.warrant)»"«ENDIF»
-    }'''
-
-	private def String elementContent(EObject element) {
-		val values = element.eClass.EAllStructuralFeatures.filter[!many && changeable]
-		values.map[feature |
-			val value = element.eGet(feature)
-			if (value !== null && value.toString != '') feature.name + ': ' + value.toString else null
-		].filterNull.join(', ')
-	}
-
-	private def String caseStudyJson(Game game) '''
-[
-«game.moves.map[jsonString(renderMove(it))].join(',\n')»
-]
-'''
-
-	private dispatch def String renderMove(Move move) { move.eClass.name }
-
-	private dispatch def String renderMove(ProposeRQ move) '''proposeResearchQuestion(«move.rq.name»{What mechanism best explains «jsonString(move.rq.effect)»})'''
-
-	private dispatch def String renderMove(ProposeRequirement move) '''proposeRequirement(«renderRequirement(move.requirement)»,«move.rq.name»)'''
-
-	private dispatch def String renderMove(SupportRequirement move) '''supportRequirement(«move.requirement.name»,«renderTheory(move.theory)»)'''
-
-	private dispatch def String renderMove(ProposeModel move) '''proposeModel(«renderModel(move.model)»,«move.requirement.name»)'''
-
-	private dispatch def String renderMove(SupportModel move) '''supportModel(«move.model.name»,«renderTheory(move.theory)»)'''
-
-	private dispatch def String renderMove(ReplaceModel move) '''replaceModel(«move.model.name»,«renderModel(move.newModel)»)'''
-
-	private dispatch def String renderMove(CounterModel move) '''counterModel(«move.model.name»,«renderExperiment(move.experiment)»,«move.requirement.name»)'''
-
-	private def String renderRequirement(Requirement requirement) '''«requirement.name»{«requirement.content»}<Models must replicate «jsonString(requirement.dataDescription)»>'''
-
-	private def String renderModel(Model model) '''«model.name»{«model.content»}<incorporates mechanism «jsonString(model.mechanism)»>'''
-
-	private def String renderExperiment(uk.ac.kcl.inf.modelspeak.agentLang.Experiment experiment) '''«experiment.name»{«experiment.content»}'''
-
-	private dispatch def String renderTheory(Theory theory) '''«theory.eClass.name»'''
-
-	private dispatch def String renderTheory(LiteratureReference theory) '''«theory.name»«theory.ref»'''
-
-	private dispatch def String renderTheory(MultiTheory theory) '''«theory.name»{{«theory.theories.map[renderTheory].join(',')»}}'''
-
-	private def String jsonString(String value) {
-		if (value === null) 'null' else '"' + value.replace('\\', '\\\\').replace('"', '\\"').replace('\r', '\\r').replace('\n', '\\n').replace('\t', '\\t') + '"'
-	}
-
-	private def String moveCatalogueJson() '''[
-	{"move":"proposeResearchQuestion (rq)","agent":"proponent","description":"Propose a specific research question rq for the simulation study."},
-	{"move":"proposeRequirement (req, [rq])","agent":"proponent","description":"Propose a requirement req that a simulation model must satisfy."},
-	{"move":"attackRequirement ([req], reason)","agent":"opponent","description":"Declare a requirement invalid."},
-	{"move":"redefineRequirement ([req], newReq)","agent":"proponent","description":"Propose an alternative requirement formulation newReq."},
-	{"move":"retractRequirement ([req])","agent":"proponent","description":"Retract a previously proposed requirement."},
-	{"move":"supportRequirement ([req], evidence)","agent":"proponent","description":"Provide additional support for the validity of req."},
-	{"move":"reviseRequirement ([model], [req], newReq, experiment)","agent":"proponent","description":"Propose a refined requirement and claim that model satisfies it."},
-	{"move":"proposeModel (model, [req])","agent":"proponent","description":"Propose a model, claiming that it satisfies requirement req."},
-	{"move":"supportModel ([model], evidence)","agent":"proponent","description":"Provide evidence for the validity of model."},
-	{"move":"counterModel ([model], experiment, [req])","agent":"opponent","description":"Provide a simulation experiment showing that model does not satisfy req."},
-	{"move":"attackModel ([model], evidence)","agent":"opponent","description":"Provide a reason why model should not be considered valid."},
-	{"move":"replaceModel ([model], newModel)","agent":"proponent","description":"Provide a new version of a model."},
-	{"move":"proposeExperiment ([model], experiment, [req])","agent":"proponent","description":"Support an earlier claim that model satisfies req."},
-	{"move":"supportExperiment ([experiment], evidence)","agent":"proponent","description":"Provide evidence that experiment was well-designed."},
-	{"move":"attackExperiment ([experiment], evidence)","agent":"opponent","description":"Provide evidence that experiment was not well-designed."},
-	{"move":"retractExperiment ([experiment])","agent":"proponent","description":"Retract an experiment previously shown to be invalid."}
-]'''
 
 	private def getArgumentGraphFileName(Resource resource) {
 		val origName = resource.URI.lastSegment
