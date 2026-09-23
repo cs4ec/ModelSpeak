@@ -1,0 +1,82 @@
+[
+    {
+        "move":"proposeResearchQuestion (rq)",
+        "agent":"proponent",
+        "description":"Propose a specific research question rq for the simulation study. This lays the foundation for the central argument: the study needs to provide a contextualised answer to rq."
+    },
+    {
+        "move":"proposeRequirement (req, [rq])",
+        "agent":"proponent",
+        "description":"Propose a requirement req that a simulation model must satisfy to help answer the referenced research question rq."
+    },
+    {
+        "move":"attackRequirement ([req], reason)",
+        "agent":"opponent",
+        "description":"Declare a requirement invalid."
+    },
+    {
+        "move":"redefineRequirement ([req], newReq)",
+        "agent":"proponent",
+        "description":"Propose an alternative requirement formulation newReq, typically in response to an attack on req."
+    },
+    {
+        "move":"retractRequirement ([req])",
+        "agent":"proponent",
+        "description":"Retract a previously proposed requirement, typically in response to an attack on req."
+    },
+    {
+        "move":"supportRequirement ([req], evidence)",
+        "agent":"proponent",
+        "description":"Provide (additional) support for the validity of req."
+    },
+    {
+        "move":"reviseRequirement ([model], [req], newReq, experiment)",
+        "agent":"proponent",
+        "description":"Propose a refined requirement newReq and claim that model satisfies it, supported by an experiment."
+    },
+    {
+        "move":"proposeModel (model, [req])",
+        "agent":"proponent",
+        "description":"Propose a model, claiming that it satisfies requirement req."
+    },
+    {
+        "move":"supportModel ([model], evidence)",
+        "agent":"proponent",
+        "description":"Provide evidence for the validity of model."
+    },
+    {
+        "move":"counterModel ([model], experiment, [req])",
+        "agent":"opponent",
+        "description":"Provide a simulation experiment showing that model does not satisfy req as previously claimed."
+    },
+    {
+        "move":"attackModel ([model], evidence)",
+        "agent":"opponent",
+        "description":"Provide a reason why model should not be considered well-constructed and valid."
+    },
+    {
+        "move":"replaceModel ([model], newModel)",
+        "agent":"proponent",
+        "description":"Provide a new version of a model, usually in response to an attack or a counter to the original model."
+    },
+    {
+        "move":"proposeExperiment ([model], experiment, [req])",
+        "agent":"proponent",
+        "description":"Support an earlier claim that model satisfies req by providing a simulation experiment."
+    },
+    {
+        "move":"supportExperiment ([experiment], evidence)",
+        "agent":"proponent",
+        "description":"Provide evidence that experiment was well-designed, executed, or analysed."
+    },
+    {
+        "move":"attackExperiment ([experiment], evidence)",
+        "agent":"opponent",
+        "description":"Provide evidence that experiment was not well-designed, executed, or analysed."
+    },
+    {
+        "move":"retractExperiment ([experiment])",
+        "agent":"proponent",
+        "description":"Retract an experiment previously shown to be invalid."
+    }
+]

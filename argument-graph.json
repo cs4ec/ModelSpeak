@@ -1,0 +1,76 @@
+{
+    "ArgumentElements": [
+        {
+            "type": "SimulationMechanismWarrant",
+            "content": "Valid models replicating the quantitative measurements of the cell surface receptor LRP6 over time include a mechanism explaining LRP6 receptor internalisation.",
+            "id": "element_0"
+        },
+        {
+            "type": "StandardSimulationWarrant",
+            "content": "Simulation models incorporating a mechanism that match given data allow to conclude that mechanism may explain data.",
+            "id": "element_1"
+        },
+        {
+            "type": "LiteratureEvidenceForDataAndEffect",
+            "content": "[Yamamoto et al. (2006)] provides observations the quantitave measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation.",
+            "id": "element_2"
+        },
+        {
+            "type": "LiteratureEvidenceForDataAndEffect",
+            "content": "[Kahn et al. (2007)] provides observations the quantitave measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation.",
+            "id": "element_3"
+        },
+        {
+            "type": "LiteratureEvidenceForDataAndEffect",
+            "content":"[Liu et al. (2014)] provides observations the quantitave measurements of the cell surface receptor LRP6 over time for effect LRP6 receptor internalisation.",
+            "id": "element_4"
+        },
+        {
+            "type": "MechanismExplainsEffect",
+            "content": "Basic internalization mechanism of WNT/LRP6 explains effect LRP6 receptor internalisation.",
+            "id": "element_5"
+        },
+        {
+            "type": "ModelMatchesDataOverTime",
+            "content": "m1 matches data 'the quantitative measurements of the cell surface receptor LRP6 over time'.",
+            "id": "element_6"
+        },
+        {
+            "type": "ExperimentResult",
+            "content": "Experiment s1 produced data Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m..",
+            "id": "element_7"
+        }
+    ],
+
+    "ArgumentElementRelations": [
+        {
+            "type": "support",
+            "claim": "element_0",
+            "evidence": "element_2",
+            "warrant": "element_1"
+        },
+        {
+            "type": "support",
+            "claim": "element_0",
+            "evidence": "element_3",
+            "warrant": "element_1"
+        },
+        {
+            "type": "support",
+            "claim": "element_0",
+            "evidence": "element_4",
+            "warrant": "element_1"
+        },
+        {
+            "type": "support",
+            "claim": "element_5",
+            "evidence": "element_6",
+            "warrant": "element_0"
+        },
+        {
+            "type": "attack",
+            "claim": "element_6",
+            "evidence": "element_7"
+        }
+    ]
+}
