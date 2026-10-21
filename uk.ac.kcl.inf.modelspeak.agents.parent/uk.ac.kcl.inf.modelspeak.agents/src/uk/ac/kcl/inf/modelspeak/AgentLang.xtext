@@ -10,7 +10,7 @@ Move:
     ProposeRequirement | AttackRequirement | RedefineRequirement | RetractRequirement | 
     SupportRequirement | ProposeModel | SupportModel | ReplaceModel | CounterModel | 
     AttackModel | ReviseRequirement | ProposeExperiment | SupportExperiment | 
-    AttackExperiment | RetractExperiment | StudyDone | NotConvinced;
+    AttackExperiment | RetractExperiment | StudyDone | NotConvinced| ProposeAssumption;
     
 ResearchQuestion:
 	name=ID '{' 'What' 'mechanism' 'best' 'explains' effect=STRING '}'
@@ -21,6 +21,10 @@ Model:
 ;
 Requirement:
 	name=ID ('{' content=STRING '}')? '<' 'Models' 'must' 'replicate' dataDescription=STRING '>' 
+;
+
+Assumption:
+	name=ID '{' content=STRING '}'
 ;
 
 Experiment:
@@ -109,6 +113,10 @@ AttackExperiment:
 
 //DefendExperiment:
 //    'DefendExperiment' '(' experiment=[Experiment] ',' counterTheory=[Theory] ',' newTheory=Theory ')';
+
+ProposeAssumption:
+	'proposeAssumption' '(' assumption=Assumption ',' model=[Model] ')'
+;
 
 RetractExperiment:
     'RetractExperiment' '(' experiment=[Experiment] ')';

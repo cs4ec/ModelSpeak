@@ -38,6 +38,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement
 import uk.ac.kcl.inf.modelspeak.agentLang.Theory
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory
+import uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption
 
 /**
  * Generate the argument graph corresponding to the current agent dialogue state.
@@ -135,6 +136,7 @@ class ArgumentGraphGenerator {
 «game.moves.map[jsonString(renderMove(it))].join(',\n')»
 ]
 '''
+	
 
 	private dispatch def String renderMove(Move move) { move.eClass.name }
 
@@ -151,12 +153,16 @@ class ArgumentGraphGenerator {
 	private dispatch def String renderMove(ReplaceModel move) '''replaceModel(«move.model.name»,«renderModel(move.newModel)»)'''
 
 	private dispatch def String renderMove(CounterModel move) '''counterModel(«move.model.name»,«renderExperiment(move.experiment)»,«move.requirement.name»)'''
+	
+	private dispatch def String renderMove(ProposeAssumption move) '''proposeAssumption(«renderAssumption(move.assumption)», «move.model.name»'''
 
 	private def String renderRequirement(Requirement requirement) '''«requirement.name»{«requirement.content»}<Models must replicate «jsonString(requirement.dataDescription)»>'''
 
 	private def String renderModel(Model model) '''«model.name»{«model.content»}<incorporates mechanism «jsonString(model.mechanism)»>'''
 
 	private def String renderExperiment(uk.ac.kcl.inf.modelspeak.agentLang.Experiment experiment) '''«experiment.name»{«experiment.content»}'''
+	
+	private def String renderAssumption(uk.ac.kcl.inf.modelspeak.agentLang.Assumption assumption) '''«assumption.name»{«assumption.content»}'''
 
 	private dispatch def String renderTheory(Theory theory) '''«theory.eClass.name»'''
 

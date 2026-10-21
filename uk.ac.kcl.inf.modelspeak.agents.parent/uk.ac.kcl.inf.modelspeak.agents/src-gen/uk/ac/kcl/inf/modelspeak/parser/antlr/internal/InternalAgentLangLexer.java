@@ -50,6 +50,7 @@ public class InternalAgentLangLexer extends Lexer {
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
     public static final int T__48=48;
+    public static final int T__49=49;
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__46=46;
@@ -784,10 +785,10 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:45:7: ( 'RetractExperiment' )
-            // InternalAgentLang.g:45:9: 'RetractExperiment'
+            // InternalAgentLang.g:45:7: ( 'proposeAssumption' )
+            // InternalAgentLang.g:45:9: 'proposeAssumption'
             {
-            match("RetractExperiment"); 
+            match("proposeAssumption"); 
 
 
             }
@@ -805,10 +806,10 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:46:7: ( 'StudyDone' )
-            // InternalAgentLang.g:46:9: 'StudyDone'
+            // InternalAgentLang.g:46:7: ( 'RetractExperiment' )
+            // InternalAgentLang.g:46:9: 'RetractExperiment'
             {
-            match("StudyDone"); 
+            match("RetractExperiment"); 
 
 
             }
@@ -826,10 +827,10 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:47:7: ( 'NotConvinced' )
-            // InternalAgentLang.g:47:9: 'NotConvinced'
+            // InternalAgentLang.g:47:7: ( 'StudyDone' )
+            // InternalAgentLang.g:47:9: 'StudyDone'
             {
-            match("NotConvinced"); 
+            match("StudyDone"); 
 
 
             }
@@ -842,16 +843,37 @@ public class InternalAgentLangLexer extends Lexer {
     }
     // $ANTLR end "T__48"
 
+    // $ANTLR start "T__49"
+    public final void mT__49() throws RecognitionException {
+        try {
+            int _type = T__49;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalAgentLang.g:48:7: ( 'NotConvinced' )
+            // InternalAgentLang.g:48:9: 'NotConvinced'
+            {
+            match("NotConvinced"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__49"
+
     // $ANTLR start "RULE_LITREF"
     public final void mRULE_LITREF() throws RecognitionException {
         try {
             int _type = RULE_LITREF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:2152:13: ( '[' (~ ( ']' ) )* ']' )
-            // InternalAgentLang.g:2152:15: '[' (~ ( ']' ) )* ']'
+            // InternalAgentLang.g:2291:13: ( '[' (~ ( ']' ) )* ']' )
+            // InternalAgentLang.g:2291:15: '[' (~ ( ']' ) )* ']'
             {
             match('['); 
-            // InternalAgentLang.g:2152:19: (~ ( ']' ) )*
+            // InternalAgentLang.g:2291:19: (~ ( ']' ) )*
             loop1:
             do {
                 int alt1=2;
@@ -864,7 +886,7 @@ public class InternalAgentLangLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalAgentLang.g:2152:19: ~ ( ']' )
+            	    // InternalAgentLang.g:2291:19: ~ ( ']' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\\')||(input.LA(1)>='^' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -901,10 +923,10 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:2154:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalAgentLang.g:2154:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalAgentLang.g:2293:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalAgentLang.g:2293:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalAgentLang.g:2154:11: ( '^' )?
+            // InternalAgentLang.g:2293:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -913,7 +935,7 @@ public class InternalAgentLangLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalAgentLang.g:2154:11: '^'
+                    // InternalAgentLang.g:2293:11: '^'
                     {
                     match('^'); 
 
@@ -931,7 +953,7 @@ public class InternalAgentLangLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalAgentLang.g:2154:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalAgentLang.g:2293:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -980,10 +1002,10 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:2156:10: ( ( '0' .. '9' )+ )
-            // InternalAgentLang.g:2156:12: ( '0' .. '9' )+
+            // InternalAgentLang.g:2295:10: ( ( '0' .. '9' )+ )
+            // InternalAgentLang.g:2295:12: ( '0' .. '9' )+
             {
-            // InternalAgentLang.g:2156:12: ( '0' .. '9' )+
+            // InternalAgentLang.g:2295:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -997,7 +1019,7 @@ public class InternalAgentLangLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalAgentLang.g:2156:13: '0' .. '9'
+            	    // InternalAgentLang.g:2295:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1029,10 +1051,10 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:2158:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalAgentLang.g:2158:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalAgentLang.g:2297:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalAgentLang.g:2297:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalAgentLang.g:2158:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalAgentLang.g:2297:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1050,10 +1072,10 @@ public class InternalAgentLangLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalAgentLang.g:2158:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalAgentLang.g:2297:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalAgentLang.g:2158:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalAgentLang.g:2297:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1069,7 +1091,7 @@ public class InternalAgentLangLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalAgentLang.g:2158:21: '\\\\' .
+                    	    // InternalAgentLang.g:2297:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1077,7 +1099,7 @@ public class InternalAgentLangLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalAgentLang.g:2158:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalAgentLang.g:2297:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1102,10 +1124,10 @@ public class InternalAgentLangLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalAgentLang.g:2158:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalAgentLang.g:2297:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalAgentLang.g:2158:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalAgentLang.g:2297:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1121,7 +1143,7 @@ public class InternalAgentLangLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalAgentLang.g:2158:54: '\\\\' .
+                    	    // InternalAgentLang.g:2297:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1129,7 +1151,7 @@ public class InternalAgentLangLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalAgentLang.g:2158:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalAgentLang.g:2297:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1172,12 +1194,12 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:2160:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalAgentLang.g:2160:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalAgentLang.g:2299:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalAgentLang.g:2299:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalAgentLang.g:2160:24: ( options {greedy=false; } : . )*
+            // InternalAgentLang.g:2299:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1202,7 +1224,7 @@ public class InternalAgentLangLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalAgentLang.g:2160:52: .
+            	    // InternalAgentLang.g:2299:52: .
             	    {
             	    matchAny(); 
 
@@ -1232,12 +1254,12 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:2162:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalAgentLang.g:2162:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalAgentLang.g:2301:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalAgentLang.g:2301:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalAgentLang.g:2162:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalAgentLang.g:2301:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1250,7 +1272,7 @@ public class InternalAgentLangLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalAgentLang.g:2162:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalAgentLang.g:2301:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1270,7 +1292,7 @@ public class InternalAgentLangLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalAgentLang.g:2162:40: ( ( '\\r' )? '\\n' )?
+            // InternalAgentLang.g:2301:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1279,9 +1301,9 @@ public class InternalAgentLangLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalAgentLang.g:2162:41: ( '\\r' )? '\\n'
+                    // InternalAgentLang.g:2301:41: ( '\\r' )? '\\n'
                     {
-                    // InternalAgentLang.g:2162:41: ( '\\r' )?
+                    // InternalAgentLang.g:2301:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -1290,7 +1312,7 @@ public class InternalAgentLangLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // InternalAgentLang.g:2162:41: '\\r'
+                            // InternalAgentLang.g:2301:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1322,10 +1344,10 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:2164:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalAgentLang.g:2164:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalAgentLang.g:2303:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalAgentLang.g:2303:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalAgentLang.g:2164:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalAgentLang.g:2303:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1379,8 +1401,8 @@ public class InternalAgentLangLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalAgentLang.g:2166:16: ( . )
-            // InternalAgentLang.g:2166:18: .
+            // InternalAgentLang.g:2305:16: ( . )
+            // InternalAgentLang.g:2305:18: .
             {
             matchAny(); 
 
@@ -1395,8 +1417,8 @@ public class InternalAgentLangLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalAgentLang.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | RULE_LITREF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt13=45;
+        // InternalAgentLang.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | RULE_LITREF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt13=46;
         alt13 = dfa13.predict(input);
         switch (alt13) {
             case 1 :
@@ -1659,56 +1681,63 @@ public class InternalAgentLangLexer extends Lexer {
                 }
                 break;
             case 38 :
-                // InternalAgentLang.g:1:232: RULE_LITREF
+                // InternalAgentLang.g:1:232: T__49
+                {
+                mT__49(); 
+
+                }
+                break;
+            case 39 :
+                // InternalAgentLang.g:1:238: RULE_LITREF
                 {
                 mRULE_LITREF(); 
 
                 }
                 break;
-            case 39 :
-                // InternalAgentLang.g:1:244: RULE_ID
+            case 40 :
+                // InternalAgentLang.g:1:250: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 40 :
-                // InternalAgentLang.g:1:252: RULE_INT
+            case 41 :
+                // InternalAgentLang.g:1:258: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 41 :
-                // InternalAgentLang.g:1:261: RULE_STRING
+            case 42 :
+                // InternalAgentLang.g:1:267: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 42 :
-                // InternalAgentLang.g:1:273: RULE_ML_COMMENT
+            case 43 :
+                // InternalAgentLang.g:1:279: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 43 :
-                // InternalAgentLang.g:1:289: RULE_SL_COMMENT
+            case 44 :
+                // InternalAgentLang.g:1:295: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 44 :
-                // InternalAgentLang.g:1:305: RULE_WS
+            case 45 :
+                // InternalAgentLang.g:1:311: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 45 :
-                // InternalAgentLang.g:1:313: RULE_ANY_OTHER
+            case 46 :
+                // InternalAgentLang.g:1:319: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1722,17 +1751,17 @@ public class InternalAgentLangLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\1\uffff\1\41\4\43\1\52\1\uffff\1\43\1\uffff\2\43\1\uffff\2\43\2\uffff\6\43\2\37\2\uffff\3\37\4\uffff\1\43\1\uffff\3\43\1\106\1\43\3\uffff\1\43\1\uffff\2\43\1\uffff\2\43\2\uffff\7\43\6\uffff\4\43\1\uffff\17\43\1\151\1\43\1\153\1\154\17\43\1\uffff\1\43\2\uffff\23\43\1\u0091\20\43\1\uffff\20\43\1\u00b8\24\43\1\u00cd\1\uffff\1\43\1\u00cf\1\43\1\u00d1\16\43\1\u00e1\1\43\1\uffff\1\43\1\uffff\1\43\1\uffff\17\43\1\uffff\11\43\1\u00fd\11\43\1\u0107\1\u0108\1\43\1\u010a\2\43\1\u010d\1\43\1\uffff\5\43\1\u0114\2\43\1\u0117\2\uffff\1\43\1\uffff\2\43\1\uffff\6\43\1\uffff\2\43\1\uffff\32\43\1\u013d\11\43\1\u0147\1\uffff\2\43\1\u014a\1\u014b\1\u014c\1\u014d\1\u014e\1\43\1\u0150\1\uffff\1\43\1\u0152\5\uffff\1\43\1\uffff\1\u0154\1\uffff\1\43\1\uffff\2\43\1\u0158\1\uffff";
+        "\1\uffff\1\41\4\43\1\52\1\uffff\1\43\1\uffff\2\43\1\uffff\2\43\2\uffff\6\43\2\37\2\uffff\3\37\4\uffff\1\43\1\uffff\3\43\1\106\1\43\3\uffff\1\43\1\uffff\2\43\1\uffff\2\43\2\uffff\7\43\6\uffff\4\43\1\uffff\17\43\1\151\1\43\1\153\1\154\17\43\1\uffff\1\43\2\uffff\23\43\1\u0091\20\43\1\uffff\20\43\1\u00b9\25\43\1\u00cf\1\uffff\1\43\1\u00d1\1\43\1\u00d3\17\43\1\u00e4\1\43\1\uffff\1\43\1\uffff\1\43\1\uffff\20\43\1\uffff\12\43\1\u0102\11\43\1\u010c\1\u010d\1\43\1\u010f\2\43\1\u0112\2\43\1\uffff\5\43\1\u011a\2\43\1\u011d\2\uffff\1\43\1\uffff\2\43\1\uffff\7\43\1\uffff\2\43\1\uffff\35\43\1\u0147\11\43\1\u0151\1\u0152\1\uffff\2\43\1\u0155\1\u0156\1\u0157\1\u0158\1\u0159\1\43\1\u015b\2\uffff\1\43\1\u015d\5\uffff\1\43\1\uffff\1\u015f\1\uffff\1\43\1\uffff\2\43\1\u0163\1\uffff";
     static final String DFA13_eofS =
-        "\u0159\uffff";
+        "\u0164\uffff";
     static final String DFA13_minS =
-        "\1\0\1\173\1\150\2\145\1\170\1\175\1\uffff\1\156\1\uffff\1\157\1\145\1\uffff\1\165\1\162\2\uffff\1\164\1\145\1\157\1\162\1\164\1\157\1\0\1\101\2\uffff\2\0\1\52\4\uffff\1\141\1\uffff\1\143\2\163\1\60\1\160\3\uffff\1\143\1\uffff\1\144\1\160\1\uffff\1\160\1\157\2\uffff\1\164\1\144\1\165\1\157\1\160\1\165\1\164\6\uffff\1\164\1\150\2\164\1\uffff\1\154\1\157\1\145\1\154\2\160\1\141\1\145\1\162\1\151\1\156\2\160\1\144\1\103\1\60\1\141\2\60\1\141\1\162\1\154\1\141\2\157\1\143\1\146\1\141\1\163\1\164\2\157\1\171\1\157\1\uffff\1\156\2\uffff\1\151\1\160\1\163\2\143\1\162\1\163\1\153\1\151\1\143\2\145\1\163\1\162\1\104\1\156\1\151\1\156\1\157\1\60\1\141\1\145\1\164\1\145\1\105\1\156\1\164\1\122\1\162\1\145\1\164\1\157\1\166\2\163\1\162\1\uffff\1\164\3\115\1\145\1\157\1\170\1\145\1\105\1\145\1\115\2\105\1\156\1\151\1\155\1\60\1\141\1\145\1\157\1\144\1\145\1\157\1\145\1\157\1\161\1\144\1\160\1\122\1\145\1\170\1\161\1\157\2\170\1\145\1\156\1\60\1\uffff\1\164\1\60\1\144\1\60\1\161\1\144\1\161\1\144\1\165\3\145\1\161\1\160\1\165\1\144\2\160\1\60\1\143\1\uffff\1\145\1\uffff\1\145\1\uffff\1\165\2\145\1\165\1\145\1\151\1\154\1\162\1\161\1\165\1\145\1\151\3\145\1\uffff\1\145\1\163\1\154\1\151\1\154\1\141\1\151\1\154\1\162\1\60\1\151\1\165\1\151\2\162\1\154\2\162\1\144\2\60\1\162\1\60\2\162\1\60\1\145\1\uffff\1\155\1\151\1\162\1\151\1\145\1\60\2\151\1\60\2\uffff\1\145\1\uffff\1\143\1\145\1\uffff\1\155\1\145\1\162\1\145\2\155\1\uffff\2\155\1\uffff\1\155\1\150\1\155\1\145\1\156\1\145\1\155\5\145\1\121\1\145\1\156\1\164\1\155\1\145\5\156\1\165\1\156\1\164\1\60\1\145\1\156\5\164\1\145\1\164\1\60\1\uffff\1\156\1\164\5\60\1\163\1\60\1\uffff\1\164\1\60\5\uffff\1\164\1\uffff\1\60\1\uffff\1\151\1\uffff\1\157\1\156\1\60\1\uffff";
+        "\1\0\1\173\1\150\2\145\1\170\1\175\1\uffff\1\156\1\uffff\1\157\1\145\1\uffff\1\165\1\162\2\uffff\1\164\1\145\1\157\1\162\1\164\1\157\1\0\1\101\2\uffff\2\0\1\52\4\uffff\1\141\1\uffff\1\143\2\163\1\60\1\160\3\uffff\1\143\1\uffff\1\144\1\160\1\uffff\1\160\1\157\2\uffff\1\164\1\144\1\165\1\157\1\160\1\165\1\164\6\uffff\1\164\1\150\2\164\1\uffff\1\154\1\157\1\145\1\154\2\160\1\141\1\145\1\162\1\151\1\156\2\160\1\144\1\103\1\60\1\141\2\60\1\141\1\162\1\154\1\141\2\157\1\143\1\146\1\141\1\163\1\164\2\157\1\171\1\157\1\uffff\1\156\2\uffff\1\151\1\160\1\163\2\143\1\162\1\163\1\153\1\151\1\143\2\145\1\163\1\162\1\104\1\156\1\151\1\156\1\157\1\60\1\141\1\145\1\164\1\145\1\105\1\156\1\164\1\122\1\162\1\145\1\164\1\157\1\166\2\163\1\162\1\uffff\1\164\2\115\1\101\1\145\1\157\1\170\1\145\1\105\1\145\1\115\2\105\1\156\1\151\1\155\1\60\1\141\1\145\1\157\1\144\1\145\1\157\1\145\1\157\1\163\1\161\1\144\1\160\1\122\1\145\1\170\1\161\1\157\2\170\1\145\1\156\1\60\1\uffff\1\164\1\60\1\144\1\60\1\161\1\144\1\161\1\144\1\163\1\165\3\145\1\161\1\160\1\165\1\144\2\160\1\60\1\143\1\uffff\1\145\1\uffff\1\145\1\uffff\1\165\2\145\1\165\1\145\1\165\1\151\1\154\1\162\1\161\1\165\1\145\1\151\3\145\1\uffff\1\145\1\163\1\154\1\151\1\154\1\141\1\151\1\154\1\155\1\162\1\60\1\151\1\165\1\151\2\162\1\154\2\162\1\144\2\60\1\162\1\60\2\162\1\60\1\160\1\145\1\uffff\1\155\1\151\1\162\1\151\1\145\1\60\2\151\1\60\2\uffff\1\145\1\uffff\1\143\1\145\1\uffff\1\164\1\155\1\145\1\162\1\145\2\155\1\uffff\2\155\1\uffff\1\155\1\150\1\155\1\151\1\145\1\156\1\145\1\155\5\145\1\121\1\145\1\157\1\156\1\164\1\155\1\145\5\156\1\165\2\156\1\164\1\60\1\145\1\156\5\164\1\145\1\164\2\60\1\uffff\1\156\1\164\5\60\1\163\1\60\2\uffff\1\164\1\60\5\uffff\1\164\1\uffff\1\60\1\uffff\1\151\1\uffff\1\157\1\156\1\60\1\uffff";
     static final String DFA13_maxS =
-        "\1\uffff\1\173\1\150\1\165\1\171\1\170\1\175\1\uffff\1\156\1\uffff\1\157\1\145\1\uffff\1\165\1\162\2\uffff\1\164\1\145\1\157\1\162\1\165\1\157\1\uffff\1\172\2\uffff\2\uffff\1\57\4\uffff\1\141\1\uffff\1\143\2\163\1\172\1\160\3\uffff\1\143\1\uffff\1\144\1\160\1\uffff\1\160\1\157\2\uffff\1\164\1\166\1\165\1\157\1\160\1\165\1\164\6\uffff\1\164\1\150\2\164\1\uffff\1\154\1\157\1\145\1\154\2\160\1\141\1\145\1\162\1\151\1\156\2\160\1\144\1\103\1\172\1\141\2\172\1\141\1\162\1\154\1\151\2\157\1\143\1\146\1\141\1\163\1\164\2\157\1\171\1\157\1\uffff\1\156\2\uffff\1\151\1\160\1\163\2\143\1\162\1\163\1\153\1\151\1\143\2\145\1\163\1\162\1\104\1\156\1\151\1\156\1\157\1\172\1\141\1\145\1\164\1\145\1\122\1\156\1\164\1\122\1\162\1\145\1\164\1\157\1\166\2\163\1\162\1\uffff\1\164\1\115\1\145\1\122\1\145\1\157\1\170\1\145\1\122\1\145\1\115\2\105\1\156\1\151\1\155\1\172\1\141\1\145\1\157\1\144\1\145\1\157\1\145\1\157\1\161\1\144\1\160\1\122\1\145\1\170\1\161\1\157\2\170\1\145\1\156\1\172\1\uffff\1\164\1\172\1\144\1\172\1\161\1\144\1\163\1\144\1\165\3\145\1\161\1\160\1\165\1\144\2\160\1\172\1\143\1\uffff\1\145\1\uffff\1\145\1\uffff\1\165\2\145\1\165\1\145\1\151\1\154\1\162\1\161\1\165\1\145\1\151\3\145\1\uffff\1\145\1\163\1\154\1\151\1\154\1\141\1\151\1\154\1\162\1\172\1\151\1\165\1\151\2\162\1\154\2\162\1\144\2\172\1\162\1\172\2\162\1\172\1\145\1\uffff\1\155\1\151\1\162\1\151\1\145\1\172\2\151\1\172\2\uffff\1\145\1\uffff\1\143\1\145\1\uffff\1\155\1\145\1\162\1\145\2\155\1\uffff\2\155\1\uffff\1\155\1\150\1\155\1\145\1\156\1\145\1\155\5\145\1\121\1\145\1\156\1\164\1\155\1\145\5\156\1\165\1\156\1\164\1\172\1\145\1\156\5\164\1\145\1\164\1\172\1\uffff\1\156\1\164\5\172\1\163\1\172\1\uffff\1\164\1\172\5\uffff\1\164\1\uffff\1\172\1\uffff\1\151\1\uffff\1\157\1\156\1\172\1\uffff";
+        "\1\uffff\1\173\1\150\1\165\1\171\1\170\1\175\1\uffff\1\156\1\uffff\1\157\1\145\1\uffff\1\165\1\162\2\uffff\1\164\1\145\1\157\1\162\1\165\1\157\1\uffff\1\172\2\uffff\2\uffff\1\57\4\uffff\1\141\1\uffff\1\143\2\163\1\172\1\160\3\uffff\1\143\1\uffff\1\144\1\160\1\uffff\1\160\1\157\2\uffff\1\164\1\166\1\165\1\157\1\160\1\165\1\164\6\uffff\1\164\1\150\2\164\1\uffff\1\154\1\157\1\145\1\154\2\160\1\141\1\145\1\162\1\151\1\156\2\160\1\144\1\103\1\172\1\141\2\172\1\141\1\162\1\154\1\151\2\157\1\143\1\146\1\141\1\163\1\164\2\157\1\171\1\157\1\uffff\1\156\2\uffff\1\151\1\160\1\163\2\143\1\162\1\163\1\153\1\151\1\143\2\145\1\163\1\162\1\104\1\156\1\151\1\156\1\157\1\172\1\141\1\145\1\164\1\145\1\122\1\156\1\164\1\122\1\162\1\145\1\164\1\157\1\166\2\163\1\162\1\uffff\1\164\1\115\1\145\1\122\1\145\1\157\1\170\1\145\1\122\1\145\1\115\2\105\1\156\1\151\1\155\1\172\1\141\1\145\1\157\1\144\1\145\1\157\1\145\1\157\1\163\1\161\1\144\1\160\1\122\1\145\1\170\1\161\1\157\2\170\1\145\1\156\1\172\1\uffff\1\164\1\172\1\144\1\172\1\161\1\144\1\163\1\144\1\163\1\165\3\145\1\161\1\160\1\165\1\144\2\160\1\172\1\143\1\uffff\1\145\1\uffff\1\145\1\uffff\1\165\2\145\1\165\1\145\1\165\1\151\1\154\1\162\1\161\1\165\1\145\1\151\3\145\1\uffff\1\145\1\163\1\154\1\151\1\154\1\141\1\151\1\154\1\155\1\162\1\172\1\151\1\165\1\151\2\162\1\154\2\162\1\144\2\172\1\162\1\172\2\162\1\172\1\160\1\145\1\uffff\1\155\1\151\1\162\1\151\1\145\1\172\2\151\1\172\2\uffff\1\145\1\uffff\1\143\1\145\1\uffff\1\164\1\155\1\145\1\162\1\145\2\155\1\uffff\2\155\1\uffff\1\155\1\150\1\155\1\151\1\145\1\156\1\145\1\155\5\145\1\121\1\145\1\157\1\156\1\164\1\155\1\145\5\156\1\165\2\156\1\164\1\172\1\145\1\156\5\164\1\145\1\164\2\172\1\uffff\1\156\1\164\5\172\1\163\1\172\2\uffff\1\164\1\172\5\uffff\1\164\1\uffff\1\172\1\uffff\1\151\1\uffff\1\157\1\156\1\172\1\uffff";
     static final String DFA13_acceptS =
-        "\7\uffff\1\7\1\uffff\1\11\2\uffff\1\16\2\uffff\1\23\1\24\10\uffff\1\47\1\50\3\uffff\1\54\1\55\1\15\1\1\1\uffff\1\47\5\uffff\1\17\1\6\1\7\1\uffff\1\11\2\uffff\1\16\2\uffff\1\23\1\24\7\uffff\1\46\1\50\1\51\1\52\1\53\1\54\4\uffff\1\21\42\uffff\1\2\1\uffff\1\13\1\4\44\uffff\1\12\46\uffff\1\5\24\uffff\1\3\1\uffff\1\14\1\uffff\1\20\17\uffff\1\44\33\uffff\1\36\11\uffff\1\10\1\34\1\uffff\1\33\2\uffff\1\32\6\uffff\1\35\2\uffff\1\45\45\uffff\1\42\11\uffff\1\26\2\uffff\1\43\1\37\1\40\1\41\1\31\1\uffff\1\25\1\uffff\1\30\1\uffff\1\27\3\uffff\1\22";
+        "\7\uffff\1\7\1\uffff\1\11\2\uffff\1\16\2\uffff\1\23\1\24\10\uffff\1\50\1\51\3\uffff\1\55\1\56\1\15\1\1\1\uffff\1\50\5\uffff\1\17\1\6\1\7\1\uffff\1\11\2\uffff\1\16\2\uffff\1\23\1\24\7\uffff\1\47\1\51\1\52\1\53\1\54\1\55\4\uffff\1\21\42\uffff\1\2\1\uffff\1\13\1\4\44\uffff\1\12\47\uffff\1\5\25\uffff\1\3\1\uffff\1\14\1\uffff\1\20\20\uffff\1\45\35\uffff\1\36\11\uffff\1\10\1\34\1\uffff\1\33\2\uffff\1\32\7\uffff\1\35\2\uffff\1\46\51\uffff\1\42\11\uffff\1\43\1\26\2\uffff\1\44\1\37\1\40\1\41\1\31\1\uffff\1\25\1\uffff\1\30\1\uffff\1\27\3\uffff\1\22";
     static final String DFA13_specialS =
-        "\1\2\26\uffff\1\1\3\uffff\1\0\1\3\u013c\uffff}>";
+        "\1\3\26\uffff\1\2\3\uffff\1\1\1\0\u0147\uffff}>";
     static final String[] DFA13_transitionS = {
             "\11\37\2\36\2\37\1\36\22\37\1\36\1\37\1\33\4\37\1\34\1\17\1\20\2\37\1\14\2\37\1\35\12\32\2\37\1\7\1\37\1\11\2\37\1\21\13\31\1\12\1\26\1\31\1\24\1\31\1\22\1\25\3\31\1\2\3\31\1\27\2\37\1\30\1\31\1\37\1\31\1\4\1\23\1\31\1\5\3\31\1\10\3\31\1\3\2\31\1\16\1\31\1\13\1\15\7\31\1\1\1\37\1\6\uff82\37",
             "\1\40",
@@ -1883,21 +1912,20 @@ public class InternalAgentLangLexer extends Lexer {
             "\1\u00a4",
             "\1\u00a5",
             "\1\u00a8\4\uffff\1\u00a7\22\uffff\1\u00a6",
-            "\1\u00aa\4\uffff\1\u00a9",
-            "\1\u00ab",
+            "\1\u00ab\13\uffff\1\u00aa\4\uffff\1\u00a9",
             "\1\u00ac",
             "\1\u00ad",
             "\1\u00ae",
-            "\1\u00b0\14\uffff\1\u00af",
-            "\1\u00b1",
+            "\1\u00af",
+            "\1\u00b1\14\uffff\1\u00b0",
             "\1\u00b2",
             "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
             "\1\u00b6",
             "\1\u00b7",
+            "\1\u00b8",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\1\u00b9",
             "\1\u00ba",
             "\1\u00bb",
             "\1\u00bc",
@@ -1917,17 +1945,17 @@ public class InternalAgentLangLexer extends Lexer {
             "\1\u00ca",
             "\1\u00cb",
             "\1\u00cc",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "",
+            "\1\u00cd",
             "\1\u00ce",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "",
             "\1\u00d0",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u00d2",
-            "\1\u00d3",
-            "\1\u00d5\1\uffff\1\u00d4",
-            "\1\u00d6",
-            "\1\u00d7",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u00d4",
+            "\1\u00d5",
+            "\1\u00d7\1\uffff\1\u00d6",
             "\1\u00d8",
             "\1\u00d9",
             "\1\u00da",
@@ -1937,16 +1965,16 @@ public class InternalAgentLangLexer extends Lexer {
             "\1\u00de",
             "\1\u00df",
             "\1\u00e0",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u00e1",
             "\1\u00e2",
-            "",
             "\1\u00e3",
-            "",
-            "\1\u00e4",
-            "",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u00e5",
+            "",
             "\1\u00e6",
+            "",
             "\1\u00e7",
+            "",
             "\1\u00e8",
             "\1\u00e9",
             "\1\u00ea",
@@ -1959,68 +1987,68 @@ public class InternalAgentLangLexer extends Lexer {
             "\1\u00f1",
             "\1\u00f2",
             "\1\u00f3",
-            "",
             "\1\u00f4",
             "\1\u00f5",
             "\1\u00f6",
             "\1\u00f7",
+            "",
             "\1\u00f8",
             "\1\u00f9",
             "\1\u00fa",
             "\1\u00fb",
             "\1\u00fc",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u00fd",
             "\1\u00fe",
             "\1\u00ff",
             "\1\u0100",
             "\1\u0101",
-            "\1\u0102",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u0103",
             "\1\u0104",
             "\1\u0105",
             "\1\u0106",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u0107",
+            "\1\u0108",
             "\1\u0109",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u010a",
             "\1\u010b",
-            "\1\u010c",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u010e",
-            "",
-            "\1\u010f",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u0110",
             "\1\u0111",
-            "\1\u0112",
-            "\1\u0113",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u0113",
+            "\1\u0114",
+            "",
             "\1\u0115",
             "\1\u0116",
+            "\1\u0117",
+            "\1\u0118",
+            "\1\u0119",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u011b",
+            "\1\u011c",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
             "",
-            "\1\u0118",
-            "",
-            "\1\u0119",
-            "\1\u011a",
-            "",
-            "\1\u011b",
-            "\1\u011c",
-            "\1\u011d",
             "\1\u011e",
+            "",
             "\1\u011f",
             "\1\u0120",
             "",
             "\1\u0121",
             "\1\u0122",
-            "",
             "\1\u0123",
             "\1\u0124",
             "\1\u0125",
             "\1\u0126",
             "\1\u0127",
+            "",
             "\1\u0128",
             "\1\u0129",
+            "",
             "\1\u012a",
             "\1\u012b",
             "\1\u012c",
@@ -2040,7 +2068,7 @@ public class InternalAgentLangLexer extends Lexer {
             "\1\u013a",
             "\1\u013b",
             "\1\u013c",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u013d",
             "\1\u013e",
             "\1\u013f",
             "\1\u0140",
@@ -2051,32 +2079,44 @@ public class InternalAgentLangLexer extends Lexer {
             "\1\u0145",
             "\1\u0146",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "",
             "\1\u0148",
             "\1\u0149",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u014a",
+            "\1\u014b",
+            "\1\u014c",
+            "\1\u014d",
+            "\1\u014e",
             "\1\u014f",
+            "\1\u0150",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "",
-            "\1\u0151",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "",
-            "",
-            "",
-            "",
             "",
             "\1\u0153",
+            "\1\u0154",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u015a",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "",
+            "",
+            "\1\u015c",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u015e",
             "",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\1\u0155",
+            "\1\u0160",
             "",
-            "\1\u0156",
-            "\1\u0157",
+            "\1\u0161",
+            "\1\u0162",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             ""
     };
@@ -2111,13 +2151,23 @@ public class InternalAgentLangLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | RULE_LITREF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | RULE_LITREF | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA13_28 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA13_28>='\u0000' && LA13_28<='\uFFFF')) ) {s = 62;}
+
+                        else s = 31;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA13_27 = input.LA(1);
 
                         s = -1;
@@ -2127,7 +2177,7 @@ public class InternalAgentLangLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
+                    case 2 : 
                         int LA13_23 = input.LA(1);
 
                         s = -1;
@@ -2137,7 +2187,7 @@ public class InternalAgentLangLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 3 : 
                         int LA13_0 = input.LA(1);
 
                         s = -1;
@@ -2202,16 +2252,6 @@ public class InternalAgentLangLexer extends Lexer {
                         else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 30;}
 
                         else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||LA13_0=='!'||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='*' && LA13_0<='+')||(LA13_0>='-' && LA13_0<='.')||(LA13_0>=':' && LA13_0<=';')||LA13_0=='='||(LA13_0>='?' && LA13_0<='@')||(LA13_0>='\\' && LA13_0<=']')||LA13_0=='`'||LA13_0=='|'||(LA13_0>='~' && LA13_0<='\uFFFF')) ) {s = 31;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA13_28 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA13_28>='\u0000' && LA13_28<='\uFFFF')) ) {s = 62;}
-
-                        else s = 31;
 
                         if ( s>=0 ) return s;
                         break;
