@@ -58,5 +58,10 @@
     <genClasses ecoreClass="arguments.ecore#//ModelInputDataValid">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelInputDataValid/dataDescription"/>
     </genClasses>
+    <genClasses ecoreClass="arguments.ecore#//ModelAssumption">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelAssumption/assumption"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelAssumption/assumptionText"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelAssumption/model"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

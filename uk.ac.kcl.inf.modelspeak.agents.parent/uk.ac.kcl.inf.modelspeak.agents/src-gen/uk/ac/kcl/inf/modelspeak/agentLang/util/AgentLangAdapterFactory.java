@@ -216,14 +216,19 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
         return createAttackExperimentAdapter();
       }
       @Override
+      public Adapter caseRetractExperiment(RetractExperiment object)
+      {
+        return createRetractExperimentAdapter();
+      }
+      @Override
       public Adapter caseProposeAssumption(ProposeAssumption object)
       {
         return createProposeAssumptionAdapter();
       }
       @Override
-      public Adapter caseRetractExperiment(RetractExperiment object)
+      public Adapter caseSupportAssumption(SupportAssumption object)
       {
-        return createRetractExperimentAdapter();
+        return createSupportAssumptionAdapter();
       }
       @Override
       public Adapter caseStudyDone(StudyDone object)
@@ -678,6 +683,21 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment <em>Retract Experiment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment
+   * @generated
+   */
+  public Adapter createRetractExperimentAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption <em>Propose Assumption</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -693,16 +713,16 @@ public class AgentLangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment <em>Retract Experiment</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption <em>Support Assumption</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption
    * @generated
    */
-  public Adapter createRetractExperimentAdapter()
+  public Adapter createSupportAssumptionAdapter()
   {
     return null;
   }

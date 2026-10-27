@@ -3,15 +3,22 @@
  */
 package uk.ac.kcl.inf.modelspeak.agentLang.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage;
+import uk.ac.kcl.inf.modelspeak.agentLang.Assumption;
 import uk.ac.kcl.inf.modelspeak.agentLang.Experiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment;
@@ -27,6 +34,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Requirement;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeExperimentImpl#getModel <em>Model</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeExperimentImpl#getExperiment <em>Experiment</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeExperimentImpl#getAssumptions <em>Assumptions</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeExperimentImpl#getRequirement <em>Requirement</em>}</li>
  * </ul>
  *
@@ -53,6 +61,16 @@ public class ProposeExperimentImpl extends MoveImpl implements ProposeExperiment
    * @ordered
    */
   protected Experiment experiment;
+
+  /**
+   * The cached value of the '{@link #getAssumptions() <em>Assumptions</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssumptions()
+   * @generated
+   * @ordered
+   */
+  protected EList<Assumption> assumptions;
 
   /**
    * The cached value of the '{@link #getRequirement() <em>Requirement</em>}' reference.
@@ -186,6 +204,21 @@ public class ProposeExperimentImpl extends MoveImpl implements ProposeExperiment
    * @generated
    */
   @Override
+  public EList<Assumption> getAssumptions()
+  {
+    if (assumptions == null)
+    {
+      assumptions = new EObjectResolvingEList<Assumption>(Assumption.class, this, AgentLangPackage.PROPOSE_EXPERIMENT__ASSUMPTIONS);
+    }
+    return assumptions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Requirement getRequirement()
   {
     if (requirement != null && requirement.eIsProxy())
@@ -256,6 +289,8 @@ public class ProposeExperimentImpl extends MoveImpl implements ProposeExperiment
         return basicGetModel();
       case AgentLangPackage.PROPOSE_EXPERIMENT__EXPERIMENT:
         return getExperiment();
+      case AgentLangPackage.PROPOSE_EXPERIMENT__ASSUMPTIONS:
+        return getAssumptions();
       case AgentLangPackage.PROPOSE_EXPERIMENT__REQUIREMENT:
         if (resolve) return getRequirement();
         return basicGetRequirement();
@@ -268,6 +303,7 @@ public class ProposeExperimentImpl extends MoveImpl implements ProposeExperiment
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -278,6 +314,10 @@ public class ProposeExperimentImpl extends MoveImpl implements ProposeExperiment
         return;
       case AgentLangPackage.PROPOSE_EXPERIMENT__EXPERIMENT:
         setExperiment((Experiment)newValue);
+        return;
+      case AgentLangPackage.PROPOSE_EXPERIMENT__ASSUMPTIONS:
+        getAssumptions().clear();
+        getAssumptions().addAll((Collection<? extends Assumption>)newValue);
         return;
       case AgentLangPackage.PROPOSE_EXPERIMENT__REQUIREMENT:
         setRequirement((Requirement)newValue);
@@ -302,6 +342,9 @@ public class ProposeExperimentImpl extends MoveImpl implements ProposeExperiment
       case AgentLangPackage.PROPOSE_EXPERIMENT__EXPERIMENT:
         setExperiment((Experiment)null);
         return;
+      case AgentLangPackage.PROPOSE_EXPERIMENT__ASSUMPTIONS:
+        getAssumptions().clear();
+        return;
       case AgentLangPackage.PROPOSE_EXPERIMENT__REQUIREMENT:
         setRequirement((Requirement)null);
         return;
@@ -323,6 +366,8 @@ public class ProposeExperimentImpl extends MoveImpl implements ProposeExperiment
         return model != null;
       case AgentLangPackage.PROPOSE_EXPERIMENT__EXPERIMENT:
         return experiment != null;
+      case AgentLangPackage.PROPOSE_EXPERIMENT__ASSUMPTIONS:
+        return assumptions != null && !assumptions.isEmpty();
       case AgentLangPackage.PROPOSE_EXPERIMENT__REQUIREMENT:
         return requirement != null;
     }

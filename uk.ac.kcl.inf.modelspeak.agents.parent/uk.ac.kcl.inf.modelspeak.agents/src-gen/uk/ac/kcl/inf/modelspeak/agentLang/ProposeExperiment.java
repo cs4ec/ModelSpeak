@@ -3,6 +3,7 @@
  */
 package uk.ac.kcl.inf.modelspeak.agentLang;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +16,7 @@ package uk.ac.kcl.inf.modelspeak.agentLang;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment#getModel <em>Model</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment#getExperiment <em>Experiment</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment#getAssumptions <em>Assumptions</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment#getRequirement <em>Requirement</em>}</li>
  * </ul>
  *
@@ -67,6 +69,18 @@ public interface ProposeExperiment extends Move
    * @generated
    */
   void setExperiment(Experiment value);
+
+  /**
+   * Returns the value of the '<em><b>Assumptions</b></em>' reference list.
+   * The list contents are of type {@link uk.ac.kcl.inf.modelspeak.agentLang.Assumption}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assumptions</em>' reference list.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage#getProposeExperiment_Assumptions()
+   * @model
+   * @generated
+   */
+  EList<Assumption> getAssumptions();
 
   /**
    * Returns the value of the '<em><b>Requirement</b></em>' reference.

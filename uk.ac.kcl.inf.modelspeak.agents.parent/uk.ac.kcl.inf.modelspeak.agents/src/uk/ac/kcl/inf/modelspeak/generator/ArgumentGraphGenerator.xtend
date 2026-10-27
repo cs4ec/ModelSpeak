@@ -154,7 +154,7 @@ class ArgumentGraphGenerator {
 
 	private dispatch def String renderMove(CounterModel move) '''counterModel(«move.model.name»,«renderExperiment(move.experiment)»,«move.requirement.name»)'''
 	
-	private dispatch def String renderMove(ProposeAssumption move) '''proposeAssumption(«renderAssumption(move.assumption)», «move.model.name»'''
+	private dispatch def String renderMove(ProposeAssumption move) '''proposeAssumption(«renderAssumption(move.assumption)»)'''
 
 	private def String renderRequirement(Requirement requirement) '''«requirement.name»{«requirement.content»}<Models must replicate «jsonString(requirement.dataDescription)»>'''
 
@@ -162,7 +162,7 @@ class ArgumentGraphGenerator {
 
 	private def String renderExperiment(uk.ac.kcl.inf.modelspeak.agentLang.Experiment experiment) '''«experiment.name»{«experiment.content»}'''
 	
-	private def String renderAssumption(uk.ac.kcl.inf.modelspeak.agentLang.Assumption assumption) '''«assumption.name»{«assumption.content»}'''
+	private def String renderAssumption(uk.ac.kcl.inf.modelspeak.agentLang.Assumption assumption) '''«assumption.name»{«jsonString(assumption.content)»}'''
 
 	private dispatch def String renderTheory(Theory theory) '''«theory.eClass.name»'''
 
@@ -181,6 +181,7 @@ class ArgumentGraphGenerator {
 	{"move":"redefineRequirement ([req], newReq)","agent":"proponent","description":"Propose an alternative requirement formulation newReq."},
 	{"move":"retractRequirement ([req])","agent":"proponent","description":"Retract a previously proposed requirement."},
 	{"move":"supportRequirement ([req], evidence)","agent":"proponent","description":"Provide additional support for the validity of req."},
+	{"move":"proposeAssumption (assumption)","agent":"proponent","description":"Propose an assumption for consideration in the argument graph."},
 	{"move":"reviseRequirement ([model], [req], newReq, experiment)","agent":"proponent","description":"Propose a refined requirement and claim that model satisfies it."},
 	{"move":"proposeModel (model, [req])","agent":"proponent","description":"Propose a model, claiming that it satisfies requirement req."},
 	{"move":"supportModel ([model], evidence)","agent":"proponent","description":"Provide evidence for the validity of model."},
@@ -257,6 +258,11 @@ class ArgumentGraphGenerator {
 	private dispatch def updateArgumentGraph(ProposeModel move) {
 		'proposeModel'.execute(
 			#['reqName' -> move.requirement.name, 'modelName' -> move.model.name, 'mechanism' -> move.model.mechanism])
+	}
+
+	private dispatch def updateArgumentGraph(ProposeAssumption move) {
+		'proposeAssumption'.execute(
+			#['assumptionName' -> move.assumption.name, 'assumptionText' -> move.assumption.content])
 	}
 
 	private dispatch def updateArgumentGraph(SupportModel move) {

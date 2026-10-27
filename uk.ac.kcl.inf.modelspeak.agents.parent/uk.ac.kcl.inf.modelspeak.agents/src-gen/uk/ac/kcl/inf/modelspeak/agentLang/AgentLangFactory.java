@@ -276,6 +276,15 @@ public interface AgentLangFactory extends EFactory
   AttackExperiment createAttackExperiment();
 
   /**
+   * Returns a new object of class '<em>Retract Experiment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Retract Experiment</em>'.
+   * @generated
+   */
+  RetractExperiment createRetractExperiment();
+
+  /**
    * Returns a new object of class '<em>Propose Assumption</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -285,13 +294,13 @@ public interface AgentLangFactory extends EFactory
   ProposeAssumption createProposeAssumption();
 
   /**
-   * Returns a new object of class '<em>Retract Experiment</em>'.
+   * Returns a new object of class '<em>Support Assumption</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Retract Experiment</em>'.
+   * @return a new object of class '<em>Support Assumption</em>'.
    * @generated
    */
-  RetractExperiment createRetractExperiment();
+  SupportAssumption createSupportAssumption();
 
   /**
    * Returns a new object of class '<em>Study Done</em>'.

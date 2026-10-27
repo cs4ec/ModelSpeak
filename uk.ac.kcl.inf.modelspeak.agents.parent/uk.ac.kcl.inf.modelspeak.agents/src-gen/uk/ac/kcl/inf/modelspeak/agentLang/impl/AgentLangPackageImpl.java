@@ -40,6 +40,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.RetractRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.ReviseRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.StudyDone;
+import uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
@@ -254,6 +255,13 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass retractExperimentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass proposeAssumptionEClass = null;
 
   /**
@@ -261,7 +269,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass retractExperimentEClass = null;
+  private EClass supportAssumptionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -444,9 +452,20 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
+  public EReference getModel_Assumptions()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getModel_Mechanism()
   {
-    return (EAttribute)modelEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1137,9 +1156,20 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
-  public EReference getProposeExperiment_Requirement()
+  public EReference getProposeExperiment_Assumptions()
   {
     return (EReference)proposeExperimentEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProposeExperiment_Requirement()
+  {
+    return (EReference)proposeExperimentEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1214,6 +1244,28 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
+  public EClass getRetractExperiment()
+  {
+    return retractExperimentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRetractExperiment_Experiment()
+  {
+    return (EReference)retractExperimentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getProposeAssumption()
   {
     return proposeAssumptionEClass;
@@ -1236,9 +1288,9 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
-  public EReference getProposeAssumption_Model()
+  public EClass getSupportAssumption()
   {
-    return (EReference)proposeAssumptionEClass.getEStructuralFeatures().get(1);
+    return supportAssumptionEClass;
   }
 
   /**
@@ -1247,9 +1299,9 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
-  public EClass getRetractExperiment()
+  public EReference getSupportAssumption_Assumption()
   {
-    return retractExperimentEClass;
+    return (EReference)supportAssumptionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1258,9 +1310,9 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
    * @generated
    */
   @Override
-  public EReference getRetractExperiment_Experiment()
+  public EReference getSupportAssumption_Theory()
   {
-    return (EReference)retractExperimentEClass.getEStructuralFeatures().get(0);
+    return (EReference)supportAssumptionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1339,6 +1391,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     modelEClass = createEClass(MODEL);
     createEAttribute(modelEClass, MODEL__NAME);
     createEAttribute(modelEClass, MODEL__CONTENT);
+    createEReference(modelEClass, MODEL__ASSUMPTIONS);
     createEAttribute(modelEClass, MODEL__MECHANISM);
 
     requirementEClass = createEClass(REQUIREMENT);
@@ -1424,6 +1477,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     proposeExperimentEClass = createEClass(PROPOSE_EXPERIMENT);
     createEReference(proposeExperimentEClass, PROPOSE_EXPERIMENT__MODEL);
     createEReference(proposeExperimentEClass, PROPOSE_EXPERIMENT__EXPERIMENT);
+    createEReference(proposeExperimentEClass, PROPOSE_EXPERIMENT__ASSUMPTIONS);
     createEReference(proposeExperimentEClass, PROPOSE_EXPERIMENT__REQUIREMENT);
 
     supportExperimentEClass = createEClass(SUPPORT_EXPERIMENT);
@@ -1434,12 +1488,15 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     createEReference(attackExperimentEClass, ATTACK_EXPERIMENT__EXPERIMENT);
     createEReference(attackExperimentEClass, ATTACK_EXPERIMENT__THEORY);
 
-    proposeAssumptionEClass = createEClass(PROPOSE_ASSUMPTION);
-    createEReference(proposeAssumptionEClass, PROPOSE_ASSUMPTION__ASSUMPTION);
-    createEReference(proposeAssumptionEClass, PROPOSE_ASSUMPTION__MODEL);
-
     retractExperimentEClass = createEClass(RETRACT_EXPERIMENT);
     createEReference(retractExperimentEClass, RETRACT_EXPERIMENT__EXPERIMENT);
+
+    proposeAssumptionEClass = createEClass(PROPOSE_ASSUMPTION);
+    createEReference(proposeAssumptionEClass, PROPOSE_ASSUMPTION__ASSUMPTION);
+
+    supportAssumptionEClass = createEClass(SUPPORT_ASSUMPTION);
+    createEReference(supportAssumptionEClass, SUPPORT_ASSUMPTION__ASSUMPTION);
+    createEReference(supportAssumptionEClass, SUPPORT_ASSUMPTION__THEORY);
 
     studyDoneEClass = createEClass(STUDY_DONE);
 
@@ -1496,8 +1553,9 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     proposeExperimentEClass.getESuperTypes().add(this.getMove());
     supportExperimentEClass.getESuperTypes().add(this.getMove());
     attackExperimentEClass.getESuperTypes().add(this.getMove());
-    proposeAssumptionEClass.getESuperTypes().add(this.getMove());
     retractExperimentEClass.getESuperTypes().add(this.getMove());
+    proposeAssumptionEClass.getESuperTypes().add(this.getMove());
+    supportAssumptionEClass.getESuperTypes().add(this.getMove());
     studyDoneEClass.getESuperTypes().add(this.getMove());
     notConvincedEClass.getESuperTypes().add(this.getMove());
 
@@ -1514,6 +1572,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModel_Content(), ecorePackage.getEString(), "content", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Assumptions(), this.getAssumption(), null, "assumptions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModel_Mechanism(), ecorePackage.getEString(), "mechanism", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1599,6 +1658,7 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     initEClass(proposeExperimentEClass, ProposeExperiment.class, "ProposeExperiment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProposeExperiment_Model(), this.getModel(), null, "model", null, 0, 1, ProposeExperiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProposeExperiment_Experiment(), this.getExperiment(), null, "experiment", null, 0, 1, ProposeExperiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProposeExperiment_Assumptions(), this.getAssumption(), null, "assumptions", null, 0, -1, ProposeExperiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProposeExperiment_Requirement(), this.getRequirement(), null, "requirement", null, 0, 1, ProposeExperiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(supportExperimentEClass, SupportExperiment.class, "SupportExperiment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1609,12 +1669,15 @@ public class AgentLangPackageImpl extends EPackageImpl implements AgentLangPacka
     initEReference(getAttackExperiment_Experiment(), this.getExperiment(), null, "experiment", null, 0, 1, AttackExperiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttackExperiment_Theory(), this.getTheory(), null, "theory", null, 0, 1, AttackExperiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(proposeAssumptionEClass, ProposeAssumption.class, "ProposeAssumption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getProposeAssumption_Assumption(), this.getAssumption(), null, "assumption", null, 0, 1, ProposeAssumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProposeAssumption_Model(), this.getModel(), null, "model", null, 0, 1, ProposeAssumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(retractExperimentEClass, RetractExperiment.class, "RetractExperiment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRetractExperiment_Experiment(), this.getExperiment(), null, "experiment", null, 0, 1, RetractExperiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(proposeAssumptionEClass, ProposeAssumption.class, "ProposeAssumption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProposeAssumption_Assumption(), this.getAssumption(), null, "assumption", null, 0, 1, ProposeAssumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(supportAssumptionEClass, SupportAssumption.class, "SupportAssumption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSupportAssumption_Assumption(), this.getAssumption(), null, "assumption", null, 0, 1, SupportAssumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSupportAssumption_Theory(), this.getTheory(), null, "theory", null, 0, 1, SupportAssumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(studyDoneEClass, StudyDone.class, "StudyDone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

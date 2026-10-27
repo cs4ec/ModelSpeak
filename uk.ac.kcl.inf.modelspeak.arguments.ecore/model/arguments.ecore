@@ -16,8 +16,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="warrant" lowerBound="1"
         eType="#//ArgumentElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="claim" lowerBound="1" eType="#//ArgumentElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assumptions" upperBound="-1"
-        eType="#//ArgumentElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimulationMechanismWarrant" eSuperTypes="#//ArgumentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputDataOverTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -55,9 +53,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ModelInputDataValid" eSuperTypes="#//ModelIsValidClaim">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelAssumption">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelAssumption" eSuperTypes="#//ArgumentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumptionText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

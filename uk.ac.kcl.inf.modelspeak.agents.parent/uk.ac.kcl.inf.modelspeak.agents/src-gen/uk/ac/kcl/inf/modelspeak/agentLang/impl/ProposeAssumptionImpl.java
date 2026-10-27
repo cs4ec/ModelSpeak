@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage;
 import uk.ac.kcl.inf.modelspeak.agentLang.Assumption;
-import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption;
 
 /**
@@ -25,7 +24,6 @@ import uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeAssumptionImpl#getAssumption <em>Assumption</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeAssumptionImpl#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,16 +39,6 @@ public class ProposeAssumptionImpl extends MoveImpl implements ProposeAssumption
    * @ordered
    */
   protected Assumption assumption;
-
-  /**
-   * The cached value of the '{@link #getModel() <em>Model</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getModel()
-   * @generated
-   * @ordered
-   */
-  protected Model model;
 
   /**
    * <!-- begin-user-doc -->
@@ -129,51 +117,6 @@ public class ProposeAssumptionImpl extends MoveImpl implements ProposeAssumption
    * @generated
    */
   @Override
-  public Model getModel()
-  {
-    if (model != null && model.eIsProxy())
-    {
-      InternalEObject oldModel = (InternalEObject)model;
-      model = (Model)eResolveProxy(oldModel);
-      if (model != oldModel)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgentLangPackage.PROPOSE_ASSUMPTION__MODEL, oldModel, model));
-      }
-    }
-    return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Model basicGetModel()
-  {
-    return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setModel(Model newModel)
-  {
-    Model oldModel = model;
-    model = newModel;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AgentLangPackage.PROPOSE_ASSUMPTION__MODEL, oldModel, model));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -196,9 +139,6 @@ public class ProposeAssumptionImpl extends MoveImpl implements ProposeAssumption
     {
       case AgentLangPackage.PROPOSE_ASSUMPTION__ASSUMPTION:
         return getAssumption();
-      case AgentLangPackage.PROPOSE_ASSUMPTION__MODEL:
-        if (resolve) return getModel();
-        return basicGetModel();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,9 +155,6 @@ public class ProposeAssumptionImpl extends MoveImpl implements ProposeAssumption
     {
       case AgentLangPackage.PROPOSE_ASSUMPTION__ASSUMPTION:
         setAssumption((Assumption)newValue);
-        return;
-      case AgentLangPackage.PROPOSE_ASSUMPTION__MODEL:
-        setModel((Model)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,9 +173,6 @@ public class ProposeAssumptionImpl extends MoveImpl implements ProposeAssumption
       case AgentLangPackage.PROPOSE_ASSUMPTION__ASSUMPTION:
         setAssumption((Assumption)null);
         return;
-      case AgentLangPackage.PROPOSE_ASSUMPTION__MODEL:
-        setModel((Model)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -255,8 +189,6 @@ public class ProposeAssumptionImpl extends MoveImpl implements ProposeAssumption
     {
       case AgentLangPackage.PROPOSE_ASSUMPTION__ASSUMPTION:
         return assumption != null;
-      case AgentLangPackage.PROPOSE_ASSUMPTION__MODEL:
-        return model != null;
     }
     return super.eIsSet(featureID);
   }

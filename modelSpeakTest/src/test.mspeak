@@ -1,12 +1,78 @@
+//Model1
 proposeResearchQuestion(rq1{What mechanism best explains "LRP6 receptor internalisation"})
-proposeRequirement (r1{"First requirement"}
-	                  <Models must replicate "time data of LRP receptor internalisation">, 
-	                rq1)
-supportRequirement (r1, ref1[Yamamoto et al. (2006)])
-proposeModel(m1{"First model"}<incorporates mechanism "Simple internalisation mechanism">, r1)
-counterModel(m1, e1{"Some data not matching time data of LRP receptor internalisation"}, r1)
+proposeRequirement(r1{"Develop a simulation model that matches the quantitative measurements of the cell surface receptor LRP6 over time"}
+	                 <Models must replicate "the quantitative measurements of the cell surface receptor LRP6 over time">,
+	               rq1)
+supportRequirement(r1, ref3[Yamamoto et al. (2006)])
+supportRequirement(r1, ref6[Khan et al. (2007)])
+supportRequirement(r1, ref7[Liu et al. (2014)])
 
-//AttackModel(m1, t1["Attack on model formulation"])
-//ReplaceModel(m1, m2["Refined model"])
-//RedefineRequirement(r1, r1Prime["First requirement, refined"])
-//SupportModel(m1, t2["Supportive theory"])
+
+proposeAssumption(a1{"FZ is either implicitly part of the WNT/LRP6 complex or that WNT–LRP6 interaction alone is sufficient for inducing LRP6 internalisation"})
+proposeAssumption(a2{"not explicitly consider the presence of FZ for LRP6 receptor internalization in the context of canonical WNT signaling"})
+proposeAssumption(a3{"the impact of FZ on LRP6 internalization dynamics can be neglected, as both receptors are activated through WNT3a and internalized in a similar way and with similar dynamic"})
+
+//model with a parameter for toggling the mechanism (CME/CIE)
+proposeModel(m1{"Basic internalization model of WNT/LRP6"}, assumptions{a1,a2,a3},
+	           <incorporates mechanism "Basic internalization mechanism of WNT/LRP6">, 
+	           r1)
+
+//scan two ranges of the parameter ke
+counterModel(m1,
+	         s1{"Simulation experiment in SESSL: parameter scans of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m."}, 
+	         r1)
+
+//Model2
+
+//a1-a3 remain valid
+proposeAssumption(a4{"i"})
+proposeAssumption(a5{"ii"})
+proposeAssumption(a6{"iii"})
+
+replaceModel(m1,m2, assumptions{a4,a5,a6}, <incorporates mechanism "The structural organization of the membrane into lo and ld domains and the corresponding receptor distribution" >)
+
+//@fiete: what do these refer to? to the assumptions?
+supportModel(m2, ref8[Sezgin et al., 2017])
+supportModel(m2, ref8[Sakane et al., 2010])
+supportModel(m2, ref8[Kagermeier-Schenk et al., 2011])
+
+//this is rather a design decision regarding the simulation experiment s2
+//proposeAssumpiton(a7{"consider that clathrin-dependent (mediated) internalization of raft fractions is highly unlikely and did not consider this model configuration in the simulation", m2}
+
+//PW: these were multiple experiments. Should we not make those explicit?
+//multiple parameter scans across 2 parameters, with different ranges (these represent the mechanistic hypotheses)
+counterModel(m2, s2{"Simulation experiment: setup CIE inside/outside/inside and outside, as well as CME and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. For CME and CIE inside, CIE outside and CIE in/outside results show deviations of the mean+/-s.e.m."}, r1)
+
+//Model3
+
+//intracellular processes - rather a model join than replacement: include all above assumptions 
+replaceModel(m2, m3 <incorporates mechanism "Coupling compartment-based internalization model with intracellular WNT model" >)
+
+//Result for in/outside fit to measurements but not for the rest
+//first, experiment with 2 separate ranges -> did not fit (observe that a mixing of ranges could work)
+ProposeExperiment(m3, s3a{"Simulation experiment: setup CIE in/outside and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Results did not match measurements."}, r1)
+//PW: is this an assumption or hypothesis? -> scan over full ranges
+proposeAssumption(a8{"a model in which CIE can occur outside of lipid rafts would lead to a better fit of the experimental data"})
+//another experiment with m3: similar to s2, open ranges, both parameters are scanned over both ranges
+
+ProposeExperiment(m3, s3{"Simulation experiment: setup CIE in/outside and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Results match measurements well."}, assumptions{a8}, r1)
+
+//this is optional:
+//NotConvinced(m3)
+
+//Model4
+//"Simulation model must not be overfitted" -> overfitting is the goal, but not specific enough as a requirement
+proposeRequirement(r2{"Simulation model must fit Sakane data for other endocytosis process"} < Models must replicate "quantitative measurements for Dkk1-induced endocytosis">, rq1)
+
+//other receptor, with other/additional parameters
+proposeModel(m4{"Temporal dynamics of Dkk1-induced LRP6 endocytosis"} <incorporates mechanism "Same underlying model as M3 but different endocytosis process related to the canonical WNT signaling pathway fits data over time "> , r2)
+
+//I think this should also be supportRequirement
+supportModel(m4, ref[Sakane et al.(2010)])
+//data for changing model constant
+supportModel(m4,  ref[Bourhis et al. (2010)])
+
+ProposeExperiment(m4, s4{"same underlying model different endocytosis processe related to the canonical WNT signaling pathway -> results match Sakane et al. (2010)"}, r2)
+
+//this is optional:
+//StudyDone()

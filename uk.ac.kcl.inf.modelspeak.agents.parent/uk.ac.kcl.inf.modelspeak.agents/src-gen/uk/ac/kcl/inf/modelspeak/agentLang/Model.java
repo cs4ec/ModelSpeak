@@ -3,6 +3,8 @@
  */
 package uk.ac.kcl.inf.modelspeak.agentLang;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.Model#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.Model#getContent <em>Content</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.Model#getAssumptions <em>Assumptions</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.Model#getMechanism <em>Mechanism</em>}</li>
  * </ul>
  *
@@ -68,6 +71,18 @@ public interface Model extends EObject
    * @generated
    */
   void setContent(String value);
+
+  /**
+   * Returns the value of the '<em><b>Assumptions</b></em>' reference list.
+   * The list contents are of type {@link uk.ac.kcl.inf.modelspeak.agentLang.Assumption}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assumptions</em>' reference list.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage#getModel_Assumptions()
+   * @model
+   * @generated
+   */
+  EList<Assumption> getAssumptions();
 
   /**
    * Returns the value of the '<em><b>Mechanism</b></em>' attribute.

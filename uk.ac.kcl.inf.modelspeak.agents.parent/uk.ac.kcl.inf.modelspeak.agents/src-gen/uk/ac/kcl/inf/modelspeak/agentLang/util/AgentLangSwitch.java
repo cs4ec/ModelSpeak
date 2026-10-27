@@ -291,6 +291,14 @@ public class AgentLangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AgentLangPackage.RETRACT_EXPERIMENT:
+      {
+        RetractExperiment retractExperiment = (RetractExperiment)theEObject;
+        T result = caseRetractExperiment(retractExperiment);
+        if (result == null) result = caseMove(retractExperiment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AgentLangPackage.PROPOSE_ASSUMPTION:
       {
         ProposeAssumption proposeAssumption = (ProposeAssumption)theEObject;
@@ -299,11 +307,11 @@ public class AgentLangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AgentLangPackage.RETRACT_EXPERIMENT:
+      case AgentLangPackage.SUPPORT_ASSUMPTION:
       {
-        RetractExperiment retractExperiment = (RetractExperiment)theEObject;
-        T result = caseRetractExperiment(retractExperiment);
-        if (result == null) result = caseMove(retractExperiment);
+        SupportAssumption supportAssumption = (SupportAssumption)theEObject;
+        T result = caseSupportAssumption(supportAssumption);
+        if (result == null) result = caseMove(supportAssumption);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -776,6 +784,22 @@ public class AgentLangSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Retract Experiment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Retract Experiment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRetractExperiment(RetractExperiment object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Propose Assumption</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -792,17 +816,17 @@ public class AgentLangSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Retract Experiment</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Support Assumption</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Retract Experiment</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Support Assumption</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRetractExperiment(RetractExperiment object)
+  public T caseSupportAssumption(SupportAssumption object)
   {
     return null;
   }

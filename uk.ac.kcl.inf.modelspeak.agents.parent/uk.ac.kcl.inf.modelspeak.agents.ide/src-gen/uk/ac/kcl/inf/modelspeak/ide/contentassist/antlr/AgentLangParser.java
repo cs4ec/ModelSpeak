@@ -37,6 +37,8 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getResearchQuestionAccess().getGroup(), "rule__ResearchQuestion__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGroup_1(), "rule__Model__Group_1__0");
+			builder.put(grammarAccess.getModelAccess().getGroup_2(), "rule__Model__Group_2__0");
+			builder.put(grammarAccess.getModelAccess().getGroup_2_4(), "rule__Model__Group_2_4__0");
 			builder.put(grammarAccess.getRequirementAccess().getGroup(), "rule__Requirement__Group__0");
 			builder.put(grammarAccess.getRequirementAccess().getGroup_1(), "rule__Requirement__Group_1__0");
 			builder.put(grammarAccess.getAssumptionAccess().getGroup(), "rule__Assumption__Group__0");
@@ -59,10 +61,13 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttackModelAccess().getGroup(), "rule__AttackModel__Group__0");
 			builder.put(grammarAccess.getReviseRequirementAccess().getGroup(), "rule__ReviseRequirement__Group__0");
 			builder.put(grammarAccess.getProposeExperimentAccess().getGroup(), "rule__ProposeExperiment__Group__0");
+			builder.put(grammarAccess.getProposeExperimentAccess().getGroup_5(), "rule__ProposeExperiment__Group_5__0");
+			builder.put(grammarAccess.getProposeExperimentAccess().getGroup_5_4(), "rule__ProposeExperiment__Group_5_4__0");
 			builder.put(grammarAccess.getSupportExperimentAccess().getGroup(), "rule__SupportExperiment__Group__0");
 			builder.put(grammarAccess.getAttackExperimentAccess().getGroup(), "rule__AttackExperiment__Group__0");
-			builder.put(grammarAccess.getProposeAssumptionAccess().getGroup(), "rule__ProposeAssumption__Group__0");
 			builder.put(grammarAccess.getRetractExperimentAccess().getGroup(), "rule__RetractExperiment__Group__0");
+			builder.put(grammarAccess.getProposeAssumptionAccess().getGroup(), "rule__ProposeAssumption__Group__0");
+			builder.put(grammarAccess.getSupportAssumptionAccess().getGroup(), "rule__SupportAssumption__Group__0");
 			builder.put(grammarAccess.getStudyDoneAccess().getGroup(), "rule__StudyDone__Group__0");
 			builder.put(grammarAccess.getNotConvincedAccess().getGroup(), "rule__NotConvinced__Group__0");
 			builder.put(grammarAccess.getGameAccess().getMovesAssignment(), "rule__Game__MovesAssignment");
@@ -70,7 +75,9 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getResearchQuestionAccess().getEffectAssignment_6(), "rule__ResearchQuestion__EffectAssignment_6");
 			builder.put(grammarAccess.getModelAccess().getNameAssignment_0(), "rule__Model__NameAssignment_0");
 			builder.put(grammarAccess.getModelAccess().getContentAssignment_1_1(), "rule__Model__ContentAssignment_1_1");
-			builder.put(grammarAccess.getModelAccess().getMechanismAssignment_5(), "rule__Model__MechanismAssignment_5");
+			builder.put(grammarAccess.getModelAccess().getAssumptionsAssignment_2_3(), "rule__Model__AssumptionsAssignment_2_3");
+			builder.put(grammarAccess.getModelAccess().getAssumptionsAssignment_2_4_1(), "rule__Model__AssumptionsAssignment_2_4_1");
+			builder.put(grammarAccess.getModelAccess().getMechanismAssignment_6(), "rule__Model__MechanismAssignment_6");
 			builder.put(grammarAccess.getRequirementAccess().getNameAssignment_0(), "rule__Requirement__NameAssignment_0");
 			builder.put(grammarAccess.getRequirementAccess().getContentAssignment_1_1(), "rule__Requirement__ContentAssignment_1_1");
 			builder.put(grammarAccess.getRequirementAccess().getDataDescriptionAssignment_6(), "rule__Requirement__DataDescriptionAssignment_6");
@@ -115,14 +122,17 @@ public class AgentLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getReviseRequirementAccess().getExperimentAssignment_8(), "rule__ReviseRequirement__ExperimentAssignment_8");
 			builder.put(grammarAccess.getProposeExperimentAccess().getModelAssignment_2(), "rule__ProposeExperiment__ModelAssignment_2");
 			builder.put(grammarAccess.getProposeExperimentAccess().getExperimentAssignment_4(), "rule__ProposeExperiment__ExperimentAssignment_4");
-			builder.put(grammarAccess.getProposeExperimentAccess().getRequirementAssignment_6(), "rule__ProposeExperiment__RequirementAssignment_6");
+			builder.put(grammarAccess.getProposeExperimentAccess().getAssumptionsAssignment_5_3(), "rule__ProposeExperiment__AssumptionsAssignment_5_3");
+			builder.put(grammarAccess.getProposeExperimentAccess().getAssumptionsAssignment_5_4_1(), "rule__ProposeExperiment__AssumptionsAssignment_5_4_1");
+			builder.put(grammarAccess.getProposeExperimentAccess().getRequirementAssignment_7(), "rule__ProposeExperiment__RequirementAssignment_7");
 			builder.put(grammarAccess.getSupportExperimentAccess().getExperimentAssignment_2(), "rule__SupportExperiment__ExperimentAssignment_2");
 			builder.put(grammarAccess.getSupportExperimentAccess().getTheoryAssignment_4(), "rule__SupportExperiment__TheoryAssignment_4");
 			builder.put(grammarAccess.getAttackExperimentAccess().getExperimentAssignment_2(), "rule__AttackExperiment__ExperimentAssignment_2");
 			builder.put(grammarAccess.getAttackExperimentAccess().getTheoryAssignment_4(), "rule__AttackExperiment__TheoryAssignment_4");
-			builder.put(grammarAccess.getProposeAssumptionAccess().getAssumptionAssignment_2(), "rule__ProposeAssumption__AssumptionAssignment_2");
-			builder.put(grammarAccess.getProposeAssumptionAccess().getModelAssignment_4(), "rule__ProposeAssumption__ModelAssignment_4");
 			builder.put(grammarAccess.getRetractExperimentAccess().getExperimentAssignment_2(), "rule__RetractExperiment__ExperimentAssignment_2");
+			builder.put(grammarAccess.getProposeAssumptionAccess().getAssumptionAssignment_2(), "rule__ProposeAssumption__AssumptionAssignment_2");
+			builder.put(grammarAccess.getSupportAssumptionAccess().getAssumptionAssignment_2(), "rule__SupportAssumption__AssumptionAssignment_2");
+			builder.put(grammarAccess.getSupportAssumptionAccess().getTheoryAssignment_4(), "rule__SupportAssumption__TheoryAssignment_4");
 			builder.put(grammarAccess.getNotConvincedAccess().getModelAssignment_2(), "rule__NotConvinced__ModelAssignment_2");
 		}
 	}

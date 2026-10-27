@@ -93,8 +93,9 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
       case AgentLangPackage.PROPOSE_EXPERIMENT: return createProposeExperiment();
       case AgentLangPackage.SUPPORT_EXPERIMENT: return createSupportExperiment();
       case AgentLangPackage.ATTACK_EXPERIMENT: return createAttackExperiment();
-      case AgentLangPackage.PROPOSE_ASSUMPTION: return createProposeAssumption();
       case AgentLangPackage.RETRACT_EXPERIMENT: return createRetractExperiment();
+      case AgentLangPackage.PROPOSE_ASSUMPTION: return createProposeAssumption();
+      case AgentLangPackage.SUPPORT_ASSUMPTION: return createSupportAssumption();
       case AgentLangPackage.STUDY_DONE: return createStudyDone();
       case AgentLangPackage.NOT_CONVINCED: return createNotConvinced();
       default:
@@ -444,6 +445,18 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
    * @generated
    */
   @Override
+  public RetractExperiment createRetractExperiment()
+  {
+    RetractExperimentImpl retractExperiment = new RetractExperimentImpl();
+    return retractExperiment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ProposeAssumption createProposeAssumption()
   {
     ProposeAssumptionImpl proposeAssumption = new ProposeAssumptionImpl();
@@ -456,10 +469,10 @@ public class AgentLangFactoryImpl extends EFactoryImpl implements AgentLangFacto
    * @generated
    */
   @Override
-  public RetractExperiment createRetractExperiment()
+  public SupportAssumption createSupportAssumption()
   {
-    RetractExperimentImpl retractExperiment = new RetractExperimentImpl();
-    return retractExperiment;
+    SupportAssumptionImpl supportAssumption = new SupportAssumptionImpl();
+    return supportAssumption;
   }
 
   /**

@@ -61,20 +61,21 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cStudyDoneParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
 		private final RuleCall cNotConvincedParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
 		private final RuleCall cProposeAssumptionParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
+		private final RuleCall cSupportAssumptionParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
 		
 		//Move:
 		//    ProposeRQ |
 		//    ProposeRequirement | AttackRequirement | RedefineRequirement | RetractRequirement |
 		//    SupportRequirement | ProposeModel | SupportModel | ReplaceModel | CounterModel |
 		//    AttackModel | ReviseRequirement | ProposeExperiment | SupportExperiment |
-		//    AttackExperiment | RetractExperiment | StudyDone | NotConvinced| ProposeAssumption;
+		//    AttackExperiment | RetractExperiment | StudyDone | NotConvinced| ProposeAssumption| SupportAssumption;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ProposeRQ |
 		//ProposeRequirement | AttackRequirement | RedefineRequirement | RetractRequirement |
 		//SupportRequirement | ProposeModel | SupportModel | ReplaceModel | CounterModel |
 		//AttackModel | ReviseRequirement | ProposeExperiment | SupportExperiment |
-		//AttackExperiment | RetractExperiment | StudyDone | NotConvinced| ProposeAssumption
+		//AttackExperiment | RetractExperiment | StudyDone | NotConvinced| ProposeAssumption| SupportAssumption
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ProposeRQ
@@ -133,6 +134,9 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//ProposeAssumption
 		public RuleCall getProposeAssumptionParserRuleCall_18() { return cProposeAssumptionParserRuleCall_18; }
+		
+		//SupportAssumption
+		public RuleCall getSupportAssumptionParserRuleCall_19() { return cSupportAssumptionParserRuleCall_19; }
 	}
 	public class ResearchQuestionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.ResearchQuestion");
@@ -196,19 +200,33 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cContentAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cContentSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cContentAssignment_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cIncorporatesKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cMechanismKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cMechanismAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cMechanismSTRINGTerminalRuleCall_5_0 = (RuleCall)cMechanismAssignment_5.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cAssumptionsKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cAssumptionsAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final CrossReference cAssumptionsAssumptionCrossReference_2_3_0 = (CrossReference)cAssumptionsAssignment_2_3.eContents().get(0);
+		private final RuleCall cAssumptionsAssumptionIDTerminalRuleCall_2_3_0_1 = (RuleCall)cAssumptionsAssumptionCrossReference_2_3_0.eContents().get(1);
+		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
+		private final Keyword cCommaKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
+		private final Assignment cAssumptionsAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final CrossReference cAssumptionsAssumptionCrossReference_2_4_1_0 = (CrossReference)cAssumptionsAssignment_2_4_1.eContents().get(0);
+		private final RuleCall cAssumptionsAssumptionIDTerminalRuleCall_2_4_1_0_1 = (RuleCall)cAssumptionsAssumptionCrossReference_2_4_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
+		private final Keyword cCommaKeyword_2_6 = (Keyword)cGroup_2.eContents().get(6);
+		private final Keyword cLessThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cIncorporatesKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cMechanismKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cMechanismAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cMechanismSTRINGTerminalRuleCall_6_0 = (RuleCall)cMechanismAssignment_6.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Model:
-		//    name=ID ('{' content=STRING '}')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
+		//    name=ID ('{' content=STRING '}')? (',' 'assumptions' '{' assumptions += [Assumption] (',' assumptions += [Assumption])* '}' ',')?  '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ('{' content=STRING '}')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
+		//name=ID ('{' content=STRING '}')? (',' 'assumptions' '{' assumptions += [Assumption] (',' assumptions += [Assumption])* '}' ',')?  '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -232,23 +250,65 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 		
+		//(',' 'assumptions' '{' assumptions += [Assumption] (',' assumptions += [Assumption])* '}' ',')?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//','
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		
+		//'assumptions'
+		public Keyword getAssumptionsKeyword_2_1() { return cAssumptionsKeyword_2_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_2() { return cLeftCurlyBracketKeyword_2_2; }
+		
+		//assumptions += [Assumption]
+		public Assignment getAssumptionsAssignment_2_3() { return cAssumptionsAssignment_2_3; }
+		
+		//[Assumption]
+		public CrossReference getAssumptionsAssumptionCrossReference_2_3_0() { return cAssumptionsAssumptionCrossReference_2_3_0; }
+		
+		//ID
+		public RuleCall getAssumptionsAssumptionIDTerminalRuleCall_2_3_0_1() { return cAssumptionsAssumptionIDTerminalRuleCall_2_3_0_1; }
+		
+		//(',' assumptions += [Assumption])*
+		public Group getGroup_2_4() { return cGroup_2_4; }
+		
+		//','
+		public Keyword getCommaKeyword_2_4_0() { return cCommaKeyword_2_4_0; }
+		
+		//assumptions += [Assumption]
+		public Assignment getAssumptionsAssignment_2_4_1() { return cAssumptionsAssignment_2_4_1; }
+		
+		//[Assumption]
+		public CrossReference getAssumptionsAssumptionCrossReference_2_4_1_0() { return cAssumptionsAssumptionCrossReference_2_4_1_0; }
+		
+		//ID
+		public RuleCall getAssumptionsAssumptionIDTerminalRuleCall_2_4_1_0_1() { return cAssumptionsAssumptionIDTerminalRuleCall_2_4_1_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_5() { return cRightCurlyBracketKeyword_2_5; }
+		
+		//','
+		public Keyword getCommaKeyword_2_6() { return cCommaKeyword_2_6; }
+		
 		//'<'
-		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
+		public Keyword getLessThanSignKeyword_3() { return cLessThanSignKeyword_3; }
 		
 		//'incorporates'
-		public Keyword getIncorporatesKeyword_3() { return cIncorporatesKeyword_3; }
+		public Keyword getIncorporatesKeyword_4() { return cIncorporatesKeyword_4; }
 		
 		//'mechanism'
-		public Keyword getMechanismKeyword_4() { return cMechanismKeyword_4; }
+		public Keyword getMechanismKeyword_5() { return cMechanismKeyword_5; }
 		
 		//mechanism=STRING
-		public Assignment getMechanismAssignment_5() { return cMechanismAssignment_5; }
+		public Assignment getMechanismAssignment_6() { return cMechanismAssignment_6; }
 		
 		//STRING
-		public RuleCall getMechanismSTRINGTerminalRuleCall_5_0() { return cMechanismSTRINGTerminalRuleCall_5_0; }
+		public RuleCall getMechanismSTRINGTerminalRuleCall_6_0() { return cMechanismSTRINGTerminalRuleCall_6_0; }
 		
 		//'>'
-		public Keyword getGreaterThanSignKeyword_6() { return cGreaterThanSignKeyword_6; }
+		public Keyword getGreaterThanSignKeyword_7() { return cGreaterThanSignKeyword_7; }
 	}
 	public class RequirementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.Requirement");
@@ -1194,17 +1254,30 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cExperimentAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cExperimentExperimentParserRuleCall_4_0 = (RuleCall)cExperimentAssignment_4.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cRequirementAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cRequirementRequirementCrossReference_6_0 = (CrossReference)cRequirementAssignment_6.eContents().get(0);
-		private final RuleCall cRequirementRequirementIDTerminalRuleCall_6_0_1 = (RuleCall)cRequirementRequirementCrossReference_6_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cAssumptionsKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cAssumptionsAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final CrossReference cAssumptionsAssumptionCrossReference_5_3_0 = (CrossReference)cAssumptionsAssignment_5_3.eContents().get(0);
+		private final RuleCall cAssumptionsAssumptionIDTerminalRuleCall_5_3_0_1 = (RuleCall)cAssumptionsAssumptionCrossReference_5_3_0.eContents().get(1);
+		private final Group cGroup_5_4 = (Group)cGroup_5.eContents().get(4);
+		private final Keyword cCommaKeyword_5_4_0 = (Keyword)cGroup_5_4.eContents().get(0);
+		private final Assignment cAssumptionsAssignment_5_4_1 = (Assignment)cGroup_5_4.eContents().get(1);
+		private final CrossReference cAssumptionsAssumptionCrossReference_5_4_1_0 = (CrossReference)cAssumptionsAssignment_5_4_1.eContents().get(0);
+		private final RuleCall cAssumptionsAssumptionIDTerminalRuleCall_5_4_1_0_1 = (RuleCall)cAssumptionsAssumptionCrossReference_5_4_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_5_5 = (Keyword)cGroup_5.eContents().get(5);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cRequirementAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cRequirementRequirementCrossReference_7_0 = (CrossReference)cRequirementAssignment_7.eContents().get(0);
+		private final RuleCall cRequirementRequirementIDTerminalRuleCall_7_0_1 = (RuleCall)cRequirementRequirementCrossReference_7_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//ProposeExperiment:
-		//    'ProposeExperiment' '(' model=[Model] ',' experiment=Experiment ',' requirement=[Requirement] ')';
+		//    'ProposeExperiment' '(' model=[Model] ',' experiment=Experiment (',' 'assumptions' '{' assumptions += [Assumption] (',' assumptions += [Assumption])* '}')? ',' requirement=[Requirement] ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ProposeExperiment' '(' model=[Model] ',' experiment=Experiment ',' requirement=[Requirement] ')'
+		//'ProposeExperiment' '(' model=[Model] ',' experiment=Experiment (',' 'assumptions' '{' assumptions += [Assumption] (',' assumptions += [Assumption])* '}')? ',' requirement=[Requirement] ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'ProposeExperiment'
@@ -1231,20 +1304,59 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Experiment
 		public RuleCall getExperimentExperimentParserRuleCall_4_0() { return cExperimentExperimentParserRuleCall_4_0; }
 		
+		//(',' 'assumptions' '{' assumptions += [Assumption] (',' assumptions += [Assumption])* '}')?
+		public Group getGroup_5() { return cGroup_5; }
+		
 		//','
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//requirement=[Requirement]
-		public Assignment getRequirementAssignment_6() { return cRequirementAssignment_6; }
+		//'assumptions'
+		public Keyword getAssumptionsKeyword_5_1() { return cAssumptionsKeyword_5_1; }
 		
-		//[Requirement]
-		public CrossReference getRequirementRequirementCrossReference_6_0() { return cRequirementRequirementCrossReference_6_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_5_2() { return cLeftCurlyBracketKeyword_5_2; }
+		
+		//assumptions += [Assumption]
+		public Assignment getAssumptionsAssignment_5_3() { return cAssumptionsAssignment_5_3; }
+		
+		//[Assumption]
+		public CrossReference getAssumptionsAssumptionCrossReference_5_3_0() { return cAssumptionsAssumptionCrossReference_5_3_0; }
 		
 		//ID
-		public RuleCall getRequirementRequirementIDTerminalRuleCall_6_0_1() { return cRequirementRequirementIDTerminalRuleCall_6_0_1; }
+		public RuleCall getAssumptionsAssumptionIDTerminalRuleCall_5_3_0_1() { return cAssumptionsAssumptionIDTerminalRuleCall_5_3_0_1; }
+		
+		//(',' assumptions += [Assumption])*
+		public Group getGroup_5_4() { return cGroup_5_4; }
+		
+		//','
+		public Keyword getCommaKeyword_5_4_0() { return cCommaKeyword_5_4_0; }
+		
+		//assumptions += [Assumption]
+		public Assignment getAssumptionsAssignment_5_4_1() { return cAssumptionsAssignment_5_4_1; }
+		
+		//[Assumption]
+		public CrossReference getAssumptionsAssumptionCrossReference_5_4_1_0() { return cAssumptionsAssumptionCrossReference_5_4_1_0; }
+		
+		//ID
+		public RuleCall getAssumptionsAssumptionIDTerminalRuleCall_5_4_1_0_1() { return cAssumptionsAssumptionIDTerminalRuleCall_5_4_1_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5_5() { return cRightCurlyBracketKeyword_5_5; }
+		
+		//','
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+		
+		//requirement=[Requirement]
+		public Assignment getRequirementAssignment_7() { return cRequirementAssignment_7; }
+		
+		//[Requirement]
+		public CrossReference getRequirementRequirementCrossReference_7_0() { return cRequirementRequirementCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getRequirementRequirementIDTerminalRuleCall_7_0_1() { return cRequirementRequirementIDTerminalRuleCall_7_0_1; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
 	}
 	public class SupportExperimentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.SupportExperiment");
@@ -1340,58 +1452,6 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//')'
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
-	public class ProposeAssumptionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.ProposeAssumption");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cProposeAssumptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAssumptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAssumptionAssumptionParserRuleCall_2_0 = (RuleCall)cAssumptionAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cModelAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cModelModelCrossReference_4_0 = (CrossReference)cModelAssignment_4.eContents().get(0);
-		private final RuleCall cModelModelIDTerminalRuleCall_4_0_1 = (RuleCall)cModelModelCrossReference_4_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		////AttackTheory:
-		////    'AttackTheory' '(' theory=[Theory] ',' counterTheory=Theory ')';
-		////DefendExperiment:
-		////    'DefendExperiment' '(' experiment=[Experiment] ',' counterTheory=[Theory] ',' newTheory=Theory ')';
-		//ProposeAssumption:
-		//    'proposeAssumption' '(' assumption=Assumption ',' model=[Model] ')'
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'proposeAssumption' '(' assumption=Assumption ',' model=[Model] ')'
-		public Group getGroup() { return cGroup; }
-		
-		//'proposeAssumption'
-		public Keyword getProposeAssumptionKeyword_0() { return cProposeAssumptionKeyword_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//assumption=Assumption
-		public Assignment getAssumptionAssignment_2() { return cAssumptionAssignment_2; }
-		
-		//Assumption
-		public RuleCall getAssumptionAssumptionParserRuleCall_2_0() { return cAssumptionAssumptionParserRuleCall_2_0; }
-		
-		//','
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-		
-		//model=[Model]
-		public Assignment getModelAssignment_4() { return cModelAssignment_4; }
-		
-		//[Model]
-		public CrossReference getModelModelCrossReference_4_0() { return cModelModelCrossReference_4_0; }
-		
-		//ID
-		public RuleCall getModelModelIDTerminalRuleCall_4_0_1() { return cModelModelIDTerminalRuleCall_4_0_1; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
-	}
 	public class RetractExperimentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.RetractExperiment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1402,6 +1462,10 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cExperimentExperimentIDTerminalRuleCall_2_0_1 = (RuleCall)cExperimentExperimentCrossReference_2_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
+		////AttackTheory:
+		////    'AttackTheory' '(' theory=[Theory] ',' counterTheory=Theory ')';
+		////DefendExperiment:
+		////    'DefendExperiment' '(' experiment=[Experiment] ',' counterTheory=[Theory] ',' newTheory=Theory ')';
 		//RetractExperiment:
 		//    'RetractExperiment' '(' experiment=[Experiment] ')';
 		@Override public ParserRule getRule() { return rule; }
@@ -1426,6 +1490,86 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class ProposeAssumptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.ProposeAssumption");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProposeAssumptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAssumptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAssumptionAssumptionParserRuleCall_2_0 = (RuleCall)cAssumptionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//ProposeAssumption:
+		//    'proposeAssumption' '(' assumption=Assumption ')'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'proposeAssumption' '(' assumption=Assumption ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'proposeAssumption'
+		public Keyword getProposeAssumptionKeyword_0() { return cProposeAssumptionKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//assumption=Assumption
+		public Assignment getAssumptionAssignment_2() { return cAssumptionAssignment_2; }
+		
+		//Assumption
+		public RuleCall getAssumptionAssumptionParserRuleCall_2_0() { return cAssumptionAssumptionParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class SupportAssumptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.SupportAssumption");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSupportAssumptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAssumptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cAssumptionAssumptionCrossReference_2_0 = (CrossReference)cAssumptionAssignment_2.eContents().get(0);
+		private final RuleCall cAssumptionAssumptionIDTerminalRuleCall_2_0_1 = (RuleCall)cAssumptionAssumptionCrossReference_2_0.eContents().get(1);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTheoryAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTheoryTheoryParserRuleCall_4_0 = (RuleCall)cTheoryAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//SupportAssumption:
+		//    'supportAssumption' '(' assumption=[Assumption] ',' theory=Theory ')'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'supportAssumption' '(' assumption=[Assumption] ',' theory=Theory ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'supportAssumption'
+		public Keyword getSupportAssumptionKeyword_0() { return cSupportAssumptionKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//assumption=[Assumption]
+		public Assignment getAssumptionAssignment_2() { return cAssumptionAssignment_2; }
+		
+		//[Assumption]
+		public CrossReference getAssumptionAssumptionCrossReference_2_0() { return cAssumptionAssumptionCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getAssumptionAssumptionIDTerminalRuleCall_2_0_1() { return cAssumptionAssumptionIDTerminalRuleCall_2_0_1; }
+		
+		//','
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		
+		//theory=Theory
+		public Assignment getTheoryAssignment_4() { return cTheoryAssignment_4; }
+		
+		//Theory
+		public RuleCall getTheoryTheoryParserRuleCall_4_0() { return cTheoryTheoryParserRuleCall_4_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 	public class StudyDoneElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.modelspeak.AgentLang.StudyDone");
@@ -1522,8 +1666,9 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final ProposeExperimentElements pProposeExperiment;
 	private final SupportExperimentElements pSupportExperiment;
 	private final AttackExperimentElements pAttackExperiment;
-	private final ProposeAssumptionElements pProposeAssumption;
 	private final RetractExperimentElements pRetractExperiment;
+	private final ProposeAssumptionElements pProposeAssumption;
+	private final SupportAssumptionElements pSupportAssumption;
 	private final StudyDoneElements pStudyDone;
 	private final NotConvincedElements pNotConvinced;
 	
@@ -1565,8 +1710,9 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pProposeExperiment = new ProposeExperimentElements();
 		this.pSupportExperiment = new SupportExperimentElements();
 		this.pAttackExperiment = new AttackExperimentElements();
-		this.pProposeAssumption = new ProposeAssumptionElements();
 		this.pRetractExperiment = new RetractExperimentElements();
+		this.pProposeAssumption = new ProposeAssumptionElements();
+		this.pSupportAssumption = new SupportAssumptionElements();
 		this.pStudyDone = new StudyDoneElements();
 		this.pNotConvinced = new NotConvincedElements();
 	}
@@ -1613,7 +1759,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    ProposeRequirement | AttackRequirement | RedefineRequirement | RetractRequirement |
 	//    SupportRequirement | ProposeModel | SupportModel | ReplaceModel | CounterModel |
 	//    AttackModel | ReviseRequirement | ProposeExperiment | SupportExperiment |
-	//    AttackExperiment | RetractExperiment | StudyDone | NotConvinced| ProposeAssumption;
+	//    AttackExperiment | RetractExperiment | StudyDone | NotConvinced| ProposeAssumption| SupportAssumption;
 	public MoveElements getMoveAccess() {
 		return pMove;
 	}
@@ -1634,7 +1780,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Model:
-	//    name=ID ('{' content=STRING '}')? '<' 'incorporates' 'mechanism' mechanism=STRING '>'
+	//    name=ID ('{' content=STRING '}')? (',' 'assumptions' '{' assumptions += [Assumption] (',' assumptions += [Assumption])* '}' ',')?  '<' 'incorporates' 'mechanism' mechanism=STRING '>'
 	//;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -1875,7 +2021,7 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//ProposeExperiment:
-	//    'ProposeExperiment' '(' model=[Model] ',' experiment=Experiment ',' requirement=[Requirement] ')';
+	//    'ProposeExperiment' '(' model=[Model] ',' experiment=Experiment (',' 'assumptions' '{' assumptions += [Assumption] (',' assumptions += [Assumption])* '}')? ',' requirement=[Requirement] ')';
 	public ProposeExperimentElements getProposeExperimentAccess() {
 		return pProposeExperiment;
 	}
@@ -1908,8 +2054,18 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 	////    'AttackTheory' '(' theory=[Theory] ',' counterTheory=Theory ')';
 	////DefendExperiment:
 	////    'DefendExperiment' '(' experiment=[Experiment] ',' counterTheory=[Theory] ',' newTheory=Theory ')';
+	//RetractExperiment:
+	//    'RetractExperiment' '(' experiment=[Experiment] ')';
+	public RetractExperimentElements getRetractExperimentAccess() {
+		return pRetractExperiment;
+	}
+	
+	public ParserRule getRetractExperimentRule() {
+		return getRetractExperimentAccess().getRule();
+	}
+	
 	//ProposeAssumption:
-	//    'proposeAssumption' '(' assumption=Assumption ',' model=[Model] ')'
+	//    'proposeAssumption' '(' assumption=Assumption ')'
 	//;
 	public ProposeAssumptionElements getProposeAssumptionAccess() {
 		return pProposeAssumption;
@@ -1919,14 +2075,15 @@ public class AgentLangGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getProposeAssumptionAccess().getRule();
 	}
 	
-	//RetractExperiment:
-	//    'RetractExperiment' '(' experiment=[Experiment] ')';
-	public RetractExperimentElements getRetractExperimentAccess() {
-		return pRetractExperiment;
+	//SupportAssumption:
+	//    'supportAssumption' '(' assumption=[Assumption] ',' theory=Theory ')'
+	//;
+	public SupportAssumptionElements getSupportAssumptionAccess() {
+		return pSupportAssumption;
 	}
 	
-	public ParserRule getRetractExperimentRule() {
-		return getRetractExperimentAccess().getRule();
+	public ParserRule getSupportAssumptionRule() {
+		return getSupportAssumptionAccess().getRule();
 	}
 	
 	//StudyDone:

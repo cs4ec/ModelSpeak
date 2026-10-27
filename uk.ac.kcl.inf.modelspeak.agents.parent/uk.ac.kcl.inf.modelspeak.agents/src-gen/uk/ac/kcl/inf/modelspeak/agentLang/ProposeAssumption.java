@@ -14,7 +14,6 @@ package uk.ac.kcl.inf.modelspeak.agentLang;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption#getAssumption <em>Assumption</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage#getProposeAssumption()
@@ -44,27 +43,5 @@ public interface ProposeAssumption extends Move
    * @generated
    */
   void setAssumption(Assumption value);
-
-  /**
-   * Returns the value of the '<em><b>Model</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Model</em>' reference.
-   * @see #setModel(Model)
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage#getProposeAssumption_Model()
-   * @model
-   * @generated
-   */
-  Model getModel();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption#getModel <em>Model</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Model</em>' reference.
-   * @see #getModel()
-   * @generated
-   */
-  void setModel(Model value);
 
 } // ProposeAssumption

@@ -1,0 +1,75 @@
+{
+  "ArgumentElements": [
+    {
+      "type": "SimulationMechanismWarrant",
+      "content": "id: 26, outputDataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, explainedEffect: LRP6 receptor internalisation, generatingRequirement: r1",
+      "id": "element_0"
+    },
+    {
+      "type": "StandardSimulationWarrant",
+      "content": "id: 27",
+      "id": "element_1"
+    },
+    {
+      "type": "LiteratureEvidenceForDataAndEffect",
+      "content": "id: 28, reference: [Yamamoto et al. (2006)], observedDataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, describedEffect: LRP6 receptor internalisation",
+      "id": "element_2"
+    },
+    {
+      "type": "LiteratureEvidenceForDataAndEffect",
+      "content": "id: 29, reference: [Khan et al. (2007)], observedDataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, describedEffect: LRP6 receptor internalisation",
+      "id": "element_3"
+    },
+    {
+      "type": "LiteratureEvidenceForDataAndEffect",
+      "content": "id: 30, reference: [Liu et al. (2014)], observedDataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, describedEffect: LRP6 receptor internalisation",
+      "id": "element_4"
+    },
+    {
+      "type": "MechanismExplainsEffect",
+      "content": "id: 31, mechanism: Basic internalization mechanism of WNT/LRP6, explainedEffect: LRP6 receptor internalisation",
+      "id": "element_5"
+    },
+    {
+      "type": "ModelMatchesDataOverTime",
+      "content": "id: 32, model: m1, dataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, mechanism: Basic internalization mechanism of WNT/LRP6",
+      "id": "element_6"
+    },
+    {
+      "type": "ExperimentResults",
+      "content": "id: 33, experimentName: s1, results: Simulation experiment in SESSL: parameter scan of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m.",
+      "id": "element_7"
+    }
+  ],
+  "ArgumentElementRelations": [
+    {
+      "type": "support",
+      "claim": "element_0",
+      "evidence": "element_2",
+      "warrant": "element_1"
+    },
+    {
+      "type": "support",
+      "claim": "element_0",
+      "evidence": "element_3",
+      "warrant": "element_1"
+    },
+    {
+      "type": "support",
+      "claim": "element_0",
+      "evidence": "element_4",
+      "warrant": "element_1"
+    },
+    {
+      "type": "support",
+      "claim": "element_5",
+      "evidence": "element_6",
+      "warrant": "element_0"
+    },
+    {
+      "type": "attack",
+      "claim": "element_6",
+      "evidence": "element_7"
+    }
+  ]
+}

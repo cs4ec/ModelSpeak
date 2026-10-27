@@ -17,6 +17,7 @@
     <genClasses ecoreClass="AgentLang.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//Model/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//Model/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AgentLang.ecore#//Model/assumptions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AgentLang.ecore#//Model/mechanism"/>
     </genClasses>
     <genClasses ecoreClass="AgentLang.ecore#//Requirement">
@@ -101,6 +102,7 @@
     <genClasses ecoreClass="AgentLang.ecore#//ProposeExperiment">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AgentLang.ecore#//ProposeExperiment/model"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AgentLang.ecore#//ProposeExperiment/experiment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AgentLang.ecore#//ProposeExperiment/assumptions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AgentLang.ecore#//ProposeExperiment/requirement"/>
     </genClasses>
     <genClasses ecoreClass="AgentLang.ecore#//SupportExperiment">
@@ -111,12 +113,15 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AgentLang.ecore#//AttackExperiment/experiment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AgentLang.ecore#//AttackExperiment/theory"/>
     </genClasses>
-    <genClasses ecoreClass="AgentLang.ecore#//ProposeAssumption">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AgentLang.ecore#//ProposeAssumption/assumption"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AgentLang.ecore#//ProposeAssumption/model"/>
-    </genClasses>
     <genClasses ecoreClass="AgentLang.ecore#//RetractExperiment">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AgentLang.ecore#//RetractExperiment/experiment"/>
+    </genClasses>
+    <genClasses ecoreClass="AgentLang.ecore#//ProposeAssumption">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AgentLang.ecore#//ProposeAssumption/assumption"/>
+    </genClasses>
+    <genClasses ecoreClass="AgentLang.ecore#//SupportAssumption">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AgentLang.ecore#//SupportAssumption/assumption"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AgentLang.ecore#//SupportAssumption/theory"/>
     </genClasses>
     <genClasses ecoreClass="AgentLang.ecore#//StudyDone"/>
     <genClasses ecoreClass="AgentLang.ecore#//NotConvinced">

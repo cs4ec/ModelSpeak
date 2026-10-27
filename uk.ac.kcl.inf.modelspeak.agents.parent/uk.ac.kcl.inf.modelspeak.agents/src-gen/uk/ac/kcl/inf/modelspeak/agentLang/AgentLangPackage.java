@@ -170,13 +170,22 @@ public interface AgentLangPackage extends EPackage
   int MODEL__CONTENT = 1;
 
   /**
+   * The feature id for the '<em><b>Assumptions</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__ASSUMPTIONS = 2;
+
+  /**
    * The feature id for the '<em><b>Mechanism</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__MECHANISM = 2;
+  int MODEL__MECHANISM = 3;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -185,7 +194,7 @@ public interface AgentLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 3;
+  int MODEL_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RequirementImpl <em>Requirement</em>}' class.
@@ -1002,13 +1011,22 @@ public interface AgentLangPackage extends EPackage
   int PROPOSE_EXPERIMENT__EXPERIMENT = MOVE_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Assumptions</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPOSE_EXPERIMENT__ASSUMPTIONS = MOVE_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Requirement</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPOSE_EXPERIMENT__REQUIREMENT = MOVE_FEATURE_COUNT + 2;
+  int PROPOSE_EXPERIMENT__REQUIREMENT = MOVE_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Propose Experiment</em>' class.
@@ -1017,7 +1035,7 @@ public interface AgentLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROPOSE_EXPERIMENT_FEATURE_COUNT = MOVE_FEATURE_COUNT + 3;
+  int PROPOSE_EXPERIMENT_FEATURE_COUNT = MOVE_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.SupportExperimentImpl <em>Support Experiment</em>}' class.
@@ -1094,43 +1112,6 @@ public interface AgentLangPackage extends EPackage
   int ATTACK_EXPERIMENT_FEATURE_COUNT = MOVE_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeAssumptionImpl <em>Propose Assumption</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeAssumptionImpl
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeAssumption()
-   * @generated
-   */
-  int PROPOSE_ASSUMPTION = 28;
-
-  /**
-   * The feature id for the '<em><b>Assumption</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPOSE_ASSUMPTION__ASSUMPTION = MOVE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Model</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPOSE_ASSUMPTION__MODEL = MOVE_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Propose Assumption</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPOSE_ASSUMPTION_FEATURE_COUNT = MOVE_FEATURE_COUNT + 2;
-
-  /**
    * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RetractExperimentImpl <em>Retract Experiment</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1138,7 +1119,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRetractExperiment()
    * @generated
    */
-  int RETRACT_EXPERIMENT = 29;
+  int RETRACT_EXPERIMENT = 28;
 
   /**
    * The feature id for the '<em><b>Experiment</b></em>' reference.
@@ -1159,6 +1140,71 @@ public interface AgentLangPackage extends EPackage
   int RETRACT_EXPERIMENT_FEATURE_COUNT = MOVE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeAssumptionImpl <em>Propose Assumption</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeAssumptionImpl
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getProposeAssumption()
+   * @generated
+   */
+  int PROPOSE_ASSUMPTION = 29;
+
+  /**
+   * The feature id for the '<em><b>Assumption</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPOSE_ASSUMPTION__ASSUMPTION = MOVE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Propose Assumption</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPOSE_ASSUMPTION_FEATURE_COUNT = MOVE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.SupportAssumptionImpl <em>Support Assumption</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.SupportAssumptionImpl
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getSupportAssumption()
+   * @generated
+   */
+  int SUPPORT_ASSUMPTION = 30;
+
+  /**
+   * The feature id for the '<em><b>Assumption</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUPPORT_ASSUMPTION__ASSUMPTION = MOVE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Theory</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUPPORT_ASSUMPTION__THEORY = MOVE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Support Assumption</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUPPORT_ASSUMPTION_FEATURE_COUNT = MOVE_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.StudyDoneImpl <em>Study Done</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1166,7 +1212,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getStudyDone()
    * @generated
    */
-  int STUDY_DONE = 30;
+  int STUDY_DONE = 31;
 
   /**
    * The number of structural features of the '<em>Study Done</em>' class.
@@ -1185,7 +1231,7 @@ public interface AgentLangPackage extends EPackage
    * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getNotConvinced()
    * @generated
    */
-  int NOT_CONVINCED = 31;
+  int NOT_CONVINCED = 32;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' reference.
@@ -1300,6 +1346,17 @@ public interface AgentLangPackage extends EPackage
    * @generated
    */
   EAttribute getModel_Content();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.inf.modelspeak.agentLang.Model#getAssumptions <em>Assumptions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Assumptions</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.Model#getAssumptions()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Assumptions();
 
   /**
    * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.agentLang.Model#getMechanism <em>Mechanism</em>}'.
@@ -1973,6 +2030,17 @@ public interface AgentLangPackage extends EPackage
   EReference getProposeExperiment_Experiment();
 
   /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment#getAssumptions <em>Assumptions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Assumptions</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment#getAssumptions()
+   * @see #getProposeExperiment()
+   * @generated
+   */
+  EReference getProposeExperiment_Assumptions();
+
+  /**
    * Returns the meta object for the reference '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment#getRequirement <em>Requirement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2048,6 +2116,27 @@ public interface AgentLangPackage extends EPackage
   EReference getAttackExperiment_Theory();
 
   /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment <em>Retract Experiment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Retract Experiment</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment
+   * @generated
+   */
+  EClass getRetractExperiment();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment#getExperiment <em>Experiment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Experiment</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment#getExperiment()
+   * @see #getRetractExperiment()
+   * @generated
+   */
+  EReference getRetractExperiment_Experiment();
+
+  /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption <em>Propose Assumption</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2069,36 +2158,36 @@ public interface AgentLangPackage extends EPackage
   EReference getProposeAssumption_Assumption();
 
   /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption#getModel <em>Model</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption <em>Support Assumption</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Model</em>'.
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption#getModel()
-   * @see #getProposeAssumption()
+   * @return the meta object for class '<em>Support Assumption</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption
    * @generated
    */
-  EReference getProposeAssumption_Model();
+  EClass getSupportAssumption();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment <em>Retract Experiment</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption#getAssumption <em>Assumption</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Retract Experiment</em>'.
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment
+   * @return the meta object for the reference '<em>Assumption</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption#getAssumption()
+   * @see #getSupportAssumption()
    * @generated
    */
-  EClass getRetractExperiment();
+  EReference getSupportAssumption_Assumption();
 
   /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment#getExperiment <em>Experiment</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption#getTheory <em>Theory</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Experiment</em>'.
-   * @see uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment#getExperiment()
-   * @see #getRetractExperiment()
+   * @return the meta object for the containment reference '<em>Theory</em>'.
+   * @see uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption#getTheory()
+   * @see #getSupportAssumption()
    * @generated
    */
-  EReference getRetractExperiment_Experiment();
+  EReference getSupportAssumption_Theory();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.agentLang.StudyDone <em>Study Done</em>}'.
@@ -2233,6 +2322,14 @@ public interface AgentLangPackage extends EPackage
      * @generated
      */
     EAttribute MODEL__CONTENT = eINSTANCE.getModel_Content();
+
+    /**
+     * The meta object literal for the '<em><b>Assumptions</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__ASSUMPTIONS = eINSTANCE.getModel_Assumptions();
 
     /**
      * The meta object literal for the '<em><b>Mechanism</b></em>' attribute feature.
@@ -2783,6 +2880,14 @@ public interface AgentLangPackage extends EPackage
     EReference PROPOSE_EXPERIMENT__EXPERIMENT = eINSTANCE.getProposeExperiment_Experiment();
 
     /**
+     * The meta object literal for the '<em><b>Assumptions</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROPOSE_EXPERIMENT__ASSUMPTIONS = eINSTANCE.getProposeExperiment_Assumptions();
+
+    /**
      * The meta object literal for the '<em><b>Requirement</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2843,6 +2948,24 @@ public interface AgentLangPackage extends EPackage
     EReference ATTACK_EXPERIMENT__THEORY = eINSTANCE.getAttackExperiment_Theory();
 
     /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RetractExperimentImpl <em>Retract Experiment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.RetractExperimentImpl
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRetractExperiment()
+     * @generated
+     */
+    EClass RETRACT_EXPERIMENT = eINSTANCE.getRetractExperiment();
+
+    /**
+     * The meta object literal for the '<em><b>Experiment</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RETRACT_EXPERIMENT__EXPERIMENT = eINSTANCE.getRetractExperiment_Experiment();
+
+    /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ProposeAssumptionImpl <em>Propose Assumption</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2861,30 +2984,30 @@ public interface AgentLangPackage extends EPackage
     EReference PROPOSE_ASSUMPTION__ASSUMPTION = eINSTANCE.getProposeAssumption_Assumption();
 
     /**
-     * The meta object literal for the '<em><b>Model</b></em>' reference feature.
+     * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.SupportAssumptionImpl <em>Support Assumption</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.SupportAssumptionImpl
+     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getSupportAssumption()
      * @generated
      */
-    EReference PROPOSE_ASSUMPTION__MODEL = eINSTANCE.getProposeAssumption_Model();
+    EClass SUPPORT_ASSUMPTION = eINSTANCE.getSupportAssumption();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.RetractExperimentImpl <em>Retract Experiment</em>}' class.
+     * The meta object literal for the '<em><b>Assumption</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.RetractExperimentImpl
-     * @see uk.ac.kcl.inf.modelspeak.agentLang.impl.AgentLangPackageImpl#getRetractExperiment()
      * @generated
      */
-    EClass RETRACT_EXPERIMENT = eINSTANCE.getRetractExperiment();
+    EReference SUPPORT_ASSUMPTION__ASSUMPTION = eINSTANCE.getSupportAssumption_Assumption();
 
     /**
-     * The meta object literal for the '<em><b>Experiment</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Theory</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RETRACT_EXPERIMENT__EXPERIMENT = eINSTANCE.getRetractExperiment_Experiment();
+    EReference SUPPORT_ASSUMPTION__THEORY = eINSTANCE.getSupportAssumption_Theory();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.StudyDoneImpl <em>Study Done</em>}' class.

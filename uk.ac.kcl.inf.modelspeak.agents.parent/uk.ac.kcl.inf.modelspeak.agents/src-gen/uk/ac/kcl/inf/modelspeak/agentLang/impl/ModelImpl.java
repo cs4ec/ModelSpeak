@@ -3,14 +3,21 @@
  */
 package uk.ac.kcl.inf.modelspeak.agentLang.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import uk.ac.kcl.inf.modelspeak.agentLang.AgentLangPackage;
+import uk.ac.kcl.inf.modelspeak.agentLang.Assumption;
 import uk.ac.kcl.inf.modelspeak.agentLang.Model;
 
 /**
@@ -23,6 +30,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Model;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ModelImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ModelImpl#getAssumptions <em>Assumptions</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.agentLang.impl.ModelImpl#getMechanism <em>Mechanism</em>}</li>
  * </ul>
  *
@@ -69,6 +77,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected String content = CONTENT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAssumptions() <em>Assumptions</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssumptions()
+   * @generated
+   * @ordered
+   */
+  protected EList<Assumption> assumptions;
 
   /**
    * The default value of the '{@link #getMechanism() <em>Mechanism</em>}' attribute.
@@ -167,6 +185,21 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public EList<Assumption> getAssumptions()
+  {
+    if (assumptions == null)
+    {
+      assumptions = new EObjectResolvingEList<Assumption>(Assumption.class, this, AgentLangPackage.MODEL__ASSUMPTIONS);
+    }
+    return assumptions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getMechanism()
   {
     return mechanism;
@@ -200,6 +233,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getName();
       case AgentLangPackage.MODEL__CONTENT:
         return getContent();
+      case AgentLangPackage.MODEL__ASSUMPTIONS:
+        return getAssumptions();
       case AgentLangPackage.MODEL__MECHANISM:
         return getMechanism();
     }
@@ -211,6 +246,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -221,6 +257,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case AgentLangPackage.MODEL__CONTENT:
         setContent((String)newValue);
+        return;
+      case AgentLangPackage.MODEL__ASSUMPTIONS:
+        getAssumptions().clear();
+        getAssumptions().addAll((Collection<? extends Assumption>)newValue);
         return;
       case AgentLangPackage.MODEL__MECHANISM:
         setMechanism((String)newValue);
@@ -245,6 +285,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case AgentLangPackage.MODEL__CONTENT:
         setContent(CONTENT_EDEFAULT);
         return;
+      case AgentLangPackage.MODEL__ASSUMPTIONS:
+        getAssumptions().clear();
+        return;
       case AgentLangPackage.MODEL__MECHANISM:
         setMechanism(MECHANISM_EDEFAULT);
         return;
@@ -266,6 +309,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AgentLangPackage.MODEL__CONTENT:
         return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+      case AgentLangPackage.MODEL__ASSUMPTIONS:
+        return assumptions != null && !assumptions.isEmpty();
       case AgentLangPackage.MODEL__MECHANISM:
         return MECHANISM_EDEFAULT == null ? mechanism != null : !MECHANISM_EDEFAULT.equals(mechanism);
     }

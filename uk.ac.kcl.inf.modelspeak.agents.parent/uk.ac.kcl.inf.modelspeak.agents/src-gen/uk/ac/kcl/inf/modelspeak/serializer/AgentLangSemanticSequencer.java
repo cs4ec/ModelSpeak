@@ -41,6 +41,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.RetractExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.RetractRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.ReviseRequirement;
 import uk.ac.kcl.inf.modelspeak.agentLang.StudyDone;
+import uk.ac.kcl.inf.modelspeak.agentLang.SupportAssumption;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportExperiment;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportModel;
 import uk.ac.kcl.inf.modelspeak.agentLang.SupportRequirement;
@@ -137,6 +138,9 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case AgentLangPackage.STUDY_DONE:
 				sequence_StudyDone(context, (StudyDone) semanticObject); 
+				return; 
+			case AgentLangPackage.SUPPORT_ASSUMPTION:
+				sequence_SupportAssumption(context, (SupportAssumption) semanticObject); 
 				return; 
 			case AgentLangPackage.SUPPORT_EXPERIMENT:
 				sequence_SupportExperiment(context, (SupportExperiment) semanticObject); 
@@ -394,7 +398,7 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (name=ID content=STRING? mechanism=STRING)
+	 *     (name=ID content=STRING? (assumptions+=[Assumption|ID] assumptions+=[Assumption|ID]*)? mechanism=STRING)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -445,19 +449,16 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ProposeAssumption returns ProposeAssumption
 	 *
 	 * Constraint:
-	 *     (assumption=Assumption model=[Model|ID])
+	 *     assumption=Assumption
 	 * </pre>
 	 */
 	protected void sequence_ProposeAssumption(ISerializationContext context, ProposeAssumption semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.PROPOSE_ASSUMPTION__ASSUMPTION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.PROPOSE_ASSUMPTION__ASSUMPTION));
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.PROPOSE_ASSUMPTION__MODEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.PROPOSE_ASSUMPTION__MODEL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getProposeAssumptionAccess().getAssumptionAssumptionParserRuleCall_2_0(), semanticObject.getAssumption());
-		feeder.accept(grammarAccess.getProposeAssumptionAccess().getModelModelIDTerminalRuleCall_4_0_1(), semanticObject.eGet(AgentLangPackage.Literals.PROPOSE_ASSUMPTION__MODEL, false));
 		feeder.finish();
 	}
 	
@@ -469,23 +470,11 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ProposeExperiment returns ProposeExperiment
 	 *
 	 * Constraint:
-	 *     (model=[Model|ID] experiment=Experiment requirement=[Requirement|ID])
+	 *     (model=[Model|ID] experiment=Experiment (assumptions+=[Assumption|ID] assumptions+=[Assumption|ID]*)? requirement=[Requirement|ID])
 	 * </pre>
 	 */
 	protected void sequence_ProposeExperiment(ISerializationContext context, ProposeExperiment semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.PROPOSE_EXPERIMENT__MODEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.PROPOSE_EXPERIMENT__MODEL));
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.PROPOSE_EXPERIMENT__EXPERIMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.PROPOSE_EXPERIMENT__EXPERIMENT));
-			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.PROPOSE_EXPERIMENT__REQUIREMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.PROPOSE_EXPERIMENT__REQUIREMENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getProposeExperimentAccess().getModelModelIDTerminalRuleCall_2_0_1(), semanticObject.eGet(AgentLangPackage.Literals.PROPOSE_EXPERIMENT__MODEL, false));
-		feeder.accept(grammarAccess.getProposeExperimentAccess().getExperimentExperimentParserRuleCall_4_0(), semanticObject.getExperiment());
-		feeder.accept(grammarAccess.getProposeExperimentAccess().getRequirementRequirementIDTerminalRuleCall_6_0_1(), semanticObject.eGet(AgentLangPackage.Literals.PROPOSE_EXPERIMENT__REQUIREMENT, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -727,6 +716,30 @@ public class AgentLangSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 */
 	protected void sequence_StudyDone(ISerializationContext context, StudyDone semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Move returns SupportAssumption
+	 *     SupportAssumption returns SupportAssumption
+	 *
+	 * Constraint:
+	 *     (assumption=[Assumption|ID] theory=Theory)
+	 * </pre>
+	 */
+	protected void sequence_SupportAssumption(ISerializationContext context, SupportAssumption semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.SUPPORT_ASSUMPTION__ASSUMPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.SUPPORT_ASSUMPTION__ASSUMPTION));
+			if (transientValues.isValueTransient(semanticObject, AgentLangPackage.Literals.SUPPORT_ASSUMPTION__THEORY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgentLangPackage.Literals.SUPPORT_ASSUMPTION__THEORY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSupportAssumptionAccess().getAssumptionAssumptionIDTerminalRuleCall_2_0_1(), semanticObject.eGet(AgentLangPackage.Literals.SUPPORT_ASSUMPTION__ASSUMPTION, false));
+		feeder.accept(grammarAccess.getSupportAssumptionAccess().getTheoryTheoryParserRuleCall_4_0(), semanticObject.getTheory());
+		feeder.finish();
 	}
 	
 	
