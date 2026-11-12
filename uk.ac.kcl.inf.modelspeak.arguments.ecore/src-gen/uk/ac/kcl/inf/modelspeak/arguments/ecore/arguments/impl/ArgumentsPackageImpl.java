@@ -19,6 +19,7 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ExperimentResults;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidence;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.LiteratureEvidenceForDataAndEffect;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.MechanismExplainsEffect;
+import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelInputDataValid;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelIsValidClaim;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelMatchesDataOverTime;
@@ -130,6 +131,13 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	private EClass modelInputDataValidEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelAssumptionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -283,16 +291,6 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	@Override
 	public EReference getArgumentElementRelation_Claim() {
 		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getArgumentElementRelation_Assumptions() {
-		return (EReference) argumentElementRelationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -561,6 +559,36 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 	 * @generated
 	 */
 	@Override
+	public EClass getModelAssumption() {
+		return modelAssumptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getModelAssumption_Assumption() {
+		return (EAttribute) modelAssumptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getModelAssumption_AssumptionText() {
+		return (EAttribute) modelAssumptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ArgumentsFactory getArgumentsFactory() {
 		return (ArgumentsFactory) getEFactoryInstance();
 	}
@@ -596,7 +624,6 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__EVIDENCE);
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__WARRANT);
 		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__CLAIM);
-		createEReference(argumentElementRelationEClass, ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS);
 
 		simulationMechanismWarrantEClass = createEClass(SIMULATION_MECHANISM_WARRANT);
 		createEAttribute(simulationMechanismWarrantEClass, SIMULATION_MECHANISM_WARRANT__OUTPUT_DATA_OVER_TIME);
@@ -636,6 +663,10 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 
 		modelInputDataValidEClass = createEClass(MODEL_INPUT_DATA_VALID);
 		createEAttribute(modelInputDataValidEClass, MODEL_INPUT_DATA_VALID__DATA_DESCRIPTION);
+
+		modelAssumptionEClass = createEClass(MODEL_ASSUMPTION);
+		createEAttribute(modelAssumptionEClass, MODEL_ASSUMPTION__ASSUMPTION);
+		createEAttribute(modelAssumptionEClass, MODEL_ASSUMPTION__ASSUMPTION_TEXT);
 	}
 
 	/**
@@ -678,6 +709,7 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		literatureEvidenceEClass.getESuperTypes().add(this.getArgumentElement());
 		modelIsValidClaimEClass.getESuperTypes().add(this.getArgumentElement());
 		modelInputDataValidEClass.getESuperTypes().add(this.getModelIsValidClaim());
+		modelAssumptionEClass.getESuperTypes().add(this.getArgumentElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(argumentElementEClass, ArgumentElement.class, "ArgumentElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -704,9 +736,6 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArgumentElementRelation_Claim(), this.getArgumentElement(), null, "claim", null, 1, 1,
 				ArgumentElementRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArgumentElementRelation_Assumptions(), this.getArgumentElement(), null, "assumptions", null,
-				0, -1, ArgumentElementRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(simulationMechanismWarrantEClass, SimulationMechanismWarrant.class, "SimulationMechanismWarrant",
@@ -784,6 +813,15 @@ public class ArgumentsPackageImpl extends EPackageImpl implements ArgumentsPacka
 		initEAttribute(getModelInputDataValid_DataDescription(), ecorePackage.getEString(), "dataDescription", null, 0,
 				1, ModelInputDataValid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelAssumptionEClass, ModelAssumption.class, "ModelAssumption", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModelAssumption_Assumption(), ecorePackage.getEString(), "assumption", null, 0, 1,
+				ModelAssumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelAssumption_AssumptionText(), ecorePackage.getEString(), "assumptionText", null, 0, 1,
+				ModelAssumption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

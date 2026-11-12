@@ -2,17 +2,12 @@
  */
 package uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl;
 
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation;
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
@@ -28,7 +23,6 @@ import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsPackage;
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentElementRelationImpl#getEvidence <em>Evidence</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentElementRelationImpl#getWarrant <em>Warrant</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentElementRelationImpl#getClaim <em>Claim</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentElementRelationImpl#getAssumptions <em>Assumptions</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,16 +58,6 @@ public abstract class ArgumentElementRelationImpl extends MinimalEObjectImpl.Con
 	 * @ordered
 	 */
 	protected ArgumentElement claim;
-
-	/**
-	 * The cached value of the '{@link #getAssumptions() <em>Assumptions</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssumptions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ArgumentElement> assumptions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,20 +210,6 @@ public abstract class ArgumentElementRelationImpl extends MinimalEObjectImpl.Con
 	 * @generated
 	 */
 	@Override
-	public EList<ArgumentElement> getAssumptions() {
-		if (assumptions == null) {
-			assumptions = new EObjectResolvingEList<ArgumentElement>(ArgumentElement.class, this,
-					ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS);
-		}
-		return assumptions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__EVIDENCE:
@@ -254,8 +224,6 @@ public abstract class ArgumentElementRelationImpl extends MinimalEObjectImpl.Con
 			if (resolve)
 				return getClaim();
 			return basicGetClaim();
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS:
-			return getAssumptions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -278,10 +246,6 @@ public abstract class ArgumentElementRelationImpl extends MinimalEObjectImpl.Con
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__CLAIM:
 			setClaim((ArgumentElement) newValue);
 			return;
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS:
-			getAssumptions().clear();
-			getAssumptions().addAll((Collection<? extends ArgumentElement>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -303,9 +267,6 @@ public abstract class ArgumentElementRelationImpl extends MinimalEObjectImpl.Con
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__CLAIM:
 			setClaim((ArgumentElement) null);
 			return;
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS:
-			getAssumptions().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -324,8 +285,6 @@ public abstract class ArgumentElementRelationImpl extends MinimalEObjectImpl.Con
 			return warrant != null;
 		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__CLAIM:
 			return claim != null;
-		case ArgumentsPackage.ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS:
-			return assumptions != null && !assumptions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

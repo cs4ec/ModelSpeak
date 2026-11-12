@@ -17,7 +17,7 @@
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.2" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.3" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
-  <relations xsi:type="arguments:Support" evidence="//@argumentElements.6" warrant="//@argumentElements.0" claim="//@argumentElements.5" assumptions="//@argumentElements.8"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.6" warrant="//@argumentElements.0" claim="//@argumentElements.8"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.7" claim="//@argumentElements.8"/>
   <relations xsi:type="arguments:Attack" evidence="//@argumentElements.9" claim="//@argumentElements.6"/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.11" warrant="//@argumentElements.0" claim="//@argumentElements.10"/>

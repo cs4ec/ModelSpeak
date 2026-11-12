@@ -39,6 +39,7 @@ import uk.ac.kcl.inf.modelspeak.agentLang.Theory
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentGraph
 import uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentsFactory
 import uk.ac.kcl.inf.modelspeak.agentLang.ProposeAssumption
+import uk.ac.kcl.inf.modelspeak.agentLang.ProposeExperiment
 
 /**
  * Generate the argument graph corresponding to the current agent dialogue state.
@@ -156,6 +157,8 @@ class ArgumentGraphGenerator {
 	
 	private dispatch def String renderMove(ProposeAssumption move) '''proposeAssumption(«renderAssumption(move.assumption)»)'''
 
+	private dispatch def String renderMove(ProposeExperiment move) '''ProposeExperiment(«move.model.name»,«renderExperiment(move.experiment)»'''
+	
 	private def String renderRequirement(Requirement requirement) '''«requirement.name»{«requirement.content»}<Models must replicate «jsonString(requirement.dataDescription)»>'''
 
 	private def String renderModel(Model model) '''«model.name»{«model.content»}<incorporates mechanism «jsonString(model.mechanism)»>'''
@@ -253,17 +256,22 @@ class ArgumentGraphGenerator {
 		// FIXME: Probably not actually correct. Should probably require that the data and effect are explicitly quoted again and then make the rule compare that these match the proposed warrant.
 		'supportRequirement'.execute(#['reqName' -> reqName, 'litRef' -> ref])
 	}
+	
+	private dispatch def updateArgumentGraph(ProposeAssumption move) {	}
 
 	// --------------- Model -----------------
 	private dispatch def updateArgumentGraph(ProposeModel move) {
 		'proposeModel'.execute(
 			#['reqName' -> move.requirement.name, 'modelName' -> move.model.name, 'mechanism' -> move.model.mechanism])
+			
+			move.model.assumptions.forEach[assumption| 
+			'addAssumptionToModel'.execute(#[
+            'modelName' -> move.model.name,
+            'assumptionName' -> assumption.name,
+            'assumptionText' -> assumption.content
+        ])]
 	}
 
-	private dispatch def updateArgumentGraph(ProposeAssumption move) {
-		'proposeAssumption'.execute(
-			#['assumptionName' -> move.assumption.name, 'assumptionText' -> move.assumption.content])
-	}
 
 	private dispatch def updateArgumentGraph(SupportModel move) {
 		move.theory.dispatchTheory([ t |
@@ -300,11 +308,12 @@ class ArgumentGraphGenerator {
 //	}
 //
 //	// --------------- Experiment -----------------
-//	private dispatch def updateArgumentGraph(ProposeExperiment move) {
-//		'proposeExperiment'.execute(
-//			#['modelName' -> move.model.name, 'requirementName' -> move.requirement.name,
-//				'experimentName' -> move.experiment.name, 'experimentContents' -> move.experiment.content])
-//	}
+	private dispatch def updateArgumentGraph(ProposeExperiment move) {
+		'ProposeExperiment'.execute(
+			#['modelName' -> move.model.name, 'requirementName' -> move.requirement.name,
+				'experimentName' -> move.experiment.name, 'experimentContents' -> move.experiment.content])
+	}  
+	
 //
 //	private dispatch def updateArgumentGraph(SupportExperiment move) {
 //		'supportExperiment'.execute(

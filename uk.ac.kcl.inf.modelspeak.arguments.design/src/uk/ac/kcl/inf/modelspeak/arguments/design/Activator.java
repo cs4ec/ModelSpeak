@@ -64,3 +64,7 @@ public class Activator extends AbstractUIPlugin {
 	return plugin;
     }
 }
+
+int a = 5
+
+int a = 6

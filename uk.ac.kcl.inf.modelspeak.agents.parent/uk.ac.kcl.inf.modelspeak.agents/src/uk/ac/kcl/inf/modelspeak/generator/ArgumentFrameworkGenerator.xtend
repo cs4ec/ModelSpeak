@@ -71,7 +71,7 @@ class ArgumentFrameworkGenerator {
 
 	private dispatch def void transformRelation(Attack a, AbstractArgumentFramework framework,
 		Map<ArgumentElement, AbstractArgument> trace) {
-		if ((a.warrant === null) && (a.assumptions.empty)) {
+		if (a.warrant === null) {
 			// We can get away with a simple and straightforward translation
 			val attack = framework.createAttack
 
@@ -90,9 +90,9 @@ class ArgumentFrameworkGenerator {
 				framework.createVirtualSupportBetween(trace, a.warrant, virtual)
 			}
 
-			a.assumptions.forEach [ ass |
-				framework.createVirtualSupportBetween(trace, ass, virtual)
-			]
+//			a.assumptions.forEach [ assumpt |
+//				framework.createVirtualSupportBetween(trace, assumpt, virtual)
+//			]
 		}
 	}
 
@@ -111,17 +111,17 @@ class ArgumentFrameworkGenerator {
 			framework.createVirtualSupportBetween(trace, s.warrant, s.claim)
 		}
 
-		if (!s.assumptions.empty) {
-			/*
-			 * If there are assumptions, then they must also be acceptable for the claim to be acceptable
-			 *  
-			 * Making this a separate chain of attacks ensures that all assumptions and both warrant and evidence 
-			 * must be acceptable for the claim to be acceptable. 
-			 */
-			s.assumptions.forEach [ a |
-				framework.createVirtualSupportBetween(trace, a, s.claim)
-			]
-		}
+//		if (!s.assumptions.empty) {
+//			/*
+//			 * If there are assumptions, then they must also be acceptable for the claim to be acceptable
+//			 *  
+//			 * Making this a separate chain of attacks ensures that all assumptions and both warrant and evidence 
+//			 * must be acceptable for the claim to be acceptable. 
+//			 */
+//			s.assumptions.forEach [ a |
+//				framework.createVirtualSupportBetween(trace, a, s.claim)
+//			]
+//		}
 	}
 
 	/**

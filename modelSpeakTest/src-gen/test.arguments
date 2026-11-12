@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="ASCII"?>
 <arguments:ArgumentGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arguments="http://www.example.org/arguments">
-  <argumentElements xsi:type="arguments:SimulationMechanismWarrant" id="16" outputDataOverTime="time data of LRP receptor internalisation" explainedEffect="LRP6 receptor internalisation" generatingRequirement="r1"/>
-  <argumentElements xsi:type="arguments:StandardSimulationWarrant" id="17"/>
-  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="18" reference="[Yamamoto et al. (2006)]" observedDataOverTime="time data of LRP receptor internalisation" describedEffect="LRP6 receptor internalisation"/>
-  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="19" mechanism="Simple internalisation mechanism" explainedEffect="LRP6 receptor internalisation"/>
-  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="20" model="m1" dataOverTime="time data of LRP receptor internalisation" mechanism="Simple internalisation mechanism"/>
-  <argumentElements xsi:type="arguments:ExperimentResults" id="21" experimentName="e1" results="Some data not matching time data of LRP receptor internalisation"/>
+  <argumentElements xsi:type="arguments:SimulationMechanismWarrant" id="41" outputDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" explainedEffect="LRP6 receptor internalisation" generatingRequirement="r1"/>
+  <argumentElements xsi:type="arguments:StandardSimulationWarrant" id="42"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="43" reference="[Yamamoto et al. (2006)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="44" reference="[Khan et al. (2007)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:LiteratureEvidenceForDataAndEffect" id="45" reference="[Liu et al. (2014)]" observedDataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" describedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="46" mechanism="Basic internalization mechanism of WNT/LRP6" explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="47" model="m1" dataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" mechanism="Basic internalization mechanism of WNT/LRP6"/>
+  <argumentElements xsi:type="arguments:ModelAssumption" id="48" assumption="a1" assumptionText="FZ is either implicitly part of the WNT/LRP6 complex or that WNT&#x2013;LRP6 interaction alone is sufficient for inducing LRP6 internalisation"/>
+  <argumentElements xsi:type="arguments:ModelAssumption" id="49" assumption="a2" assumptionText="not explicitly consider the presence of FZ for LRP6 receptor internalization in the context of canonical WNT signaling"/>
+  <argumentElements xsi:type="arguments:ModelAssumption" id="50" assumption="a3" assumptionText="the impact of FZ on LRP6 internalization dynamics can be neglected, as both receptors are activated through WNT3a and internalized in a similar way and with similar dynamic"/>
+  <argumentElements xsi:type="arguments:ExperimentResults" id="51" experimentName="s1" results="Simulation experiment in SESSL: parameter scans of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m."/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="52" mechanism="The structural organization of the membrane into lo and ld domains and the corresponding receptor distribution" explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="53" model="m2" dataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" mechanism="The structural organization of the membrane into lo and ld domains and the corresponding receptor distribution"/>
+  <argumentElements xsi:type="arguments:ExperimentResults" id="54" experimentName="s2" results="Simulation experiment: setup CIE inside/outside/inside and outside, as well as CME and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. For CME and CIE inside, CIE outside and CIE in/outside results show deviations of the mean+/-s.e.m."/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="55" mechanism="Coupling compartment-based internalization model with intracellular WNT model" explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="56" model="m3" dataOverTime="the quantitative measurements of the cell surface receptor LRP6 over time" mechanism="Coupling compartment-based internalization model with intracellular WNT model"/>
+  <argumentElements xsi:type="arguments:SimulationMechanismWarrant" id="57" outputDataOverTime="quantitative measurements for Dkk1-induced endocytosis" explainedEffect="LRP6 receptor internalisation" generatingRequirement="r2"/>
+  <argumentElements xsi:type="arguments:MechanismExplainsEffect" id="58" mechanism="Same underlying model as M3 but different endocytosis process related to the canonical WNT signaling pathway fits data over time " explainedEffect="LRP6 receptor internalisation"/>
+  <argumentElements xsi:type="arguments:ModelMatchesDataOverTime" id="59" model="m4" dataOverTime="quantitative measurements for Dkk1-induced endocytosis" mechanism="Same underlying model as M3 but different endocytosis process related to the canonical WNT signaling pathway fits data over time "/>
   <relations xsi:type="arguments:Support" evidence="//@argumentElements.2" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
-  <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.0" claim="//@argumentElements.3"/>
-  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.5" claim="//@argumentElements.4"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.3" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.4" warrant="//@argumentElements.1" claim="//@argumentElements.0"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.6" warrant="//@argumentElements.0" claim="//@argumentElements.5"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.7" warrant="//@argumentElements.0" claim="//@argumentElements.6"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.8" warrant="//@argumentElements.0" claim="//@argumentElements.6"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.9" warrant="//@argumentElements.0" claim="//@argumentElements.6"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.10" claim="//@argumentElements.6"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.12" warrant="//@argumentElements.0" claim="//@argumentElements.11"/>
+  <relations xsi:type="arguments:Attack" evidence="//@argumentElements.13" claim="//@argumentElements.12"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.15" warrant="//@argumentElements.0" claim="//@argumentElements.14"/>
+  <relations xsi:type="arguments:Support" evidence="//@argumentElements.18" warrant="//@argumentElements.16" claim="//@argumentElements.17"/>
 </arguments:ArgumentGraph>

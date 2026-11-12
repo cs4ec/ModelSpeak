@@ -1,0 +1,171 @@
+{
+  "ArgumentElements": [
+    {
+      "type": "SimulationMechanismWarrant",
+      "content": "id: 41, outputDataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, explainedEffect: LRP6 receptor internalisation, generatingRequirement: r1",
+      "id": "element_0"
+    },
+    {
+      "type": "StandardSimulationWarrant",
+      "content": "id: 42",
+      "id": "element_1"
+    },
+    {
+      "type": "LiteratureEvidenceForDataAndEffect",
+      "content": "id: 43, reference: [Yamamoto et al. (2006)], observedDataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, describedEffect: LRP6 receptor internalisation",
+      "id": "element_2"
+    },
+    {
+      "type": "LiteratureEvidenceForDataAndEffect",
+      "content": "id: 44, reference: [Khan et al. (2007)], observedDataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, describedEffect: LRP6 receptor internalisation",
+      "id": "element_3"
+    },
+    {
+      "type": "LiteratureEvidenceForDataAndEffect",
+      "content": "id: 45, reference: [Liu et al. (2014)], observedDataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, describedEffect: LRP6 receptor internalisation",
+      "id": "element_4"
+    },
+    {
+      "type": "MechanismExplainsEffect",
+      "content": "id: 46, mechanism: Basic internalization mechanism of WNT/LRP6, explainedEffect: LRP6 receptor internalisation",
+      "id": "element_5"
+    },
+    {
+      "type": "ModelMatchesDataOverTime",
+      "content": "id: 47, model: m1, dataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, mechanism: Basic internalization mechanism of WNT/LRP6",
+      "id": "element_6"
+    },
+    {
+      "type": "ModelAssumption",
+      "content": "id: 48, assumption: a1, assumptionText: FZ is either implicitly part of the WNT/LRP6 complex or that WNT–LRP6 interaction alone is sufficient for inducing LRP6 internalisation",
+      "id": "element_7"
+    },
+    {
+      "type": "ModelAssumption",
+      "content": "id: 49, assumption: a2, assumptionText: not explicitly consider the presence of FZ for LRP6 receptor internalization in the context of canonical WNT signaling",
+      "id": "element_8"
+    },
+    {
+      "type": "ModelAssumption",
+      "content": "id: 50, assumption: a3, assumptionText: the impact of FZ on LRP6 internalization dynamics can be neglected, as both receptors are activated through WNT3a and internalized in a similar way and with similar dynamic",
+      "id": "element_9"
+    },
+    {
+      "type": "ExperimentResults",
+      "content": "id: 51, experimentName: s1, results: Simulation experiment in SESSL: parameter scans of ke and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. Both for CME and CIE, results show significant deviations of the mean+/-s.e.m.",
+      "id": "element_10"
+    },
+    {
+      "type": "MechanismExplainsEffect",
+      "content": "id: 52, mechanism: The structural organization of the membrane into lo and ld domains and the corresponding receptor distribution, explainedEffect: LRP6 receptor internalisation",
+      "id": "element_11"
+    },
+    {
+      "type": "ModelMatchesDataOverTime",
+      "content": "id: 53, model: m2, dataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, mechanism: The structural organization of the membrane into lo and ld domains and the corresponding receptor distribution",
+      "id": "element_12"
+    },
+    {
+      "type": "ExperimentResults",
+      "content": "id: 54, experimentName: s2, results: Simulation experiment: setup CIE inside/outside/inside and outside, as well as CME and comparison of time courses of LRP6 at membrane and in endosome to in vitro measurements. For CME and CIE inside, CIE outside and CIE in/outside results show deviations of the mean+/-s.e.m.",
+      "id": "element_13"
+    },
+    {
+      "type": "MechanismExplainsEffect",
+      "content": "id: 55, mechanism: Coupling compartment-based internalization model with intracellular WNT model, explainedEffect: LRP6 receptor internalisation",
+      "id": "element_14"
+    },
+    {
+      "type": "ModelMatchesDataOverTime",
+      "content": "id: 56, model: m3, dataOverTime: the quantitative measurements of the cell surface receptor LRP6 over time, mechanism: Coupling compartment-based internalization model with intracellular WNT model",
+      "id": "element_15"
+    },
+    {
+      "type": "SimulationMechanismWarrant",
+      "content": "id: 57, outputDataOverTime: quantitative measurements for Dkk1-induced endocytosis, explainedEffect: LRP6 receptor internalisation, generatingRequirement: r2",
+      "id": "element_16"
+    },
+    {
+      "type": "MechanismExplainsEffect",
+      "content": "id: 58, mechanism: Same underlying model as M3 but different endocytosis process related to the canonical WNT signaling pathway fits data over time , explainedEffect: LRP6 receptor internalisation",
+      "id": "element_17"
+    },
+    {
+      "type": "ModelMatchesDataOverTime",
+      "content": "id: 59, model: m4, dataOverTime: quantitative measurements for Dkk1-induced endocytosis, mechanism: Same underlying model as M3 but different endocytosis process related to the canonical WNT signaling pathway fits data over time ",
+      "id": "element_18"
+    }
+  ],
+  "ArgumentElementRelations": [
+    {
+      "type": "support",
+      "claim": "element_0",
+      "evidence": "element_2",
+      "warrant": "element_1"
+    },
+    {
+      "type": "support",
+      "claim": "element_0",
+      "evidence": "element_3",
+      "warrant": "element_1"
+    },
+    {
+      "type": "support",
+      "claim": "element_0",
+      "evidence": "element_4",
+      "warrant": "element_1"
+    },
+    {
+      "type": "support",
+      "claim": "element_5",
+      "evidence": "element_6",
+      "warrant": "element_0"
+    },
+    {
+      "type": "support",
+      "claim": "element_6",
+      "evidence": "element_7",
+      "warrant": "element_0"
+    },
+    {
+      "type": "support",
+      "claim": "element_6",
+      "evidence": "element_8",
+      "warrant": "element_0"
+    },
+    {
+      "type": "support",
+      "claim": "element_6",
+      "evidence": "element_9",
+      "warrant": "element_0"
+    },
+    {
+      "type": "attack",
+      "claim": "element_6",
+      "evidence": "element_10"
+    },
+    {
+      "type": "support",
+      "claim": "element_11",
+      "evidence": "element_12",
+      "warrant": "element_0"
+    },
+    {
+      "type": "attack",
+      "claim": "element_12",
+      "evidence": "element_13"
+    },
+    {
+      "type": "support",
+      "claim": "element_14",
+      "evidence": "element_15",
+      "warrant": "element_0"
+    },
+    {
+      "type": "support",
+      "claim": "element_17",
+      "evidence": "element_18",
+      "warrant": "element_16"
+    }
+  ]
+}

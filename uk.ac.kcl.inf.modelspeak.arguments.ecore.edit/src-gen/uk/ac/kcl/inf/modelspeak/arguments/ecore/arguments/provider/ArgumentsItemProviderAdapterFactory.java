@@ -326,6 +326,29 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelAssumptionItemProvider modelAssumptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelAssumptionAdapter() {
+		if (modelAssumptionItemProvider == null) {
+			modelAssumptionItemProvider = new ModelAssumptionItemProvider(this);
+		}
+
+		return modelAssumptionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -452,6 +475,8 @@ public class ArgumentsItemProviderAdapterFactory extends ArgumentsAdapterFactory
 			literatureEvidenceItemProvider.dispose();
 		if (modelInputDataValidItemProvider != null)
 			modelInputDataValidItemProvider.dispose();
+		if (modelAssumptionItemProvider != null)
+			modelAssumptionItemProvider.dispose();
 	}
 
 }

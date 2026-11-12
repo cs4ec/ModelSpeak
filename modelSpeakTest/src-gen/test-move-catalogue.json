@@ -1,0 +1,19 @@
+[
+	{"move":"proposeResearchQuestion (rq)","agent":"proponent","description":"Propose a specific research question rq for the simulation study."},
+	{"move":"proposeRequirement (req, [rq])","agent":"proponent","description":"Propose a requirement req that a simulation model must satisfy."},
+	{"move":"attackRequirement ([req], reason)","agent":"opponent","description":"Declare a requirement invalid."},
+	{"move":"redefineRequirement ([req], newReq)","agent":"proponent","description":"Propose an alternative requirement formulation newReq."},
+	{"move":"retractRequirement ([req])","agent":"proponent","description":"Retract a previously proposed requirement."},
+	{"move":"supportRequirement ([req], evidence)","agent":"proponent","description":"Provide additional support for the validity of req."},
+	{"move":"proposeAssumption (assumption)","agent":"proponent","description":"Propose an assumption for consideration in the argument graph."},
+	{"move":"reviseRequirement ([model], [req], newReq, experiment)","agent":"proponent","description":"Propose a refined requirement and claim that model satisfies it."},
+	{"move":"proposeModel (model, [req])","agent":"proponent","description":"Propose a model, claiming that it satisfies requirement req."},
+	{"move":"supportModel ([model], evidence)","agent":"proponent","description":"Provide evidence for the validity of model."},
+	{"move":"counterModel ([model], experiment, [req])","agent":"opponent","description":"Provide a simulation experiment showing that model does not satisfy req."},
+	{"move":"attackModel ([model], evidence)","agent":"opponent","description":"Provide a reason why model should not be considered valid."},
+	{"move":"replaceModel ([model], newModel)","agent":"proponent","description":"Provide a new version of a model."},
+	{"move":"proposeExperiment ([model], experiment, [req])","agent":"proponent","description":"Support an earlier claim that model satisfies req."},
+	{"move":"supportExperiment ([experiment], evidence)","agent":"proponent","description":"Provide evidence that experiment was well-designed."},
+	{"move":"attackExperiment ([experiment], evidence)","agent":"opponent","description":"Provide evidence that experiment was not well-designed."},
+	{"move":"retractExperiment ([experiment])","agent":"proponent","description":"Retract an experiment previously shown to be invalid."}
+]

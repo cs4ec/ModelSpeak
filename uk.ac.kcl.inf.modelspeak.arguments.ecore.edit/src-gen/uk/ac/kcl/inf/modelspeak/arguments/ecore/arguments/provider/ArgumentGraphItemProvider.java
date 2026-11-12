@@ -175,6 +175,9 @@ public class ArgumentGraphItemProvider extends ItemProviderAdapter implements IE
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
 				ArgumentsFactory.eINSTANCE.createModelInputDataValid()));
 
+		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__ARGUMENT_ELEMENTS,
+				ArgumentsFactory.eINSTANCE.createModelAssumption()));
+
 		newChildDescriptors.add(createChildParameter(ArgumentsPackage.Literals.ARGUMENT_GRAPH__RELATIONS,
 				ArgumentsFactory.eINSTANCE.createSupport()));
 

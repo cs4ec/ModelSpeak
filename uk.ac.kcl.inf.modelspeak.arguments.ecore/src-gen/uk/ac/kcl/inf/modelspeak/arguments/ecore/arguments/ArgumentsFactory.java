@@ -121,6 +121,15 @@ public interface ArgumentsFactory extends EFactory {
 	ModelInputDataValid createModelInputDataValid();
 
 	/**
+	 * Returns a new object of class '<em>Model Assumption</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Assumption</em>'.
+	 * @generated
+	 */
+	ModelAssumption createModelAssumption();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

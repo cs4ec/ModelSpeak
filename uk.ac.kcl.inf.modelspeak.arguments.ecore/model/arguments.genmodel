@@ -22,7 +22,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/evidence"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/warrant"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/claim"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arguments.ecore#//ArgumentElementRelation/assumptions"/>
     </genClasses>
     <genClasses ecoreClass="arguments.ecore#//SimulationMechanismWarrant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//SimulationMechanismWarrant/outputDataOverTime"/>
@@ -61,7 +60,6 @@
     <genClasses ecoreClass="arguments.ecore#//ModelAssumption">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelAssumption/assumption"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelAssumption/assumptionText"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arguments.ecore#//ModelAssumption/model"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

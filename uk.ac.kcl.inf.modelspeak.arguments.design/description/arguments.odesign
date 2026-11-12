@@ -79,6 +79,13 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
             </style>
           </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(arguments::ModelAssumption)">
+            <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="AttackNode" semanticCandidatesExpression="feature:relations" domainClass="arguments::Attack">
           <style xsi:type="style:LozengeNodeDescription" labelSize="10" showIcon="false" labelExpression="Attack" labelPosition="node" resizeKind="NSEW">
@@ -132,14 +139,6 @@
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="evidence">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <edgeMappings name="SupportAssumptionLink" sourceMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='SupportNode']" targetMapping="//@ownedViewpoints[name='SimStudyArgumentViewpoint']/@ownedRepresentations[name='SimStudyArgumentDiagram']/@defaultLayer/@nodeMappings[name='ArgumentElementNode']" targetFinderExpression="feature:assumptions">
-          <style lineStyle="dash" endsCentering="Target">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
-            <centerLabelStyleDescription labelSize="7" showIcon="false" labelExpression="assuming">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>

@@ -177,22 +177,13 @@ public interface ArgumentsPackage extends EPackage {
 	int ARGUMENT_ELEMENT_RELATION__CLAIM = 2;
 
 	/**
-	 * The feature id for the '<em><b>Assumptions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS = 3;
-
-	/**
 	 * The number of structural features of the '<em>Argument Element Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_ELEMENT_RELATION_FEATURE_COUNT = 4;
+	int ARGUMENT_ELEMENT_RELATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Argument Element Relation</em>' class.
@@ -571,15 +562,6 @@ public interface ArgumentsPackage extends EPackage {
 	int SUPPORT__CLAIM = ARGUMENT_ELEMENT_RELATION__CLAIM;
 
 	/**
-	 * The feature id for the '<em><b>Assumptions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUPPORT__ASSUMPTIONS = ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS;
-
-	/**
 	 * The number of structural features of the '<em>Support</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -633,15 +615,6 @@ public interface ArgumentsPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTACK__CLAIM = ARGUMENT_ELEMENT_RELATION__CLAIM;
-
-	/**
-	 * The feature id for the '<em><b>Assumptions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACK__ASSUMPTIONS = ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Attack</em>' class.
@@ -818,6 +791,61 @@ public interface ArgumentsPackage extends EPackage {
 	int MODEL_INPUT_DATA_VALID_OPERATION_COUNT = MODEL_IS_VALID_CLAIM_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelAssumptionImpl <em>Model Assumption</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelAssumptionImpl
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelAssumption()
+	 * @generated
+	 */
+	int MODEL_ASSUMPTION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ASSUMPTION__ID = ARGUMENT_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Assumption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ASSUMPTION__ASSUMPTION = ARGUMENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Assumption Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ASSUMPTION__ASSUMPTION_TEXT = ARGUMENT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Model Assumption</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ASSUMPTION_FEATURE_COUNT = ARGUMENT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Model Assumption</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ASSUMPTION_OPERATION_COUNT = ARGUMENT_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElement <em>Argument Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -912,17 +940,6 @@ public interface ArgumentsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getArgumentElementRelation_Claim();
-
-	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getAssumptions <em>Assumptions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Assumptions</em>'.
-	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ArgumentElementRelation#getAssumptions()
-	 * @see #getArgumentElementRelation()
-	 * @generated
-	 */
-	EReference getArgumentElementRelation_Assumptions();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.SimulationMechanismWarrant <em>Simulation Mechanism Warrant</em>}'.
@@ -1200,6 +1217,38 @@ public interface ArgumentsPackage extends EPackage {
 	EAttribute getModelInputDataValid_DataDescription();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption <em>Model Assumption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Model Assumption</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption
+	 * @generated
+	 */
+	EClass getModelAssumption();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption#getAssumption <em>Assumption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Assumption</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption#getAssumption()
+	 * @see #getModelAssumption()
+	 * @generated
+	 */
+	EAttribute getModelAssumption_Assumption();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption#getAssumptionText <em>Assumption Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Assumption Text</em>'.
+	 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.ModelAssumption#getAssumptionText()
+	 * @see #getModelAssumption()
+	 * @generated
+	 */
+	EAttribute getModelAssumption_AssumptionText();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1299,14 +1348,6 @@ public interface ArgumentsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARGUMENT_ELEMENT_RELATION__CLAIM = eINSTANCE.getArgumentElementRelation_Claim();
-
-		/**
-		 * The meta object literal for the '<em><b>Assumptions</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARGUMENT_ELEMENT_RELATION__ASSUMPTIONS = eINSTANCE.getArgumentElementRelation_Assumptions();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.SimulationMechanismWarrantImpl <em>Simulation Mechanism Warrant</em>}' class.
@@ -1542,6 +1583,32 @@ public interface ArgumentsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MODEL_INPUT_DATA_VALID__DATA_DESCRIPTION = eINSTANCE.getModelInputDataValid_DataDescription();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelAssumptionImpl <em>Model Assumption</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ModelAssumptionImpl
+		 * @see uk.ac.kcl.inf.modelspeak.arguments.ecore.arguments.impl.ArgumentsPackageImpl#getModelAssumption()
+		 * @generated
+		 */
+		EClass MODEL_ASSUMPTION = eINSTANCE.getModelAssumption();
+
+		/**
+		 * The meta object literal for the '<em><b>Assumption</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_ASSUMPTION__ASSUMPTION = eINSTANCE.getModelAssumption_Assumption();
+
+		/**
+		 * The meta object literal for the '<em><b>Assumption Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_ASSUMPTION__ASSUMPTION_TEXT = eINSTANCE.getModelAssumption_AssumptionText();
 
 	}
 
